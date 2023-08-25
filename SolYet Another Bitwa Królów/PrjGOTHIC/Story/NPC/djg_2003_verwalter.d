@@ -1,0 +1,51 @@
+
+instance DJG_2003_VERWALTER(Npc_Default)
+{
+	name[0] = NPCNAME_VERWALTER;
+	guild = GIL_NONE;
+	id = 2003;
+	voice = 6;
+	npcType = NPC_FLAG_GHOST | npctype_main;
+	aivar[AIV_ToughGuy] = TRUE;
+	aivar[AIV_ToughGuyNewsOverride] = TRUE;
+	aivar[AIV_IGNORE_Murder] = TRUE;
+	aivar[AIV_IGNORE_Theft] = TRUE;
+	aivar[AIV_IGNORE_Sheepkiller] = TRUE;
+	aivar[AIV_IgnoresArmor] = TRUE;
+	aivar[AIV_NoFightParker] = TRUE;
+	aivar[91] = TRUE;
+	B_SetAttributesToChapter(self,1);
+	if(FRAKTION_L2 == DJG)
+	{
+		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_djg_m);
+	}
+	else if(FRAKTION_L2 == Pal)
+	{
+		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,ItAr_PAL_M);
+	}
+	else if(FRAKTION_L2 == TMP)
+	{
+		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_tmp_m);
+	}
+	else if(FRAKTION_L2 == SKE)
+	{
+		b_setskelettvisual(self,3);
+	};
+	Mdl_SetModelFatness(self,1);
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,10);
+	EquipItem(self,ItMw_Nagelknueppel);
+	B_CreateAmbientInv(self);
+	senses = SENSE_SEE | SENSE_SMELL;
+	senses_range = 2000;
+	fight_tactic = FAI_HUMAN_COWARD;
+	daily_routine = Rtn_Start_2003;
+};
+
+
+func void Rtn_Start_2003()
+{
+	TA_Stand_WP(8,0,23,0,"L2_KING_VERWALTER");
+	TA_Stand_WP(23,0,8,0,"L2_KING_VERWALTER");
+};
+
