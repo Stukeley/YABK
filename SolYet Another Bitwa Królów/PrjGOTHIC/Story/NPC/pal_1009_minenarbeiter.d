@@ -31,7 +31,7 @@ instance PAL_1009_MINENARBEITER(Npc_Default)
 	}
 	else if(FRAKTION_L1 == SKE)
 	{
-		b_setskelettvisual(self,1);
+		B_SetSkelettVisual(self,1);
 	};
 	Mdl_SetModelFatness(self,1);
 	B_GiveNpcTalents(self);

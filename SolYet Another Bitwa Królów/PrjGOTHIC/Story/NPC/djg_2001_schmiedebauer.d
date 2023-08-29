@@ -32,7 +32,7 @@ instance DJG_2001_SCHMIEDEBAUER(Npc_Default)
 	}
 	else if(FRAKTION_L2 == SKE)
 	{
-		b_setskelettvisual(self,3);
+		B_SetSkelettVisual(self,3);
 	};
 	Mdl_SetModelFatness(self,1);
 	B_GiveNpcTalents(self);

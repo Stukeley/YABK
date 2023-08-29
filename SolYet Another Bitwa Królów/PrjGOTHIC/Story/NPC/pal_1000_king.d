@@ -29,7 +29,7 @@ instance PAL_1000_KING(Npc_Default)
 	}
 	else if(FRAKTION_L1 == SKE)
 	{
-		b_setskelettvisual(self,4);
+		B_SetSkelettVisual(self,4);
 	};
 
 	Mdl_SetModelFatness(self,1);

@@ -121,19 +121,19 @@ func void b_setwachenabilities(var C_Npc slf,var int gil)
 	{
 		if(stufe == 1)
 		{
-			b_setskelettvisual(slf,1);
+			B_SetSkelettVisual(slf,1);
 		}
 		else if(stufe == 2)
 		{
-			b_setskelettvisual(slf,2);
+			B_SetSkelettVisual(slf,2);
 		}
 		else if(stufe == 3)
 		{
-			b_setskelettvisual(slf,3);
+			B_SetSkelettVisual(slf,3);
 		}
 		else if(stufe == 4)
 		{
-			b_setskelettvisual(slf,4);
+			B_SetSkelettVisual(slf,4);
 		};
 	};
 	if(gil == GIL_PAL)
@@ -283,19 +283,19 @@ func void b_updatewachenabilities(var C_Npc slf)
 		{
 			if(stufe == 1)
 			{
-				b_setskelettvisual(slf,1);
+				B_SetSkelettVisual(slf,1);
 			}
 			else if(stufe == 2)
 			{
-				b_setskelettvisual(slf,2);
+				B_SetSkelettVisual(slf,2);
 			}
 			else if(stufe == 3)
 			{
-				b_setskelettvisual(slf,3);
+				B_SetSkelettVisual(slf,3);
 			}
 			else if(stufe == 4)
 			{
-				b_setskelettvisual(slf,4);
+				B_SetSkelettVisual(slf,4);
 			};
 		};
 		hp_max = slf.attribute[ATR_HITPOINTS_MAX];

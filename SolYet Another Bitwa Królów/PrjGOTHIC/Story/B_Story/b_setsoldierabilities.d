@@ -1,7 +1,7 @@
 // Zmiana parametrow Zolnierzy (w zaleznosci od posiadanych ulepszen).
 // TODO - pierszy priorytet to ogarnac ten plik
 
-// Funkcja zmieniajaca parametry stworzonego Zolnierza (C_Npc) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
+// Funkcja zmieniajaca parametry stworzonego Zolnierza (slf) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
 // gil - gildia (GIL_PAL lub GIL_DJG)
 func void b_setsoldierabilities(var C_Npc slf,var int gil)
 {
@@ -139,19 +139,19 @@ func void b_setsoldierabilities(var C_Npc slf,var int gil)
 	{
 		if(used_armor == 1)
 		{
-			b_setskelettvisual(slf,1);
+			B_SetSkelettVisual(slf,1);
 		}
 		else if(used_armor == 2)
 		{
-			b_setskelettvisual(slf,2);
+			B_SetSkelettVisual(slf,2);
 		}
 		else if(used_armor == 3)
 		{
-			b_setskelettvisual(slf,3);
+			B_SetSkelettVisual(slf,3);
 		}
 		else if(used_armor == 4)
 		{
-			b_setskelettvisual(slf,4);
+			B_SetSkelettVisual(slf,4);
 		};
 	};
 	slf.guild = gil;

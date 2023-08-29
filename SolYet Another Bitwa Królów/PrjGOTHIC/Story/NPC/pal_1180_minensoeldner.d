@@ -22,7 +22,7 @@ instance PAL_1180_MINENSOELDNER(Npc_Default)
 	}
 	else if(FRAKTION_L1 == SKE)
 	{
-		b_setskelettvisual(self,2);
+		B_SetSkelettVisual(self,2);
 	};
 	if(L1_UNSTERBLICHKEIT == TRUE)
 	{

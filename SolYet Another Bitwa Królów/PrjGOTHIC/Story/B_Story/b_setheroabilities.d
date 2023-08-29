@@ -1,9 +1,9 @@
 // Zmiana parametrow Bohaterow (w zaleznosci od posiadanych ulepszen).
 // TODO - pierszy priorytet to ogarnac ten plik
 
-// Funkcja zmieniajaca parametry stworzonego Bohatera (C_Npc) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
+// Funkcja zmieniajaca parametry stworzonego Bohatera (slf) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
 // gil - gildia (GIL_PAL = czerwoni, lub GIL_DJG = niebiescy)
-func void b_setheroabilities(var C_Npc slf, var int gil)
+func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 {
 	// Frakcja bohatera - PAL (Paladyn), DJG (Lowca Smokow), TMP (Templariusz), SKE (Ozywieniec).
 	var int fraktion;
@@ -70,7 +70,7 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 	slf.aivar[99] = 4;
 	slf.aivar[75] = ruestungslevel;
 
-	if(LOAD == 0)
+	if (LOAD == 0)
 	{
 		slf.aivar[74] = 1;
 	}
@@ -82,58 +82,52 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 	// Przypisanie wygladu bohatera w zaleznosci od frakcji i poziomu zbroi.
 	if (fraktion == DJG)
 	{
-		switch (ruestungslevel)
+		if (ruestungslevel == 0)
 		{
-			case 0:
-				B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, itar_sld_M);
-				break;
-
-			case 1:
-				B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, itar_djg_l);
-				break;
-
-			default:
-				B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, itar_djg_h);
-				break;
+			B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, itar_sld_M);
+		}
+		else if (ruestungslevel == 1)
+		{
+			B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, itar_djg_l);
+		}
+		else
+		{
+			B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, itar_djg_h);
 		};
 	}
 	else if (fraktion == Pal)
 	{
-		switch (ruestungslevel)
+		if (ruestungslevel == 0)
 		{
-			case 0:
-				B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, ItAr_MIL_M);
-				break;
-
-			case 1:
-				B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, ItAr_PAL_M);
-				break;
-
-			default:
-				B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, ItAr_PAl_H);
-				break;
+			B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, ItAr_MIL_M);
+		}
+		else if (ruestungslevel == 1)
+		{
+			B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, ItAr_PAL_M);
+		}
+		else
+		{
+			B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, ItAr_PAl_H);
 		};
 	}
 	else if (fraktion == TMP)
 	{
-		switch (ruestungslevel)
+		if (ruestungslevel == 0)
 		{
-			case 0:
-				B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, itar_tmp_l);
-				break;
-
-			case 1:
-				B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, itar_tmp_m);
-				break;
-
-			default:
-				B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, itar_tmp_h);
-				break;
+			B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, itar_tmp_l);
 		}
+		else if (ruestungslevel == 1)
+		{
+			B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, itar_tmp_m);
+		}
+		else
+		{
+			B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, itar_tmp_h);
+		};
 	}
 	else if (fraktion == SKE)
 	{
-		b_setskelettvisual(slf, ruestungslevel + 2);
+		B_SetSkelettVisual(slf, ruestungslevel + 2);
 	};
 
 	slf.voice = 6;
@@ -159,7 +153,7 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 	B_GiveNpcTalents(slf);
 
 	// Ustawienie miecza i jego umiejetnosci w zaleznosci od talentu.
-	if(schwertlevel == 0)
+	if (schwertlevel == 0)
 	{
 		EquipItem(slf,itmw_hero_1);
 		slf.HitChance[NPC_TALENT_1H] = 31;
@@ -167,7 +161,7 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 		Mdl_ApplyOverlayMds(slf,"humans_1hST1.mds");
 		Mdl_ApplyOverlayMds(slf,"humans_2hST1.mds");
 	}
-	else if(schwertlevel == 1)
+	else if (schwertlevel == 1)
 	{
 		EquipItem(slf,itmw_hero_2);
 		slf.HitChance[NPC_TALENT_1H] = 54;
@@ -175,7 +169,7 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 		Mdl_ApplyOverlayMds(slf,"humans_1hST1.mds");
 		Mdl_ApplyOverlayMds(slf,"humans_2hST1.mds");
 	}
-	else if(schwertlevel == 2)
+	else if (schwertlevel == 2)
 	{
 		EquipItem(slf,itmw_hero_3);
 		slf.HitChance[NPC_TALENT_1H] = 77;
@@ -183,7 +177,7 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 		Mdl_ApplyOverlayMds(slf,"humans_1hST2.mds");
 		Mdl_ApplyOverlayMds(slf,"humans_2hST2.mds");
 	}
-	else if(schwertlevel >= 3)
+	else if (schwertlevel >= 3)
 	{
 		EquipItem(slf,itmw_hero_4);
 		slf.HitChance[NPC_TALENT_1H] = 100;
@@ -194,7 +188,8 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 
 	// Ustawienie atrybutow i AI w zaleznosci od poziomu (za doswiadczenie).
 	// [BALANS]
-	var int multiplier = skilllevel / TOTEGEGNERFUERSKILLLEVEL;
+	var int multiplier;
+	multiplier = skilllevel / TOTEGEGNERFUERSKILLLEVEL;
 	
 	slf.aivar[96] = multiplier;
 
@@ -215,7 +210,7 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 	};
 
 	// Ustawienie kuszy i jej umiejetnosci w zaleznosci od talentu.
-	if(armbrustlevel == 1)
+	if (armbrustlevel == 1)
 	{
 		EquipItem(slf,ItRw_Crossbow_L_02);
 		slf.HitChance[NPC_TALENT_BOW] = 31;
@@ -223,7 +218,7 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 		Mdl_ApplyOverlayMds(slf,"humans_BowT1.mds");
 		Mdl_ApplyOverlayMds(slf,"humans_CBowT1.mds");
 	}
-	else if(armbrustlevel == 2)
+	else if (armbrustlevel == 2)
 	{
 		EquipItem(slf,ItRw_Crossbow_M_01);
 		slf.HitChance[NPC_TALENT_BOW] = 54;
@@ -231,7 +226,7 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 		Mdl_ApplyOverlayMds(slf,"humans_BowT1.mds");
 		Mdl_ApplyOverlayMds(slf,"humans_CBowT1.mds");
 	}
-	else if(armbrustlevel == 3)
+	else if (armbrustlevel == 3)
 	{
 		EquipItem(slf,ItRw_Crossbow_M_02);
 		slf.HitChance[NPC_TALENT_BOW] = 77;
@@ -239,7 +234,7 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 		Mdl_ApplyOverlayMds(slf,"humans_BowT2.mds");
 		Mdl_ApplyOverlayMds(slf,"humans_CBowT2.mds");
 	}
-	else if(armbrustlevel == 4)
+	else if (armbrustlevel == 4)
 	{
 		EquipItem(slf,ItRw_Crossbow_H_01);
 		slf.HitChance[NPC_TALENT_BOW] = 100;
@@ -249,7 +244,7 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 	};
 
 	// ?
-	if(L1_WEGAUFTEILUNG < WEGCOUNTER)
+	if (L1_WEGAUFTEILUNG < WEGCOUNTER)
 	{
 		slf.aivar[97] = 1;
 	}
@@ -259,7 +254,7 @@ func void b_setheroabilities(var C_Npc slf, var int gil)
 	};
 
 	// Cos dotyczace AI na innej mapie.
-	if(MAP == VARUS_MAP)
+	if (MAP == VARUS_MAP)
 	{
 		slf.aivar[97] = 2;
 		slf.aivar[94] = 0;

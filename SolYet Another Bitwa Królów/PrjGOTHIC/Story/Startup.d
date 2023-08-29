@@ -24,40 +24,40 @@ func void init_global()
 	{
 		if(FRAKTION_L1 == SKE)
 		{
-			b_setskelettvisual(pal_1000_king,4);
+			B_SetSkelettVisual(pal_1000_king,4);
 			Mdl_ApplyOverlayMds(pal_1002_schmied,"humans_skeleton.mds");
 			Mdl_SetVisualBody(pal_1002_schmied,"Ske_Body2",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
-			b_setskelettvisual(pal_1004_magier,6);
-			b_setskelettvisual(pal_1007_minenaufseher,3);
-			b_setskelettvisual(pal_1008_minenarbeiter,1);
-			b_setskelettvisual(pal_1009_minenarbeiter,1);
-			b_setskelettvisual(pal_1010_minenarbeiter,1);
+			B_SetSkelettVisual(pal_1004_magier,6);
+			B_SetSkelettVisual(pal_1007_minenaufseher,3);
+			B_SetSkelettVisual(pal_1008_minenarbeiter,1);
+			B_SetSkelettVisual(pal_1009_minenarbeiter,1);
+			B_SetSkelettVisual(pal_1010_minenarbeiter,1);
 			if(LAGER == 1)
 			{
-				b_setskelettvisual(pal_1001_schmiedebauer,3);
-				b_setskelettvisual(pal_1005_magiebauer,3);
-				b_setskelettvisual(pal_1006_minebauer,3);
-				b_setskelettvisual(pal_1003_verwalter,3);
-				b_setskelettvisual(pal_1011_elite,3);
+				B_SetSkelettVisual(pal_1001_schmiedebauer,3);
+				B_SetSkelettVisual(pal_1005_magiebauer,3);
+				B_SetSkelettVisual(pal_1006_minebauer,3);
+				B_SetSkelettVisual(pal_1003_verwalter,3);
+				B_SetSkelettVisual(pal_1011_elite,3);
 			};
 		};
 		if(FRAKTION_L2 == SKE)
 		{
-			b_setskelettvisual(djg_2000_king,4);
+			B_SetSkelettVisual(djg_2000_king,4);
 			Mdl_ApplyOverlayMds(djg_2002_schmied,"humans_skeleton.mds");
 			Mdl_SetVisualBody(djg_2002_schmied,"Ske_Body2",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
-			b_setskelettvisual(djg_2004_magier,6);
-			b_setskelettvisual(djg_2007_minenaufseher,3);
-			b_setskelettvisual(djg_2008_minenarbeiter,1);
-			b_setskelettvisual(djg_2009_minenarbeiter,1);
-			b_setskelettvisual(djg_2010_minenarbeiter,1);
+			B_SetSkelettVisual(djg_2004_magier,6);
+			B_SetSkelettVisual(djg_2007_minenaufseher,3);
+			B_SetSkelettVisual(djg_2008_minenarbeiter,1);
+			B_SetSkelettVisual(djg_2009_minenarbeiter,1);
+			B_SetSkelettVisual(djg_2010_minenarbeiter,1);
 			if(LAGER == 2)
 			{
-				b_setskelettvisual(djg_2001_schmiedebauer,3);
-				b_setskelettvisual(djg_2005_magiebauer,3);
-				b_setskelettvisual(djg_2006_minebauer,3);
-				b_setskelettvisual(djg_2003_verwalter,3);
-				b_setskelettvisual(djg_2011_elite,3);
+				B_SetSkelettVisual(djg_2001_schmiedebauer,3);
+				B_SetSkelettVisual(djg_2005_magiebauer,3);
+				B_SetSkelettVisual(djg_2006_minebauer,3);
+				B_SetSkelettVisual(djg_2003_verwalter,3);
+				B_SetSkelettVisual(djg_2011_elite,3);
 			};
 		};
 	};

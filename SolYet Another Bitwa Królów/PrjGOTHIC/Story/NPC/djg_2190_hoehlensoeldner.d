@@ -22,7 +22,7 @@ instance DJG_2190_HOEHLENSOELDNER(Npc_Default)
 	}
 	else if(FRAKTION_L2 == SKE)
 	{
-		b_setskelettvisual(self,3);
+		B_SetSkelettVisual(self,3);
 	};
 	if(L2_UNSTERBLICHKEIT == TRUE)
 	{

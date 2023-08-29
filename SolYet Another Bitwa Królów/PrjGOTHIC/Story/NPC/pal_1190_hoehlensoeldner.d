@@ -22,7 +22,7 @@ instance PAL_1190_HOEHLENSOELDNER(Npc_Default)
 	}
 	else if(FRAKTION_L1 == SKE)
 	{
-		b_setskelettvisual(self,3);
+		B_SetSkelettVisual(self,3);
 	};
 	if(L1_UNSTERBLICHKEIT == TRUE)
 	{

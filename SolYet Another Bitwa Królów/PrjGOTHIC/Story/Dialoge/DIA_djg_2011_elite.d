@@ -159,7 +159,7 @@ func void djg_2011_elite_ruestungsupgrade_info()
 			}
 			else if(FRAKTION_L1 == SKE)
 			{
-				b_setskelettvisual(pal_1012_hero,3);
+				B_SetSkelettVisual(pal_1012_hero,3);
 			};
 		};
 		if(L2_HELD_RUESTUNGLEVEL == 2)
@@ -178,7 +178,7 @@ func void djg_2011_elite_ruestungsupgrade_info()
 			}
 			else if(FRAKTION_L1 == SKE)
 			{
-				b_setskelettvisual(pal_1012_hero,4);
+				B_SetSkelettVisual(pal_1012_hero,4);
 			};
 		};
 		AI_EquipBestArmor(djg_2012_hero);

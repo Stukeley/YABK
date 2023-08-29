@@ -22,7 +22,7 @@ instance DJG_2180_MINENSOELDNER(Npc_Default)
 	}
 	else if(FRAKTION_L2 == SKE)
 	{
-		b_setskelettvisual(self,2);
+		B_SetSkelettVisual(self,2);
 	};
 	if(L2_UNSTERBLICHKEIT == TRUE)
 	{

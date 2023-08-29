@@ -9,6 +9,8 @@ Więcej informacji o modyfikacji:
 Modyfikacja powstaje pod patronatem serwera Discord "Stukeleyak - Speedruny i Modyfikacje". https://discord.gg/DRZxEHtaGV
 
 ## Informacje dla osób wspierających projekt
+Pierwszym etapem rozwoju modyfikacji jest ogarnięcie kodu źródłowego, który jest momentami napisany dość kiepsko.
+
 Projekt zawiera całą masę plików niezwiązanych bezpośrednio z modyfikacją Bitwa Królów 3 - czy są one potrzebne do działania modyfikacji? Wymaga to dalszych testów.
 
 Hierarchia interesujących nas plików źródłowych:
@@ -19,6 +21,8 @@ Hierarchia interesujących nas plików źródłowych:
   |- SVM.d
   |- Text.d
   |- Story
+  	|- B_Story
+        |- (funkcje związane z działaniem niektórych elementów modyfikacji)
      |- Dialoge
         |- (dialogi z modyfikacji)
      |- NPC
@@ -28,3 +32,8 @@ Hierarchia interesujących nas plików źródłowych:
 Oznaczenia w plikach:
 - [TODO] - zmiany potrzebne na już
 - [BALANS] - zmiany dotyczące balansu gry
+
+Plik GOTHIC.dat zawiera skompilowane skrypty gotowe do spakowania jako plik .MOD i uruchomienia w grze.
+
+## Changelog balansu
+- [soon]

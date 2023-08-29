@@ -35,7 +35,7 @@ instance PAL_1004_MAGIER(Npc_Default)
 	}
 	else if(FRAKTION_L1 == SKE)
 	{
-		b_setskelettvisual(self,6);
+		B_SetSkelettVisual(self,6);
 	};
 	Mdl_SetModelFatness(self,1);
 	B_GiveNpcTalents(self);

@@ -80,7 +80,7 @@ func void b_setmageabilities(var C_Npc slf,var int gil)
 	}
 	else if(fraktion == SKE)
 	{
-		b_setskelettvisual(slf,5);
+		B_SetSkelettVisual(slf,5);
 	};
 	slf.aivar[99] = 3;
 	if(LOAD == 0)

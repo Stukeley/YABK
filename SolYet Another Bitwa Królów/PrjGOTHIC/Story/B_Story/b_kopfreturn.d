@@ -78,19 +78,19 @@ func void b_kopfreturn(var C_Npc slf)
 			{
 				if(used_armor == 1)
 				{
-					b_setskelettvisual(slf,1);
+					B_SetSkelettVisual(slf,1);
 				}
 				else if(used_armor == 2)
 				{
-					b_setskelettvisual(slf,2);
+					B_SetSkelettVisual(slf,2);
 				}
 				else if(used_armor == 3)
 				{
-					b_setskelettvisual(slf,3);
+					B_SetSkelettVisual(slf,3);
 				}
 				else if(used_armor == 4)
 				{
-					b_setskelettvisual(slf,4);
+					B_SetSkelettVisual(slf,4);
 				};
 			};
 		}
@@ -158,19 +158,19 @@ func void b_kopfreturn(var C_Npc slf)
 			{
 				if(stufe == 1)
 				{
-					b_setskelettvisual(slf,1);
+					B_SetSkelettVisual(slf,1);
 				}
 				else if(stufe == 2)
 				{
-					b_setskelettvisual(slf,2);
+					B_SetSkelettVisual(slf,2);
 				}
 				else if(stufe == 3)
 				{
-					b_setskelettvisual(slf,3);
+					B_SetSkelettVisual(slf,3);
 				}
 				else if(stufe == 4)
 				{
-					b_setskelettvisual(slf,4);
+					B_SetSkelettVisual(slf,4);
 				};
 			};
 			if(stufe == 7)
@@ -195,7 +195,7 @@ func void b_kopfreturn(var C_Npc slf)
 			}
 			else if(fraktion == SKE)
 			{
-				b_setskelettvisual(slf,5);
+				B_SetSkelettVisual(slf,5);
 			};
 		}
 		else if(slf.aivar[99] == 4)
@@ -216,7 +216,7 @@ func void b_kopfreturn(var C_Npc slf)
 				}
 				else if(fraktion == SKE)
 				{
-					b_setskelettvisual(slf,2);
+					B_SetSkelettVisual(slf,2);
 				};
 			}
 			else if(slf.aivar[75] == 1)
@@ -235,7 +235,7 @@ func void b_kopfreturn(var C_Npc slf)
 				}
 				else if(fraktion == SKE)
 				{
-					b_setskelettvisual(slf,3);
+					B_SetSkelettVisual(slf,3);
 				};
 			}
 			else if(slf.aivar[75] >= 2)
@@ -254,7 +254,7 @@ func void b_kopfreturn(var C_Npc slf)
 				}
 				else if(fraktion == SKE)
 				{
-					b_setskelettvisual(slf,4);
+					B_SetSkelettVisual(slf,4);
 				};
 			};
 		}
@@ -321,19 +321,19 @@ func void b_kopfreturn(var C_Npc slf)
 			{
 				if(slf.aivar[75] == 1)
 				{
-					b_setskelettvisual(slf,1);
+					B_SetSkelettVisual(slf,1);
 				}
 				else if(slf.aivar[75] == 2)
 				{
-					b_setskelettvisual(slf,2);
+					B_SetSkelettVisual(slf,2);
 				}
 				else if(slf.aivar[75] == 3)
 				{
-					b_setskelettvisual(slf,3);
+					B_SetSkelettVisual(slf,3);
 				}
 				else if(slf.aivar[75] == 4)
 				{
-					b_setskelettvisual(slf,4);
+					B_SetSkelettVisual(slf,4);
 				};
 			};
 		};

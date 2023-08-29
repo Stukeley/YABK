@@ -1,7 +1,7 @@
 // Zmiana parametrow Najemnikow (w zaleznosci od wybranego rodzaju najemnika).
 // TODO - pierszy priorytet to ogarnac ten plik
 
-// Funkcja zmieniajaca parametry stworzonego Najemnika (C_Npc) w zaleznosci od gildii (gil) oraz wybranego w dialogu typu (slaby, silny, itd.)
+// Funkcja zmieniajaca parametry stworzonego Najemnika (slf) w zaleznosci od gildii (gil) oraz wybranego w dialogu typu (slaby, silny, itd.)
 // gil - gildia (GIL_PAL lub GIL_DJG)
 // stufe - przekazana globalna zmienna oznaczajaca poziom najemnika (1 - 4 albo 7, ale nie wiem skad to 7)
 func void b_setmercabilities(var C_Npc slf,var int gil,var int stufe)
@@ -124,19 +124,19 @@ func void b_setmercabilities(var C_Npc slf,var int gil,var int stufe)
 	{
 		if(stufe == 1)
 		{
-			b_setskelettvisual(slf,1);
+			B_SetSkelettVisual(slf,1);
 		}
 		else if(stufe == 2)
 		{
-			b_setskelettvisual(slf,2);
+			B_SetSkelettVisual(slf,2);
 		}
 		else if(stufe == 3)
 		{
-			b_setskelettvisual(slf,3);
+			B_SetSkelettVisual(slf,3);
 		}
 		else if(stufe == 4)
 		{
-			b_setskelettvisual(slf,4);
+			B_SetSkelettVisual(slf,4);
 		};
 	};
 	if(unsterblichkeit == TRUE)
