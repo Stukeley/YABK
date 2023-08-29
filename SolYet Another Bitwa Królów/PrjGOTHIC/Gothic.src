@@ -41,7 +41,7 @@ Story\Log_Entries\B_CloseTopics_Mattes.d
 Story\Log_Entries\B_CloseTopics_Yoly.d
 Story\Log_Entries\B_CheckLog.d
 Story\B_Story\B_GivePlayerXP.d
-Story\B_Story\B_Message.d
+Story\B_Story\b_message.d
 Story\B_Story\B_KillNpc.d
 Story\B_Story\B_RemoveNpc.d
 Story\B_Content\B_PlayerFindItem.d
@@ -368,7 +368,7 @@ Story\NPC_Scripts\B_GiveNpcTalents.d
 Story\NPC_Scripts\B_SetAttributesToChapter.d
 Story\NPC_Scripts\Npc_Default.d
 Story\B_Story\b_setsoldierabilities.d
-Story\B_Story\B_SetMageAbilities.d
+Story\B_Story\b_setmageabilities.d
 Story\B_Story\b_setheroabilities.d
 Story\B_Story\b_setmercabilities.d
 Story\B_Story\b_setwachenabilities.d
@@ -538,7 +538,7 @@ Story\B_Story\B_Enter_AddonWorld.d
 Story\B_Story\B_Kapitelwechsel.d
 Story\B_Story\b_hasupgradeweapons.d
 Story\B_Story\b_otherteamfraktion.d
-Story\B_Story\B_RevivePalHero.d
+Story\B_Story\b_revivepalhero.d
 Story\B_Content\C_Addon_Knows_Schnaps.d
 Story\B_Story\b_lagereinsnotsoeldner.d
 Story\B_Story\b_lagerzweinotsoeldner.d

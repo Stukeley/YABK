@@ -35,5 +35,8 @@ Oznaczenia w plikach:
 
 Plik GOTHIC.dat zawiera skompilowane skrypty gotowe do spakowania jako plik .MOD i uruchomienia w grze.
 
+Pliki Gothic.src i ou.bin to pliki zawierające przede wszystkim spolszczone dialogi, które w oryginalnej wersji modyfikacji były po niemiecku, i należy je zawrzeć w spakowanej modyfikacji.  
+Plik Gothic.src powinien znajdować się w `/_work/Data/Scripts/Content/` a plik ou.bin - w `/_work/Data/Scripts/Content/Cutscene/`.
+
 ## Changelog balansu
 - [soon]
