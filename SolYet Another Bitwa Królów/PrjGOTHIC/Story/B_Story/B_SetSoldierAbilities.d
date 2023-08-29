@@ -1,5 +1,4 @@
 // Zmiana parametrow Zolnierzy (w zaleznosci od posiadanych ulepszen).
-// TODO - pierszy priorytet to ogarnac ten plik
 
 // Funkcja zwracajaca typ (kod) pancerza zolnierza w zaleznosci od frakcji oraz poziomu ulepszenia zbroi.
 // Nie uwzglednia szkieletow - maja one osobna funkcje B_SetSkelettVisual.
