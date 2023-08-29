@@ -1,3 +1,4 @@
+// Dialog z Kowalem Niebieskiego Obozu
 
 instance DJG_2002_SCHMIED_EXIT(C_Info)
 {

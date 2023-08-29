@@ -1,3 +1,4 @@
+// Budowniczy Domu Magow Czerwonego Obozu
 
 instance PAL_1005_MAGIEBAUER(Npc_Default)
 {

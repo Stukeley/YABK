@@ -1,3 +1,4 @@
+// Mag Niebieskiego Obozu
 
 instance DJG_2120_MAGIER(Npc_Default)
 {

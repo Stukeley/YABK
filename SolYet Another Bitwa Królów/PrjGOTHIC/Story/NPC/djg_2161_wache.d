@@ -1,3 +1,4 @@
+// Straznik Na Drodze do Niebieskiego Obozu
 
 instance DJG_2161_WACHE(Npc_Default)
 {

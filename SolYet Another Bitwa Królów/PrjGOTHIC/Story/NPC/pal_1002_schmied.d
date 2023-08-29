@@ -1,3 +1,4 @@
+// Kowal Czerwonego Obozu
 
 instance PAL_1002_SCHMIED(Npc_Default)
 {

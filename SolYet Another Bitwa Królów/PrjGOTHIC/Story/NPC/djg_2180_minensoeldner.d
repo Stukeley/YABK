@@ -1,3 +1,4 @@
+// Prawdopodobnie cos zwiazanego z kopalnia na Mapie 3
 
 instance DJG_2180_MINENSOELDNER(Npc_Default)
 {

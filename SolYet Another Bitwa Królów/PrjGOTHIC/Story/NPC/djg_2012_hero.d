@@ -1,3 +1,4 @@
+// Bohater Niebieskiego Obozu
 
 instance DJG_2012_HERO(Npc_Default)
 {

@@ -1,3 +1,4 @@
+// Dialog z Zarzadca Niebieskiego Obozu
 
 instance DJG_2003_VERWALTER_EXIT(C_Info)
 {

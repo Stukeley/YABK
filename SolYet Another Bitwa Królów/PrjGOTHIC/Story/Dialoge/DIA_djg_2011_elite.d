@@ -1,3 +1,4 @@
+// Dialog z Elita Niebieskiego Obozu
 
 instance DJG_2011_ELITE_EXIT(C_Info)
 {

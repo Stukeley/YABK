@@ -1,3 +1,4 @@
+// Elita Niebieskiego Obozu
 
 instance DJG_2011_ELITE(Npc_Default)
 {

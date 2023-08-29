@@ -1,3 +1,5 @@
+// Najemnik Czerwonego Obozu
+// Uwzglednia kazdy typ najemnika
 
 instance PAL_1140_SOELDNER(Npc_Default)
 {

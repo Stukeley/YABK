@@ -1,3 +1,4 @@
+// Zolnierz Niebieskiego Obozu
 
 instance DJG_2100_SOLDAT(Npc_Default)
 {
@@ -6,6 +7,7 @@ instance DJG_2100_SOLDAT(Npc_Default)
 	daily_routine = rtn_lager2_2100;
 };
 
+// Rutyny zalezne od mapy.
 
 func void rtn_lager1_2100()
 {

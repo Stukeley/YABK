@@ -1,3 +1,4 @@
+// Trzeci Kopacz w Kopalni Czerwonego Obozu
 
 instance PAL_1010_MINENARBEITER(Npc_Default)
 {

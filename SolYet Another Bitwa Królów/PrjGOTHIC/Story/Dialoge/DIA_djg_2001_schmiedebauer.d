@@ -1,3 +1,4 @@
+// Dialog z Budowniczym Kuzni Niebieskiego Obozu
 
 instance DJG_2001_SCHMIEDEBAUER_EXIT(C_Info)
 {

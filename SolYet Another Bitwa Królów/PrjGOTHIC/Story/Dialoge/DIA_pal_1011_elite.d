@@ -1,3 +1,4 @@
+// Dialog z Elita Czerwonego Obozu
 
 instance PAL_1011_ELITE_EXIT(C_Info)
 {

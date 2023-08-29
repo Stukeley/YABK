@@ -1,3 +1,4 @@
+// Dialog z Budowniczym Domu Magow Niebieskiego Obozu
 
 instance DJG_2005_MAGIEBAUER_EXIT(C_Info)
 {

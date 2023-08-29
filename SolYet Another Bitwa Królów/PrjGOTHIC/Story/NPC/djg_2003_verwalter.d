@@ -1,3 +1,4 @@
+// Zarzadca Niebieskiego Obozu
 
 instance DJG_2003_VERWALTER(Npc_Default)
 {

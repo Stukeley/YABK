@@ -1,4 +1,8 @@
+// Zmiana parametrow Bohaterow (w zaleznosci od posiadanych ulepszen).
+// TODO - pierszy priorytet to ogarnac ten plik
 
+// Funkcja zmieniajaca parametry stworzonego Bohatera (C_Npc) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
+// gil - gildia (GIL_PAL lub GIL_DJG)
 func void b_setheroabilities(var C_Npc slf,var int gil)
 {
 	var int fraktion;

@@ -1,3 +1,4 @@
+// Prawdopodobnie cos zwiazanego ze szkieletami na Mapie 3
 
 instance PAL_1190_HOEHLENSOELDNER(Npc_Default)
 {

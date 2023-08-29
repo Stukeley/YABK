@@ -1,3 +1,4 @@
+// Dialog z Kowalem Czerwonego Obozu
 
 instance PAL_1002_SCHMIED_EXIT(C_Info)
 {

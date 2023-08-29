@@ -1,3 +1,4 @@
+// Budowniczy Kuzni Niebieskiego Obozu
 
 instance DJG_2001_SCHMIEDEBAUER(Npc_Default)
 {

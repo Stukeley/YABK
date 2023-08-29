@@ -1,3 +1,4 @@
+// Dialog z Budowniczym Kuzni Czerwonego Obozu
 
 instance PAL_1001_SCHMIEDEBAUER_EXIT(C_Info)
 {

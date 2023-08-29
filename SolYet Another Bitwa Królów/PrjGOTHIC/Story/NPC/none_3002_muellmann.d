@@ -1,3 +1,4 @@
+// Smieciarz
 
 instance NONE_3002_MUELLMANN(Npc_Default)
 {

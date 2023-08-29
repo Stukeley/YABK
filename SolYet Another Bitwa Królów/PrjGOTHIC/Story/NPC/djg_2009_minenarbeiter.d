@@ -1,3 +1,4 @@
+// Drugi Kopacz w Kopalni Niebieskiego Obozu
 
 instance DJG_2009_MINENARBEITER(Npc_Default)
 {

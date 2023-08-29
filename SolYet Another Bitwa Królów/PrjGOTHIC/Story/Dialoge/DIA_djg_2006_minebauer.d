@@ -1,3 +1,4 @@
+// Dialog z Budowniczym Kopalnie Niebieskiego Obozu
 
 instance DJG_2006_MINEBAUER_EXIT(C_Info)
 {

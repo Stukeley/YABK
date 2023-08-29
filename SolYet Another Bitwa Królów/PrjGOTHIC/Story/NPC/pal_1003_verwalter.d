@@ -1,3 +1,4 @@
+// Zarzadca Czerwonego Obozu
 
 instance PAL_1003_VERWALTER(Npc_Default)
 {

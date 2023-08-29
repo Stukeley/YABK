@@ -1,3 +1,4 @@
+// Budowniczy Kopalni Czerwonego Obozu
 
 instance PAL_1006_MINEBAUER(Npc_Default)
 {

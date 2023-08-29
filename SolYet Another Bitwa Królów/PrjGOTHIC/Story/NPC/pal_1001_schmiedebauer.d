@@ -1,3 +1,4 @@
+// Budowniczy Kuzni Czerwonego Obozu
 
 instance PAL_1001_SCHMIEDEBAUER(Npc_Default)
 {

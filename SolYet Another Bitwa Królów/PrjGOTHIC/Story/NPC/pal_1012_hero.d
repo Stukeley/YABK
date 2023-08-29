@@ -1,3 +1,4 @@
+// Bohater Czerwonego Obozu
 
 instance PAL_1012_HERO(Npc_Default)
 {

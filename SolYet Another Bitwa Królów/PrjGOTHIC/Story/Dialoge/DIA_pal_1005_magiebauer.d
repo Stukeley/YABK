@@ -1,3 +1,4 @@
+// Dialog z Budowniczym Domu Magow Czerwonego Obozu
 
 instance PAL_1005_MAGIEBAUER_EXIT(C_Info)
 {

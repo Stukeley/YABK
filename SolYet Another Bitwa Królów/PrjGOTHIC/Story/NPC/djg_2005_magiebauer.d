@@ -1,3 +1,4 @@
+// Budowniczy Domu Magow Niebieskiego Obozu
 
 instance DJG_2005_MAGIEBAUER(Npc_Default)
 {

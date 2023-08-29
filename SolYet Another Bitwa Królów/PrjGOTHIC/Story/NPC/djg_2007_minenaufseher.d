@@ -1,3 +1,4 @@
+// Zarzadca Kopalni Niebieskiego Obozu (po jej wybudowaniu)
 
 instance DJG_2007_MINENAUFSEHER(Npc_Default)
 {

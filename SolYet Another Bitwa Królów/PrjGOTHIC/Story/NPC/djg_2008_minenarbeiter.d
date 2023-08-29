@@ -1,3 +1,4 @@
+// Pierwszy Kopacz w Kopalni Niebieskiego Obozu
 
 instance DJG_2008_MINENARBEITER(Npc_Default)
 {

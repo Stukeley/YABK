@@ -1,3 +1,4 @@
+// Dialog z Krolem Czerwonego Obozu
 
 instance PAL_1000_KING_EXIT(C_Info)
 {

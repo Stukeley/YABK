@@ -1,3 +1,4 @@
+// Trzeci Kopacz w Kopalni Niebieskiego Obozu
 
 instance DJG_2010_MINENARBEITER(Npc_Default)
 {

@@ -1,3 +1,4 @@
+// Straznik Obok Czerwonego Obozu
 
 instance PAL_1160_WACHE(Npc_Default)
 {

@@ -1,3 +1,4 @@
+// Zolnierz Czerwonego Obozu
 
 instance PAL_1100_SOLDAT(Npc_Default)
 {
@@ -6,6 +7,7 @@ instance PAL_1100_SOLDAT(Npc_Default)
 	daily_routine = rtn_lager1_1100;
 };
 
+// Rutyny zalezne od mapy.
 
 func void rtn_lager1_1100()
 {

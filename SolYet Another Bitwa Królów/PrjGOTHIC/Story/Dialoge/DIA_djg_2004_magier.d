@@ -1,3 +1,4 @@
+// Dialog z Uczonym Niebieskiego Obozu
 
 instance DJG_2004_MAGIER_EXIT(C_Info)
 {

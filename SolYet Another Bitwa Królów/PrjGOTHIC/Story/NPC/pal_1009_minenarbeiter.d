@@ -1,3 +1,4 @@
+// Drugi Kopacz w Kopalni Czerwonego Obozu
 
 instance PAL_1009_MINENARBEITER(Npc_Default)
 {

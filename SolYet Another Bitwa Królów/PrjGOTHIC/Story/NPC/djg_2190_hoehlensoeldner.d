@@ -1,3 +1,4 @@
+// Prawdopodobnie cos zwiazanego ze szkieletami na Mapie 3
 
 instance DJG_2190_HOEHLENSOELDNER(Npc_Default)
 {

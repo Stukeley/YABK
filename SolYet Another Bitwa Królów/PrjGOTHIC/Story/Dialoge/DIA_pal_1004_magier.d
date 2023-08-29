@@ -1,3 +1,4 @@
+// Dialog z Uczonym Czerwonego Obozu
 
 instance PAL_1004_MAGIER_EXIT(C_Info)
 {

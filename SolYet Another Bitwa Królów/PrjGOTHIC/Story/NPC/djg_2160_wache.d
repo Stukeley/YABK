@@ -1,3 +1,4 @@
+// Straznik Obok Niebieskiego Obozu
 
 instance DJG_2160_WACHE(Npc_Default)
 {

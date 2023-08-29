@@ -1,3 +1,4 @@
+// Uczony Czerwonego Obozu
 
 instance PAL_1004_MAGIER(Npc_Default)
 {

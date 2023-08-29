@@ -1,4 +1,8 @@
+// Zmiana parametrow Magow (w zaleznosci od posiadanych ulepszen).
+// TODO - pierszy priorytet to ogarnac ten plik
 
+// Funkcja zmieniajaca parametry stworzonego Maga (C_Npc) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
+// gil - gildia (GIL_PAL lub GIL_DJG)
 func void b_setmageabilities(var C_Npc slf,var int gil)
 {
 	var int fraktion;

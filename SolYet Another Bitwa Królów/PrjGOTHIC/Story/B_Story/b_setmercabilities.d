@@ -1,4 +1,9 @@
+// Zmiana parametrow Najemnikow (w zaleznosci od wybranego rodzaju najemnika).
+// TODO - pierszy priorytet to ogarnac ten plik
 
+// Funkcja zmieniajaca parametry stworzonego Najemnika (C_Npc) w zaleznosci od gildii (gil) oraz wybranego w dialogu typu (slaby, silny, itd.)
+// gil - gildia (GIL_PAL lub GIL_DJG)
+// stufe - przekazana globalna zmienna oznaczajaca poziom najemnika (1 - 4 albo 7, ale nie wiem skad to 7)
 func void b_setmercabilities(var C_Npc slf,var int gil,var int stufe)
 {
 	var int face;

@@ -1,3 +1,4 @@
+// Dialog z Rezyserem (poczatek gry, wybor poziomu trudnosci i frakcji)
 
 instance VLK_666_SPIELLEITER_EXIT(C_Info)
 {

@@ -1,3 +1,4 @@
+// Uczony Niebieskiego Obozu
 
 instance DJG_2004_MAGIER(Npc_Default)
 {

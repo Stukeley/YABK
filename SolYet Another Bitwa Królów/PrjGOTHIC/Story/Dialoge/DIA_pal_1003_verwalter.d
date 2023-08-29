@@ -1,3 +1,4 @@
+// Dialog z Zarzadca Czerwonego Obozu
 
 instance PAL_1003_VERWALTER_EXIT(C_Info)
 {

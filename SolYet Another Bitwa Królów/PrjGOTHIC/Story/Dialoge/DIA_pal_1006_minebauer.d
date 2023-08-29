@@ -1,3 +1,4 @@
+// Dialog z Budowniczym Kopalnie Czerwonego Obozu
 
 instance PAL_1006_MINEBAUER_EXIT(C_Info)
 {

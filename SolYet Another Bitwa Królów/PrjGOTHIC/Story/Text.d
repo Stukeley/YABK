@@ -1,3 +1,5 @@
+// Wszystkie przet³umaczone nazwy NPC i innych obiektów.
+// OTWIERAÆ Z KODOWANIEM 'Windows 1250'
 
 const string MOBNAME_CRATE = "Skrzynia";
 const string MOBNAME_CHEST = "Kufer";

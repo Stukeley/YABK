@@ -1,3 +1,4 @@
+// Straznik Na Drodze do Czerwonego Obozu
 
 instance PAL_1161_WACHE(Npc_Default)
 {

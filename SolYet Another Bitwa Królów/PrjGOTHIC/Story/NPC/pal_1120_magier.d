@@ -1,3 +1,4 @@
+// Mag Czerwonego Obozu
 
 instance PAL_1120_MAGIER(Npc_Default)
 {

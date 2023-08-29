@@ -1,3 +1,4 @@
+// Zarzadca Kopalni Czerwonego Obozu (po jej wybudowaniu)
 
 instance PAL_1007_MINENAUFSEHER(Npc_Default)
 {

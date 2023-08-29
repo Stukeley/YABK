@@ -1,3 +1,5 @@
+// Najemnik Niebieskiego Obozu
+// Uwzglednia kazdy typ najemnika
 
 instance DJG_2140_SOELDNER(Npc_Default)
 {

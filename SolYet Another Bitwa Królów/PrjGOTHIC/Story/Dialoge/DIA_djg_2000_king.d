@@ -1,3 +1,4 @@
+// Dialog z Krolem Niebieskiego Obozu
 
 instance DJG_2000_KING_EXIT(C_Info)
 {

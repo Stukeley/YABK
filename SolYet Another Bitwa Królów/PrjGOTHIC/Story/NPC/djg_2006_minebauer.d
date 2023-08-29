@@ -1,3 +1,4 @@
+// Budowniczy Kopalni Niebieskiego Obozu
 
 instance DJG_2006_MINEBAUER(Npc_Default)
 {

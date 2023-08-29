@@ -1,3 +1,4 @@
+// Kowal Niebieskiego Obozu
 
 instance DJG_2002_SCHMIED(Npc_Default)
 {

@@ -1,3 +1,4 @@
+// Elita Czerwonego Obozu
 
 instance PAL_1011_ELITE(Npc_Default)
 {

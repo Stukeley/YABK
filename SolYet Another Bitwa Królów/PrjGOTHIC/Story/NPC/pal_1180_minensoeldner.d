@@ -1,3 +1,4 @@
+// Prawdopodobnie cos zwiazanego z kopalnia na Mapie 3
 
 instance PAL_1180_MINENSOELDNER(Npc_Default)
 {

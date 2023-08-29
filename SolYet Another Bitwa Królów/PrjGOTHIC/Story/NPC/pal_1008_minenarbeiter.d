@@ -1,3 +1,4 @@
+// Pierwszy Kopacz w Kopalni Czerwonego Obozu
 
 instance PAL_1008_MINENARBEITER(Npc_Default)
 {
