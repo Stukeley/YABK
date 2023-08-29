@@ -201,25 +201,51 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	};
 
 	// Ustawienie atrybutow i AI w zaleznosci od poziomu (za doswiadczenie).
+	// Zostawiam to w takiej formie, bo latwiej wtedy zmieniac poszczegolne wartosci dla kazdego poziomu.
 	// [BALANS]
-	var int multiplier;
-	multiplier = skilllevel / TOTEGEGNERFUERSKILLLEVEL;
+	var int ratio;
+	ratio = skilllevel / TOTEGEGNERFUERSKILLLEVEL;
 	
-	slf.aivar[96] = multiplier;
+	slf.aivar[96] = ratio;
 
-	if (multiplier >= 4)
+	if (ratio >= 7)
 	{
-		B_SetAttributesToChapter(slf, 5 + multiplier);
+		B_SetAttributesToChapter(slf, 12);
 		slf.fight_tactic = FAI_HUMAN_MASTER;
 	}
-	else if (multiplier == 3)
+	else if (ratio >= 6)
+	{
+		B_SetAttributesToChapter(slf, 11);
+		slf.fight_tactic = FAI_HUMAN_MASTER;
+	}
+	else if (ratio >= 5)
+	{
+		B_SetAttributesToChapter(slf, 10);
+		slf.fight_tactic = FAI_HUMAN_MASTER;
+	}
+	else if (ratio >= 4)
+	{
+		B_SetAttributesToChapter(slf, 9);
+		slf.fight_tactic = FAI_HUMAN_MASTER;
+	}
+	else if (ratio >= 3)
 	{
 		B_SetAttributesToChapter(slf, 6);
 		slf.fight_tactic = FAI_HUMAN_MASTER;
 	}
+	else if (ratio >= 2)
+	{
+		B_SetAttributesToChapter(slf, 5);
+		slf.fight_tactic = FAI_HUMAN_STRONG;
+	}
+	else if (ratio >= 1)
+	{
+		B_SetAttributesToChapter(slf, 4);
+		slf.fight_tactic = FAI_HUMAN_STRONG;
+	}
 	else
 	{
-		B_SetAttributesToChapter(slf, 3 + multiplier);
+		B_SetAttributesToChapter(slf, 3);
 		slf.fight_tactic = FAI_HUMAN_STRONG;
 	};
 
