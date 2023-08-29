@@ -9,7 +9,7 @@ func void b_skelettkontrollchange()
 		}
 		else
 		{
-			b_message("NEWS_Neutral_SkelettRotesLager");
+			B_Message("NEWS_Neutral_SkelettRotesLager");
 		};
 		Wld_InsertNpc(pal_skeleton,"HOEHLE");
 		SKELETONKONTROLL = GIL_PAL;
@@ -22,7 +22,7 @@ func void b_skelettkontrollchange()
 		}
 		else
 		{
-			b_message("NEWS_Neutral_SkelettBlauesLager");
+			B_Message("NEWS_Neutral_SkelettBlauesLager");
 		};
 		Wld_InsertNpc(djg_skeleton,"HOEHLE");
 		SKELETONKONTROLL = GIL_DJG;

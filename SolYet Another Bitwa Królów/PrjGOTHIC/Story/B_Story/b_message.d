@@ -1,5 +1,5 @@
 
-func void b_message(var string message)
+func void B_Message(var string message)
 {
 	if(NONEWS_ON == FALSE)
 	{

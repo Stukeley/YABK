@@ -12,7 +12,7 @@ func void b_lagerzweinotsoeldner()
 		L2_HAVEGOLD -= SOELDNERLEVEL4_COST;
 		L2_CURRENT_MERCLEVEL = 4;
 		b_debug("Ich baue einen meisterhaften Söldner für ",SOELDNERLEVEL4_COST);
-		b_message("NEWS_Gegner_Soeldner");
+		B_Message("NEWS_Gegner_Soeldner");
 		b_spawnsoeldner(GIL_DJG);
 	}
 	else if(L2_HAVEGOLD >= SOELDNERLEVEL3_COST)
@@ -20,7 +20,7 @@ func void b_lagerzweinotsoeldner()
 		L2_HAVEGOLD -= SOELDNERLEVEL3_COST;
 		L2_CURRENT_MERCLEVEL = 3;
 		b_debug("Ich baue einen starken Söldner für ",SOELDNERLEVEL3_COST);
-		b_message("NEWS_Gegner_Soeldner");
+		B_Message("NEWS_Gegner_Soeldner");
 		b_spawnsoeldner(GIL_DJG);
 	};
 };
@@ -64,7 +64,7 @@ func void b_lagerzweiki_wirtschaft()
 		{
 			L2_HAVEGOLD -= MINENWACHE;
 			Wld_InsertNpc(djg_2180_minensoeldner,SPAWNWAYPOINT);
-			b_message("NEWS_Gegner_Minenwachen");
+			B_Message("NEWS_Gegner_Minenwachen");
 			L2_LEBENDEMINENWACHEN += 1;
 			L2_MINENLEUTE += 1;
 			L2_ERSTEWACHEGEBAUT = TRUE;
@@ -135,7 +135,7 @@ func void b_lagerzweiki_wirtschaft()
 		{
 			L2_HAVEGOLD -= MINENWACHE;
 			Wld_InsertNpc(djg_2180_minensoeldner,SPAWNWAYPOINT);
-			b_message("NEWS_Gegner_Minenwachen");
+			B_Message("NEWS_Gegner_Minenwachen");
 			L2_LEBENDEMINENWACHEN += 1;
 			L2_MINENLEUTE += 1;
 		};
@@ -187,7 +187,7 @@ func void b_lagerzweiki_wirtschaft()
 			{
 				Wld_InsertNpc(djg_2180_minensoeldner,SPAWNWAYPOINT);
 			};
-			b_message("NEWS_Gegner_Minenwachen");
+			B_Message("NEWS_Gegner_Minenwachen");
 			L2_LEBENDEMINENWACHEN += zusaetzlichewachen;
 			L2_MINENLEUTE += zusaetzlichewachen;
 		};
@@ -225,8 +225,8 @@ func void b_lagerzweiki_wirtschaft()
 	};
 	if((L2_MINE >= 3) && ((L2_LEBENDEMINENWACHEN >= L1_LEBENDEMINENWACHEN) || ((MAP != VARUS_MAP) && (MAP != MACHTL_MAP))) && (SCHWIERIGKEIT >= DIFF_NORMAL) && (L2_HELD_SPAWNED == FALSE) && (L2_HAVEGOLD >= HERO_COST) && (L2_SOLDIER_LEVEL >= 2))
 	{
-		b_revivedjghero();
-		b_message("NEWS_Gegner_Held");
+		B_ReviveDjgHero();
+		B_Message("NEWS_Gegner_Held");
 		L2_HAVEGOLD -= HERO_COST;
 		L2_HELD_SPAWNED = TRUE;
 	};
@@ -241,7 +241,7 @@ func void b_lagerzweiki_wirtschaft()
 				Wld_InsertNpc(djg_2190_hoehlensoeldner,SPAWNWAYPOINT);
 				Wld_InsertNpc(djg_2190_hoehlensoeldner,SPAWNWAYPOINT);
 				Wld_InsertNpc(djg_2190_hoehlensoeldner,SPAWNWAYPOINT);
-				b_message("NEWS_Gegner_HoehlenSoeldner");
+				B_Message("NEWS_Gegner_HoehlenSoeldner");
 			};
 		}
 		else if((((L1_LEBENDEHOEHLENSOELDNER + SCHWIERIGKEIT) - 1) >= L2_LEBENDEHOEHLENSOELDNER) || (SKELETONKONTROLL == GIL_PAL))
@@ -251,7 +251,7 @@ func void b_lagerzweiki_wirtschaft()
 				L2_HAVEGOLD -= HOEHLENSOELDNER;
 				Wld_InsertNpc(djg_2190_hoehlensoeldner,SPAWNWAYPOINT);
 				L2_LEBENDEHOEHLENSOELDNER += 1;
-				b_message("NEWS_Gegner_HoehlenSoeldner");
+				B_Message("NEWS_Gegner_HoehlenSoeldner");
 			};
 		};
 	};
@@ -434,7 +434,7 @@ func void b_lagerzweiki_wirtschaft()
 		b_spawnsoeldner(GIL_DJG);
 		b_spawnsoeldner(GIL_DJG);
 		b_debug("Ich kaufe drei meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 2);
-		b_message("NEWS_Gegner_Soeldner");
+		B_Message("NEWS_Gegner_Soeldner");
 	};
 	if(Npc_IsInState(pal_1000_king,ZS_Attack) && (L2_EHRENPUNKTE >= UNSTERBLICHKEIT_COST) && (L2_UNSTERBLICHKEIT == FALSE) && (L2_SOLDIER_LEVEL >= 7) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
@@ -471,7 +471,7 @@ func void b_lagerzweiki_wirtschaft()
 		b_spawnsoeldner(GIL_DJG);
 		L2_EHRENPUNKTCHOICE = 0;
 		b_debug("Ich hole mir zwei Söldner für soviele Ehrenpunkte: ",MERC_COST);
-		b_message("NEWS_Gegner_Soeldner");
+		B_Message("NEWS_Gegner_Soeldner");
 	};
 	if((L2_EHRENPUNKTE >= (UNSTERBLICHKEIT_COST + KLAU_COST)) && (SCHWIERIGKEIT >= DIFF_NORMAL) && (L2_EHRENPUNKTCHOICE == 0) && ((L2_REVIVE == TRUE) || (L2_INSTANTKILL == TRUE) || (L2_VAMPIRSCHLAG == TRUE)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
@@ -534,7 +534,7 @@ func void b_lagerzweiki_held()
 		{
 			L2_HAVEGOLD -= MINENWACHE;
 			Wld_InsertNpc(djg_2180_minensoeldner,SPAWNWAYPOINT);
-			b_message("NEWS_Gegner_Minenwachen");
+			B_Message("NEWS_Gegner_Minenwachen");
 			L2_MINENLEUTE += 1;
 			L2_LEBENDEMINENWACHEN += 1;
 			L2_ERSTEWACHEGEBAUT = TRUE;
@@ -564,8 +564,8 @@ func void b_lagerzweiki_held()
 	};
 	if((L2_MINE >= 3) && ((L2_LEBENDEMINENWACHEN >= L1_LEBENDEMINENWACHEN) || ((MAP != VARUS_MAP) && (MAP != MACHTL_MAP))) && (SCHWIERIGKEIT >= DIFF_NORMAL) && (L2_HELD_SPAWNED == FALSE) && (L2_HAVEGOLD >= HERO_COST))
 	{
-		b_revivedjghero();
-		b_message("NEWS_Gegner_Held");
+		B_ReviveDjgHero();
+		B_Message("NEWS_Gegner_Held");
 		L2_HAVEGOLD -= HERO_COST;
 		L2_HELD_SPAWNED = TRUE;
 	};
@@ -606,7 +606,7 @@ func void b_lagerzweiki_held()
 		{
 			L2_HAVEGOLD -= MINENWACHE;
 			Wld_InsertNpc(djg_2180_minensoeldner,SPAWNWAYPOINT);
-			b_message("NEWS_Gegner_Minenwachen");
+			B_Message("NEWS_Gegner_Minenwachen");
 			L2_LEBENDEMINENWACHEN += 1;
 			L2_MINENLEUTE += 1;
 		};
@@ -660,7 +660,7 @@ func void b_lagerzweiki_held()
 			};
 			L2_LEBENDEMINENWACHEN += zusaetzlichewachen;
 			L2_MINENLEUTE += zusaetzlichewachen;
-			b_message("NEWS_Gegner_Minenwachen");
+			B_Message("NEWS_Gegner_Minenwachen");
 		};
 		if((L2_LEBENDEMINENWACHEN > L1_LEBENDEMINENWACHEN) && (L2_LEBENDEMINENARBEITER < BIGMINE_GOLD) && (L2_HAVEGOLD >= MINENARBEITERSOELDNER) && (L2_MINENLEUTE < MAXMINENLEUTE))
 		{
@@ -818,7 +818,7 @@ func void b_lagerzweiki_held()
 				L2_HAVEGOLD -= HOEHLENSOELDNER;
 				Wld_InsertNpc(djg_2190_hoehlensoeldner,SPAWNWAYPOINT);
 				L2_LEBENDEHOEHLENSOELDNER += 1;
-				b_message("NEWS_Gegner_HoehlenSoeldner");
+				B_Message("NEWS_Gegner_HoehlenSoeldner");
 			};
 		};
 	};
@@ -839,7 +839,7 @@ func void b_lagerzweiki_held()
 		b_spawnsoeldner(GIL_PAL);
 		b_spawnsoeldner(GIL_PAL);
 		b_debug("Ich kaufe drei meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 2);
-		b_message("NEWS_Gegner_Soeldner");
+		B_Message("NEWS_Gegner_Soeldner");
 	};
 	if((L2_HAVEGOLD >= (SOELDNERLEVEL4_COST * 5)) && (NOMERCS_ON == FALSE) && (L2_LEBENDEMINENWACHEN >= L1_LEBENDEMINENWACHEN) && (L2_HELD_ARMBRUSTLEVEL >= 4) && (L2_HELD_SCHWERTLEVEL >= 3) && (L2_HELD_RUESTUNGLEVEL >= 2) && (SCHWIERIGKEIT == DIFF_HEAVY))
 	{
@@ -851,7 +851,7 @@ func void b_lagerzweiki_held()
 		b_spawnsoeldner(GIL_PAL);
 		b_spawnsoeldner(GIL_PAL);
 		b_debug("Ich kaufe fünf meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 2);
-		b_message("NEWS_Gegner_Soeldner");
+		B_Message("NEWS_Gegner_Soeldner");
 	};
 	if((L2_HAVEGOLD >= (SOELDNERLEVEL4_COST * 8)) && (NOMERCS_ON == FALSE) && (L2_LEBENDEMINENWACHEN >= L1_LEBENDEMINENWACHEN) && (L2_HELD_ARMBRUSTLEVEL >= 4) && (L2_HELD_SCHWERTLEVEL >= 3) && (L2_HELD_RUESTUNGLEVEL >= 2) && (SCHWIERIGKEIT >= DIFF_HORROR))
 	{
@@ -866,7 +866,7 @@ func void b_lagerzweiki_held()
 		b_spawnsoeldner(GIL_PAL);
 		b_spawnsoeldner(GIL_PAL);
 		b_debug("Ich kaufe acht meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 2);
-		b_message("NEWS_Gegner_Soeldner");
+		B_Message("NEWS_Gegner_Soeldner");
 	};
 	if(Npc_IsInState(pal_1000_king,ZS_Attack) && (L2_EHRENPUNKTE >= UNSTERBLICHKEIT_COST) && (L2_UNSTERBLICHKEIT == FALSE) && (L2_SOLDIER_LEVEL >= 7) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
@@ -903,7 +903,7 @@ func void b_lagerzweiki_held()
 		b_spawnsoeldner(GIL_PAL);
 		L2_EHRENPUNKTCHOICE = 0;
 		b_debug("Ich hole mir zwei Söldner für soviele Ehrenpunkte: ",MERC_COST);
-		b_message("NEWS_Gegner_Soeldner");
+		B_Message("NEWS_Gegner_Soeldner");
 	};
 	if((L2_EHRENPUNKTE >= (UNSTERBLICHKEIT_COST + KLAU_COST)) && (L2_EHRENPUNKTCHOICE == 0) && ((L2_REVIVE == TRUE) || (L2_INSTANTKILL == TRUE) || (L2_VAMPIRSCHLAG == TRUE)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
@@ -969,7 +969,7 @@ func void b_lagerzweiki_soeldner()
 		b_spawnsoeldner(GIL_DJG);
 		b_spawnsoeldner(GIL_DJG);
 		b_debug("Ich kaufe mir zwei meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 3);
-		b_message("NEWS_Gegner_Soeldner");
+		B_Message("NEWS_Gegner_Soeldner");
 	};
 	if((L2_HAVEGOLD >= (SOELDNERLEVEL4_COST * 3)) && (SCHWIERIGKEIT == DIFF_NORMAL))
 	{
@@ -979,7 +979,7 @@ func void b_lagerzweiki_soeldner()
 		b_spawnsoeldner(GIL_DJG);
 		b_spawnsoeldner(GIL_DJG);
 		b_debug("Ich kaufe mir drei meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 3);
-		b_message("NEWS_Gegner_Soeldner");
+		B_Message("NEWS_Gegner_Soeldner");
 	};
 	if((L2_HAVEGOLD >= (SOELDNERLEVEL4_COST * 5)) && (SCHWIERIGKEIT == DIFF_HEAVY))
 	{
@@ -991,7 +991,7 @@ func void b_lagerzweiki_soeldner()
 		b_spawnsoeldner(GIL_DJG);
 		b_spawnsoeldner(GIL_DJG);
 		b_debug("Ich kaufe mir fünf meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 3);
-		b_message("NEWS_Gegner_Soeldner");
+		B_Message("NEWS_Gegner_Soeldner");
 	};
 	if((L2_HAVEGOLD >= (SOELDNERLEVEL4_COST * 10)) && (SCHWIERIGKEIT == DIFF_HORROR))
 	{
@@ -1008,7 +1008,7 @@ func void b_lagerzweiki_soeldner()
 		b_spawnsoeldner(GIL_DJG);
 		b_spawnsoeldner(GIL_DJG);
 		b_debug("Ich kaufe mir ZEHN meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 3);
-		b_message("NEWS_Gegner_Soeldner");
+		B_Message("NEWS_Gegner_Soeldner");
 	};
 	if(Npc_IsInState(pal_1000_king,ZS_Attack) && (L2_EHRENPUNKTE >= UNSTERBLICHKEIT_COST) && (L2_UNSTERBLICHKEIT == FALSE))
 	{

@@ -15,27 +15,27 @@ func void ZS_Dead()
 	{
 		if((Hlp_GetInstanceID(self) == pal_1012_hero) && (LAGER == 1))
 		{
-			b_message("NEWS_Eigen_HeldKilled");
+			B_Message("NEWS_Eigen_HeldKilled");
 		};
 		if((Hlp_GetInstanceID(self) == djg_2012_hero) && (LAGER == 2))
 		{
-			b_message("NEWS_Eigen_HeldKilled");
+			B_Message("NEWS_Eigen_HeldKilled");
 		};
 		if((Hlp_GetInstanceID(self) == pal_1160_wache) && (LAGER == 1))
 		{
-			b_message("NEWS_Eigen_WacheKilled");
+			B_Message("NEWS_Eigen_WacheKilled");
 		};
 		if((Hlp_GetInstanceID(self) == djg_2160_wache) && (LAGER == 2))
 		{
-			b_message("NEWS_Eigen_WacheKilled");
+			B_Message("NEWS_Eigen_WacheKilled");
 		};
 		if((Hlp_GetInstanceID(self) == pal_1161_wache) && (LAGER == 1))
 		{
-			b_message("NEWS_Eigen_WacheKilled");
+			B_Message("NEWS_Eigen_WacheKilled");
 		};
 		if((Hlp_GetInstanceID(self) == djg_2161_wache) && (LAGER == 2))
 		{
-			b_message("NEWS_Eigen_WacheKilled");
+			B_Message("NEWS_Eigen_WacheKilled");
 		};
 	};
 	if((Hlp_GetInstanceID(other) == pal_1012_hero) && (self.guild == GIL_DJG))
@@ -56,7 +56,7 @@ func void ZS_Dead()
 		other.aivar[96] = 7;
 		if(((other.guild == GIL_PAL) && (LAGER == 1)) || ((other.guild == GIL_DJG) && (LAGER == 2)))
 		{
-			b_message("NEWS_Eigen_HeldLevelup");
+			B_Message("NEWS_Eigen_HeldLevelup");
 		};
 	}
 	else if((skilllevel >= (6 * TOTEGEGNERFUERSKILLLEVEL)) && (other.aivar[96] < 6) && ((Hlp_GetInstanceID(other) == pal_1012_hero) || (Hlp_GetInstanceID(other) == djg_2012_hero)))
@@ -67,7 +67,7 @@ func void ZS_Dead()
 		other.aivar[96] = 6;
 		if(((other.guild == GIL_PAL) && (LAGER == 1)) || ((other.guild == GIL_DJG) && (LAGER == 2)))
 		{
-			b_message("NEWS_Eigen_HeldLevelup");
+			B_Message("NEWS_Eigen_HeldLevelup");
 		};
 	}
 	else if((skilllevel >= (5 * TOTEGEGNERFUERSKILLLEVEL)) && (other.aivar[96] < 5) && ((Hlp_GetInstanceID(other) == pal_1012_hero) || (Hlp_GetInstanceID(other) == djg_2012_hero)))
@@ -78,7 +78,7 @@ func void ZS_Dead()
 		other.aivar[96] = 5;
 		if(((other.guild == GIL_PAL) && (LAGER == 1)) || ((other.guild == GIL_DJG) && (LAGER == 2)))
 		{
-			b_message("NEWS_Eigen_HeldLevelup");
+			B_Message("NEWS_Eigen_HeldLevelup");
 		};
 	}
 	else if((skilllevel >= (4 * TOTEGEGNERFUERSKILLLEVEL)) && (other.aivar[96] < 4) && ((Hlp_GetInstanceID(other) == pal_1012_hero) || (Hlp_GetInstanceID(other) == djg_2012_hero)))
@@ -89,7 +89,7 @@ func void ZS_Dead()
 		other.aivar[96] = 4;
 		if(((other.guild == GIL_PAL) && (LAGER == 1)) || ((other.guild == GIL_DJG) && (LAGER == 2)))
 		{
-			b_message("NEWS_Eigen_HeldLevelup");
+			B_Message("NEWS_Eigen_HeldLevelup");
 		};
 	}
 	else if((skilllevel >= (3 * TOTEGEGNERFUERSKILLLEVEL)) && (other.aivar[96] < 3) && ((Hlp_GetInstanceID(other) == pal_1012_hero) || (Hlp_GetInstanceID(other) == djg_2012_hero)))
@@ -100,7 +100,7 @@ func void ZS_Dead()
 		other.aivar[96] = 3;
 		if(((other.guild == GIL_PAL) && (LAGER == 1)) || ((other.guild == GIL_DJG) && (LAGER == 2)))
 		{
-			b_message("NEWS_Eigen_HeldLevelup");
+			B_Message("NEWS_Eigen_HeldLevelup");
 		};
 	}
 	else if((skilllevel >= (2 * TOTEGEGNERFUERSKILLLEVEL)) && (other.aivar[96] < 2) && ((Hlp_GetInstanceID(other) == pal_1012_hero) || (Hlp_GetInstanceID(other) == djg_2012_hero)))
@@ -111,7 +111,7 @@ func void ZS_Dead()
 		other.aivar[96] = 2;
 		if(((other.guild == GIL_PAL) && (LAGER == 1)) || ((other.guild == GIL_DJG) && (LAGER == 2)))
 		{
-			b_message("NEWS_Eigen_HeldLevelup");
+			B_Message("NEWS_Eigen_HeldLevelup");
 		};
 	}
 	else if((skilllevel >= (1 * TOTEGEGNERFUERSKILLLEVEL)) && (other.aivar[96] < 1) && ((Hlp_GetInstanceID(other) == pal_1012_hero) || (Hlp_GetInstanceID(other) == djg_2012_hero)))
@@ -122,7 +122,7 @@ func void ZS_Dead()
 		other.aivar[96] = 1;
 		if(((other.guild == GIL_PAL) && (LAGER == 1)) || ((other.guild == GIL_DJG) && (LAGER == 2)))
 		{
-			b_message("NEWS_Eigen_HeldLevelup");
+			B_Message("NEWS_Eigen_HeldLevelup");
 		};
 	};
 	if(Hlp_GetInstanceID(self) == pal_1012_hero)
@@ -188,7 +188,7 @@ func void ZS_Dead()
 	{
 		if(LAGER == 1)
 		{
-			b_message("NEWS_Eigen_MinenarbeiterKilled");
+			B_Message("NEWS_Eigen_MinenarbeiterKilled");
 		};
 		L1_MINENLEUTE -= 1;
 		if(self.aivar[AIV_TAPOSITION] == ISINPOS)
@@ -200,7 +200,7 @@ func void ZS_Dead()
 	{
 		if(LAGER == 2)
 		{
-			b_message("NEWS_Eigen_MinenarbeiterKilled");
+			B_Message("NEWS_Eigen_MinenarbeiterKilled");
 		};
 		L2_MINENLEUTE -= 1;
 		if(self.aivar[AIV_TAPOSITION] == ISINPOS)

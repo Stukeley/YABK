@@ -46,7 +46,7 @@ func void pal_1011_elite_hero_info()
 {
 	if(Npc_HasItems(hero,ItMi_Gold) >= HERO_COST)
 	{
-		b_revivepalhero();
+		B_RevivePalHero();
 		B_GiveInvItems(other,self,ItMi_Gold,HERO_COST);
 		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
 		L1_HELD_SPAWNED = TRUE;

@@ -2,7 +2,7 @@
 
 instance DJG_2120_MAGIER(Npc_Default)
 {
-	b_setmageabilities(self,GIL_DJG);
+	B_SetMageAbilities(self,GIL_DJG);
 	id = 2120;
 	daily_routine = rtn_lager2_2120;
 };

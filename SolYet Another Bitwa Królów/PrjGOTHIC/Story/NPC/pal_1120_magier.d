@@ -2,7 +2,7 @@
 
 instance PAL_1120_MAGIER(Npc_Default)
 {
-	b_setmageabilities(self,GIL_PAL);
+	B_SetMageAbilities(self,GIL_PAL);
 	id = 1120;
 	daily_routine = rtn_lager1_1120;
 };

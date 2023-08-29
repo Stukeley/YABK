@@ -2,7 +2,7 @@
 
 instance DJG_2012_HERO(Npc_Default)
 {
-	B_SetHeroAbilities(self,GIL_DJG);
+	B_SetHeroAbilities(self, GIL_DJG);
 	id = 2012;
 	daily_routine = rtn_lager2_2012;
 };

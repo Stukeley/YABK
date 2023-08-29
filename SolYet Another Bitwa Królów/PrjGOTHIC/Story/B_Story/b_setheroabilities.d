@@ -1,5 +1,4 @@
 // Zmiana parametrow Bohaterow (w zaleznosci od posiadanych ulepszen).
-// TODO - pierszy priorytet to ogarnac ten plik
 
 // Funkcja zmieniajaca parametry stworzonego Bohatera (slf) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
 // gil - gildia (GIL_PAL = czerwoni, lub GIL_DJG = niebiescy)
@@ -212,35 +211,35 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	// Ustawienie kuszy i jej umiejetnosci w zaleznosci od talentu.
 	if (armbrustlevel == 1)
 	{
-		EquipItem(slf,ItRw_Crossbow_L_02);
+		EquipItem(slf, ItRw_Crossbow_L_02);
 		slf.HitChance[NPC_TALENT_BOW] = 31;
 		slf.HitChance[NPC_TALENT_CROSSBOW] = 31;
-		Mdl_ApplyOverlayMds(slf,"humans_BowT1.mds");
-		Mdl_ApplyOverlayMds(slf,"humans_CBowT1.mds");
+		Mdl_ApplyOverlayMds(slf, "humans_BowT1.mds");
+		Mdl_ApplyOverlayMds(slf, "humans_CBowT1.mds");
 	}
 	else if (armbrustlevel == 2)
 	{
-		EquipItem(slf,ItRw_Crossbow_M_01);
+		EquipItem(slf, ItRw_Crossbow_M_01);
 		slf.HitChance[NPC_TALENT_BOW] = 54;
 		slf.HitChance[NPC_TALENT_CROSSBOW] = 54;
-		Mdl_ApplyOverlayMds(slf,"humans_BowT1.mds");
-		Mdl_ApplyOverlayMds(slf,"humans_CBowT1.mds");
+		Mdl_ApplyOverlayMds(slf, "humans_BowT1.mds");
+		Mdl_ApplyOverlayMds(slf, "humans_CBowT1.mds");
 	}
 	else if (armbrustlevel == 3)
 	{
-		EquipItem(slf,ItRw_Crossbow_M_02);
+		EquipItem(slf, ItRw_Crossbow_M_02);
 		slf.HitChance[NPC_TALENT_BOW] = 77;
 		slf.HitChance[NPC_TALENT_CROSSBOW] = 77;
-		Mdl_ApplyOverlayMds(slf,"humans_BowT2.mds");
-		Mdl_ApplyOverlayMds(slf,"humans_CBowT2.mds");
+		Mdl_ApplyOverlayMds(slf, "humans_BowT2.mds");
+		Mdl_ApplyOverlayMds(slf, "humans_CBowT2.mds");
 	}
 	else if (armbrustlevel == 4)
 	{
-		EquipItem(slf,ItRw_Crossbow_H_01);
+		EquipItem(slf, ItRw_Crossbow_H_01);
 		slf.HitChance[NPC_TALENT_BOW] = 100;
 		slf.HitChance[NPC_TALENT_CROSSBOW] = 100;
-		Mdl_ApplyOverlayMds(slf,"humans_BowT2.mds");
-		Mdl_ApplyOverlayMds(slf,"humans_CBowT2.mds");
+		Mdl_ApplyOverlayMds(slf, "humans_BowT2.mds");
+		Mdl_ApplyOverlayMds(slf, "humans_CBowT2.mds");
 	};
 
 	// ?

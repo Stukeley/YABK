@@ -2,7 +2,7 @@
 
 instance PAL_1012_HERO(Npc_Default)
 {
-	B_SetHeroAbilities(self,GIL_PAL);
+	B_SetHeroAbilities(self, GIL_PAL);
 	id = 1012;
 	daily_routine = rtn_lager1_1012;
 };

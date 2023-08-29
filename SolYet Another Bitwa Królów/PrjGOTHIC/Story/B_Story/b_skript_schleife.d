@@ -4,7 +4,7 @@ func void b_skript_schleife()
 	ABLAUF += 1;
 	if((Npc_IsInState(pal_1000_king,ZS_Attack) && (LAGER == 1)) || (Npc_IsInState(djg_2000_king,ZS_Attack) && (LAGER == 2)))
 	{
-		b_message("NEWS_Eigen_KoenigAngegriffen");
+		B_Message("NEWS_Eigen_KoenigAngegriffen");
 	};
 	b_muellmann(none_3000_muellmann);
 	if(none_3001_muellmann.attribute[ATR_HITPOINTS] > 0)
@@ -25,11 +25,11 @@ func void b_skript_schleife()
 	};
 	if(ABLAUF == L1_HELD_TOT)
 	{
-		b_revivepalhero();
+		B_RevivePalHero();
 	};
 	if(ABLAUF == L2_HELD_TOT)
 	{
-		b_revivedjghero();
+		B_ReviveDjgHero();
 	};
 	if((L1_SCHMIEDE_ERBAUT == TRUE) && (L1_SCHMIEDE_ERBAUT_TIME == 0) && (L1_SCHMIEDE == 0))
 	{
@@ -44,7 +44,7 @@ func void b_skript_schleife()
 		}
 		else
 		{
-			b_message("NEWS_Gegner_SchmiedeFertig");
+			B_Message("NEWS_Gegner_SchmiedeFertig");
 		};
 		Wld_InsertNpc(pal_1002_schmied,SPAWNWAYPOINT);
 		L1_SCHMIEDE = ABLAUF;
@@ -63,7 +63,7 @@ func void b_skript_schleife()
 		}
 		else
 		{
-			b_message("NEWS_Gegner_SchmiedeFertig");
+			B_Message("NEWS_Gegner_SchmiedeFertig");
 		};
 		Wld_InsertNpc(djg_2002_schmied,SPAWNWAYPOINT);
 		L2_SCHMIEDE = ABLAUF;
@@ -194,7 +194,7 @@ func void b_skript_schleife()
 					{
 						if((LAGER == 1) && (L1_USED_WEAPON < MAXWEAPONSTEP))
 						{
-							b_message("NEWS_Eigen_SchmiedWaffeFertig");
+							B_Message("NEWS_Eigen_SchmiedWaffeFertig");
 						};
 						if(L1_USED_WEAPON == 1)
 						{
@@ -234,7 +234,7 @@ func void b_skript_schleife()
 					{
 						if((LAGER == 1) && (L1_USED_ARMOR < MAXARMORSTEP))
 						{
-							b_message("NEWS_Eigen_SchmiedRuessiFertig");
+							B_Message("NEWS_Eigen_SchmiedRuessiFertig");
 						};
 						if(FRAKTION_L1 == DJG)
 						{
@@ -518,7 +518,7 @@ func void b_skript_schleife()
 					{
 						if((LAGER == 2) && (L2_USED_WEAPON < MAXWEAPONSTEP))
 						{
-							b_message("NEWS_Eigen_SchmiedWaffeFertig");
+							B_Message("NEWS_Eigen_SchmiedWaffeFertig");
 						};
 						if(L2_USED_WEAPON == 1)
 						{
@@ -558,7 +558,7 @@ func void b_skript_schleife()
 					{
 						if((LAGER == 2) && (L2_USED_ARMOR < MAXARMORSTEP))
 						{
-							b_message("NEWS_Eigen_SchmiedRuessiFertig");
+							B_Message("NEWS_Eigen_SchmiedRuessiFertig");
 						};
 						if(FRAKTION_L2 == DJG)
 						{
@@ -731,7 +731,7 @@ func void b_skript_schleife()
 		Wld_InsertNpc(pal_1004_magier,"L1_MAGIE_02");
 		if(LAGER != 1)
 		{
-			b_message("NEWS_Gegner_MagierFertig");
+			B_Message("NEWS_Gegner_MagierFertig");
 		};
 		L1_MAGIE = ABLAUF;
 	};
@@ -749,7 +749,7 @@ func void b_skript_schleife()
 		Wld_InsertNpc(djg_2004_magier,"L2_MAGIE_02");
 		if(LAGER != 2)
 		{
-			b_message("NEWS_Gegner_MagierFertig");
+			B_Message("NEWS_Gegner_MagierFertig");
 		};
 		L2_MAGIE = ABLAUF;
 	};
@@ -951,7 +951,7 @@ func void b_skript_schleife()
 		}
 		else
 		{
-			b_message("NEWS_Gegner_MineFertig");
+			B_Message("NEWS_Gegner_MineFertig");
 		};
 		Wld_InsertNpc(pal_1008_minenarbeiter,"L1_MINE_GOLD_1");
 		L1_MINE = 1;
@@ -970,7 +970,7 @@ func void b_skript_schleife()
 		}
 		else
 		{
-			b_message("NEWS_Gegner_MineFertig");
+			B_Message("NEWS_Gegner_MineFertig");
 		};
 		Wld_InsertNpc(djg_2008_minenarbeiter,"L2_MINE_GOLD_1");
 		L2_MINE = 1;
