@@ -314,7 +314,7 @@ func void b_lagerzweiki_wirtschaft()
 			{
 				CreateInvItems(djg_2012_hero,itar_djg_l,1);
 			}
-			else if(FRAKTION_L2 == Pal)
+			else if(FRAKTION_L2 == PAL)
 			{
 				CreateInvItems(djg_2012_hero,ItAr_PAL_M,1);
 			}
@@ -329,7 +329,7 @@ func void b_lagerzweiki_wirtschaft()
 			{
 				CreateInvItems(djg_2012_hero,itar_djg_h,1);
 			}
-			else if(FRAKTION_L2 == Pal)
+			else if(FRAKTION_L2 == PAL)
 			{
 				CreateInvItems(djg_2012_hero,ItAr_PAl_H,1);
 			}
@@ -442,7 +442,7 @@ func void b_lagerzweiki_wirtschaft()
 		L2_EHRENPUNKTE -= UNSTERBLICHKEIT_COST;
 		b_debug("Der gegnerische König wird angegriffen, also leiste ich mir Unsterblichkeit für ",UNSTERBLICHKEIT_COST);
 	};
-	if((L2_EHRENPUNKTE >= REVIVE_COST) && ((L2_REVIVE == FALSE) && (FRAKTION_L2 == Pal)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
+	if((L2_EHRENPUNKTE >= REVIVE_COST) && ((L2_REVIVE == FALSE) && (FRAKTION_L2 == PAL)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
 		L2_EHRENPUNKTE -= REVIVE_COST;
 		L2_REVIVE = TRUE;
@@ -680,7 +680,7 @@ func void b_lagerzweiki_held()
 			{
 				CreateInvItems(djg_2012_hero,itar_djg_l,1);
 			}
-			else if(FRAKTION_L2 == Pal)
+			else if(FRAKTION_L2 == PAL)
 			{
 				CreateInvItems(djg_2012_hero,ItAr_PAL_M,1);
 			}
@@ -695,7 +695,7 @@ func void b_lagerzweiki_held()
 			{
 				CreateInvItems(djg_2012_hero,itar_djg_h,1);
 			}
-			else if(FRAKTION_L2 == Pal)
+			else if(FRAKTION_L2 == PAL)
 			{
 				CreateInvItems(djg_2012_hero,ItAr_PAl_H,1);
 			}
@@ -888,7 +888,7 @@ func void b_lagerzweiki_held()
 		L2_EHRENPUNKTCHOICE = 0;
 		b_debug("Ich kaufe mir den Vampirschlag für: ",VAMPIR_COST);
 	};
-	if((L2_EHRENPUNKTE >= INSTANTKILL_COST) && (L2_INSTANTKILL == FALSE) && (FRAKTION_L2 == Pal) && (SCHWIERIGKEIT >= DIFF_NORMAL))
+	if((L2_EHRENPUNKTE >= INSTANTKILL_COST) && (L2_INSTANTKILL == FALSE) && (FRAKTION_L2 == PAL) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
 		L2_EHRENPUNKTE -= INSTANTKILL_COST;
 		L2_VAMPIRSCHLAG = TRUE;

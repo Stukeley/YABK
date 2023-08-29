@@ -22,7 +22,7 @@ instance DJG_2006_MINEBAUER(Npc_Default)
 	{
 		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_djg_m);
 	}
-	else if(FRAKTION_L2 == Pal)
+	else if(FRAKTION_L2 == PAL)
 	{
 		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,ItAr_PAL_M);
 	}

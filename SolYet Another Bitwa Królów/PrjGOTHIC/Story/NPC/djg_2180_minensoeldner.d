@@ -12,7 +12,7 @@ instance DJG_2180_MINENSOELDNER(Npc_Default)
 	{
 		B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_NormalBald,BodyTex_P,itar_sld_M);
 	}
-	else if(FRAKTION_L2 == Pal)
+	else if(FRAKTION_L2 == PAL)
 	{
 		B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_NormalBald,BodyTex_P,ItAr_MIL_M);
 	}

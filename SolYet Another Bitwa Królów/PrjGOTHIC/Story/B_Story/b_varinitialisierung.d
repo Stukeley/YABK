@@ -8,7 +8,7 @@ const int DEBUG = 0;
 var int load;
 var int fraktion_l1;
 var int fraktion_l2;
-const int Pal = 0;
+const int PAL = 0;
 const int DJG = 1;
 const int TMP = 2;
 const int SKE = 3;

@@ -12,7 +12,7 @@ instance PAL_1190_HOEHLENSOELDNER(Npc_Default)
 	{
 		B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_Normal02,BodyTex_P,itar_djg_l);
 	}
-	else if(FRAKTION_L1 == Pal)
+	else if(FRAKTION_L1 == PAL)
 	{
 		B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_Normal02,BodyTex_P,ItAr_PAL_M);
 	}

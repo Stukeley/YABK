@@ -4,7 +4,7 @@
 // Nie uwzglednia szkieletow - maja one osobna funkcje B_SetSkelettVisual.
 func int B_GetHeroArmor(var int fraktion, var int armor_level)
 {
-	if (fraktion == Pal)
+	if (fraktion == PAL)
 	{
 		if (armor_level == 0)
 		{

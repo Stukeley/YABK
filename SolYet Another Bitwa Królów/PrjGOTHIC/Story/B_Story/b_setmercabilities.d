@@ -63,7 +63,7 @@ func void b_setmercabilities(var C_Npc slf,var int gil,var int stufe)
 	{
 		slf.aivar[74] = LOAD;
 	};
-	if(fraktion == Pal)
+	if(fraktion == PAL)
 	{
 		if(stufe == 1)
 		{

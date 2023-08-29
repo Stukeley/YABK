@@ -1010,7 +1010,7 @@ func void djg_2003_verwalter_ehrenpunkte_info()
 {
 	Info_ClearChoices(djg_2003_verwalter_ehrenpunkte);
 	Info_AddChoice(djg_2003_verwalter_ehrenpunkte,Dialog_Back,djg_2003_verwalter_ehrenpunkte_back);
-	if((L2_REVIVE == FALSE) && (((LAGER == 1) && (FRAKTION_L1 == Pal)) || ((LAGER == 2) && (FRAKTION_L2 == Pal))))
+	if((L2_REVIVE == FALSE) && (((LAGER == 1) && (FRAKTION_L1 == PAL)) || ((LAGER == 2) && (FRAKTION_L2 == PAL))))
 	{
 		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_ehrenpunktstring("REVIVE"),djg_2003_verwalter_ehrenpunkte_revive);
 	};

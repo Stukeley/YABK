@@ -60,7 +60,7 @@ func void b_setwachenabilities(var C_Npc slf,var int gil)
 	{
 		slf.aivar[74] = LOAD;
 	};
-	if(fraktion == Pal)
+	if(fraktion == PAL)
 	{
 		if(stufe == 1)
 		{
@@ -222,7 +222,7 @@ func void b_updatewachenabilities(var C_Npc slf)
 				slf.flags = NPC_FLAG_IMMORTAL;
 			};
 		};
-		if(fraktion == Pal)
+		if(fraktion == PAL)
 		{
 			if(stufe == 1)
 			{

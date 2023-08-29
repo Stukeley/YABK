@@ -149,7 +149,7 @@ func void djg_2011_elite_ruestungsupgrade_info()
 			{
 				CreateInvItems(djg_2012_hero,itar_djg_l,1);
 			}
-			else if(FRAKTION_L2 == Pal)
+			else if(FRAKTION_L2 == PAL)
 			{
 				CreateInvItems(djg_2012_hero,ItAr_PAL_M,1);
 			}
@@ -168,7 +168,7 @@ func void djg_2011_elite_ruestungsupgrade_info()
 			{
 				CreateInvItems(djg_2012_hero,itar_djg_h,1);
 			}
-			else if(FRAKTION_L2 == Pal)
+			else if(FRAKTION_L2 == PAL)
 			{
 				CreateInvItems(djg_2012_hero,ItAr_PAl_H,1);
 			}

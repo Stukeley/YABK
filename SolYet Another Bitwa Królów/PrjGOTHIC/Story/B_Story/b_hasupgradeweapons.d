@@ -22,7 +22,7 @@ func int b_hasupgradearmors()
 {
 	if(LAGER == 1)
 	{
-		if((FRAKTION_L1 == Pal) && (((L1_USED_ARMOR == 1) && (Npc_HasItems(hero,ItAr_MIL_M) >= 3)) || ((L1_USED_ARMOR == 2) && (Npc_HasItems(hero,ItAr_PAL_M) >= 3)) || ((L1_USED_ARMOR == 3) && (Npc_HasItems(hero,ItAr_PAl_H) >= 3))))
+		if((FRAKTION_L1 == PAL) && (((L1_USED_ARMOR == 1) && (Npc_HasItems(hero,ItAr_MIL_M) >= 3)) || ((L1_USED_ARMOR == 2) && (Npc_HasItems(hero,ItAr_PAL_M) >= 3)) || ((L1_USED_ARMOR == 3) && (Npc_HasItems(hero,ItAr_PAl_H) >= 3))))
 		{
 			return TRUE;
 		};
@@ -41,7 +41,7 @@ func int b_hasupgradearmors()
 	};
 	if(LAGER == 2)
 	{
-		if((FRAKTION_L2 == Pal) && (((L2_USED_ARMOR == 1) && (Npc_HasItems(hero,ItAr_MIL_M) >= 3)) || ((L2_USED_ARMOR == 2) && (Npc_HasItems(hero,ItAr_PAL_M) >= 3)) || ((L2_USED_ARMOR == 3) && (Npc_HasItems(hero,ItAr_PAl_H) >= 3))))
+		if((FRAKTION_L2 == PAL) && (((L2_USED_ARMOR == 1) && (Npc_HasItems(hero,ItAr_MIL_M) >= 3)) || ((L2_USED_ARMOR == 2) && (Npc_HasItems(hero,ItAr_PAL_M) >= 3)) || ((L2_USED_ARMOR == 3) && (Npc_HasItems(hero,ItAr_PAl_H) >= 3))))
 		{
 			return TRUE;
 		};

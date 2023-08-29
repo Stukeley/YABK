@@ -1018,7 +1018,7 @@ func void pal_1003_verwalter_ehrenpunkte_info()
 {
 	Info_ClearChoices(pal_1003_verwalter_ehrenpunkte);
 	Info_AddChoice(pal_1003_verwalter_ehrenpunkte,Dialog_Back,pal_1003_verwalter_ehrenpunkte_back);
-	if((L1_REVIVE == FALSE) && (((LAGER == 2) && (FRAKTION_L2 == Pal)) || ((LAGER == 1) && (FRAKTION_L1 == Pal))))
+	if((L1_REVIVE == FALSE) && (((LAGER == 2) && (FRAKTION_L2 == PAL)) || ((LAGER == 1) && (FRAKTION_L1 == PAL))))
 	{
 		Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_ehrenpunktstring("REVIVE"),pal_1003_verwalter_ehrenpunkte_revive);
 	};

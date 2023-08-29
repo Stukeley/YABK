@@ -5,7 +5,7 @@
 // Nie uwzglednia szkieletow - maja one osobna funkcje B_SetSkelettVisual.
 func int B_GetSoldierArmor(var int fraktion, var int armor_level)
 {
-	if (fraktion == Pal)
+	if (fraktion == PAL)
 	{
 		if (armor_level == 1)
 		{

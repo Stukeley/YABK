@@ -17,7 +17,7 @@ func void b_kopfreturn(var C_Npc slf)
 		if(slf.aivar[99] == 1)
 		{
 			used_armor = slf.aivar[75];
-			if(fraktion == Pal)
+			if(fraktion == PAL)
 			{
 				if(used_armor == 1)
 				{
@@ -97,7 +97,7 @@ func void b_kopfreturn(var C_Npc slf)
 		else if(slf.aivar[99] == 2)
 		{
 			stufe = slf.aivar[96];
-			if(fraktion == Pal)
+			if(fraktion == PAL)
 			{
 				if(stufe == 1)
 				{
@@ -181,7 +181,7 @@ func void b_kopfreturn(var C_Npc slf)
 		}
 		else if(slf.aivar[99] == 3)
 		{
-			if(fraktion == Pal)
+			if(fraktion == PAL)
 			{
 				B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",Face_B_Saturas,BodyTex_B,ItAr_KDF_H);
 			}
@@ -206,7 +206,7 @@ func void b_kopfreturn(var C_Npc slf)
 				{
 					B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",Face_N_Wolf,BodyTex_N,itar_sld_M);
 				}
-				else if(fraktion == Pal)
+				else if(fraktion == PAL)
 				{
 					B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",Face_N_Wolf,BodyTex_N,ItAr_MIL_M);
 				}
@@ -225,7 +225,7 @@ func void b_kopfreturn(var C_Npc slf)
 				{
 					B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",Face_N_Wolf,BodyTex_N,itar_djg_l);
 				}
-				else if(FRAKTION_L2 == Pal)
+				else if(FRAKTION_L2 == PAL)
 				{
 					B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",Face_N_Wolf,BodyTex_N,ItAr_PAL_M);
 				}
@@ -244,7 +244,7 @@ func void b_kopfreturn(var C_Npc slf)
 				{
 					B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",Face_N_Wolf,BodyTex_N,itar_djg_h);
 				}
-				else if(fraktion == Pal)
+				else if(fraktion == PAL)
 				{
 					B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",Face_N_Wolf,BodyTex_N,ItAr_PAl_H);
 				}
@@ -260,7 +260,7 @@ func void b_kopfreturn(var C_Npc slf)
 		}
 		else if(slf.aivar[99] == 5)
 		{
-			if(fraktion == Pal)
+			if(fraktion == PAL)
 			{
 				if(slf.aivar[75] == 1)
 				{

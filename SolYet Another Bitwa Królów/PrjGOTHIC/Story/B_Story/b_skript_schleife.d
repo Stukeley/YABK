@@ -272,7 +272,7 @@ func void b_skript_schleife()
 								};
 							};
 						}
-						else if(FRAKTION_L1 == Pal)
+						else if(FRAKTION_L1 == PAL)
 						{
 							if(L1_USED_ARMOR == 1)
 							{
@@ -596,7 +596,7 @@ func void b_skript_schleife()
 								};
 							};
 						}
-						else if(FRAKTION_L2 == Pal)
+						else if(FRAKTION_L2 == PAL)
 						{
 							if(L2_USED_ARMOR == 1)
 							{

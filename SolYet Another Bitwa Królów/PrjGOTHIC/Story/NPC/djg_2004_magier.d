@@ -25,7 +25,7 @@ instance DJG_2004_MAGIER(Npc_Default)
 	{
 		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,ITAR_KDW_L_Addon);
 	}
-	else if(FRAKTION_L2 == Pal)
+	else if(FRAKTION_L2 == PAL)
 	{
 		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,ItAr_KDF_L);
 	}

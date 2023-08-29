@@ -93,7 +93,7 @@ func void B_SetMageAbilities(var C_Npc slf,var int gil)
 
 	Mdl_ApplyOverlayMds(slf,"humans_mage.mds");
 
-	if (fraktion == Pal)
+	if (fraktion == PAL)
 	{
 		B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_B_Saturas, BodyTex_B, ItAr_KDF_H);
 	}
