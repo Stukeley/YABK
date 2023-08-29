@@ -1,3 +1,6 @@
+// Ustawianie statystyk dowolnego NPC w zaleznosci od jego poziomu.
+// Dotyczy zarowno Bohatera jak i jednostek (Zolnierzy i Magow).
+// [Balans]
 
 func void B_SetAttributesToChapter(var C_Npc slf,var int kap)
 {

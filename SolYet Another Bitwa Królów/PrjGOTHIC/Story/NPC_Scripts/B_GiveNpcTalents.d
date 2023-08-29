@@ -1,3 +1,4 @@
+// Funkcja ustawiajaca domyslne talenty dla NPC (male znaczenie)
 
 func void B_GiveNpcTalents(var C_Npc slf)
 {

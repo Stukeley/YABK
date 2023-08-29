@@ -24,3 +24,7 @@ Hierarchia interesujących nas plików źródłowych:
      |- NPC
         |- (NPC z modyfikacji)
 ```
+
+Oznaczenia w plikach:
+- [TODO] - zmiany potrzebne na już
+- [BALANS] - zmiany dotyczące balansu gry
