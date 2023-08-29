@@ -2,7 +2,7 @@
 
 instance PAL_1100_SOLDAT(Npc_Default)
 {
-	b_setsoldierabilities(self,GIL_PAL);
+	B_SetSoldierAbilities(self,GIL_PAL);
 	id = 1100;
 	daily_routine = rtn_lager1_1100;
 };

@@ -1,7 +1,7 @@
 // Zmiana parametrow Magow (w zaleznosci od posiadanych ulepszen).
 
 // Funkcja zmieniajaca parametry stworzonego Maga (C_Npc) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
-// gil - gildia (GIL_PAL lub GIL_DJG)
+// gil - gildia (GIL_PAL = czerwoni, lub GIL_DJG = niebiescy)
 func void B_SetMageAbilities(var C_Npc slf,var int gil)
 {
 	// Frakcja maga - PAL (Paladyn), DJG (Lowca Smokow), TMP (Templariusz), SKE (Ozywieniec).
@@ -123,6 +123,7 @@ func void B_SetMageAbilities(var C_Npc slf,var int gil)
 	};
 
 	// Ustawienie statystyk oraz stylu walki w zaleznosci czy magowie sa ulepszeni czy nie.
+	// [BALANS]
 	if (magierupdate == TRUE)
 	{
 		B_SetAttributesToChapter(slf, 5);

@@ -1,14 +1,91 @@
 // Zmiana parametrow Zolnierzy (w zaleznosci od posiadanych ulepszen).
 // TODO - pierszy priorytet to ogarnac ten plik
 
-// Funkcja zmieniajaca parametry stworzonego Zolnierza (slf) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
-// gil - gildia (GIL_PAL lub GIL_DJG)
-func void b_setsoldierabilities(var C_Npc slf,var int gil)
+// Funkcja zwracajaca typ (kod) pancerza zolnierza w zaleznosci od frakcji oraz poziomu ulepszenia zbroi.
+// Nie uwzglednia szkieletow - maja one osobna funkcje B_SetSkelettVisual.
+func int B_GetSoldierArmor(var int fraktion, var int armor_level)
 {
+	if (fraktion == Pal)
+	{
+		if (armor_level == 1)
+		{
+			return ItAr_MIL_L;
+		}
+		else if (armor_level == 2)
+		{
+			return ItAr_MIL_M;
+		}
+		else if (armor_level == 3)
+		{
+			return ItAr_PAL_M;
+		}
+		else if (armor_level == 4)
+		{
+			return ItAr_PAl_H;
+		};
+	}
+	else if (fraktion == DJG)
+	{
+		if (armor_level == 1)
+		{
+			return ItAr_Sld_L;
+		}
+		else if (armor_level == 2)
+		{
+			return itar_sld_M;
+		}
+		else if (armor_level == 3)
+		{
+			return itar_djg_l;
+		}
+		else if (armor_level == 4)
+		{
+			return itar_djg_h;
+		};
+	}
+	else if (fraktion == TMP)
+	{
+		if (armor_level == 1)
+		{
+			return itar_snov_l;
+		}
+		else if (armor_level == 2)
+		{
+			return itar_tmp_l;
+		}
+		else if (armor_level == 3)
+		{
+			return itar_tmp_m;
+		}
+		else if (armor_level == 4)
+		{
+			return itar_tmp_h;
+		};
+	};
+
+	return 0;
+};
+
+// Funkcja zmieniajaca parametry stworzonego Zolnierza (slf) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
+// gil - gildia (GIL_PAL = czerwoni, lub GIL_DJG = niebiescy)
+func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
+{
+	// Poziom zolnierza.
 	var int stufe;
+
+	// Twarz??
 	var int face;
+
+	// Frakcja zolnierza - PAL (Paladyn), DJG (Lowca Smokow), TMP (Templariusz), SKE (Ozywieniec).
 	var int fraktion;
+
+	// Uzywana zbroja (zalezna od ulepszen).
 	var int used_armor;
+
+	// Uzywany miecz (zalezny od ulepszen).
+	var int used_weapon;
+
+	// Domyslne atrybuty zolnierza.
 	slf.attribute[ATR_STRENGTH] = 10;
 	slf.aivar[REAL_STRENGTH] = 10;
 	slf.attribute[ATR_DEXTERITY] = 10;
@@ -18,59 +95,71 @@ func void b_setsoldierabilities(var C_Npc slf,var int gil)
 	slf.attribute[ATR_MANA] = 10;
 	slf.attribute[ATR_HITPOINTS_MAX] = 40;
 	slf.attribute[ATR_HITPOINTS] = 40;
+
 	slf.HitChance[NPC_TALENT_1H] = 0;
 	slf.HitChance[NPC_TALENT_2H] = 0;
 	slf.HitChance[NPC_TALENT_BOW] = 0;
 	slf.HitChance[NPC_TALENT_CROSSBOW] = 0;
+
 	slf.protection[PROT_EDGE] = 0;
 	slf.protection[PROT_BLUNT] = 0;
 	slf.protection[PROT_POINT] = 0;
 	slf.protection[PROT_FIRE] = 0;
 	slf.protection[PROT_MAGIC] = 0;
-	Npc_SetTalentSkill(self,NPC_TALENT_1H,0);
-	Npc_SetTalentSkill(self,NPC_TALENT_2H,0);
-	slf.aivar[96] = stufe;
-	if(gil == GIL_PAL)
-	{
-		stufe = L1_SOLDIER_LEVEL;
-	}
-	else if(gil == GIL_DJG)
-	{
-		stufe = L2_SOLDIER_LEVEL;
-	};
-	face = Face_N_NormalBart01 + stufe;
-	if(gil == GIL_PAL)
+
+	Npc_SetTalentSkill(self, NPC_TALENT_1H, 0);
+	Npc_SetTalentSkill(self, NPC_TALENT_2H, 0);
+
+	// aivar - tablica sterujaca AI.
+	// Dlaczego takie wartosci?
+
+	if (gil == GIL_PAL)
 	{
 		fraktion = FRAKTION_L1;
-		if(L1_UNSTERBLICHKEIT == TRUE)
+		stufe = L1_SOLDIER_LEVEL;
+		if (L1_UNSTERBLICHKEIT == TRUE)
 		{
 			slf.flags = NPC_FLAG_IMMORTAL;
 		};
-		if(L1_HEILTRANKERFORSCHT == TRUE)
+
+		// Jezeli mamy umiejetnosc "Pelnia Zycia" od uczonego.
+		if (L1_HEILTRANKERFORSCHT == TRUE)
 		{
-			CreateInvItems(slf,ItPo_Health_Addon_04,1);
+			CreateInvItems(slf, ItPo_Health_Addon_04, 1);
 		};
+
 		used_armor = L1_USED_ARMOR;
+		used_weapon = L1_USED_WEAPON;
 		slf.name[0] = NPCNAME_SOLDAT_PAL;
 	}
 	else
 	{
 		fraktion = FRAKTION_L2;
-		if(L2_UNSTERBLICHKEIT == TRUE)
+		stufe = L2_SOLDIER_LEVEL;
+		if (L2_UNSTERBLICHKEIT == TRUE)
 		{
 			slf.flags = NPC_FLAG_IMMORTAL;
 		};
-		if(L2_HEILTRANKERFORSCHT == TRUE)
+
+		// Jezeli mamy umiejetnosc "Pelnia Zycia" od uczonego.
+		if (L2_HEILTRANKERFORSCHT == TRUE)
 		{
-			CreateInvItems(slf,ItPo_Health_Addon_04,1);
+			CreateInvItems(slf, ItPo_Health_Addon_04, 1);
 		};
+
 		used_armor = L2_USED_ARMOR;
+		used_weapon = L2_USED_WEAPON;
 		slf.name[0] = NPCNAME_SOLDAT_DJG;
 	};
+
+	face = Face_N_NormalBart01 + stufe;
+
+	slf.aivar[96] = stufe;
 	slf.aivar[98] = face;
 	slf.aivar[99] = 1;
 	slf.aivar[75] = used_armor;
-	if(LOAD == 0)
+
+	if (LOAD == 0)
 	{
 		slf.aivar[74] = 1;
 	}
@@ -78,180 +167,132 @@ func void b_setsoldierabilities(var C_Npc slf,var int gil)
 	{
 		slf.aivar[74] = LOAD;
 	};
-	if(fraktion == Pal)
+
+	// Przypisanie wygladu zolnierza w zaleznosci od frakcji i poziomu ulepszenia zbroi.
+	if (fraktion == SKE)
 	{
-		if(used_armor == 1)
-		{
-			B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",slf.aivar[98],BodyTex_N,ITAR_Mil_L);
-		}
-		else if(used_armor == 2)
-		{
-			B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",slf.aivar[98],BodyTex_N,ItAr_MIL_M);
-		}
-		else if(used_armor == 3)
-		{
-			B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",slf.aivar[98],BodyTex_N,ItAr_PAL_M);
-		}
-		else if(used_armor == 4)
-		{
-			B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",slf.aivar[98],BodyTex_N,ItAr_PAl_H);
-		};
+		B_SetSkelettVisual(slf, used_armor);
 	}
-	else if(fraktion == DJG)
+	else
 	{
-		if(used_armor == 1)
+		var int soldier_armor;
+		soldier_armor = B_GetSoldierArmor(fraktion, used_armor);
+
+		if (soldier_armor != 0)
 		{
-			B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",slf.aivar[98],BodyTex_N,ItAr_Sld_L);
-		}
-		else if(used_armor == 2)
-		{
-			B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",slf.aivar[98],BodyTex_N,itar_sld_M);
-		}
-		else if(used_armor == 3)
-		{
-			B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",slf.aivar[98],BodyTex_N,itar_djg_l);
-		}
-		else if(used_armor == 4)
-		{
-			B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",slf.aivar[98],BodyTex_N,itar_djg_h);
-		};
-	}
-	else if(fraktion == TMP)
-	{
-		if(used_armor == 1)
-		{
-			B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",slf.aivar[98],BodyTex_N,itar_snov_l);
-		}
-		else if(used_armor == 2)
-		{
-			B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",slf.aivar[98],BodyTex_N,itar_tmp_l);
-		}
-		else if(used_armor == 3)
-		{
-			B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",slf.aivar[98],BodyTex_N,itar_tmp_m);
-		}
-		else if(used_armor == 4)
-		{
-			B_SetNpcVisual(slf,MALE,"Hum_Head_Fighter",slf.aivar[98],BodyTex_N,itar_tmp_h);
-		};
-	}
-	else if(fraktion == SKE)
-	{
-		if(used_armor == 1)
-		{
-			B_SetSkelettVisual(slf,1);
-		}
-		else if(used_armor == 2)
-		{
-			B_SetSkelettVisual(slf,2);
-		}
-		else if(used_armor == 3)
-		{
-			B_SetSkelettVisual(slf,3);
-		}
-		else if(used_armor == 4)
-		{
-			B_SetSkelettVisual(slf,4);
+			B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", slf.aivar[98], BodyTex_N, soldier_armor);
 		};
 	};
+
 	slf.guild = gil;
 	slf.voice = 6;
 	slf.npcType = npctype_main;
+
+	// Ustawienie modelu postaci.
 	if(fraktion != SKE)
 	{
-		Mdl_SetVisual(slf,"humans.mds");
+		Mdl_SetVisual(slf, "humans.mds");
 	};
-	Mdl_ApplyOverlayMds(slf,"humans_relaxed.mds");
-	Mdl_SetModelFatness(slf,0);
+	Mdl_ApplyOverlayMds(slf, "humans_relaxed.mds");
+	Mdl_SetModelFatness(slf, 0);
+
 	B_GiveNpcTalents(slf);
 	B_CreateAmbientInv(slf);
+
+	// AI.
 	slf.senses = SENSE_SEE | SENSE_SMELL | SENSE_HEAR;
 	slf.senses_range = 2500;
-	if(stufe == 1)
+
+	// Ustawienie statystyk w zaleznosci od wykupionego poziomu zolnierzy.
+	// Zostawiam to w takiej formie, bo latwiej wtedy zmieniac poszczegolne wartosci dla kazdego poziomu.
+	// [BALANS]
+	if (stufe == 1)
 	{
-		B_SetAttributesToChapter(slf,0);
-		B_SetFightSkills(slf,10);
-		Npc_SetTalentSkill(self,NPC_TALENT_1H,0);
+		B_SetAttributesToChapter(slf, 0);
+		B_SetFightSkills(slf, 10);
+		Npc_SetTalentSkill(self, NPC_TALENT_1H, 0);
 		slf.fight_tactic = FAI_HUMAN_COWARD;
-	};
-	if(stufe == 2)
+	}
+	else if (stufe == 2)
 	{
-		B_SetAttributesToChapter(slf,1);
-		B_SetFightSkills(slf,30);
-		Npc_SetTalentSkill(self,NPC_TALENT_1H,1);
+		B_SetAttributesToChapter(slf, 1);
+		B_SetFightSkills(slf, 30);
+		Npc_SetTalentSkill(self, NPC_TALENT_1H, 1);
 		slf.fight_tactic = FAI_HUMAN_COWARD;
-	};
-	if(stufe == 3)
+	}
+	else if (stufe == 3)
 	{
-		B_SetAttributesToChapter(slf,2);
-		B_SetFightSkills(slf,45);
-		Npc_SetTalentSkill(self,NPC_TALENT_1H,1);
+		B_SetAttributesToChapter(slf, 2);
+		B_SetFightSkills(slf, 45);
+		Npc_SetTalentSkill(self, NPC_TALENT_1H, 1);
 		slf.fight_tactic = FAI_HUMAN_NORMAL;
-	};
-	if(stufe == 4)
+	}
+	else if (stufe == 4)
 	{
-		B_SetAttributesToChapter(slf,3);
-		B_SetFightSkills(slf,60);
-		Npc_SetTalentSkill(self,NPC_TALENT_1H,2);
+		B_SetAttributesToChapter(slf, 3);
+		B_SetFightSkills(slf, 60);
+		Npc_SetTalentSkill(self, NPC_TALENT_1H, 2);
 		slf.fight_tactic = FAI_HUMAN_NORMAL;
-	};
-	if(stufe == 5)
+	}
+	else if (stufe == 5)
 	{
-		B_SetAttributesToChapter(slf,4);
-		B_SetFightSkills(slf,70);
-		Npc_SetTalentSkill(self,NPC_TALENT_1H,2);
+		B_SetAttributesToChapter(slf, 4);
+		B_SetFightSkills(slf, 70);
+		Npc_SetTalentSkill(self, NPC_TALENT_1H, 2);
 		slf.fight_tactic = FAI_HUMAN_STRONG;
-	};
-	if(stufe == 6)
+	}
+	else if (stufe == 6)
 	{
-		B_SetAttributesToChapter(slf,5);
-		B_SetFightSkills(slf,80);
-		Npc_SetTalentSkill(self,NPC_TALENT_1H,2);
+		B_SetAttributesToChapter(slf, 5);
+		B_SetFightSkills(slf, 80);
+		Npc_SetTalentSkill(self, NPC_TALENT_1H, 2);
 		slf.fight_tactic = FAI_HUMAN_STRONG;
-	};
-	if(stufe == 7)
+	}
+	else if (stufe == 7)
 	{
-		B_SetAttributesToChapter(slf,6);
-		B_SetFightSkills(slf,90);
-		Npc_SetTalentSkill(self,NPC_TALENT_1H,2);
+		B_SetAttributesToChapter(slf, 6);
+		B_SetFightSkills(slf, 90);
+		Npc_SetTalentSkill(self, NPC_TALENT_1H, 2);
 		slf.fight_tactic = FAI_HUMAN_MASTER;
 	};
-	if(gil == GIL_DJG)
+
+	// Ustawienie broni w zaleznosci od posiadanego ulepszenia.
+	if (gil == GIL_DJG)
 	{
-		if(L2_USED_WEAPON == 1)
+		if (used_weapon == 1)
 		{
-			EquipItem(slf,itmw_shortsword_djg);
+			EquipItem(slf, itmw_shortsword_djg);
 		}
-		else if(L2_USED_WEAPON == 2)
+		else if (used_weapon == 2)
 		{
-			EquipItem(slf,itmw_sword_djg);
+			EquipItem(slf, itmw_sword_djg);
 		}
-		else if(L2_USED_WEAPON == 3)
+		else if (used_weapon == 3)
 		{
-			EquipItem(slf,itmw_langschwert_djg);
+			EquipItem(slf, itmw_langschwert_djg);
 		}
-		else if(L2_USED_WEAPON == 4)
+		else if (used_weapon == 4)
 		{
-			EquipItem(slf,itmw_elbastardo_djg);
+			EquipItem(slf, itmw_elbastardo_djg);
 		};
 	}
-	else if(gil == GIL_PAL)
+	else if (gil == GIL_PAL)
 	{
-		if(L1_USED_WEAPON == 1)
+		if (used_weapon == 1)
 		{
-			EquipItem(slf,itmw_shortsword_pal);
+			EquipItem(slf, itmw_shortsword_pal);
 		}
-		else if(L1_USED_WEAPON == 2)
+		else if (used_weapon == 2)
 		{
-			EquipItem(slf,itmw_sword_pal);
+			EquipItem(slf, itmw_sword_pal);
 		}
-		else if(L1_USED_WEAPON == 3)
+		else if (used_weapon == 3)
 		{
-			EquipItem(slf,itmw_langschwert_pal);
+			EquipItem(slf, itmw_langschwert_pal);
 		}
-		else if(L1_USED_WEAPON == 4)
+		else if (used_weapon == 4)
 		{
-			EquipItem(slf,itmw_elbastardo_pal);
+			EquipItem(slf, itmw_elbastardo_pal);
 		};
 	};
 };

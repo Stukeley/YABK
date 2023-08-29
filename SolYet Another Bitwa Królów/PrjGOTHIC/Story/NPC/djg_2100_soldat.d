@@ -2,7 +2,7 @@
 
 instance DJG_2100_SOLDAT(Npc_Default)
 {
-	b_setsoldierabilities(self,GIL_DJG);
+	B_SetSoldierAbilities(self,GIL_DJG);
 	id = 2100;
 	daily_routine = rtn_lager2_2100;
 };
