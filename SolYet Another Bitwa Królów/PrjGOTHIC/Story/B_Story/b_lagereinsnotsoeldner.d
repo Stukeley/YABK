@@ -13,7 +13,7 @@ func void b_lagereinsnotsoeldner()
 		L1_CURRENT_MERCLEVEL = 4;
 		b_debug("Ich baue einen meisterhaften Söldner für ",SOELDNERLEVEL4_COST);
 		B_Message("NEWS_Gegner_Soeldner");
-		b_spawnsoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
 	}
 	else if(L1_HAVEGOLD >= SOELDNERLEVEL3_COST)
 	{
@@ -21,7 +21,7 @@ func void b_lagereinsnotsoeldner()
 		L1_CURRENT_MERCLEVEL = 3;
 		b_debug("Ich baue einen starken Söldner für ",SOELDNERLEVEL3_COST);
 		B_Message("NEWS_Gegner_Soeldner");
-		b_spawnsoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
 	};
 };
 
@@ -430,9 +430,9 @@ func void b_lagereinski_wirtschaft()
 	{
 		L1_HAVEGOLD -= SOELDNERLEVEL4_COST * 3;
 		L1_CURRENT_MERCLEVEL = 4;
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
 		b_debug("Ich kaufe drei meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 2);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
@@ -467,8 +467,8 @@ func void b_lagereinski_wirtschaft()
 	{
 		L1_EHRENPUNKTE -= MERC_COST;
 		L1_CURRENT_MERCLEVEL = 4;
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
 		L1_EHRENPUNKTCHOICE = 0;
 		b_debug("Ich hole mir zwei Söldner für soviele Ehrenpunkte: ",MERC_COST);
 		B_Message("NEWS_Gegner_Soeldner");
@@ -826,9 +826,9 @@ func void b_lagereinski_held()
 	{
 		L1_HAVEGOLD -= SOELDNERLEVEL4_COST * 3;
 		L1_CURRENT_MERCLEVEL = 4;
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
 		b_debug("Ich kaufe drei meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 2);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
@@ -836,11 +836,11 @@ func void b_lagereinski_held()
 	{
 		L1_HAVEGOLD -= SOELDNERLEVEL4_COST * 5;
 		L1_CURRENT_MERCLEVEL = 4;
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
 		b_debug("Ich kaufe fünf meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 2);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
@@ -848,14 +848,14 @@ func void b_lagereinski_held()
 	{
 		L1_HAVEGOLD -= SOELDNERLEVEL4_COST * 8;
 		L1_CURRENT_MERCLEVEL = 4;
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
-		b_spawnsoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
 		b_debug("Ich kaufe acht meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 2);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
@@ -890,8 +890,8 @@ func void b_lagereinski_held()
 	{
 		L1_EHRENPUNKTE -= MERC_COST;
 		L1_CURRENT_MERCLEVEL = 4;
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
 		L1_EHRENPUNKTCHOICE = 0;
 		b_debug("Ich hole mir zwei Söldner für soviele Ehrenpunkte: ",MERC_COST);
 		B_Message("NEWS_Gegner_Soeldner");
@@ -957,8 +957,8 @@ func void b_lagereinski_soeldner()
 	{
 		L1_HAVEGOLD -= SOELDNERLEVEL4_COST * 2;
 		L1_CURRENT_MERCLEVEL = 4;
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
 		b_debug("Ich kaufe mir zwei meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 3);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
@@ -966,9 +966,9 @@ func void b_lagereinski_soeldner()
 	{
 		L1_HAVEGOLD -= SOELDNERLEVEL4_COST * 3;
 		L1_CURRENT_MERCLEVEL = 4;
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
 		b_debug("Ich kaufe mir drei meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 3);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
@@ -976,11 +976,11 @@ func void b_lagereinski_soeldner()
 	{
 		L1_HAVEGOLD -= SOELDNERLEVEL4_COST * 5;
 		L1_CURRENT_MERCLEVEL = 4;
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
 		b_debug("Ich kaufe mir fünf meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 3);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
@@ -988,16 +988,16 @@ func void b_lagereinski_soeldner()
 	{
 		L1_HAVEGOLD -= SOELDNERLEVEL4_COST * 10;
 		L1_CURRENT_MERCLEVEL = 4;
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
 		b_debug("Ich kaufe mir ZEHN meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 3);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
@@ -1022,8 +1022,8 @@ func void b_lagereinski_soeldner()
 	{
 		L1_EHRENPUNKTE -= MERC_COST;
 		L1_CURRENT_MERCLEVEL = 4;
-		b_spawnsoeldner(GIL_PAL);
-		b_spawnsoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
+		B_SpawnSoeldner(GIL_PAL);
 		L1_EHRENPUNKTCHOICE = 0;
 	};
 };

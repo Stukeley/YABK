@@ -1,5 +1,6 @@
+// Plik zawierajacy funkcje odpowiedzialne za pojawianie sie najemnikow.
 
-func void b_spawnsoeldner(var int guild)
+func void B_SpawnSoeldner(var int guild)
 {
 	if((guild == GIL_PAL) || (guild == GIL_MIL))
 	{
@@ -46,12 +47,12 @@ func void b_skript_schleife_spawn()
 		if(SKELETONKONTROLL == GIL_PAL)
 		{
 			L1_CURRENT_MERCLEVEL = 7;
-			b_spawnsoeldner(GIL_PAL);
+			B_SpawnSoeldner(GIL_PAL);
 		};
 		if(SKELETONKONTROLL == GIL_DJG)
 		{
 			L2_CURRENT_MERCLEVEL = 7;
-			b_spawnsoeldner(GIL_DJG);
+			B_SpawnSoeldner(GIL_DJG);
 		};
 		LASTSKELETTSPAWN = ABLAUF;
 	};
@@ -158,171 +159,16 @@ func void b_skript_schleife_spawn()
 	};
 };
 
-func void b_spawnmanysoeldner(var int guild,var int anzahl)
+// Funkcja odpowiedzialna za zespawnowanie wielu najemnikow (tak duzo, ile mamy zlota).
+// guild - gildia (GIL_PAL = czerwoni, lub GIL_DJG = niebiescy)
+// amount - ilosc najemnikow do zespawnowania
+func void B_SpawnManySoeldner(var int guild, var int amount)
 {
-	if(anzahl >= 1)
+	// Petla za pomoca rekursji.
+	if (amount > 0)
 	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 2)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 3)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 4)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 5)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 6)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 7)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 8)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 9)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 10)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 11)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 12)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 13)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 14)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 15)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 16)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 17)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 18)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 19)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 20)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 21)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 22)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 23)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 24)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 25)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 26)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 27)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 28)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 29)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 30)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 31)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 32)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 33)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 34)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 35)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 36)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 37)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 38)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 39)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 40)
-	{
-		b_spawnsoeldner(guild);
-	};
-	if(anzahl >= 41)
-	{
-		b_spawnsoeldner(guild);
+		B_SpawnSoeldner(guild);
+		B_SpawnManySoeldner(guild, amount - 1);
 	};
 };
 

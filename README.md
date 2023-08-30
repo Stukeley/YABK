@@ -38,5 +38,9 @@ Plik GOTHIC.dat zawiera skompilowane skrypty gotowe do spakowania jako plik .MOD
 Pliki Gothic.src i ou.bin to pliki zawierające przede wszystkim spolszczone dialogi, które w oryginalnej wersji modyfikacji były po niemiecku, i należy je zawrzeć w spakowanej modyfikacji.  
 Plik Gothic.src powinien znajdować się w `/_work/Data/Scripts/Content/` a plik ou.bin - w `/_work/Data/Scripts/Content/Cutscene/`.
 
+Przydatne zasoby:
+- Składnia Daedalus (to nie to samo co DLang): https://www.worldofgothic.de/modifikation/index.php?go=daedalus
+- Gothic API (to OpenGothic, ale oryginał jest podobny): https://github.com/Try/OpenGothic/wiki/Daedalus-scripts
+
 ## Changelog balansu
 - [soon]

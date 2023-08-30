@@ -459,140 +459,29 @@ func void djg_2003_verwalter_soeldner_back()
 
 func void djg_2003_verwalter_soeldner_level_4_many()
 {
-	var int anzahl;
-	if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 30))
+	var int soldiers_amount;
+	var int gold_amount;
+	gold_amount = Npc_HasItems(hero, ItMi_Gold);
+
+	soldiers_amount = gold_amount / SOELDNERLEVEL4_COST;
+
+	Print(ConcatStrings(IntToString(soldiers_amount), PRINT_SENDMERCS));
+
+	if(Npc_HasItems(hero, ItMi_Gold) >= (SOELDNERLEVEL4_COST * soldiers_amount))
 	{
-		anzahl = 30;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 29))
-	{
-		anzahl = 29;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 28))
-	{
-		anzahl = 28;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 27))
-	{
-		anzahl = 27;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 26))
-	{
-		anzahl = 26;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 25))
-	{
-		anzahl = 25;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 24))
-	{
-		anzahl = 24;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 23))
-	{
-		anzahl = 23;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 22))
-	{
-		anzahl = 22;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 21))
-	{
-		anzahl = 21;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 20))
-	{
-		anzahl = 20;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 19))
-	{
-		anzahl = 19;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 18))
-	{
-		anzahl = 18;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 17))
-	{
-		anzahl = 17;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 16))
-	{
-		anzahl = 16;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 15))
-	{
-		anzahl = 15;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 14))
-	{
-		anzahl = 14;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 13))
-	{
-		anzahl = 13;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 12))
-	{
-		anzahl = 12;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 11))
-	{
-		anzahl = 11;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 10))
-	{
-		anzahl = 10;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 9))
-	{
-		anzahl = 9;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 8))
-	{
-		anzahl = 8;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 7))
-	{
-		anzahl = 7;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 6))
-	{
-		anzahl = 6;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 5))
-	{
-		anzahl = 5;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 4))
-	{
-		anzahl = 4;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 3))
-	{
-		anzahl = 3;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 2))
-	{
-		anzahl = 2;
-	}
-	else if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * 1))
-	{
-		anzahl = 1;
-	};
-	Print(ConcatStrings(IntToString(anzahl),PRINT_SENDMERCS));
-	if(Npc_HasItems(hero,ItMi_Gold) >= (SOELDNERLEVEL4_COST * anzahl))
-	{
-		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
-		B_GiveInvItems(other,self,ItMi_Gold,SOELDNERLEVEL4_COST * anzahl);
+		AI_Output(self, other, "PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
+		B_GiveInvItems(other, self, ItMi_Gold, SOELDNERLEVEL4_COST * soldiers_amount);
+
 		L2_CURRENT_MERCLEVEL = 4;
-		b_spawnmanysoeldner(GIL_DJG,anzahl);
-		REACTONMERCS = REACTONMERCS + anzahl;
+		B_SpawnManySoeldner(GIL_DJG, soldiers_amount);
+
+		REACTONMERCS = REACTONMERCS + soldiers_amount;
 	}
 	else
 	{
-		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_LEVEL_1_Info_06_03");	//Nie masz wystarczaj¹co z³ota.
+		AI_Output(self, other, "PAL_1003_Verwalter_IMPROVE_LEVEL_1_Info_06_03");	//Nie masz wystarczaj¹co z³ota.
 	};
+	
 	Info_ClearChoices(djg_2003_verwalter_soeldner);
 };
 
@@ -603,7 +492,7 @@ func void djg_2003_verwalter_soeldner_level_4()
 		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
 		B_GiveInvItems(other,self,ItMi_Gold,SOELDNERLEVEL4_COST);
 		L2_CURRENT_MERCLEVEL = 4;
-		b_spawnsoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
 	}
 	else
 	{
@@ -619,7 +508,7 @@ func void djg_2003_verwalter_soeldner_level_3()
 		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
 		B_GiveInvItems(other,self,ItMi_Gold,SOELDNERLEVEL3_COST);
 		L2_CURRENT_MERCLEVEL = 3;
-		b_spawnsoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
 	}
 	else
 	{
@@ -635,7 +524,7 @@ func void djg_2003_verwalter_soeldner_level_2()
 		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
 		B_GiveInvItems(other,self,ItMi_Gold,SOELDNERLEVEL2_COST);
 		L2_CURRENT_MERCLEVEL = 2;
-		b_spawnsoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
 	}
 	else
 	{
@@ -651,7 +540,7 @@ func void djg_2003_verwalter_soeldner_level_1()
 		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
 		B_GiveInvItems(other,self,ItMi_Gold,SOELDNERLEVEL2_COST);
 		L2_CURRENT_MERCLEVEL = 1;
-		b_spawnsoeldner(GIL_DJG);
+		B_SpawnSoeldner(GIL_DJG);
 	}
 	else
 	{
@@ -1156,7 +1045,7 @@ func void djg_2003_verwalter_ehrenpunkte_merc()
 	{
 		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
 		L2_CURRENT_MERCLEVEL = 4;
-		b_spawnmanysoeldner(GIL_DJG,MERC_FUER_EHRENPUNKTE);
+		B_SpawnManySoeldner(GIL_DJG,MERC_FUER_EHRENPUNKTE);
 		L2_EHRENPUNKTE -= MERC_COST;
 	}
 	else
