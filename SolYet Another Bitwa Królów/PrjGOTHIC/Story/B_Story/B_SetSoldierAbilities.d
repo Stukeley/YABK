@@ -1,70 +1,5 @@
 // Zmiana parametrow Zolnierzy (w zaleznosci od posiadanych ulepszen).
 
-// Funkcja zwracajaca typ (kod) pancerza zolnierza w zaleznosci od frakcji oraz poziomu ulepszenia zbroi.
-// Nie uwzglednia szkieletow - maja one osobna funkcje B_SetSkelettVisual.
-func int B_GetSoldierArmor(var int fraktion, var int armor_level)
-{
-	if (fraktion == PAL)
-	{
-		if (armor_level == 1)
-		{
-			return ItAr_MIL_L;
-		}
-		else if (armor_level == 2)
-		{
-			return ItAr_MIL_M;
-		}
-		else if (armor_level == 3)
-		{
-			return ItAr_PAL_M;
-		}
-		else if (armor_level == 4)
-		{
-			return ItAr_PAl_H;
-		};
-	}
-	else if (fraktion == DJG)
-	{
-		if (armor_level == 1)
-		{
-			return ItAr_Sld_L;
-		}
-		else if (armor_level == 2)
-		{
-			return itar_sld_M;
-		}
-		else if (armor_level == 3)
-		{
-			return itar_djg_l;
-		}
-		else if (armor_level == 4)
-		{
-			return itar_djg_h;
-		};
-	}
-	else if (fraktion == TMP)
-	{
-		if (armor_level == 1)
-		{
-			return itar_snov_l;
-		}
-		else if (armor_level == 2)
-		{
-			return itar_tmp_l;
-		}
-		else if (armor_level == 3)
-		{
-			return itar_tmp_m;
-		}
-		else if (armor_level == 4)
-		{
-			return itar_tmp_h;
-		};
-	};
-
-	return 0;
-};
-
 // Funkcja zmieniajaca parametry stworzonego Zolnierza (slf) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
 // gil - gildia (GIL_PAL = czerwoni, lub GIL_DJG = niebiescy)
 func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
@@ -175,9 +110,9 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 	else
 	{
 		var int soldier_armor;
-		soldier_armor = B_GetSoldierArmor(fraktion, used_armor);
+		soldier_armor = B_GetUnitArmor(fraktion, used_armor);
 
-		if (soldier_armor != 0)
+		if (soldier_armor != -1)
 		{
 			B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", slf.aivar[98], BodyTex_N, soldier_armor);
 		};

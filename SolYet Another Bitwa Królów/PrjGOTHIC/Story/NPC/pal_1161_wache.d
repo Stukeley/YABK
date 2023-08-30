@@ -2,7 +2,7 @@
 
 instance PAL_1161_WACHE(Npc_Default)
 {
-	b_setwachenabilities(self,GIL_PAL);
+	B_SetWachenAbilities(self,GIL_PAL);
 	id = 1161;
 	daily_routine = rtn_start_1161;
 };

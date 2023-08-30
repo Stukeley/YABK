@@ -2,7 +2,7 @@
 
 instance DJG_2161_WACHE(Npc_Default)
 {
-	b_setwachenabilities(self,GIL_DJG);
+	B_SetWachenAbilities(self,GIL_DJG);
 	id = 2161;
 	daily_routine = rtn_start_2161;
 };

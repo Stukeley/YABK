@@ -1,58 +1,5 @@
 // Zmiana parametrow Bohaterow (w zaleznosci od posiadanych ulepszen).
 
-// Funkcja zwracajaca typ (kod) pancerza bohatera w zaleznosci od frakcji oraz poziomu ulepszenia zbroi.
-// Nie uwzglednia szkieletow - maja one osobna funkcje B_SetSkelettVisual.
-func int B_GetHeroArmor(var int fraktion, var int armor_level)
-{
-	if (fraktion == PAL)
-	{
-		if (armor_level == 0)
-		{
-			return ItAr_MIL_M;
-		}
-		else if (armor_level == 1)
-		{
-			return ItAr_PAL_M;
-		}
-		else
-		{
-			return ItAr_PAl_H;
-		};
-	}
-	else if (fraktion == DJG)
-	{
-		if (armor_level == 0)
-		{
-			return itar_sld_M;
-		}
-		else if (armor_level == 1)
-		{
-			return itar_djg_l;
-		}
-		else
-		{
-			return itar_djg_h;
-		};
-	}
-	else if (fraktion == TMP)
-	{
-		if (armor_level == 0)
-		{
-			return itar_tmp_l;
-		}
-		else if (armor_level == 1)
-		{
-			return itar_tmp_m;
-		}
-		else
-		{
-			return itar_tmp_h;
-		};
-	};
-
-	return 0;
-};
-
 // Funkcja zmieniajaca parametry stworzonego Bohatera (slf) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
 // gil - gildia (GIL_PAL = czerwoni, lub GIL_DJG = niebiescy)
 func void B_SetHeroAbilities(var C_Npc slf, var int gil)
@@ -139,9 +86,13 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	else
 	{
 		var int hero_armor;
-		hero_armor = B_GetHeroArmor(fraktion, ruestungslevel);
+		// ruestungslevel + 1 bo pancerze bohatera liczymy w skali 1-3 zamiast 1-4.
+		hero_armor = B_GetUnitArmor(fraktion, ruestungslevel + 1);
 
-		B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, hero_armor);
+		if (hero_armor != -1)
+		{
+			B_SetNpcVisual(slf, MALE, "Hum_Head_Fighter", Face_N_Wolf, BodyTex_N, hero_armor);
+		};
 	};
 
 	slf.voice = 6;

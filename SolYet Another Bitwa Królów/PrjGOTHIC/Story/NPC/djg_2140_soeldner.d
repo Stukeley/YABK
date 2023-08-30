@@ -3,7 +3,7 @@
 
 instance DJG_2140_SOELDNER(Npc_Default)
 {
-	b_setmercabilities(self,GIL_DJG,L2_CURRENT_MERCLEVEL);
+	B_SetMercAbilities(self,GIL_DJG,L2_CURRENT_MERCLEVEL);
 	id = 2140;
 	daily_routine = rtn_lager2_2140;
 };

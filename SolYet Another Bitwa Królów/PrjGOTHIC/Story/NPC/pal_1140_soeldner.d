@@ -3,7 +3,7 @@
 
 instance PAL_1140_SOELDNER(Npc_Default)
 {
-	b_setmercabilities(self,GIL_PAL,L1_CURRENT_MERCLEVEL);
+	B_SetMercAbilities(self,GIL_PAL,L1_CURRENT_MERCLEVEL);
 	id = 1140;
 	daily_routine = rtn_lager1_1140;
 };

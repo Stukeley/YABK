@@ -810,8 +810,8 @@ func void b_skript_schleife()
 				if(L1_TRANK_ERFORSCHEN == POTION_WACHENUPDATE)
 				{
 					L1_WACHEN_LEVEL += 1;
-					b_updatewachenabilities(pal_1160_wache);
-					b_updatewachenabilities(pal_1161_wache);
+					B_UpdateWachenAbilities(pal_1160_wache);
+					B_UpdateWachenAbilities(pal_1161_wache);
 				};
 				if(L1_TRANK_ERFORSCHEN == POTION_GOLDUPDATE)
 				{
@@ -904,8 +904,8 @@ func void b_skript_schleife()
 				if(L2_TRANK_ERFORSCHEN == POTION_WACHENUPDATE)
 				{
 					L2_WACHEN_LEVEL += 1;
-					b_updatewachenabilities(djg_2160_wache);
-					b_updatewachenabilities(djg_2161_wache);
+					B_UpdateWachenAbilities(djg_2160_wache);
+					B_UpdateWachenAbilities(djg_2161_wache);
 				};
 				if(L2_TRANK_ERFORSCHEN == POTION_GOLDUPDATE)
 				{

@@ -21,6 +21,7 @@ Story\B_Story\C_NpcIsInQuarter.d
 Story\B_Story\B_AddFightSkill.d
 Story\B_Story\B_RaiseFightTalent.d
 Story\NPC_Scripts\B_SetFightSkills.d
+Story\NPC_Scripts\B_GetUnitArmor.d
 Story\B_Story\B_RaiseAttribute.d
 Story\B_Story\B_LogEntry.d
 Story\B_Story\B_GetDayPlus.d
