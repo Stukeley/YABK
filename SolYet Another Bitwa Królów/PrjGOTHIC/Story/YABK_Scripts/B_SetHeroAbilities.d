@@ -7,7 +7,7 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	// Frakcja bohatera - PAL (Paladyn), DJG (Lowca Smokow), TMP (Templariusz), SKE (Ozywieniec).
 	var int fraktion;
 
-	// Poziom zbroi bohatera (od 1 do 3).
+	// Poziom zbroi bohatera (od 0 do 2).
 	var int ruestungslevel;
 
 	// Poziom bohatera zalezny od doswiadczenia (od 1 do 8).
@@ -86,8 +86,8 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	else
 	{
 		var int hero_armor;
-		// ruestungslevel + 1 bo pancerze bohatera liczymy w skali 1-3 zamiast 1-4.
-		hero_armor = B_GetUnitArmor(fraktion, ruestungslevel + 1);
+		// ruestungslevel + 1 bo pancerze bohatera liczymy w skali 0-2 zamiast 1-4.
+		hero_armor = B_GetUnitArmor(fraktion, ruestungslevel + 2);
 
 		if (hero_armor != -1)
 		{

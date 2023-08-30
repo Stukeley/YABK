@@ -1,3 +1,4 @@
+// Funkcja odpowiadajaca za zachowanie smieciarza.
 
 func void b_muellmann(var C_Npc slf)
 {

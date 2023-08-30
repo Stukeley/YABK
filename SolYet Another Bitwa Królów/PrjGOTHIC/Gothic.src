@@ -21,7 +21,7 @@ Story\B_Story\C_NpcIsInQuarter.d
 Story\B_Story\B_AddFightSkill.d
 Story\B_Story\B_RaiseFightTalent.d
 Story\NPC_Scripts\B_SetFightSkills.d
-Story\NPC_Scripts\B_GetUnitArmor.d
+Story\YABK_Scripts\B_GetUnitArmor.d
 Story\B_Story\B_RaiseAttribute.d
 Story\B_Story\B_LogEntry.d
 Story\B_Story\B_GetDayPlus.d
@@ -257,9 +257,9 @@ AI\Magic\ZS_Magic\ZS_Zapped.d
 Story\B_Story\B_GiveDeathInv.d
 Story\B_Story\b_unsterblichkeit.d
 Story\NPC_Scripts\B_SetNpcVisual.d
-Story\B_Story\b_setskelettvisual.d
+Story\YABK_Scripts\B_SetSkelettVisual.d
 AI\Human\TA.d
-Story\B_Story\b_muellmann.d
+Story\YABK_Scripts\B_Muellmann.d
 Story\B_Story\b_schwertistmuell.d
 AI\Human\TA_Human\ZS_Announce_Herold.d
 AI\Human\TA_Human\ZS_Bandit.d
@@ -368,11 +368,11 @@ Story\NPC_Scripts\B_CreateAmbientInv.d
 Story\NPC_Scripts\B_GiveNpcTalents.d
 Story\NPC_Scripts\B_SetAttributesToChapter.d
 Story\NPC_Scripts\Npc_Default.d
-Story\B_Story\b_setsoldierabilities.d
-Story\B_Story\b_setmageabilities.d
-Story\B_Story\b_setheroabilities.d
-Story\B_Story\b_setmercabilities.d
-Story\B_Story\b_setwachenabilities.d
+Story\YABK_Scripts\B_SetSoldierAbilities.d
+Story\YABK_Scripts\B_SetMageAbilities.d
+Story\YABK_Scripts\B_SetHeroAbilities.d
+Story\YABK_Scripts\B_SetMercAbilities.d
+Story\YABK_Scripts\B_SetWachenAbilities.d
 Story\NPC\djg_2000_king.d
 Story\NPC\djg_2001_schmiedebauer.d
 Story\NPC\djg_2002_schmied.d
@@ -539,7 +539,7 @@ Story\B_Story\B_Enter_AddonWorld.d
 Story\B_Story\B_Kapitelwechsel.d
 Story\B_Story\b_hasupgradeweapons.d
 Story\B_Story\b_otherteamfraktion.d
-Story\B_Story\b_revivepalhero.d
+Story\YABK_Scripts\B_ReviveHero.d
 Story\B_Content\C_Addon_Knows_Schnaps.d
 Story\B_Story\b_lagereinsnotsoeldner.d
 Story\B_Story\b_lagerzweinotsoeldner.d

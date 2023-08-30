@@ -20,7 +20,7 @@ func int B_GetUnitArmor(var int fraktion, var int level)
 		{
 			return ItAr_PAL_M;
 		}
-		else if (level == 4)
+		else
 		{
 			return ItAr_PAl_H;
 		};
@@ -39,7 +39,7 @@ func int B_GetUnitArmor(var int fraktion, var int level)
 		{
 			return itar_djg_l;
 		}
-		else if (level == 4)
+		else
 		{
 			return itar_djg_h;
 		};
@@ -58,7 +58,7 @@ func int B_GetUnitArmor(var int fraktion, var int level)
 		{
 			return itar_tmp_m;
 		}
-		else if (level == 4)
+		else
 		{
 			return itar_tmp_h;
 		};
