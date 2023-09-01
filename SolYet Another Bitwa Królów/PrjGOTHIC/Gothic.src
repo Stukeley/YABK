@@ -22,6 +22,8 @@ Story\B_Story\B_AddFightSkill.d
 Story\B_Story\B_RaiseFightTalent.d
 Story\NPC_Scripts\B_SetFightSkills.d
 Story\YABK_Scripts\B_GetUnitArmor.d
+Story\YABK_Scripts\B_GetUnitCrossbow.d
+Story\YABK_Scripts\B_GetUnitWeapon.d
 Story\B_Story\B_RaiseAttribute.d
 Story\B_Story\B_LogEntry.d
 Story\B_Story\B_GetDayPlus.d

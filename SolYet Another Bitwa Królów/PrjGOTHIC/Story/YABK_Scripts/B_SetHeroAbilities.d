@@ -118,9 +118,12 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	B_GiveNpcTalents(slf);
 
 	// Ustawienie miecza i jego umiejetnosci w zaleznosci od talentu.
+	var int hero_weapon;
+	hero_weapon = B_GetHeroWeapon(schwertlevel);
+	EquipItem(slf, hero_weapon);
+
 	if (schwertlevel == 0)
 	{
-		EquipItem(slf,itmw_hero_1);
 		slf.HitChance[NPC_TALENT_1H] = 31;
 		slf.HitChance[NPC_TALENT_2H] = 31;
 		Mdl_ApplyOverlayMds(slf,"humans_1hST1.mds");
@@ -128,7 +131,6 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	}
 	else if (schwertlevel == 1)
 	{
-		EquipItem(slf,itmw_hero_2);
 		slf.HitChance[NPC_TALENT_1H] = 54;
 		slf.HitChance[NPC_TALENT_2H] = 54;
 		Mdl_ApplyOverlayMds(slf,"humans_1hST1.mds");
@@ -136,7 +138,6 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	}
 	else if (schwertlevel == 2)
 	{
-		EquipItem(slf,itmw_hero_3);
 		slf.HitChance[NPC_TALENT_1H] = 77;
 		slf.HitChance[NPC_TALENT_2H] = 77;
 		Mdl_ApplyOverlayMds(slf,"humans_1hST2.mds");
@@ -144,7 +145,6 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	}
 	else if (schwertlevel >= 3)
 	{
-		EquipItem(slf,itmw_hero_4);
 		slf.HitChance[NPC_TALENT_1H] = 100;
 		slf.HitChance[NPC_TALENT_2H] = 100;
 		Mdl_ApplyOverlayMds(slf,"humans_1hST2.mds");
@@ -201,9 +201,17 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	};
 
 	// Ustawienie kuszy i jej umiejetnosci w zaleznosci od talentu.
+	// Umiejetnosc kuszy bohatera zaczyna sie od 0.
+	var int hero_crossbow;
+	hero_crossbow = B_GetUnitCrossbow(armbrustlevel);
+	
+	if (hero_crossbow != -1)
+	{
+		EquipItem(slf, hero_crossbow);
+	}
+
 	if (armbrustlevel == 1)
 	{
-		EquipItem(slf, ItRw_Crossbow_L_02);
 		slf.HitChance[NPC_TALENT_BOW] = 31;
 		slf.HitChance[NPC_TALENT_CROSSBOW] = 31;
 		Mdl_ApplyOverlayMds(slf, "humans_BowT1.mds");
@@ -211,7 +219,6 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	}
 	else if (armbrustlevel == 2)
 	{
-		EquipItem(slf, ItRw_Crossbow_M_01);
 		slf.HitChance[NPC_TALENT_BOW] = 54;
 		slf.HitChance[NPC_TALENT_CROSSBOW] = 54;
 		Mdl_ApplyOverlayMds(slf, "humans_BowT1.mds");
@@ -219,7 +226,6 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	}
 	else if (armbrustlevel == 3)
 	{
-		EquipItem(slf, ItRw_Crossbow_M_02);
 		slf.HitChance[NPC_TALENT_BOW] = 77;
 		slf.HitChance[NPC_TALENT_CROSSBOW] = 77;
 		Mdl_ApplyOverlayMds(slf, "humans_BowT2.mds");
@@ -227,7 +233,6 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	}
 	else if (armbrustlevel == 4)
 	{
-		EquipItem(slf, ItRw_Crossbow_H_01);
 		slf.HitChance[NPC_TALENT_BOW] = 100;
 		slf.HitChance[NPC_TALENT_CROSSBOW] = 100;
 		Mdl_ApplyOverlayMds(slf, "humans_BowT2.mds");

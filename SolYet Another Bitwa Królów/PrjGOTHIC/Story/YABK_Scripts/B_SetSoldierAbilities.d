@@ -191,43 +191,8 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 	};
 
 	// Ustawienie broni w zaleznosci od posiadanego ulepszenia.
-	if (gil == GIL_DJG)
-	{
-		if (used_weapon == 1)
-		{
-			EquipItem(slf, itmw_shortsword_djg);
-		}
-		else if (used_weapon == 2)
-		{
-			EquipItem(slf, itmw_sword_djg);
-		}
-		else if (used_weapon == 3)
-		{
-			EquipItem(slf, itmw_langschwert_djg);
-		}
-		else if (used_weapon == 4)
-		{
-			EquipItem(slf, itmw_elbastardo_djg);
-		};
-	}
-	else if (gil == GIL_PAL)
-	{
-		if (used_weapon == 1)
-		{
-			EquipItem(slf, itmw_shortsword_pal);
-		}
-		else if (used_weapon == 2)
-		{
-			EquipItem(slf, itmw_sword_pal);
-		}
-		else if (used_weapon == 3)
-		{
-			EquipItem(slf, itmw_langschwert_pal);
-		}
-		else if (used_weapon == 4)
-		{
-			EquipItem(slf, itmw_elbastardo_pal);
-		};
-	};
+	var int soldier_weapon;
+	soldier_weapon = B_GetSoldierWeapon(gil, used_weapon);
+	EquipItem(slf, soldier_weapon);
 };
 

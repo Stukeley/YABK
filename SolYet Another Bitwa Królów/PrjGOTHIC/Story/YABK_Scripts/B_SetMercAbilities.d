@@ -130,6 +130,13 @@ func void B_SetMercAbilities(var C_Npc slf, var int gil, var int stufe)
 	// Ustawienie nazwy i parametrow w zaleznosci od poziomu najemnika.
 	// Zostawiam to w takiej formie, bo latwiej wtedy zmieniac poszczegolne wartosci dla kazdego poziomu.
 	// [BALANS]
+	var int merc_weapon;
+	merc_weapon = B_GetMercWeapon(stufe);
+	if (merc_weapon != -1)
+	{
+		EquipItem(slf, merc_weapon);
+	};
+
 	if (stufe == 1)
 	{
 		if (gil == GIL_PAL)
@@ -146,8 +153,6 @@ func void B_SetMercAbilities(var C_Npc slf, var int gil, var int stufe)
 
 		Npc_SetTalentSkill(slf, NPC_TALENT_1H, 0);
 		slf.fight_tactic = FAI_HUMAN_COWARD;
-
-		EquipItem(slf, itmw_shortsword_sk);
 	}
 	else if (stufe == 2)
 	{
@@ -165,8 +170,6 @@ func void B_SetMercAbilities(var C_Npc slf, var int gil, var int stufe)
 
 		Npc_SetTalentSkill(slf, NPC_TALENT_1H, 1);
 		slf.fight_tactic = FAI_HUMAN_NORMAL;
-
-		EquipItem(slf, itmw_sword_sk);
 	}
 	else if (stufe == 3)
 	{
@@ -184,8 +187,6 @@ func void B_SetMercAbilities(var C_Npc slf, var int gil, var int stufe)
 
 		Npc_SetTalentSkill(slf, NPC_TALENT_1H, 2);
 		slf.fight_tactic = FAI_HUMAN_STRONG;
-
-		EquipItem(slf, itmw_langschwert_sk);
 	}
 	else if (stufe == 4)
 	{
@@ -203,8 +204,6 @@ func void B_SetMercAbilities(var C_Npc slf, var int gil, var int stufe)
 
 		Npc_SetTalentSkill(slf, NPC_TALENT_1H, 2);
 		slf.fight_tactic = FAI_HUMAN_MASTER;
-
-		EquipItem(slf, itmw_elbastardo_sk);
 	}
 	// Jacys specjalni najemnicy?
 	else if (stufe == 5)
@@ -247,7 +246,6 @@ func void B_SetMercAbilities(var C_Npc slf, var int gil, var int stufe)
 		Mdl_ApplyOverlayMds(slf, "humans_2hST2.mds");
 
 		slf.damagetype = DAM_EDGE;
-		EquipItem(slf, ItMw_2H_Sword_M_01);
 	};
 };
 

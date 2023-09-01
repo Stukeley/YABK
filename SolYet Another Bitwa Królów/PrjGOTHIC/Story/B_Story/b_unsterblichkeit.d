@@ -32,6 +32,7 @@ func void b_setunsterblichkeit(var C_Npc slf)
 	};
 };
 
+// [TODO] niesmiertelnosc totalnie nie dziala
 func void b_mach_unsterblich_1()
 {
 	if(L1_UNSTERBLICHKEIT == FALSE)

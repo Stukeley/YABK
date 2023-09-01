@@ -216,11 +216,16 @@ func void djg_2011_elite_armbrustupgrade_info()
 		L2_HELD_ARMBRUSTLEVEL += 1;
 		B_GiveInvItems(other,self,ItMi_Gold,HERO_ARMBRUSTUPGRADE);
 		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
+
+		// Podmiana kuszy na nowy poziom.
+		var int new_hero_crossbow;
+		new_hero_crossbow = B_GetUnitCrossbow(L2_HELD_ARMBRUSTLEVEL);
+		CreateInvItems(djg_2012_hero, new_hero_crossbow, 1);
+
 		if(L2_HELD_ARMBRUSTLEVEL == 1)
 		{
 			djg_2012_hero.HitChance[NPC_TALENT_BOW] = 30;
 			djg_2012_hero.HitChance[NPC_TALENT_CROSSBOW] = 30;
-			CreateInvItems(djg_2012_hero,ItRw_Crossbow_L_02,1);
 			Mdl_ApplyOverlayMds(djg_2012_hero,"humans_1hST1.mds");
 			Mdl_ApplyOverlayMds(djg_2012_hero,"humans_2hST1.mds");
 		};
@@ -228,7 +233,6 @@ func void djg_2011_elite_armbrustupgrade_info()
 		{
 			djg_2012_hero.HitChance[NPC_TALENT_BOW] = 54;
 			djg_2012_hero.HitChance[NPC_TALENT_CROSSBOW] = 54;
-			CreateInvItems(djg_2012_hero,ItRw_Crossbow_M_01,1);
 			Mdl_ApplyOverlayMds(djg_2012_hero,"humans_BowT1.mds");
 			Mdl_ApplyOverlayMds(djg_2012_hero,"humans_CBowT1.mds");
 		};
@@ -236,7 +240,6 @@ func void djg_2011_elite_armbrustupgrade_info()
 		{
 			djg_2012_hero.HitChance[NPC_TALENT_BOW] = 77;
 			djg_2012_hero.HitChance[NPC_TALENT_CROSSBOW] = 77;
-			CreateInvItems(djg_2012_hero,ItRw_Crossbow_M_02,1);
 			Mdl_ApplyOverlayMds(djg_2012_hero,"humans_BowT2.mds");
 			Mdl_ApplyOverlayMds(djg_2012_hero,"humans_CBowT2.mds");
 		};
@@ -244,10 +247,10 @@ func void djg_2011_elite_armbrustupgrade_info()
 		{
 			djg_2012_hero.HitChance[NPC_TALENT_BOW] = 100;
 			djg_2012_hero.HitChance[NPC_TALENT_CROSSBOW] = 100;
-			CreateInvItems(djg_2012_hero,ItRw_Crossbow_H_01,1);
 			Mdl_ApplyOverlayMds(djg_2012_hero,"humans_BowT2.mds");
 			Mdl_ApplyOverlayMds(djg_2012_hero,"humans_CBowT2.mds");
 		};
+		
 		AI_EquipBestRangedWeapon(djg_2012_hero);
 	}
 	else
