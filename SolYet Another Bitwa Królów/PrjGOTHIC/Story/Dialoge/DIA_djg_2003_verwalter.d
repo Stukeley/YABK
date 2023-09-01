@@ -191,7 +191,7 @@ instance DJG_2003_VERWALTER_IMPROVE_LEVEL_1(C_Info)
 	information = djg_2003_verwalter_improve_level_1_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_buildimprovelevelstring(1);
+	description = b_BuildImproveLevelString(1);
 };
 
 
@@ -225,7 +225,7 @@ instance DJG_2003_VERWALTER_IMPROVE_LEVEL_2(C_Info)
 	information = djg_2003_verwalter_improve_level_2_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_buildimprovelevelstring(2);
+	description = b_BuildImproveLevelString(2);
 };
 
 
@@ -259,7 +259,7 @@ instance DJG_2003_VERWALTER_IMPROVE_LEVEL_3(C_Info)
 	information = djg_2003_verwalter_improve_level_3_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_buildimprovelevelstring(3);
+	description = b_BuildImproveLevelString(3);
 };
 
 
@@ -293,7 +293,7 @@ instance DJG_2003_VERWALTER_IMPROVE_LEVEL_4(C_Info)
 	information = djg_2003_verwalter_improve_level_4_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_buildimprovelevelstring(4);
+	description = b_BuildImproveLevelString(4);
 };
 
 
@@ -327,7 +327,7 @@ instance DJG_2003_VERWALTER_IMPROVE_LEVEL_5(C_Info)
 	information = djg_2003_verwalter_improve_level_5_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_buildimprovelevelstring(5);
+	description = b_BuildImproveLevelString(5);
 };
 
 
@@ -361,7 +361,7 @@ instance DJG_2003_VERWALTER_IMPROVE_LEVEL_6(C_Info)
 	information = djg_2003_verwalter_improve_level_6_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_buildimprovelevelstring(6);
+	description = b_BuildImproveLevelString(6);
 };
 
 
@@ -445,11 +445,11 @@ func void djg_2003_verwalter_soeldner_info()
 {
 	Info_ClearChoices(djg_2003_verwalter_soeldner);
 	Info_AddChoice(djg_2003_verwalter_soeldner,Dialog_Back,djg_2003_verwalter_soeldner_back);
-	Info_AddChoice(djg_2003_verwalter_soeldner,b_getcoststring_vielesoeldner(PRINT_MANYMERCS,SOELDNERLEVEL4_COST),djg_2003_verwalter_soeldner_level_4_many);
-	Info_AddChoice(djg_2003_verwalter_soeldner,b_getcoststring(PRINT_SENDMERC4,SOELDNERLEVEL4_COST),djg_2003_verwalter_soeldner_level_4);
-	Info_AddChoice(djg_2003_verwalter_soeldner,b_getcoststring(PRINT_SENDMERC3,SOELDNERLEVEL3_COST),djg_2003_verwalter_soeldner_level_3);
-	Info_AddChoice(djg_2003_verwalter_soeldner,b_getcoststring(PRINT_SENDMERC2,SOELDNERLEVEL2_COST),djg_2003_verwalter_soeldner_level_2);
-	Info_AddChoice(djg_2003_verwalter_soeldner,b_getcoststring(PRINT_SENDMERC1,SOELDNERLEVEL2_COST),djg_2003_verwalter_soeldner_level_1);
+	Info_AddChoice(djg_2003_verwalter_soeldner,B_GetCostString_Vielesoeldner(PRINT_MANYMERCS,SOELDNERLEVEL4_COST),djg_2003_verwalter_soeldner_level_4_many);
+	Info_AddChoice(djg_2003_verwalter_soeldner,B_GetCostString(PRINT_SENDMERC4,SOELDNERLEVEL4_COST),djg_2003_verwalter_soeldner_level_4);
+	Info_AddChoice(djg_2003_verwalter_soeldner,B_GetCostString(PRINT_SENDMERC3,SOELDNERLEVEL3_COST),djg_2003_verwalter_soeldner_level_3);
+	Info_AddChoice(djg_2003_verwalter_soeldner,B_GetCostString(PRINT_SENDMERC2,SOELDNERLEVEL2_COST),djg_2003_verwalter_soeldner_level_2);
+	Info_AddChoice(djg_2003_verwalter_soeldner,B_GetCostString(PRINT_SENDMERC1,SOELDNERLEVEL1_COST),djg_2003_verwalter_soeldner_level_1);
 };
 
 func void djg_2003_verwalter_soeldner_back()
@@ -575,11 +575,11 @@ func void djg_2003_verwalter_wachen_info()
 	Info_AddChoice(djg_2003_verwalter_wachen,Dialog_Back,djg_2003_verwalter_wachen_back);
 	if(djg_2161_wache.attribute[ATR_HITPOINTS] == 0)
 	{
-		Info_AddChoice(djg_2003_verwalter_wachen,b_getcoststring(PRINT_GETWACHE2,WACHE_COST),djg_2003_verwalter_wachen_ebene_2);
+		Info_AddChoice(djg_2003_verwalter_wachen,B_GetCostString(PRINT_GETWACHE2,WACHE_COST),djg_2003_verwalter_wachen_ebene_2);
 	};
 	if(djg_2160_wache.attribute[ATR_HITPOINTS] == 0)
 	{
-		Info_AddChoice(djg_2003_verwalter_wachen,b_getcoststring(PRINT_GETWACHE1,WACHE_COST),djg_2003_verwalter_wachen_ebene_1);
+		Info_AddChoice(djg_2003_verwalter_wachen,B_GetCostString(PRINT_GETWACHE1,WACHE_COST),djg_2003_verwalter_wachen_ebene_1);
 	};
 };
 
@@ -644,15 +644,15 @@ func void djg_2003_verwalter_hoehlen_soeldner_info()
 	Info_AddChoice(djg_2003_verwalter_hoehlen_soeldner,Dialog_Back,djg_2003_verwalter_hoehlen_soeldner_back);
 	if(L2_LEBENDEHOEHLENSOELDNER <= (MAXHOEHLENWACHEN - 5))
 	{
-		Info_AddChoice(djg_2003_verwalter_hoehlen_soeldner,b_getcoststring(PRINT_5HOEHLENSOELDNER,5 * HOEHLENSOELDNER),djg_2003_verwalter_hoehlen_soeldner_5_soeld);
+		Info_AddChoice(djg_2003_verwalter_hoehlen_soeldner,B_GetCostString(PRINT_5HOEHLENSOELDNER,5 * HOEHLENSOELDNER),djg_2003_verwalter_hoehlen_soeldner_5_soeld);
 	};
 	if(L2_LEBENDEHOEHLENSOELDNER <= (MAXHOEHLENWACHEN - 3))
 	{
-		Info_AddChoice(djg_2003_verwalter_hoehlen_soeldner,b_getcoststring(PRINT_3HOEHLENSOELDNER,3 * HOEHLENSOELDNER),djg_2003_verwalter_hoehlen_soeldner_3_soeld);
+		Info_AddChoice(djg_2003_verwalter_hoehlen_soeldner,B_GetCostString(PRINT_3HOEHLENSOELDNER,3 * HOEHLENSOELDNER),djg_2003_verwalter_hoehlen_soeldner_3_soeld);
 	};
 	if(L2_LEBENDEHOEHLENSOELDNER <= (MAXHOEHLENWACHEN - 1))
 	{
-		Info_AddChoice(djg_2003_verwalter_hoehlen_soeldner,b_getcoststring(PRINT_1HOEHLENSOELDNER,HOEHLENSOELDNER),djg_2003_verwalter_hoehlen_soeldner_1_soeld);
+		Info_AddChoice(djg_2003_verwalter_hoehlen_soeldner,B_GetCostString(PRINT_1HOEHLENSOELDNER,HOEHLENSOELDNER),djg_2003_verwalter_hoehlen_soeldner_1_soeld);
 	};
 };
 
@@ -741,23 +741,23 @@ func void djg_2003_verwalter_minen_soeldner_info()
 	Info_AddChoice(djg_2003_verwalter_minen_soeldner,Dialog_Back,djg_2003_verwalter_minen_soeldner_back);
 	if(L2_MINENLEUTE <= (MAXMINENLEUTE - 5))
 	{
-		Info_AddChoice(djg_2003_verwalter_minen_soeldner,b_getcoststring(PRINT_5MINENWACHE,5 * MINENWACHE),djg_2003_verwalter_minen_soeldner_5_wache);
+		Info_AddChoice(djg_2003_verwalter_minen_soeldner,B_GetCostString(PRINT_5MINENWACHE,5 * MINENWACHE),djg_2003_verwalter_minen_soeldner_5_wache);
 	};
 	if(L2_MINENLEUTE <= (MAXMINENLEUTE - 3))
 	{
-		Info_AddChoice(djg_2003_verwalter_minen_soeldner,b_getcoststring(PRINT_3MINENWACHE,3 * MINENWACHE),djg_2003_verwalter_minen_soeldner_3_wache);
+		Info_AddChoice(djg_2003_verwalter_minen_soeldner,B_GetCostString(PRINT_3MINENWACHE,3 * MINENWACHE),djg_2003_verwalter_minen_soeldner_3_wache);
 	};
 	if(L2_MINENLEUTE <= (MAXMINENLEUTE - 1))
 	{
-		Info_AddChoice(djg_2003_verwalter_minen_soeldner,b_getcoststring(PRINT_1MINENWACHE,MINENWACHE),djg_2003_verwalter_minen_soeldner_wache);
+		Info_AddChoice(djg_2003_verwalter_minen_soeldner,B_GetCostString(PRINT_1MINENWACHE,MINENWACHE),djg_2003_verwalter_minen_soeldner_wache);
 	};
 	if(L2_MINENLEUTE <= (MAXMINENLEUTE - 2))
 	{
-		Info_AddChoice(djg_2003_verwalter_minen_soeldner,b_getcoststring(PRINT_2MINENARBEITER,MINENARBEITERSOELDNER * 2),djg_2003_verwalter_minen_soeldner_2_arbeiter);
+		Info_AddChoice(djg_2003_verwalter_minen_soeldner,B_GetCostString(PRINT_2MINENARBEITER,MINENARBEITERSOELDNER * 2),djg_2003_verwalter_minen_soeldner_2_arbeiter);
 	};
 	if(L2_MINENLEUTE <= (MAXMINENLEUTE - 1))
 	{
-		Info_AddChoice(djg_2003_verwalter_minen_soeldner,b_getcoststring(PRINT_1MINENARBEITER,MINENARBEITERSOELDNER),djg_2003_verwalter_minen_soeldner_arbeiter);
+		Info_AddChoice(djg_2003_verwalter_minen_soeldner,B_GetCostString(PRINT_1MINENARBEITER,MINENARBEITERSOELDNER),djg_2003_verwalter_minen_soeldner_arbeiter);
 	};
 };
 
@@ -901,28 +901,28 @@ func void djg_2003_verwalter_ehrenpunkte_info()
 	Info_AddChoice(djg_2003_verwalter_ehrenpunkte,Dialog_Back,djg_2003_verwalter_ehrenpunkte_back);
 	if((L2_REVIVE == FALSE) && (((LAGER == 1) && (FRAKTION_L1 == PAL)) || ((LAGER == 2) && (FRAKTION_L2 == PAL))))
 	{
-		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_ehrenpunktstring("REVIVE"),djg_2003_verwalter_ehrenpunkte_revive);
+		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("REVIVE"),djg_2003_verwalter_ehrenpunkte_revive);
 	};
 	if((L2_VAMPIRSCHLAG == FALSE) && (((LAGER == 1) && (FRAKTION_L1 == TMP)) || ((LAGER == 2) && (FRAKTION_L2 == TMP))))
 	{
-		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_ehrenpunktstring("VAMPIRSCHLAG"),djg_2003_verwalter_ehrenpunkte_vampir);
+		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("VAMPIRSCHLAG"),djg_2003_verwalter_ehrenpunkte_vampir);
 	};
 	if((L2_INSTANTKILL == FALSE) && (((LAGER == 1) && (FRAKTION_L1 == DJG)) || ((LAGER == 2) && (FRAKTION_L2 == DJG))))
 	{
-		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_ehrenpunktstring("INSTANTKILL"),djg_2003_verwalter_ehrenpunkte_instantkill);
+		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("INSTANTKILL"),djg_2003_verwalter_ehrenpunkte_instantkill);
 	};
 	if((L2_UNTOTEN_SPAWN == FALSE) && (((LAGER == 1) && (FRAKTION_L1 == SKE)) || ((LAGER == 2) && (FRAKTION_L2 == SKE))))
 	{
-		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_ehrenpunktstring("UNTOTENSPAWN"),djg_2003_verwalter_ehrenpunkte_untotenspawn);
+		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("UNTOTENSPAWN"),djg_2003_verwalter_ehrenpunkte_untotenspawn);
 	};
 	if(L2_UNSTERBLICHKEIT == FALSE)
 	{
-		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_ehrenpunktstring("UNSTERBLICHKEIT"),djg_2003_verwalter_ehrenpunkte_unsterblichkeit);
+		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("UNSTERBLICHKEIT"),djg_2003_verwalter_ehrenpunkte_unsterblichkeit);
 	};
-	Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_ehrenpunktstring("SOELDNER"),djg_2003_verwalter_ehrenpunkte_merc);
-	Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_ehrenpunktstring("KING_HEAL"),djg_2003_verwalter_ehrenpunkte_king_heal);
-	Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_ehrenpunktstring("KLAUEN"),djg_2003_verwalter_ehrenpunkte_klau);
-	Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_ehrenpunktstring("GOLD"),djg_2003_verwalter_ehrenpunkte_gold);
+	Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("SOELDNER"),djg_2003_verwalter_ehrenpunkte_merc);
+	Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("KING_HEAL"),djg_2003_verwalter_ehrenpunkte_king_heal);
+	Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("KLAUEN"),djg_2003_verwalter_ehrenpunkte_klau);
+	Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("GOLD"),djg_2003_verwalter_ehrenpunkte_gold);
 };
 
 func void djg_2003_verwalter_ehrenpunkte_back()

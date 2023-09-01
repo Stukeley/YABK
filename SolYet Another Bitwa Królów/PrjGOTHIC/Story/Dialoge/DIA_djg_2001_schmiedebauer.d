@@ -30,7 +30,7 @@ instance DJG_2001_SCHMIEDEBAUER_ERBAUEN(C_Info)
 	information = djg_2001_schmiedebauer_erbauen_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_getcoststring(PRINT_BUILDSMITH,SMITHCOST);
+	description = B_GetCostString(PRINT_BUILDSMITH,SMITHCOST);
 };
 
 

@@ -30,7 +30,7 @@ instance PAL_1001_SCHMIEDEBAUER_ERBAUEN(C_Info)
 	information = pal_1001_schmiedebauer_erbauen_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_getcoststring(PRINT_BUILDSMITH,SMITHCOST);
+	description = B_GetCostString(PRINT_BUILDSMITH,SMITHCOST);
 };
 
 

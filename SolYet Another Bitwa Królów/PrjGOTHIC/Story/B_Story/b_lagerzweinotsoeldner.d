@@ -485,7 +485,7 @@ func void b_lagerzweiki_wirtschaft()
 			klaugold = havegold;
 		};
 		L2_HAVEGOLD += klaugold;
-		Print(b_klaustring(klaugold));
+		Print(b_KlauString(klaugold));
 		L2_EHRENPUNKTE -= KLAU_COST;
 		if(NOMERCS_ON == FALSE)
 		{
@@ -917,7 +917,7 @@ func void b_lagerzweiki_held()
 			klaugold = havegold;
 		};
 		L2_HAVEGOLD += klaugold;
-		Print(b_klaustring(klaugold));
+		Print(b_KlauString(klaugold));
 		L2_EHRENPUNKTE -= KLAU_COST;
 		if(NOMERCS_ON == FALSE)
 		{

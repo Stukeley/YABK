@@ -113,11 +113,11 @@ func void djg_2004_magier_runen_erforschen_info()
 	Info_AddChoice(djg_2004_magier_runen_erforschen,Dialog_Back,djg_2004_magier_runen_erforschen_back);
 	if(L2_BLITZSCHLAGERFORSCHT == FALSE)
 	{
-		Info_AddChoice(djg_2004_magier_runen_erforschen,b_getspellstring(NAME_SPL_LightningFlash,BLITZSCHLAG_COST),djg_2004_magier_runen_erforschen_blitzschlag);
+		Info_AddChoice(djg_2004_magier_runen_erforschen,B_GetSpellString(NAME_SPL_LightningFlash,BLITZSCHLAG_COST),djg_2004_magier_runen_erforschen_blitzschlag);
 	};
 	if(L2_WUNDENHEILENERFORSCHT == FALSE)
 	{
-		Info_AddChoice(djg_2004_magier_runen_erforschen,b_getspellstring(PRINT_SELFHEALING,HEILUNG_COST),djg_2004_magier_runen_erforschen_heilung);
+		Info_AddChoice(djg_2004_magier_runen_erforschen,B_GetSpellString(PRINT_SELFHEALING,HEILUNG_COST),djg_2004_magier_runen_erforschen_heilung);
 	};
 };
 
@@ -228,27 +228,27 @@ func void djg_2004_magier_traenke_erforschen_info()
 	Info_AddChoice(djg_2004_magier_traenke_erforschen,Dialog_Back,djg_2004_magier_traenke_erforschen_back);
 	if(L2_SCHMIEDESTEP == SCHMIEDESTEP)
 	{
-		Info_AddChoice(djg_2004_magier_traenke_erforschen,b_getcoststring(PRINT_IMPROVESMITH,SMITHUPGRADE_COST),djg_2004_magier_traenke_erforschen_schmiede_step);
+		Info_AddChoice(djg_2004_magier_traenke_erforschen,B_GetCostString(PRINT_IMPROVESMITH,SMITHUPGRADE_COST),djg_2004_magier_traenke_erforschen_schmiede_step);
 	};
 	if(L2_EHRE_UPDATE == FALSE)
 	{
-		Info_AddChoice(djg_2004_magier_traenke_erforschen,b_getcoststring(PRINT_EHREEIGENESOLDATEN,GOLD_UPDATE),djg_2004_magier_traenke_erforschen_ehren_update);
+		Info_AddChoice(djg_2004_magier_traenke_erforschen,B_GetCostString(PRINT_EHREEIGENESOLDATEN,GOLD_UPDATE),djg_2004_magier_traenke_erforschen_ehren_update);
 	};
 	if(L2_GOLD_UPDATE == FALSE)
 	{
-		Info_AddChoice(djg_2004_magier_traenke_erforschen,b_getcoststring(PRINT_GOLDEIGENESOLDATEN,GOLD_UPDATE),djg_2004_magier_traenke_erforschen_gold_update);
+		Info_AddChoice(djg_2004_magier_traenke_erforschen,B_GetCostString(PRINT_GOLDEIGENESOLDATEN,GOLD_UPDATE),djg_2004_magier_traenke_erforschen_gold_update);
 	};
 	if(L2_MAGIERUPDATE == FALSE)
 	{
-		Info_AddChoice(djg_2004_magier_traenke_erforschen,b_getcoststring(PRINT_VERBESSEREMAGIER,MAGIERUPDATE_COST),djg_2004_magier_traenke_erforschen_magier_update);
+		Info_AddChoice(djg_2004_magier_traenke_erforschen,B_GetCostString(PRINT_VERBESSEREMAGIER,MAGIERUPDATE_COST),djg_2004_magier_traenke_erforschen_magier_update);
 	};
 	if((L2_WACHEN_LEVEL < 4) && ((MAP == MAP01) || (MAP == VARUS_MAP)))
 	{
-		Info_AddChoice(djg_2004_magier_traenke_erforschen,b_getcoststring(PRINT_VERBESSEREWACHEN,L2_WACHEN_LEVEL * WACHEN_UPDATE_PER_LEVEL),djg_2004_magier_traenke_erforschen_wachen_update);
+		Info_AddChoice(djg_2004_magier_traenke_erforschen,B_GetCostString(PRINT_VERBESSEREWACHEN,L2_WACHEN_LEVEL * WACHEN_UPDATE_PER_LEVEL),djg_2004_magier_traenke_erforschen_wachen_update);
 	};
 	if(L2_HEILTRANKERFORSCHT == FALSE)
 	{
-		Info_AddChoice(djg_2004_magier_traenke_erforschen,b_getspellstring(PRINT_HEALPOTION,HEILTRANK_COST),djg_2004_magier_traenke_erforschen_heiltrank);
+		Info_AddChoice(djg_2004_magier_traenke_erforschen,B_GetSpellString(PRINT_HEALPOTION,HEILTRANK_COST),djg_2004_magier_traenke_erforschen_heiltrank);
 	};
 };
 

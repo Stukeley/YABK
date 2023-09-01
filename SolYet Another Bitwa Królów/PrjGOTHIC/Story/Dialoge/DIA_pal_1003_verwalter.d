@@ -198,7 +198,7 @@ instance PAL_1003_VERWALTER_IMPROVE_LEVEL_1(C_Info)
 	information = pal_1003_verwalter_improve_level_1_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_buildimprovelevelstring(1);
+	description = b_BuildImproveLevelString(1);
 };
 
 
@@ -239,7 +239,7 @@ instance PAL_1003_VERWALTER_IMPROVE_LEVEL_2(C_Info)
 	information = pal_1003_verwalter_improve_level_2_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_buildimprovelevelstring(2);
+	description = b_BuildImproveLevelString(2);
 };
 
 
@@ -280,7 +280,7 @@ instance PAL_1003_VERWALTER_IMPROVE_LEVEL_3(C_Info)
 	information = pal_1003_verwalter_improve_level_3_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_buildimprovelevelstring(3);
+	description = b_BuildImproveLevelString(3);
 };
 
 
@@ -321,7 +321,7 @@ instance PAL_1003_VERWALTER_IMPROVE_LEVEL_4(C_Info)
 	information = pal_1003_verwalter_improve_level_4_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_buildimprovelevelstring(4);
+	description = b_BuildImproveLevelString(4);
 };
 
 
@@ -355,7 +355,7 @@ instance PAL_1003_VERWALTER_IMPROVE_LEVEL_5(C_Info)
 	information = pal_1003_verwalter_improve_level_5_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_buildimprovelevelstring(5);
+	description = b_BuildImproveLevelString(5);
 };
 
 
@@ -396,7 +396,7 @@ instance PAL_1003_VERWALTER_IMPROVE_LEVEL_6(C_Info)
 	information = pal_1003_verwalter_improve_level_6_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_buildimprovelevelstring(6);
+	description = b_BuildImproveLevelString(6);
 };
 
 
@@ -453,11 +453,11 @@ func void pal_1003_verwalter_soeldner_info()
 {
 	Info_ClearChoices(pal_1003_verwalter_soeldner);
 	Info_AddChoice(pal_1003_verwalter_soeldner,Dialog_Back,pal_1003_verwalter_soeldner_back);
-	Info_AddChoice(pal_1003_verwalter_soeldner,b_getcoststring_vielesoeldner(PRINT_MANYMERCS,SOELDNERLEVEL4_COST),pal_1003_verwalter_soeldner_level_4_many);
-	Info_AddChoice(pal_1003_verwalter_soeldner,b_getcoststring(PRINT_SENDMERC4,SOELDNERLEVEL4_COST),pal_1003_verwalter_soeldner_level_4);
-	Info_AddChoice(pal_1003_verwalter_soeldner,b_getcoststring(PRINT_SENDMERC3,SOELDNERLEVEL3_COST),pal_1003_verwalter_soeldner_level_3);
-	Info_AddChoice(pal_1003_verwalter_soeldner,b_getcoststring(PRINT_SENDMERC2,SOELDNERLEVEL2_COST),pal_1003_verwalter_soeldner_level_2);
-	Info_AddChoice(pal_1003_verwalter_soeldner,b_getcoststring(PRINT_SENDMERC1,SOELDNERLEVEL1_COST),pal_1003_verwalter_soeldner_level_1);
+	Info_AddChoice(pal_1003_verwalter_soeldner,B_GetCostString_Vielesoeldner(PRINT_MANYMERCS,SOELDNERLEVEL4_COST),pal_1003_verwalter_soeldner_level_4_many);
+	Info_AddChoice(pal_1003_verwalter_soeldner,B_GetCostString(PRINT_SENDMERC4,SOELDNERLEVEL4_COST),pal_1003_verwalter_soeldner_level_4);
+	Info_AddChoice(pal_1003_verwalter_soeldner,B_GetCostString(PRINT_SENDMERC3,SOELDNERLEVEL3_COST),pal_1003_verwalter_soeldner_level_3);
+	Info_AddChoice(pal_1003_verwalter_soeldner,B_GetCostString(PRINT_SENDMERC2,SOELDNERLEVEL2_COST),pal_1003_verwalter_soeldner_level_2);
+	Info_AddChoice(pal_1003_verwalter_soeldner,B_GetCostString(PRINT_SENDMERC1,SOELDNERLEVEL1_COST),pal_1003_verwalter_soeldner_level_1);
 };
 
 func void pal_1003_verwalter_soeldner_back()
@@ -583,11 +583,11 @@ func void pal_1003_verwalter_wachen_info()
 	Info_AddChoice(pal_1003_verwalter_wachen,Dialog_Back,pal_1003_verwalter_wachen_back);
 	if(pal_1161_wache.attribute[ATR_HITPOINTS] == 0)
 	{
-		Info_AddChoice(pal_1003_verwalter_wachen,b_getcoststring(PRINT_GETWACHE2,WACHE_COST),pal_1003_verwalter_wachen_ebene_2);
+		Info_AddChoice(pal_1003_verwalter_wachen,B_GetCostString(PRINT_GETWACHE2,WACHE_COST),pal_1003_verwalter_wachen_ebene_2);
 	};
 	if(pal_1160_wache.attribute[ATR_HITPOINTS] == 0)
 	{
-		Info_AddChoice(pal_1003_verwalter_wachen,b_getcoststring(PRINT_GETWACHE1,WACHE_COST),pal_1003_verwalter_wachen_ebene_1);
+		Info_AddChoice(pal_1003_verwalter_wachen,B_GetCostString(PRINT_GETWACHE1,WACHE_COST),pal_1003_verwalter_wachen_ebene_1);
 	};
 };
 
@@ -652,15 +652,15 @@ func void pal_1003_verwalter_hoehlen_soeldner_info()
 	Info_AddChoice(pal_1003_verwalter_hoehlen_soeldner,Dialog_Back,pal_1003_verwalter_hoehlen_soeldner_back);
 	if(L1_LEBENDEHOEHLENSOELDNER <= (MAXHOEHLENWACHEN - 5))
 	{
-		Info_AddChoice(pal_1003_verwalter_hoehlen_soeldner,b_getcoststring(PRINT_5HOEHLENSOELDNER,5 * HOEHLENSOELDNER),pal_1003_verwalter_hoehlen_soeldner_5_soeld);
+		Info_AddChoice(pal_1003_verwalter_hoehlen_soeldner,B_GetCostString(PRINT_5HOEHLENSOELDNER,5 * HOEHLENSOELDNER),pal_1003_verwalter_hoehlen_soeldner_5_soeld);
 	};
 	if(L1_LEBENDEHOEHLENSOELDNER <= (MAXHOEHLENWACHEN - 3))
 	{
-		Info_AddChoice(pal_1003_verwalter_hoehlen_soeldner,b_getcoststring(PRINT_3HOEHLENSOELDNER,3 * HOEHLENSOELDNER),pal_1003_verwalter_hoehlen_soeldner_3_soeld);
+		Info_AddChoice(pal_1003_verwalter_hoehlen_soeldner,B_GetCostString(PRINT_3HOEHLENSOELDNER,3 * HOEHLENSOELDNER),pal_1003_verwalter_hoehlen_soeldner_3_soeld);
 	};
 	if(L1_LEBENDEHOEHLENSOELDNER <= (MAXHOEHLENWACHEN - 1))
 	{
-		Info_AddChoice(pal_1003_verwalter_hoehlen_soeldner,b_getcoststring(PRINT_1HOEHLENSOELDNER,HOEHLENSOELDNER),pal_1003_verwalter_hoehlen_soeldner_1_soeld);
+		Info_AddChoice(pal_1003_verwalter_hoehlen_soeldner,B_GetCostString(PRINT_1HOEHLENSOELDNER,HOEHLENSOELDNER),pal_1003_verwalter_hoehlen_soeldner_1_soeld);
 	};
 };
 
@@ -749,23 +749,23 @@ func void pal_1003_verwalter_minen_soeldner_info()
 	Info_AddChoice(pal_1003_verwalter_minen_soeldner,Dialog_Back,pal_1003_verwalter_minen_soeldner_back);
 	if(L1_MINENLEUTE <= (MAXMINENLEUTE - 5))
 	{
-		Info_AddChoice(pal_1003_verwalter_minen_soeldner,b_getcoststring(PRINT_5MINENWACHE,5 * MINENWACHE),pal_1003_verwalter_minen_soeldner_5_wache);
+		Info_AddChoice(pal_1003_verwalter_minen_soeldner,B_GetCostString(PRINT_5MINENWACHE,5 * MINENWACHE),pal_1003_verwalter_minen_soeldner_5_wache);
 	};
 	if(L1_MINENLEUTE <= (MAXMINENLEUTE - 3))
 	{
-		Info_AddChoice(pal_1003_verwalter_minen_soeldner,b_getcoststring(PRINT_3MINENWACHE,3 * MINENWACHE),pal_1003_verwalter_minen_soeldner_3_wache);
+		Info_AddChoice(pal_1003_verwalter_minen_soeldner,B_GetCostString(PRINT_3MINENWACHE,3 * MINENWACHE),pal_1003_verwalter_minen_soeldner_3_wache);
 	};
 	if(L1_MINENLEUTE <= (MAXMINENLEUTE - 1))
 	{
-		Info_AddChoice(pal_1003_verwalter_minen_soeldner,b_getcoststring(PRINT_1MINENWACHE,MINENWACHE),pal_1003_verwalter_minen_soeldner_wache);
+		Info_AddChoice(pal_1003_verwalter_minen_soeldner,B_GetCostString(PRINT_1MINENWACHE,MINENWACHE),pal_1003_verwalter_minen_soeldner_wache);
 	};
 	if(L1_MINENLEUTE <= (MAXMINENLEUTE - 2))
 	{
-		Info_AddChoice(pal_1003_verwalter_minen_soeldner,b_getcoststring(PRINT_2MINENARBEITER,MINENARBEITERSOELDNER * 2),pal_1003_verwalter_minen_soeldner_2_arbeiter);
+		Info_AddChoice(pal_1003_verwalter_minen_soeldner,B_GetCostString(PRINT_2MINENARBEITER,MINENARBEITERSOELDNER * 2),pal_1003_verwalter_minen_soeldner_2_arbeiter);
 	};
 	if(L1_MINENLEUTE <= (MAXMINENLEUTE - 1))
 	{
-		Info_AddChoice(pal_1003_verwalter_minen_soeldner,b_getcoststring(PRINT_1MINENARBEITER,MINENARBEITERSOELDNER),pal_1003_verwalter_minen_soeldner_arbeiter);
+		Info_AddChoice(pal_1003_verwalter_minen_soeldner,B_GetCostString(PRINT_1MINENARBEITER,MINENARBEITERSOELDNER),pal_1003_verwalter_minen_soeldner_arbeiter);
 	};
 };
 
@@ -909,28 +909,28 @@ func void pal_1003_verwalter_ehrenpunkte_info()
 	Info_AddChoice(pal_1003_verwalter_ehrenpunkte,Dialog_Back,pal_1003_verwalter_ehrenpunkte_back);
 	if((L1_REVIVE == FALSE) && (((LAGER == 2) && (FRAKTION_L2 == PAL)) || ((LAGER == 1) && (FRAKTION_L1 == PAL))))
 	{
-		Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_ehrenpunktstring("REVIVE"),pal_1003_verwalter_ehrenpunkte_revive);
+		Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_EhrenpunktString("REVIVE"),pal_1003_verwalter_ehrenpunkte_revive);
 	};
 	if((L1_VAMPIRSCHLAG == FALSE) && (((LAGER == 2) && (FRAKTION_L2 == TMP)) || ((LAGER == 1) && (FRAKTION_L1 == TMP))))
 	{
-		Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_ehrenpunktstring("VAMPIRSCHLAG"),pal_1003_verwalter_ehrenpunkte_vampir);
+		Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_EhrenpunktString("VAMPIRSCHLAG"),pal_1003_verwalter_ehrenpunkte_vampir);
 	};
 	if((L1_INSTANTKILL == FALSE) && (((LAGER == 2) && (FRAKTION_L2 == DJG)) || ((LAGER == 1) && (FRAKTION_L1 == DJG))))
 	{
-		Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_ehrenpunktstring("INSTANTKILL"),pal_1003_verwalter_ehrenpunkte_instantkill);
+		Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_EhrenpunktString("INSTANTKILL"),pal_1003_verwalter_ehrenpunkte_instantkill);
 	};
 	if((L1_UNTOTEN_SPAWN == FALSE) && (((LAGER == 2) && (FRAKTION_L2 == SKE)) || ((LAGER == 1) && (FRAKTION_L1 == SKE))))
 	{
-		Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_ehrenpunktstring("UNTOTENSPAWN"),pal_1003_verwalter_ehrenpunkte_untotenspawn);
+		Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_EhrenpunktString("UNTOTENSPAWN"),pal_1003_verwalter_ehrenpunkte_untotenspawn);
 	};
 	if(L1_UNSTERBLICHKEIT == FALSE)
 	{
-		Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_ehrenpunktstring("UNSTERBLICHKEIT"),pal_1003_verwalter_ehrenpunkte_unsterblichkeit);
+		Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_EhrenpunktString("UNSTERBLICHKEIT"),pal_1003_verwalter_ehrenpunkte_unsterblichkeit);
 	};
-	Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_ehrenpunktstring("SOELDNER"),pal_1003_verwalter_ehrenpunkte_merc);
-	Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_ehrenpunktstring("KING_HEAL"),pal_1003_verwalter_ehrenpunkte_king_heal);
-	Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_ehrenpunktstring("KLAUEN"),pal_1003_verwalter_ehrenpunkte_klau);
-	Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_ehrenpunktstring("GOLD"),pal_1003_verwalter_ehrenpunkte_gold);
+	Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_EhrenpunktString("SOELDNER"),pal_1003_verwalter_ehrenpunkte_merc);
+	Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_EhrenpunktString("KING_HEAL"),pal_1003_verwalter_ehrenpunkte_king_heal);
+	Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_EhrenpunktString("KLAUEN"),pal_1003_verwalter_ehrenpunkte_klau);
+	Info_AddChoice(pal_1003_verwalter_ehrenpunkte,b_EhrenpunktString("GOLD"),pal_1003_verwalter_ehrenpunkte_gold);
 };
 
 func void pal_1003_verwalter_ehrenpunkte_back()

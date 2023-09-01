@@ -29,7 +29,7 @@ instance PAL_1007_MINENAUFSEHER_MEHR_ARBEITER(C_Info)
 	information = pal_1007_minenaufseher_mehr_arbeiter_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_getcoststring(PRINT_ADDMINENARBEITER,MINENARBEITERCOST);
+	description = B_GetCostString(PRINT_ADDMINENARBEITER,MINENARBEITERCOST);
 };
 
 

@@ -1,5 +1,6 @@
+// Funkcje do budowania opcji dialogowych.
 
-func string B_BuildLearnString(var string text,var int kosten)
+func string B_BuildLearnString(var string text, var int kosten)
 {
 	var string concatText;
 	concatText = ConcatStrings(text,PRINT_Kosten);
@@ -8,7 +9,8 @@ func string B_BuildLearnString(var string text,var int kosten)
 	return concatText;
 };
 
-func string b_buildimprovelevelstring(var int level)
+// Funkcja sluzaca do budowania napisu opcji dialogowej zwiekszania poziomu zolnierzy.
+func string b_BuildImproveLevelString(var int level)
 {
 	var string concatText;
 	var int kosten;
@@ -20,7 +22,8 @@ func string b_buildimprovelevelstring(var int level)
 	return concatText;
 };
 
-func string b_getspellstring(var string spell,var int kosten)
+// Funkcja sluzaca do budowania napisu opcji dialogowej uczenia sie nowego czaru.
+func string B_GetSpellString(var string spell, var int kosten)
 {
 	var string concatText;
 	concatText = ConcatStrings("(",spell);
@@ -30,7 +33,9 @@ func string b_getspellstring(var string spell,var int kosten)
 	return concatText;
 };
 
-func string b_getcoststring(var string text,var int kosten)
+// Funkcja sluzaca do budowania napisu opcji dialogowej kupowania czegokolwiek za zloto.
+// Moze powinno by tak samo jak wyzej?
+func string B_GetCostString(var string text, var int kosten)
 {
 	var string concatText;
 	concatText = ConcatStrings(text," (");
@@ -39,7 +44,8 @@ func string b_getcoststring(var string text,var int kosten)
 	return concatText;
 };
 
-func string b_getcoststring_vielesoeldner(var string text,var int kosten)
+// Funkcja sluzaca do budowania napisu opcji dialogowej kupowania wielu najemnikow za zloto.
+func string B_GetCostString_Vielesoeldner(var string text, var int kosten)
 {
 	var string concatText;
 	concatText = ConcatStrings(text,PRINT_STRING_VIELESOELDNER);
@@ -48,7 +54,8 @@ func string b_getcoststring_vielesoeldner(var string text,var int kosten)
 	return concatText;
 };
 
-func string b_ehrenpunktstring(var string wish)
+// Funkcja sluzaca do budowania napisu opcji dialogowej kupowania rzeczy za honor.
+func string b_EhrenpunktString(var string wish)
 {
 	var string concatText;
 	var string cost;
@@ -131,7 +138,7 @@ func string b_ehrenpunktstring(var string wish)
 	return concatText;
 };
 
-func string b_klaustring(var int gold)
+func string b_KlauString(var int gold)
 {
 	var string concatText;
 	concatText = ConcatStrings(PRINT_KLAUSTRING1,IntToString(gold));

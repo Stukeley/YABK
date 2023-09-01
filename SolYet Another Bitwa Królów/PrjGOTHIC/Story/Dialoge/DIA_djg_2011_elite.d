@@ -30,7 +30,7 @@ instance DJG_2011_ELITE_HERO(C_Info)
 	information = djg_2011_elite_hero_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_getcoststring(PRINT_GETHERO,HERO_COST);
+	description = B_GetCostString(PRINT_GETHERO,HERO_COST);
 };
 
 
@@ -65,7 +65,7 @@ instance DJG_2011_ELITE_WAFFENUPGRADE(C_Info)
 	information = djg_2011_elite_waffenupgrade_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_getcoststring(PRINT_IMPROVEHEROWEAPON,HERO_WAFFENUPGRADE);
+	description = B_GetCostString(PRINT_IMPROVEHEROWEAPON,HERO_WAFFENUPGRADE);
 };
 
 
@@ -124,7 +124,7 @@ instance DJG_2011_ELITE_RUESTUNGSUPGRADE(C_Info)
 	information = djg_2011_elite_ruestungsupgrade_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_getcoststring(PRINT_IMPROVEHEROARMOR,HERO_RUESTUNGSUPGRADE);
+	description = B_GetCostString(PRINT_IMPROVEHEROARMOR,HERO_RUESTUNGSUPGRADE);
 };
 
 
@@ -197,7 +197,7 @@ instance DJG_2011_ELITE_ARMBRUSTUPGRADE(C_Info)
 	information = djg_2011_elite_armbrustupgrade_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_getcoststring(PRINT_IMPROVEHEROCROSSBOW,HERO_ARMBRUSTUPGRADE);
+	description = B_GetCostString(PRINT_IMPROVEHEROCROSSBOW,HERO_ARMBRUSTUPGRADE);
 };
 
 
@@ -264,7 +264,7 @@ instance DJG_2011_ELITE_QUICK_REVIVE(C_Info)
 	information = djg_2011_elite_quick_revive_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_getcoststring(PRINT_HEROQUICKREVIVE,HERO_QUICKREVIVE);
+	description = B_GetCostString(PRINT_HEROQUICKREVIVE,HERO_QUICKREVIVE);
 };
 
 

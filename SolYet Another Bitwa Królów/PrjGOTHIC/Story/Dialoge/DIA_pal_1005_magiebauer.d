@@ -30,7 +30,7 @@ instance PAL_1005_MAGIEBAUER_ERBAUEN(C_Info)
 	information = pal_1005_magiebauer_erbauen_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_getcoststring(PRINT_BUILDMAGE,MAGECOST);
+	description = B_GetCostString(PRINT_BUILDMAGE,MAGECOST);
 };
 
 

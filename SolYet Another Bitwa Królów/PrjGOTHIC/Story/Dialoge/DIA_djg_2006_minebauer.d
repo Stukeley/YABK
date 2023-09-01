@@ -30,7 +30,7 @@ instance DJG_2006_MINEBAUER_ERBAUEN(C_Info)
 	information = djg_2006_minebauer_erbauen_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_getcoststring(PRINT_BUILDMINE,MINENCOST);
+	description = B_GetCostString(PRINT_BUILDMINE,MINENCOST);
 };
 
 

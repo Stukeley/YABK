@@ -29,7 +29,7 @@ instance DJG_2007_MINENAUFSEHER_MEHR_ARBEITER(C_Info)
 	information = djg_2007_minenaufseher_mehr_arbeiter_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = b_getcoststring(PRINT_ADDMINENARBEITER,MINENARBEITERCOST);
+	description = B_GetCostString(PRINT_ADDMINENARBEITER,MINENARBEITERCOST);
 };
 
 
