@@ -21,12 +21,14 @@ Hierarchia interesujących nas plików źródłowych:
   |- SVM.d
   |- Text.d
   |- Story
-  	|- B_Story
+     |- B_Story
         |- (funkcje związane z działaniem niektórych elementów modyfikacji)
      |- Dialoge
         |- (dialogi z modyfikacji)
      |- NPC
         |- (NPC z modyfikacji)
+     |- YABK_Scripts
+        |- (skrypty z modyfikacji)
 ```
 
 Oznaczenia w plikach:
