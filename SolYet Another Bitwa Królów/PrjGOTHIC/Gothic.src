@@ -550,7 +550,7 @@ Story\B_Story\b_printschleife.d
 Story\B_Story\b_skelettkontrollchange.d
 Story\Dialog_Mobsis\B_OnHotkey.d
 Story\B_Content\B_ScUsesRake.d
-Story\B_Story\b_call.d
+Story\YABK_Scripts\B_Call.d
 Story\Dialoge\DIA_djg_2000_king.d
 Story\Dialoge\DIA_djg_2001_schmiedebauer.d
 Story\Dialoge\DIA_djg_2002_schmied.d
