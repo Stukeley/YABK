@@ -105,6 +105,7 @@ func void B_SetWachenAbilities(var C_Npc slf, var int gil)
 
 	face = Face_L_ToughBald01 + stufe;
 
+	// Ustawiamy niesmiertelnosc [perk za honor].
 	if (gil == GIL_PAL)
 	{
 		fraktion = FRAKTION_L1;
@@ -202,6 +203,8 @@ func void B_UpdateWachenAbilities(var C_Npc slf)
 		stufe = L2_WACHEN_LEVEL;
 	};
 	face = Face_L_ToughBald01 + stufe;
+
+	// Ustawiamy niesmiertelnosc [perk za honor].
 	if(slf.guild == GIL_PAL)
 	{
 		fraktion = FRAKTION_L1;

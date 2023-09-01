@@ -995,7 +995,7 @@ func void djg_2003_verwalter_ehrenpunkte_unsterblichkeit()
 	if(L2_EHRENPUNKTE >= UNSTERBLICHKEIT_COST)
 	{
 		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
-		b_mach_unsterblich_1();
+		B_SetImmortalAll_L2();
 		L2_EHRENPUNKTE -= UNSTERBLICHKEIT_COST;
 	}
 	else

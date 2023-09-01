@@ -97,7 +97,7 @@ func void B_SetMercAbilities(var C_Npc slf, var int gil, var int stufe)
 		};
 	};
 
-	// Ustawienie niesmiertelnosci.
+	// Ustawiamy niesmiertelnosc [perk za honor].
 	if(unsterblichkeit == TRUE)
 	{
 		slf.flags = NPC_FLAG_IMMORTAL;

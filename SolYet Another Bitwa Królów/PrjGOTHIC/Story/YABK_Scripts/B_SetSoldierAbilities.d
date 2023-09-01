@@ -44,9 +44,7 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 	Npc_SetTalentSkill(self, NPC_TALENT_1H, 0);
 	Npc_SetTalentSkill(self, NPC_TALENT_2H, 0);
 
-	// aivar - tablica sterujaca AI.
-	// Dlaczego takie wartosci?
-
+	// Ustawiamy m.in. niesmiertelnosc [perk za honor].
 	if (gil == GIL_PAL)
 	{
 		fraktion = FRAKTION_L1;
@@ -88,6 +86,8 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 
 	face = Face_N_NormalBart01 + stufe;
 
+	// aivar - tablica sterujaca AI.
+	// Dlaczego takie wartosci?
 	slf.aivar[96] = stufe;
 	slf.aivar[98] = face;
 	slf.aivar[99] = 1;

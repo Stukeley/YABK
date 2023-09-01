@@ -257,7 +257,7 @@ AI\Magic\ZS_Magic\ZS_Swarm.d
 AI\Magic\ZS_Magic\ZS_Whirlwind.d
 AI\Magic\ZS_Magic\ZS_Zapped.d
 Story\B_Story\B_GiveDeathInv.d
-Story\B_Story\b_unsterblichkeit.d
+Story\YABK_Scripts\B_Immortality.d
 Story\NPC_Scripts\B_SetNpcVisual.d
 Story\YABK_Scripts\B_SetSkelettVisual.d
 AI\Human\TA.d

@@ -438,7 +438,7 @@ func void b_lagereinski_wirtschaft()
 	};
 	if(Npc_IsInState(djg_2000_king,ZS_Attack) && (L1_EHRENPUNKTE >= UNSTERBLICHKEIT_COST) && (L1_UNSTERBLICHKEIT == FALSE) && (L1_SOLDIER_LEVEL >= 7) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
-		b_mach_unsterblich_1();
+		B_SetImmortalAll_L1();
 		L1_EHRENPUNKTE -= UNSTERBLICHKEIT_COST;
 		b_debug("Der gegnerische König wird angegriffen, also leiste ich mir Unsterblichkeit für ",UNSTERBLICHKEIT_COST);
 	};
@@ -861,7 +861,7 @@ func void b_lagereinski_held()
 	};
 	if(Npc_IsInState(djg_2000_king,ZS_Attack) && (L1_EHRENPUNKTE >= UNSTERBLICHKEIT_COST) && (L1_UNSTERBLICHKEIT == FALSE) && (L1_SOLDIER_LEVEL >= 7) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
-		b_mach_unsterblich_1();
+		B_SetImmortalAll_L1();
 		L1_EHRENPUNKTE -= UNSTERBLICHKEIT_COST;
 		b_debug("Der gegnerische König wird angegriffen, also leiste ich mir Unsterblichkeit für ",UNSTERBLICHKEIT_COST);
 	};
@@ -1003,7 +1003,7 @@ func void b_lagereinski_soeldner()
 	};
 	if(Npc_IsInState(djg_2000_king,ZS_Attack) && (L1_EHRENPUNKTE >= UNSTERBLICHKEIT_COST) && (L1_UNSTERBLICHKEIT == FALSE))
 	{
-		b_mach_unsterblich_1();
+		B_SetImmortalAll_L1();
 		L1_EHRENPUNKTE -= UNSTERBLICHKEIT_COST;
 		b_debug("Der gegnerische König wird angegriffen, also leiste ich mir Unsterblichkeit für ",UNSTERBLICHKEIT_COST);
 	};
@@ -1015,7 +1015,7 @@ func void b_lagereinski_soeldner()
 	};
 	if(Npc_IsInState(djg_2000_king,ZS_Attack) && (L1_EHRENPUNKTE >= UNSTERBLICHKEIT_COST) && (L1_UNSTERBLICHKEIT == FALSE))
 	{
-		b_mach_unsterblich_2();
+		B_SetImmortalAll_L2();
 		L1_EHRENPUNKTE -= UNSTERBLICHKEIT_COST;
 	};
 	if(L1_EHRENPUNKTE >= MERC_COST)

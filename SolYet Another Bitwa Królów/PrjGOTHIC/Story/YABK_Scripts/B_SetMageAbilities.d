@@ -189,7 +189,8 @@ func void B_SetMageAbilities(var C_Npc slf,var int gil)
 	// Ustawiamy uzywany spell na wybrany w dialogu.
 	slf.aivar[89] = favoritspell;
 
-	if(unsterblichkeit == TRUE)
+	// Ustawiamy niesmiertelnosc [perk za honor].
+	if (unsterblichkeit == TRUE)
 	{
 		slf.flags = NPC_FLAG_IMMORTAL;
 	};
