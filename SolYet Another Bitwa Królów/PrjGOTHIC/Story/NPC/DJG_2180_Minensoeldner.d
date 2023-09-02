@@ -24,7 +24,7 @@ instance DJG_2180_MINENSOELDNER(Npc_Default)
 	{
 		B_SetSkelettVisual(self,2);
 	};
-	if(L2_UNSTERBLICHKEIT == TRUE)
+	if(L2_BONUSHPPERK == TRUE)
 	{
 		flags = NPC_FLAG_IMMORTAL;
 	};

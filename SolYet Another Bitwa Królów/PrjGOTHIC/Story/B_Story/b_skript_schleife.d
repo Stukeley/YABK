@@ -1,4 +1,6 @@
+// Plik zawierajacy skrypt powiazany bezposrednio z pojawianiem sie jednostek co jakis czas.
 
+// Funkcja reprezentujaca "petle"? zwiazana z pojawianiem sie jednostek.
 func void b_skript_schleife()
 {
 	ABLAUF += 1;

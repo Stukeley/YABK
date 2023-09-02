@@ -19,6 +19,9 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	// Poziom kuszy bohatera (od 0 do 4).
 	var int armbrustlevel;
 
+	// Dodatkowe HP [perk za honor].
+	var int bonusHpPerk;
+
 	// Domyslne atrybuty bohatera.
 	slf.attribute[ATR_STRENGTH] = 10;
 	slf.aivar[REAL_STRENGTH] = 10;
@@ -52,6 +55,7 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 		schwertlevel = L2_HELD_SCHWERTLEVEL;
 		armbrustlevel = L2_HELD_ARMBRUSTLEVEL;
 		slf.name[0] = NPCNAME_HERO_DJG;
+		bonusHpPerk = L2_BONUSHPPERK;
 	}
 	else if (gil == GIL_PAL)
 	{
@@ -61,6 +65,7 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 		schwertlevel = L1_HELD_SCHWERTLEVEL;
 		armbrustlevel = L1_HELD_ARMBRUSTLEVEL;
 		slf.name[0] = NPCNAME_HERO_PAL;
+		bonusHpPerk = L1_BONUSHPPERK;
 	};
 
 	// aivar - tablica sterujaca AI.
@@ -254,6 +259,11 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	{
 		slf.aivar[97] = 2;
 		slf.aivar[94] = 0;
+	};
+
+	if (bonusHpPerk == TRUE)
+	{
+		B_SetUnitHpOverLimit(slf, gil);
 	};
 };
 

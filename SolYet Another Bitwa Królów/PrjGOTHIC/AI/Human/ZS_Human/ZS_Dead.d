@@ -390,10 +390,6 @@ func int ZS_Dead_loop()
 				CreateInvItems(self,ItPo_Health_Addon_04,1);
 			};
 			self.aivar[89] = L1_FAVORITSPELL;
-			if(L1_UNSTERBLICHKEIT == TRUE)
-			{
-				self.flags = NPC_FLAG_IMMORTAL;
-			};
 		}
 		else if(Hlp_GetInstanceID(self) == djg_2120_magier)
 		{
@@ -420,10 +416,6 @@ func int ZS_Dead_loop()
 				CreateInvItems(self,ItPo_Health_Addon_04,1);
 			};
 			self.aivar[89] = L2_FAVORITSPELL;
-			if(L2_UNSTERBLICHKEIT == TRUE)
-			{
-				self.flags = NPC_FLAG_IMMORTAL;
-			};
 		}
 		else if(Hlp_GetInstanceID(self) == pal_1100_soldat)
 		{

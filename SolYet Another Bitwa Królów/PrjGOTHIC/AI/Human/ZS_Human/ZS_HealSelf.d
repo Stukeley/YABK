@@ -2,12 +2,10 @@
 func void ZS_HealSelf()
 {
 	Perception_Set_Minimal();
-	B_ToggleImmortal(self);
 };
 
 func int ZS_HealSelf_Loop()
 {
-	B_ToggleImmortal(self);
 	if(self.attribute[ATR_HITPOINTS] == self.attribute[ATR_HITPOINTS_MAX])
 	{
 		Npc_ClearAIQueue(self);

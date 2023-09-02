@@ -97,31 +97,15 @@ func void B_SetWachenAbilities(var C_Npc slf, var int gil)
 	if (gil == GIL_PAL)
 	{
 		stufe = L1_WACHEN_LEVEL;
+		fraktion = FRAKTION_L1;
 	}
 	else if (gil == GIL_DJG)
 	{
 		stufe = L2_WACHEN_LEVEL;
+		fraktion = FRAKTION_L2;
 	};
 
 	face = Face_L_ToughBald01 + stufe;
-
-	// Ustawiamy niesmiertelnosc [perk za honor].
-	if (gil == GIL_PAL)
-	{
-		fraktion = FRAKTION_L1;
-		if (L1_UNSTERBLICHKEIT == TRUE)
-		{
-			slf.flags = NPC_FLAG_IMMORTAL;
-		};
-	}
-	else if (gil == GIL_DJG)
-	{
-		fraktion = FRAKTION_L2;
-		if (L2_UNSTERBLICHKEIT == TRUE)
-		{
-			slf.flags = NPC_FLAG_IMMORTAL;
-		};
-	};
 
 	// AI.
 	slf.aivar[98] = face;
@@ -197,30 +181,14 @@ func void B_UpdateWachenAbilities(var C_Npc slf)
 	if(slf.guild == GIL_PAL)
 	{
 		stufe = L1_WACHEN_LEVEL;
+		fraktion = FRAKTION_L1;
 	}
 	else if(slf.guild == GIL_DJG)
 	{
 		stufe = L2_WACHEN_LEVEL;
+		fraktion = FRAKTION_L2;
 	};
 	face = Face_L_ToughBald01 + stufe;
-
-	// Ustawiamy niesmiertelnosc [perk za honor].
-	if(slf.guild == GIL_PAL)
-	{
-		fraktion = FRAKTION_L1;
-		if(L1_UNSTERBLICHKEIT == TRUE)
-		{
-			slf.flags = NPC_FLAG_IMMORTAL;
-		};
-	}
-	else if(slf.guild == GIL_DJG)
-	{
-		fraktion = FRAKTION_L2;
-		if(L2_UNSTERBLICHKEIT == TRUE)
-		{
-			slf.flags = NPC_FLAG_IMMORTAL;
-		};
-	};
 
 	// Ustawienie pancerza, broni i statystyk.
 	B_UpdateGenericWachenAbilities(self, fraktion, stufe);

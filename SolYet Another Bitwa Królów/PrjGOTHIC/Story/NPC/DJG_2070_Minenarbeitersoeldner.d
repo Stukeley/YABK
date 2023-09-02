@@ -14,7 +14,7 @@ instance DJG_2070_MINENARBEITERSOELDNER(Npc_Default)
 	aivar[AIV_IgnoresArmor] = TRUE;
 	aivar[AIV_NoFightParker] = TRUE;
 	aivar[97] = 3;
-	if(L2_UNSTERBLICHKEIT == TRUE)
+	if(L2_BONUSHPPERK == TRUE)
 	{
 		flags = NPC_FLAG_IMMORTAL;
 	};

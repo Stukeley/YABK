@@ -24,7 +24,7 @@ instance DJG_2190_HOEHLENSOELDNER(Npc_Default)
 	{
 		B_SetSkelettVisual(self,3);
 	};
-	if(L2_UNSTERBLICHKEIT == TRUE)
+	if(L2_BONUSHPPERK == TRUE)
 	{
 		flags = NPC_FLAG_IMMORTAL;
 	};

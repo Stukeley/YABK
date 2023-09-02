@@ -14,10 +14,6 @@ instance PAL_1070_MINENARBEITERSOELDNER(Npc_Default)
 	aivar[AIV_IgnoresArmor] = TRUE;
 	aivar[AIV_NoFightParker] = TRUE;
 	aivar[97] = 3;
-	if(L1_UNSTERBLICHKEIT == TRUE)
-	{
-		flags = NPC_FLAG_IMMORTAL;
-	};
 	B_SetAttributesToChapter(self,1);
 	Mdl_SetVisual(self,"humans.mds");
 	Mdl_ApplyOverlayMds(self,"humans_relaxed.mds");

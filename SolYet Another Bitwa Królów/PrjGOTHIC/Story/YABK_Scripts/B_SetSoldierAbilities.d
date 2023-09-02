@@ -19,6 +19,9 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 	// Uzywany miecz (zalezny od ulepszen).
 	var int used_weapon;
 
+	// Dodatkowe HP [perk za honor].
+	var int bonusHpPerk;
+
 	// Domyslne atrybuty zolnierza.
 	slf.attribute[ATR_STRENGTH] = 10;
 	slf.aivar[REAL_STRENGTH] = 10;
@@ -49,9 +52,9 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 	{
 		fraktion = FRAKTION_L1;
 		stufe = L1_SOLDIER_LEVEL;
-		if (L1_UNSTERBLICHKEIT == TRUE)
+		if (L1_BONUSHPPERK == TRUE)
 		{
-			slf.flags = NPC_FLAG_IMMORTAL;
+			bonusHpPerk = TRUE;
 		};
 
 		// Jezeli mamy umiejetnosc "Pelnia Zycia" od uczonego.
@@ -64,13 +67,13 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 		used_weapon = L1_USED_WEAPON;
 		slf.name[0] = NPCNAME_SOLDAT_PAL;
 	}
-	else
+	else if (gil == GIL_DJG)
 	{
 		fraktion = FRAKTION_L2;
 		stufe = L2_SOLDIER_LEVEL;
-		if (L2_UNSTERBLICHKEIT == TRUE)
+		if (L2_BONUSHPPERK == TRUE)
 		{
-			slf.flags = NPC_FLAG_IMMORTAL;
+			bonusHpPerk = TRUE;
 		};
 
 		// Jezeli mamy umiejetnosc "Pelnia Zycia" od uczonego.
@@ -194,5 +197,11 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 	var int soldier_weapon;
 	soldier_weapon = B_GetSoldierWeapon(gil, used_weapon);
 	EquipItem(slf, soldier_weapon);
+
+	// Ustawiamy dodatkowe HP [perk za honor].
+	if (bonusHpPerk == TRUE)
+	{
+		B_SetUnitHpOverLimit(slf, gil);
+	};
 };
 

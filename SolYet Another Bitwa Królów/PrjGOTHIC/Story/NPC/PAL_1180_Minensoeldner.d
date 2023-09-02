@@ -24,10 +24,6 @@ instance PAL_1180_MINENSOELDNER(Npc_Default)
 	{
 		B_SetSkelettVisual(self,2);
 	};
-	if(L1_UNSTERBLICHKEIT == TRUE)
-	{
-		flags = NPC_FLAG_IMMORTAL;
-	};
 	aivar[97] = 3;
 	Mdl_SetVisual(self,"HumanS.mds");
 	Mdl_ApplyOverlayMds(self,"humans_relaxed.mds");

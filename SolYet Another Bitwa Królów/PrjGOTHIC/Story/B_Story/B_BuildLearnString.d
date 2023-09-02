@@ -60,10 +60,10 @@ func string b_EhrenpunktString(var string wish)
 	var string concatText;
 	var string cost;
 	var string Chance;
-	if(Hlp_StrCmp(wish,"UNSTERBLICHKEIT"))
+	if(Hlp_StrCmp(wish,"BONUSHPPERK"))
 	{
-		cost = IntToString(UNSTERBLICHKEIT_COST);
-		concatText = ConcatStrings(PRINT_UNSTERBLICHKEIT,cost);
+		cost = IntToString(BONUSHPPERK_COST);
+		concatText = ConcatStrings(PRINT_BONUSHPPERK,cost);
 		concatText = ConcatStrings(concatText,PRINT_NEEDEDEHRE);
 	}
 	else if(Hlp_StrCmp(wish,"GOLD"))

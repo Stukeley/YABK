@@ -915,9 +915,9 @@ func void djg_2003_verwalter_ehrenpunkte_info()
 	{
 		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("UNTOTENSPAWN"),djg_2003_verwalter_ehrenpunkte_untotenspawn);
 	};
-	if(L2_UNSTERBLICHKEIT == FALSE)
+	if(L2_BONUSHPPERK == FALSE)
 	{
-		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("UNSTERBLICHKEIT"),djg_2003_verwalter_ehrenpunkte_unsterblichkeit);
+		Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("BONUSHPPERK"),djg_2003_verwalter_ehrenpunkte_bonushpperk);
 	};
 	Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("SOELDNER"),djg_2003_verwalter_ehrenpunkte_merc);
 	Info_AddChoice(djg_2003_verwalter_ehrenpunkte,b_EhrenpunktString("KING_HEAL"),djg_2003_verwalter_ehrenpunkte_king_heal);
@@ -990,13 +990,13 @@ func void djg_2003_verwalter_ehrenpunkte_untotenspawn()
 	Info_ClearChoices(djg_2003_verwalter_ehrenpunkte);
 };
 
-func void djg_2003_verwalter_ehrenpunkte_unsterblichkeit()
+func void djg_2003_verwalter_ehrenpunkte_bonushpperk()
 {
-	if(L2_EHRENPUNKTE >= UNSTERBLICHKEIT_COST)
+	if(L2_EHRENPUNKTE >= BONUSHPPERK_COST)
 	{
 		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
-		B_SetImmortalAll_L2();
-		L2_EHRENPUNKTE -= UNSTERBLICHKEIT_COST;
+		L2_BONUSHPPERK = TRUE;
+		L2_EHRENPUNKTE -= BONUSHPPERK_COST;
 	}
 	else
 	{

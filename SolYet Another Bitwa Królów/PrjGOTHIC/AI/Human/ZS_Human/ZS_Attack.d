@@ -8,7 +8,6 @@ func void B_AssessSurprise()
 func void ZS_Attack()
 {
 	Perception_Set_Minimal();
-	B_ToggleImmortal(self);
 	Npc_PercEnable(self,PERC_ASSESSSURPRISE,B_AssessSurprise);
 	B_ValidateOther();
 	self.aivar[AIV_LASTTARGET] = Hlp_GetInstanceID(other);
@@ -51,7 +50,6 @@ func void ZS_Attack()
 func int ZS_Attack_Loop()
 {
 	var C_Item waffe;
-	B_ToggleImmortal(self);
 	Npc_GetTarget(self);
 	if(Npc_GetDistToNpc(self,other) > self.aivar[AIV_FightDistCancel])
 	{

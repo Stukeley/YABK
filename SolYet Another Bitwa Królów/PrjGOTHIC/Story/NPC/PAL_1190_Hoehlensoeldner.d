@@ -24,10 +24,6 @@ instance PAL_1190_HOEHLENSOELDNER(Npc_Default)
 	{
 		B_SetSkelettVisual(self,3);
 	};
-	if(L1_UNSTERBLICHKEIT == TRUE)
-	{
-		flags = NPC_FLAG_IMMORTAL;
-	};
 	aivar[97] = 4;
 	Mdl_SetVisual(self,"HumanS.mds");
 	Mdl_ApplyOverlayMds(self,"humans_relaxed.mds");

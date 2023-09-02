@@ -1,9 +1,11 @@
+// Plik zawiera funkcje wywolywane na poczatku gry.
 
 func void startup_global()
 {
 	Game_InitGerman();
 };
 
+// Glowna funkcja startup.
 func void init_global()
 {
 	LOAD = LOAD + 1;

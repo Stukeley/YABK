@@ -1,3 +1,4 @@
+// Itemy do testowania - mieszek z goldem i mieszek z honorem.
 
 instance ITSE_GOLDPOCKET1000(C_Item)
 {
@@ -12,8 +13,8 @@ instance ITSE_GOLDPOCKET1000(C_Item)
 	description = "Ein Lederbeutel";
 	text[0] = "";
 	text[1] = "";
-	text[2] = "Ein prallgefüllter Beutel";
-	text[3] = "gefüllt mit goldenen Münzen";
+	text[2] = "Mieszek zawieraj¹cy 1000 Sztuk Z³ota";
+	text[3] = "";
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;
@@ -39,8 +40,8 @@ instance ITSE_EHRENPOCKET1000(C_Item)
 	description = "Ein Lederbeutel";
 	text[0] = "";
 	text[1] = "";
-	text[2] = "Ein prallgefüllter Beutel";
-	text[3] = "gefüllt mit Ehrenpunkten";
+	text[2] = "Mieszek zawieraj¹cy 1000 Punktów Honoru";
+	text[3] = "";
 	text[4] = "";
 	text[5] = NAME_Value;
 	count[5] = value;

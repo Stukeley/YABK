@@ -1,4 +1,6 @@
-// Plik zawiera funkcje zwiazane z czasem.
+// Plik zawiera funkcje i stale zwiazane z czasem.
+
+const int REAL_SECONDS_PER_GAME_MINUTE = 5;
 
 // Funkcja (najprawdopodobniej) wykorystywana do debugowania, albo wcale.
 func void b_call(var int integer)

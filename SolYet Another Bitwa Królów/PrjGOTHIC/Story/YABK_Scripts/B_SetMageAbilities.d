@@ -2,7 +2,7 @@
 
 // Funkcja zmieniajaca parametry stworzonego Maga (C_Npc) w zaleznosci od gildii (gil) z uwzglednieniem m.in. ulepszen.
 // gil - gildia (GIL_PAL = czerwoni, lub GIL_DJG = niebiescy)
-func void B_SetMageAbilities(var C_Npc slf,var int gil)
+func void B_SetMageAbilities(var C_Npc slf, var int gil)
 {
 	// Frakcja maga - PAL (Paladyn), DJG (Lowca Smokow), TMP (Templariusz), SKE (Ozywieniec).
 	var int fraktion;
@@ -28,8 +28,8 @@ func void B_SetMageAbilities(var C_Npc slf,var int gil)
 	// Ustawiony uzywany spell.
 	var int favoritspell;
 
-	// Niesmiertelnosc?
-	var int unsterblichkeit;
+	// Perk "Zdrowie".
+	var int bonusHpPerk;
 
 	// Poziom maga (jaki?).
 	var int stufe;
@@ -59,7 +59,7 @@ func void B_SetMageAbilities(var C_Npc slf,var int gil)
 	if (gil == GIL_PAL)
 	{
 		stufe = L1_MAGE_LEVEL;
-		unsterblichkeit = L1_UNSTERBLICHKEIT;
+		bonusHpPerk = L1_bonusHpPerk;
 		fraktion = FRAKTION_L1;
 		magierupdate = L1_MAGIERUPDATE;
 		slf.name[0] = NPCNAME_MAGE_PAL;
@@ -73,7 +73,7 @@ func void B_SetMageAbilities(var C_Npc slf,var int gil)
 	else if (gil == GIL_DJG)
 	{
 		stufe = L2_MAGE_LEVEL;
-		unsterblichkeit = L2_UNSTERBLICHKEIT;
+		bonusHpPerk = L2_bonusHpPerk;
 		fraktion = FRAKTION_L2;
 		magierupdate = L2_MAGIERUPDATE;
 		slf.name[0] = NPCNAME_MAGE_DJG;
@@ -189,10 +189,10 @@ func void B_SetMageAbilities(var C_Npc slf,var int gil)
 	// Ustawiamy uzywany spell na wybrany w dialogu.
 	slf.aivar[89] = favoritspell;
 
-	// Ustawiamy niesmiertelnosc [perk za honor].
-	if (unsterblichkeit == TRUE)
+	// Ustawiamy dodatkowe zdrowie [perk za honor].
+	if (bonusHpPerk == TRUE)
 	{
-		slf.flags = NPC_FLAG_IMMORTAL;
+		B_SetUnitHpOverLimit(slf, gil);
 	};
 };
 

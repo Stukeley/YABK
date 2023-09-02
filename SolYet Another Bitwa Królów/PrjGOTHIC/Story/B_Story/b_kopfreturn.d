@@ -345,7 +345,6 @@ func void ZS_RunToWP()
 {
 	Perception_Set_Normal();
 	B_ResetAll(self);
-	B_ToggleImmortal(self);
 	self.aivar[AIV_TAPOSITION] = NOTINPOS;
 	AI_SetWalkMode(self,NPC_RUN);
 	b_kopfreturn(self);
@@ -370,7 +369,6 @@ func int ZS_RunToWP_Loop()
 	{
 		AI_GotoWP(self,self.wp);
 	};
-	B_ToggleImmortal(self);
 	self.aivar[AIV_TAPOSITION] = ISINPOS;
 	if(self.aivar[AIV_TAPOSITION] == ISINPOS)
 	{

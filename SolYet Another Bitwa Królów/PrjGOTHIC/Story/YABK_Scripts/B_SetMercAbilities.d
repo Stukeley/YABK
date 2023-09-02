@@ -11,9 +11,6 @@ func void B_SetMercAbilities(var C_Npc slf, var int gil, var int stufe)
 	// Frakcja najemnika - PAL (Paladyn), DJG (Lowca Smokow), TMP (Templariusz), SKE (Ozywieniec).
 	var int fraktion;
 
-	// Niesmiertelnosc?
-	var int unsterblichkeit;
-
 	// Domyslne atrybuty najemnika.
 	slf.attribute[ATR_STRENGTH] = 10;
 	slf.aivar[REAL_STRENGTH] = 10;
@@ -59,12 +56,10 @@ func void B_SetMercAbilities(var C_Npc slf, var int gil, var int stufe)
 	if ((gil == GIL_PAL) || (gil == GIL_MIL))
 	{
 		fraktion = FRAKTION_L1;
-		unsterblichkeit = L1_UNSTERBLICHKEIT;
 	}
 	else if ((gil == GIL_DJG) || (gil == GIL_SLD))
 	{
 		fraktion = FRAKTION_L2;
-		unsterblichkeit = L2_UNSTERBLICHKEIT;
 	};
 
 	// AI.
@@ -95,12 +90,6 @@ func void B_SetMercAbilities(var C_Npc slf, var int gil, var int stufe)
 		{
 			B_SetNpcVisual(slf, MALE, "Hum_Head_Bald", slf.aivar[98], BodyTex_P, merc_armor);
 		};
-	};
-
-	// Ustawiamy niesmiertelnosc [perk za honor].
-	if(unsterblichkeit == TRUE)
-	{
-		slf.flags = NPC_FLAG_IMMORTAL;
 	};
 
 	slf.guild = gil;

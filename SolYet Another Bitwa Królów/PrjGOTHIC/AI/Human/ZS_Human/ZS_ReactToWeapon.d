@@ -2,7 +2,6 @@
 func void ZS_ReactToWeapon()
 {
 	Perception_Set_Minimal();
-	B_ToggleImmortal(self);
 	Npc_PercEnable(self,PERC_ASSESSFIGHTSOUND,B_AssessFightSound);
 	if(B_AssessEnemy())
 	{

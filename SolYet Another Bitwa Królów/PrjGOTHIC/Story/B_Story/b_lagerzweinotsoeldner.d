@@ -1,3 +1,4 @@
+// Wyglada jak plik odpowiedzialny za "AI" przeciwnika.
 
 var int l2_ehrenpunktchoice;
 var int ki_type_2;
@@ -436,11 +437,17 @@ func void b_lagerzweiki_wirtschaft()
 		b_debug("Ich kaufe drei meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 2);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
-	if(Npc_IsInState(pal_1000_king,ZS_Attack) && (L2_EHRENPUNKTE >= UNSTERBLICHKEIT_COST) && (L2_UNSTERBLICHKEIT == FALSE) && (L2_SOLDIER_LEVEL >= 7) && (SCHWIERIGKEIT >= DIFF_NORMAL))
+	if(Npc_IsInState(pal_1000_king,ZS_Attack) && (L2_EHRENPUNKTE >= BONUSHPPERK_COST) && (L2_BONUSHPPERK == FALSE) && (L2_SOLDIER_LEVEL >= 7) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
-		B_SetImmortalAll_L2();
-		L2_EHRENPUNKTE -= UNSTERBLICHKEIT_COST;
-		b_debug("Der gegnerische König wird angegriffen, also leiste ich mir Unsterblichkeit für ",UNSTERBLICHKEIT_COST);
+		L2_BONUSHPPERK = TRUE;
+		L2_EHRENPUNKTE -= BONUSHPPERK_COST;
+		b_debug("Der gegnerische König wird angegriffen, also leiste ich mir Unsterblichkeit für ",BONUSHPPERK_COST);
+	};
+	if (L2_BONUSHPPERK == FALSE && L2_EHRENPUNKTE >= BONUSHPPERK_COST && SCHWIERIGKEIT >= DIFF_NORMAL)
+	{
+		L2_EHRENPUNKTE -= BONUSHPPERK_COST;
+		L2_BONUSHPPERK = TRUE;
+		b_debug("Ich kaufe mir den Bonus-HP-Perk für: ", BONUSHPPERK_COST);
 	};
 	if((L2_EHRENPUNKTE >= REVIVE_COST) && ((L2_REVIVE == FALSE) && (FRAKTION_L2 == PAL)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
@@ -463,7 +470,7 @@ func void b_lagerzweiki_wirtschaft()
 		L2_EHRENPUNKTCHOICE = 0;
 		b_debug("Ich kaufe mir den Instantkill für: ",INSTANTKILL_COST);
 	};
-	if((L2_EHRENPUNKTE >= (UNSTERBLICHKEIT_COST + MERC_COST)) && (L2_EHRENPUNKTCHOICE == 1) && (SCHWIERIGKEIT >= DIFF_NORMAL) && ((L2_REVIVE == TRUE) || (L2_INSTANTKILL == TRUE) || (L2_VAMPIRSCHLAG == TRUE)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
+	if((L2_EHRENPUNKTE >= (BONUSHPPERK_COST + MERC_COST)) && (L2_EHRENPUNKTCHOICE == 1) && (SCHWIERIGKEIT >= DIFF_NORMAL) && ((L2_REVIVE == TRUE) || (L2_INSTANTKILL == TRUE) || (L2_VAMPIRSCHLAG == TRUE)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
 		L2_EHRENPUNKTE -= MERC_COST;
 		L2_CURRENT_MERCLEVEL = 4;
@@ -473,7 +480,7 @@ func void b_lagerzweiki_wirtschaft()
 		b_debug("Ich hole mir zwei Söldner für soviele Ehrenpunkte: ",MERC_COST);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
-	if((L2_EHRENPUNKTE >= (UNSTERBLICHKEIT_COST + KLAU_COST)) && (SCHWIERIGKEIT >= DIFF_NORMAL) && (L2_EHRENPUNKTCHOICE == 0) && ((L2_REVIVE == TRUE) || (L2_INSTANTKILL == TRUE) || (L2_VAMPIRSCHLAG == TRUE)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
+	if((L2_EHRENPUNKTE >= (BONUSHPPERK_COST + KLAU_COST)) && (SCHWIERIGKEIT >= DIFF_NORMAL) && (L2_EHRENPUNKTCHOICE == 0) && ((L2_REVIVE == TRUE) || (L2_INSTANTKILL == TRUE) || (L2_VAMPIRSCHLAG == TRUE)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
 		havegold = Npc_HasItems(hero,ItMi_Gold);
 		if(havegold >= KLAU_FUER_EHRENPUNKTE)
@@ -868,11 +875,17 @@ func void b_lagerzweiki_held()
 		b_debug("Ich kaufe acht meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 2);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
-	if(Npc_IsInState(pal_1000_king,ZS_Attack) && (L2_EHRENPUNKTE >= UNSTERBLICHKEIT_COST) && (L2_UNSTERBLICHKEIT == FALSE) && (L2_SOLDIER_LEVEL >= 7) && (SCHWIERIGKEIT >= DIFF_NORMAL))
+	if(Npc_IsInState(pal_1000_king,ZS_Attack) && (L2_EHRENPUNKTE >= BONUSHPPERK_COST) && (L2_BONUSHPPERK == FALSE) && (L2_SOLDIER_LEVEL >= 7) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
-		B_SetImmortalAll_L1();
-		L2_EHRENPUNKTE -= UNSTERBLICHKEIT_COST;
-		b_debug("Der gegnerische König wird angegriffen, also leiste ich mir Unsterblichkeit für ",UNSTERBLICHKEIT_COST);
+		L2_BONUSHPPERK = TRUE;
+		L2_EHRENPUNKTE -= BONUSHPPERK_COST;
+		b_debug("Der gegnerische König wird angegriffen, also leiste ich mir Unsterblichkeit für ",BONUSHPPERK_COST);
+	};
+	if (L2_BONUSHPPERK == FALSE && L2_EHRENPUNKTE >= BONUSHPPERK_COST && SCHWIERIGKEIT >= DIFF_NORMAL)
+	{
+		L2_EHRENPUNKTE -= BONUSHPPERK_COST;
+		L2_BONUSHPPERK = TRUE;
+		b_debug("Ich kaufe mir den Bonus-HP-Perk für: ", BONUSHPPERK_COST);
 	};
 	if((L2_EHRENPUNKTE >= REVIVE_COST) && ((L2_REVIVE == FALSE) && (FRAKTION_L2 == DJG)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
@@ -895,7 +908,7 @@ func void b_lagerzweiki_held()
 		L2_EHRENPUNKTCHOICE = 0;
 		b_debug("Ich kaufe mir den Instantkill für: ",INSTANTKILL_COST);
 	};
-	if((L2_EHRENPUNKTE >= (UNSTERBLICHKEIT_COST + MERC_COST)) && (L2_EHRENPUNKTCHOICE == 1) && ((L2_REVIVE == TRUE) || (L2_INSTANTKILL == TRUE) || (L2_VAMPIRSCHLAG == TRUE)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
+	if((L2_EHRENPUNKTE >= (BONUSHPPERK_COST + MERC_COST)) && (L2_EHRENPUNKTCHOICE == 1) && ((L2_REVIVE == TRUE) || (L2_INSTANTKILL == TRUE) || (L2_VAMPIRSCHLAG == TRUE)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
 		L2_EHRENPUNKTE -= MERC_COST;
 		L2_CURRENT_MERCLEVEL = 4;
@@ -905,7 +918,7 @@ func void b_lagerzweiki_held()
 		b_debug("Ich hole mir zwei Söldner für soviele Ehrenpunkte: ",MERC_COST);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
-	if((L2_EHRENPUNKTE >= (UNSTERBLICHKEIT_COST + KLAU_COST)) && (L2_EHRENPUNKTCHOICE == 0) && ((L2_REVIVE == TRUE) || (L2_INSTANTKILL == TRUE) || (L2_VAMPIRSCHLAG == TRUE)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
+	if((L2_EHRENPUNKTE >= (BONUSHPPERK_COST + KLAU_COST)) && (L2_EHRENPUNKTCHOICE == 0) && ((L2_REVIVE == TRUE) || (L2_INSTANTKILL == TRUE) || (L2_VAMPIRSCHLAG == TRUE)) && (SCHWIERIGKEIT >= DIFF_NORMAL))
 	{
 		havegold = Npc_HasItems(hero,ItMi_Gold);
 		if(havegold >= KLAU_FUER_EHRENPUNKTE)
@@ -1010,11 +1023,11 @@ func void b_lagerzweiki_soeldner()
 		b_debug("Ich kaufe mir ZEHN meisterhafte Söldner für ",SOELDNERLEVEL4_COST * 3);
 		B_Message("NEWS_Gegner_Soeldner");
 	};
-	if(Npc_IsInState(pal_1000_king,ZS_Attack) && (L2_EHRENPUNKTE >= UNSTERBLICHKEIT_COST) && (L2_UNSTERBLICHKEIT == FALSE))
+	if(Npc_IsInState(pal_1000_king,ZS_Attack) && (L2_EHRENPUNKTE >= BONUSHPPERK_COST) && (L2_BONUSHPPERK == FALSE))
 	{
-		B_SetImmortalAll_L2();
-		L2_EHRENPUNKTE -= UNSTERBLICHKEIT_COST;
-		b_debug("Der gegnerische König wird angegriffen, also leiste ich mir Unsterblichkeit für ",UNSTERBLICHKEIT_COST);
+		L2_BONUSHPPERK = TRUE;
+		L2_EHRENPUNKTE -= BONUSHPPERK_COST;
+		b_debug("Der gegnerische König wird angegriffen, also leiste ich mir Unsterblichkeit für ",BONUSHPPERK_COST);
 	};
 	if((L2_HAVEGOLD > SMITHCOST) && (L2_SCHMIEDE_ERBAUT == FALSE) && (L2_MINE > 1) && (L2_SOLDIER_LEVEL >= 1))
 	{
@@ -1022,10 +1035,10 @@ func void b_lagerzweiki_soeldner()
 		L2_SCHMIEDGEGENSTAND = SCHMIED_GOLD;
 		L2_HAVEGOLD -= SMITHCOST;
 	};
-	if(Npc_IsInState(pal_1000_king,ZS_Attack) && (L2_EHRENPUNKTE >= UNSTERBLICHKEIT_COST) && (L2_UNSTERBLICHKEIT == FALSE))
+	if(Npc_IsInState(pal_1000_king,ZS_Attack) && (L2_EHRENPUNKTE >= BONUSHPPERK_COST) && (L2_BONUSHPPERK == FALSE))
 	{
-		B_SetImmortalAll_L2();
-		L2_EHRENPUNKTE -= UNSTERBLICHKEIT_COST;
+		L2_BONUSHPPERK = TRUE;
+		L2_EHRENPUNKTE -= BONUSHPPERK_COST;
 	};
 	if(L2_EHRENPUNKTE >= MERC_COST)
 	{
