@@ -45,4 +45,4 @@ Przydatne zasoby:
 - Gothic API (to OpenGothic, ale oryginał jest podobny): https://github.com/Try/OpenGothic/wiki/Daedalus-scripts
 
 ## Changelog balansu
-- [soon]
+- Usunięto perk za punkty honoru "Nieśmiertelność" i zamieniono go perkiem "Bonusowe HP" - jest to spowodowane faktem, że wcześniejsza wersja umiejętności była bardzo pobugowana i nie było możliwości sprawienia, by działała dokładnie tak, jak zamierzyli oryginalni twórcy
