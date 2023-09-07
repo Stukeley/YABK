@@ -1,55 +1,38 @@
+/* 
+AI_PrintScreen(
+	string, <TEKST KTÓRY WYŒWIETLAMY NA EKRANIE> 
+	odleg³oœæOdLewejKrawêdzi, <PO PROSTU POSX>
+	odleg³oœæOdGóry, <PO PROSTU POSY>
+	FONT, <CZCIONECZKA Z PLICZKU>
+	czasWyœwietlania <TUTAJ TO NIE WIEM, PRZY 0 NIE WIDAÆ TEKSTU, PRZY 1 TEKST MRYGA WIÊC ZGADUJE ¯E CHODZI O CZAS WYŒWIETLENIA>
+)
+
+*/
 
 func void b_printschleife()
 {
-	var string punkte;
-	var string gold;
-	var string hp_own;
-	var string hp_other;
-	var string concatText;
-	var int prozentangaberechts;
-	var string heldenstufe;
-	var string heldennext;
-	var string heldenschwert;
-	var string heldenruessi;
-	var string heldenarmbrust;
-	var int noetigekills;
-	var int prozent;
-	var string prozentstring;
-	if((BOTK_GEWONNEN == 0) && Npc_IsDead(djg_2000_king))
-	{
-		if(LAGER == 2)
-		{
-			BOTK_GEWONNEN = 2;
-		}
-		else
-		{
-			BOTK_GEWONNEN = 1;
-		};
-	};
-	if((BOTK_GEWONNEN == 0) && Npc_IsDead(pal_1000_king))
-	{
-		if(LAGER == 1)
-		{
-			BOTK_GEWONNEN = 2;
-		}
-		else
-		{
-			BOTK_GEWONNEN = 1;
-		};
-	};
-	if((BOTK_GEWONNEN > 0) && !(Npc_IsInState(hero,ZS_Talk) && (hero.aivar[AIV_INVINCIBLE] == FALSE) && (ISTALKING == FALSE) && InfoManager_HasFinished()))
-	{
-		if(BOTK_GEWONNEN == 1)
-		{
-			PlayVideo("PL_BotK_Wygrana.bik");
-		}
-		else
-		{
-			PlayVideo("PL_BotK_Przegrana.bik");
-		};
-		PlayVideo("PL_BotK_Credits.bik");
-		ExitSession();
-	};
+	var string punkte;  // PUNKTY HONORU
+	var string gold; // Z£OTO
+	var string hp_own; // HP TWOJEGO KRÓLA
+	var string hp_other; // HP KRÓLA PRZECIWNIKA
+	var string concatText; // £ACZENIE TEKSTÓW (ZMIENNA POMOCNICZA)
+	var int prozentangaberechts; // DO WYBRANIA POZYCJI X TEKSTÓW NA EKRANIE (DOMYŒLNIE 0)
+	var string heldenstufe; // init str Poziom bohatera
+	var string heldennext; // init str Nastêpny poziom: 
+	var string heldenschwert; // init str Poziom mieczy:
+	var string heldenruessi; // init str Poziom zbroi:
+	var string heldenarmbrust; // str Poziom kuszy:
+	var int noetigekills; // ILOŒÆ KILLI BOHATERA DO LICZENIA LVLA 
+	var int prozent; // Procent do next lvl bohatera
+
+	// PRZYPISANIE TESKTÓW DO ZIMENNYCH 
+	heldenstufe = PRINT_HELDENSTUFE; 
+	heldennext = PRINT_HELDENNEXT; 
+	heldenschwert = PRINT_HELDENSCHWERT; 
+	heldenruessi = PRINT_HELDENRUESSI; 
+	heldenarmbrust = PRINT_HELDENARMBRUST;
+
+	// INIT GIERECZKI
 	if(GIVERUNEN == FALSE)
 	{
 		if(NOSTARTMONEY == FALSE)
@@ -80,48 +63,54 @@ func void b_printschleife()
 		};
 		GIVERUNEN = TRUE;
 	};
-	gold = IntToString(Npc_HasItems(hero,ItMi_Gold));
-	concatText = ConcatStrings(ConcatStrings("Z³oto: ",""),gold);
-	AI_PrintScreen(concatText,prozentangaberechts,2,FONT_ScreenSmall,2);
+
+
+	// SPRAWDZENIE CZY I CZYJ KRÓL JEST MARTWY (mo¿e da siê lepiej ale coœ mi nie dzia³a³o do sprawdzenia)
+ 	if((BOTK_GEWONNEN == 0) && Npc_IsDead(djg_2000_king))
+	{
+		if(LAGER == 2)
+		{
+			BOTK_GEWONNEN = 2;
+		}
+		else
+		{
+			BOTK_GEWONNEN = 1;
+		};
+	};
+	if((BOTK_GEWONNEN == 0) && Npc_IsDead(pal_1000_king))
+	{
+		if(LAGER == 1)
+		{
+			BOTK_GEWONNEN = 2;
+		}
+		else
+		{
+			BOTK_GEWONNEN = 1;
+		};
+	};
+
+	// KONIEC GIERECZKI
+	if(BOTK_GEWONNEN > 0 && !(Npc_IsInState(hero,ZS_Talk) && (hero.aivar[AIV_INVINCIBLE] == FALSE) && (ISTALKING == FALSE) && InfoManager_HasFinished()))
+	{
+		if(BOTK_GEWONNEN == 1)
+		{
+			PlayVideo("PL_BotK_Wygrana.bik");
+		}
+		else
+		{
+			PlayVideo("PL_BotK_Przegrana.bik");
+		};
+		PlayVideo("PL_BotK_Credits.bik");
+		ExitSession();
+	};
+	
+	// SETUP HP KRÓLÓW, PUNKTÓW HONORU I TESKSTÓW POZIOMÓW BOHATERA
 	if(LAGER == 1)
 	{
 		punkte = IntToString(L1_EHRENPUNKTE);
-	}
-	else if(LAGER == 2)
-	{
-		punkte = IntToString(L2_EHRENPUNKTE);
-	};
-	concatText = ConcatStrings(ConcatStrings("Punkty Honoru: ",""),punkte);
-	AI_PrintScreen(concatText,prozentangaberechts,4,FONT_ScreenSmall,2);
-	if(LAGER == 1)
-	{
-		hp_own = IntToString((pal_1000_king.attribute * 100) / pal_1000_king.attribute[ATR_HITPOINTS_MAX]);
-	}
-	else if(LAGER == 2)
-	{
-		hp_own = IntToString((djg_2000_king.attribute * 100) / djg_2000_king.attribute[ATR_HITPOINTS_MAX]);
-	};
-	concatText = ConcatStrings(PRINT_STATUSOWNKING,hp_own);
-	concatText = ConcatStrings(concatText,"%");
-	AI_PrintScreen(concatText,prozentangaberechts,6,FONT_ScreenSmall,2);
-	if(LAGER == 1)
-	{
+		hp_own = IntToString((pal_1000_king.attribute* 100) / pal_1000_king.attribute[ATR_HITPOINTS_MAX] );
 		hp_other = IntToString((djg_2000_king.attribute * 100) / djg_2000_king.attribute[ATR_HITPOINTS_MAX]);
-	}
-	else if(LAGER == 2)
-	{
-		hp_other = IntToString((pal_1000_king.attribute * 100) / pal_1000_king.attribute[ATR_HITPOINTS_MAX]);
-	};
-	concatText = ConcatStrings(PRINT_STATUSOTHERKING,hp_other);
-	concatText = ConcatStrings(concatText,"%");
-	AI_PrintScreen(concatText,prozentangaberechts,8,FONT_ScreenSmall,2);
-	heldenstufe = PRINT_HELDENSTUFE;
-	heldennext = PRINT_HELDENNEXT;
-	heldenschwert = PRINT_HELDENSCHWERT;
-	heldenruessi = PRINT_HELDENRUESSI;
-	heldenarmbrust = PRINT_HELDENARMBRUST;
-	if(LAGER == 1)
-	{
+
 		noetigekills = L1_HELD_SKILLLEVEL;
 		heldenschwert = ConcatStrings(heldenschwert,IntToString(L1_HELD_SCHWERTLEVEL + 1));
 		heldenruessi = ConcatStrings(heldenruessi,IntToString(L1_HELD_RUESTUNGLEVEL + 1));
@@ -129,100 +118,53 @@ func void b_printschleife()
 	}
 	else if(LAGER == 2)
 	{
+		hp_own = IntToString((djg_2000_king.attribute * 100) / djg_2000_king.attribute[ATR_HITPOINTS_MAX]);
+		hp_other = IntToString((pal_1000_king.attribute * 100) / pal_1000_king.attribute[ATR_HITPOINTS_MAX]);
+		punkte = IntToString(L2_EHRENPUNKTE);
+
+
 		noetigekills = L2_HELD_SKILLLEVEL;
 		heldenschwert = ConcatStrings(heldenschwert,IntToString(L2_HELD_SCHWERTLEVEL + 1));
 		heldenruessi = ConcatStrings(heldenruessi,IntToString(L2_HELD_RUESTUNGLEVEL + 1));
 		heldenarmbrust = ConcatStrings(heldenarmbrust,IntToString(L2_HELD_ARMBRUSTLEVEL));
 	};
-	if(noetigekills >= (7 * TOTEGEGNERFUERSKILLLEVEL))
-	{
-		heldenstufe = ConcatStrings(heldenstufe,"8");
-	}
-	else if(noetigekills >= (6 * TOTEGEGNERFUERSKILLLEVEL))
-	{
-		heldenstufe = ConcatStrings(heldenstufe,"7");
-	}
-	else if(noetigekills >= (5 * TOTEGEGNERFUERSKILLLEVEL))
-	{
-		heldenstufe = ConcatStrings(heldenstufe,"6");
-	}
-	else if(noetigekills >= (4 * TOTEGEGNERFUERSKILLLEVEL))
-	{
-		heldenstufe = ConcatStrings(heldenstufe,"5");
-	}
-	else if(noetigekills >= (3 * TOTEGEGNERFUERSKILLLEVEL))
-	{
-		heldenstufe = ConcatStrings(heldenstufe,"4");
-	}
-	else if(noetigekills >= (2 * TOTEGEGNERFUERSKILLLEVEL))
-	{
-		heldenstufe = ConcatStrings(heldenstufe,"3");
-	}
-	else if(noetigekills >= (1 * TOTEGEGNERFUERSKILLLEVEL))
-	{
-		heldenstufe = ConcatStrings(heldenstufe,"2");
-	}
-	else
-	{
-		heldenstufe = ConcatStrings(heldenstufe,"1");
-	};
-	if(LAGER == 1)
-	{
-		noetigekills = L1_HELD_SKILLLEVEL;
-	}
-	else if(LAGER == 2)
-	{
-		noetigekills = L2_HELD_SKILLLEVEL;
-	};
-	if(noetigekills >= TOTEGEGNERFUERSKILLLEVEL)
-	{
-		noetigekills = noetigekills - TOTEGEGNERFUERSKILLLEVEL;
-	};
-	if(noetigekills >= TOTEGEGNERFUERSKILLLEVEL)
-	{
-		noetigekills = noetigekills - TOTEGEGNERFUERSKILLLEVEL;
-	};
-	if(noetigekills >= TOTEGEGNERFUERSKILLLEVEL)
-	{
-		noetigekills = noetigekills - TOTEGEGNERFUERSKILLLEVEL;
-	};
-	if(noetigekills >= TOTEGEGNERFUERSKILLLEVEL)
-	{
-		noetigekills = noetigekills - TOTEGEGNERFUERSKILLLEVEL;
-	};
-	if(noetigekills >= TOTEGEGNERFUERSKILLLEVEL)
-	{
-		noetigekills = noetigekills - TOTEGEGNERFUERSKILLLEVEL;
-	};
-	if(noetigekills >= TOTEGEGNERFUERSKILLLEVEL)
-	{
-		noetigekills = noetigekills - TOTEGEGNERFUERSKILLLEVEL;
-	};
-	if(noetigekills >= TOTEGEGNERFUERSKILLLEVEL)
-	{
-		noetigekills = noetigekills - TOTEGEGNERFUERSKILLLEVEL;
-	};
-	if(noetigekills >= TOTEGEGNERFUERSKILLLEVEL)
-	{
-		noetigekills = noetigekills - TOTEGEGNERFUERSKILLLEVEL;
-	};
-	if(noetigekills >= TOTEGEGNERFUERSKILLLEVEL)
-	{
-		noetigekills = noetigekills - TOTEGEGNERFUERSKILLLEVEL;
-	};
-	prozent = noetigekills * 100;
+
+	// GOLD NA SCREEN
+	gold = IntToString(Npc_HasItems(hero,ItMi_Gold));
+	concatText = ConcatStrings(ConcatStrings("Z³oto: ",""),gold);
+	AI_PrintScreen(concatText,prozentangaberechts,2,FONT_ScreenSmall,2);
+
+
+
+	// PUNKTY HONORU NA SCREEN
+	concatText = ConcatStrings(ConcatStrings("Punkty Honoru: ",""),punkte);
+	AI_PrintScreen(concatText,prozentangaberechts,4,FONT_ScreenSmall,2);
+
+
+	// HP KRÓLÓW W %  NA SCREEN
+	concatText = ConcatStrings(PRINT_STATUSOWNKING,hp_own);
+	concatText = ConcatStrings(concatText,"%");
+	AI_PrintScreen(concatText,prozentangaberechts,6,FONT_ScreenSmall,2);
+	concatText = ConcatStrings(PRINT_STATUSOTHERKING,hp_other);
+	concatText = ConcatStrings(concatText,"%");
+	AI_PrintScreen(concatText,prozentangaberechts,8,FONT_ScreenSmall,2);
+
+	// AKUTALNY LVL BOHATERA NA SCREEN
+	heldenstufe = ConcatStrings(heldenstufe, IntToString((noetigekills / TOTEGEGNERFUERSKILLLEVEL) + 1));
+
+	// LICZENIE % DO NEXT LVLA
+	prozent = noetigekills % TOTEGEGNERFUERSKILLLEVEL * 100;
 	prozent = prozent / TOTEGEGNERFUERSKILLLEVEL;
-	if(prozent >= 100)
-	{
-		prozent = prozent - 100;
-	};
-	prozentstring = IntToString(prozent);
+
+	// STATYSTYKI BOHATERA £¥CZONE W JEDN¥ LINIÊ
 	heldenstufe = ConcatStrings(heldenstufe,PRINT_VON8);
-	heldennext = ConcatStrings(heldennext,prozentstring);
+	heldennext = ConcatStrings(heldennext,IntToString(prozent));
 	heldennext = ConcatStrings(heldennext,PRINT_PERCENT);
 	heldenschwert = ConcatStrings(heldenschwert,PRINT_VON4);
 	heldenruessi = ConcatStrings(heldenruessi,PRINT_VON3);
 	heldenarmbrust = ConcatStrings(heldenarmbrust,PRINT_VON4);
+
+	// SPRAWDZANIE CZY MAMY BOHATERA I WYŒWIETLANIE STATÓW
 	if(((LAGER == 1) && (L1_HELD_SPAWNED == TRUE)) || ((LAGER == 2) && (L2_HELD_SPAWNED == TRUE)))
 	{
 		AI_PrintScreen(heldenstufe,5,12,FONT_ScreenSmall,5);
@@ -231,13 +173,14 @@ func void b_printschleife()
 		AI_PrintScreen(heldenruessi,5,18,FONT_ScreenSmall,5);
 		AI_PrintScreen(heldenarmbrust,5,20,FONT_ScreenSmall,5);
 	};
-	if(LAGER != 2)
-	{
-		b_lagerzweiki();
-	}
-	else if(LAGER != 1)
-	{
+
+	// POZOSTA£OŒCI PO STARYM DEBUGOWANIU, MO¯NA KORZYSTAÆ 
+	if(LAGER == 2) {
 		b_lagereinski();
+	}
+	else {
+		b_lagerzweiki();
 	};
+
 };
 
