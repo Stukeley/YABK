@@ -547,7 +547,7 @@ Story\B_Content\C_Addon_Knows_Schnaps.d
 Story\B_Story\b_lagereinsnotsoeldner.d
 Story\B_Story\b_lagerzweinotsoeldner.d
 Story\B_Story\b_skript_schleife.d
-Story\B_Story\b_printschleife.d
+Story\YABK_Scripts\B_PrintSchleife.d
 Story\B_Story\b_skelettkontrollchange.d
 Story\Dialog_Mobsis\B_OnHotkey.d
 Story\B_Content\B_ScUsesRake.d

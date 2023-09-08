@@ -9,7 +9,7 @@ AI_PrintScreen(
 
 */
 
-func void b_printschleife()
+func void B_PrintSchleife()
 {
 	var string punkte;  // PUNKTY HONORU
 	var string gold; // Z£OTO
