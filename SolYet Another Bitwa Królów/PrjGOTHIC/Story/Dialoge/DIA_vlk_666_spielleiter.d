@@ -112,11 +112,11 @@ func void vlk_666_spielleiter_important_pal()
 	Info_ClearChoices(vlk_666_spielleiter_important);
 	if(LAGER == 1)
 	{
-		FRAKTION_L1 = Pal;
+		FRAKTION_L1 = PAL;
 	}
 	else if(LAGER == 2)
 	{
-		FRAKTION_L2 = Pal;
+		FRAKTION_L2 = PAL;
 	};
 	AI_Output(self,other,"VLK_666_Spielleiter_IMPORTANT_PAL_07_01");	//Teraz pójdŸ do obrazu mapy, w której chcesz graæ.
 	b_otherteamfraktion();
@@ -253,11 +253,11 @@ func void vlk_666_spielleiter_fraktion_pal()
 {
 	if(LAGER == 1)
 	{
-		FRAKTION_L1 = Pal;
+		FRAKTION_L1 = PAL;
 	}
 	else if(LAGER == 2)
 	{
-		FRAKTION_L2 = Pal;
+		FRAKTION_L2 = PAL;
 	};
 	b_otherteamfraktion();
 	Info_ClearChoices(vlk_666_spielleiter_fraktion);

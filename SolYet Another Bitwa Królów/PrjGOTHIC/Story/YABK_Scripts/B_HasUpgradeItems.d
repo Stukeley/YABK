@@ -1,5 +1,5 @@
 
-func int b_hasupgradeweapons()
+func int B_HasUpgradeWeapons()
 {
 	if(LAGER == 1)
 	{
@@ -18,7 +18,7 @@ func int b_hasupgradeweapons()
 	return FALSE;
 };
 
-func int b_hasupgradearmors()
+func int B_HasUpgradeArmors()
 {
 	if(LAGER == 1)
 	{
