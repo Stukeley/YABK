@@ -44,6 +44,8 @@ Oznaczenia w plikach:
    - Gothic.src do "\_WORK\DATA\SCRIPTS\CONTENT"
    - ou.bin do "\_WORK\DATA\SCRIPTS\CONTENT\CUTSCENE"
 
+ALTERNATYWNIE wystarczy uruchomić skrypt "Kopiuj skompilowane do spakowania.ps1", który zrobi to automatycznie (tylko Windows).
+
 Plik GOTHIC.dat zawiera skompilowane skrypty gotowe do spakowania jako plik .MOD i uruchomienia w grze.
 
 Pliki Gothic.src i ou.bin to pliki zawierające przede wszystkim spolszczone dialogi, które w oryginalnej wersji modyfikacji były po niemiecku, i należy je zawrzeć w spakowanej modyfikacji.  
@@ -65,16 +67,9 @@ Przydatne zasoby:
 - Gothic API (to OpenGothic, ale oryginał jest podobny): https://github.com/Try/OpenGothic/wiki/Daedalus-scripts
 
 ## TODO / przemyślenia
-- zmiana wyglądu bohatera jak zmieni się pancerz szkieleta
-- żeby ai ulepszało magów
-- pełnie
 - mag czasami się nie pojawia od razu
-- teleporty
-- kowal gdy produkuje zbroje gdy mamy juz 3
+- teleporty bez animacji?
 - różne typy AI z różnym zachowaniem
-- instrukcja jak kompilować mod
-- stara nieśmiertelność - potrzebny nam sposób, żeby ustawiać NPC jako nieśmiertelnych i cofać im tę nieśmiertelność po pewnym czasie
-- jakiś skrypt na auto przenoszenie skompilowanych rzeczy do folderu "Do Spakowania"?
 
 ## Changelog balansu
 - Usunięto perk za punkty honoru "Nieśmiertelność" i zamieniono go perkiem "Bonusowe HP" - jest to spowodowane faktem, że wcześniejsza wersja umiejętności była bardzo pobugowana i nie było możliwości sprawienia, by działała dokładnie tak, jak zamierzyli oryginalni twórcy
