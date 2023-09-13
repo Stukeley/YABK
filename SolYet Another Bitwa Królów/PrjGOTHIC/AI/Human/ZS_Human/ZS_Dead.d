@@ -353,9 +353,7 @@ func void ZS_Dead()
 	// Po zabiciu ulecz sie pelnia, jesli ja posiadasz.
 	if (Npc_HasItems(other, ItPo_Health_Addon_04) && other.attribute[ATR_HITPOINTS] < other.attribute[ATR_HITPOINTS_MAX])
 	{
-		other.attribute[ATR_HITPOINTS] = other.attribute[ATR_HITPOINTS_MAX];
-		Npc_RemoveInvItems(other, ItPo_Health_Addon_04, 1);
-		Wld_PlayEffect("spellFX_PalHeal_ORIGIN", other, other, 0, 0, 0, FALSE);
+		B_UseItem(other, ItPo_Health_Addon_04);
 	};
 
 	B_GiveTradeInv(self);
