@@ -74,6 +74,7 @@ Przydatne zasoby:
 - różne typy AI z różnym zachowaniem
 - instrukcja jak kompilować mod
 - stara nieśmiertelność - potrzebny nam sposób, żeby ustawiać NPC jako nieśmiertelnych i cofać im tę nieśmiertelność po pewnym czasie
+- jakiś skrypt na auto przenoszenie skompilowanych rzeczy do folderu "Do Spakowania"?
 
 ## Changelog balansu
 - Usunięto perk za punkty honoru "Nieśmiertelność" i zamieniono go perkiem "Bonusowe HP" - jest to spowodowane faktem, że wcześniejsza wersja umiejętności była bardzo pobugowana i nie było możliwości sprawienia, by działała dokładnie tak, jak zamierzyli oryginalni twórcy
