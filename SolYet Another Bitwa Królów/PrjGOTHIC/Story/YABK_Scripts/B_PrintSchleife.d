@@ -34,27 +34,27 @@ func void B_PrintSchleife()
 	heldenarmbrust = PRINT_HELDENARMBRUST;
 
 	// INIT GIERECZKI
-	if(GIVERUNEN == FALSE)
+	if (GIVERUNEN == FALSE)
 	{
-		if(NOSTARTMONEY == FALSE)
+		if (NOSTARTMONEY == FALSE)
 		{
 			CreateInvItems(hero,ItMi_Gold,STARTGELD);
 			L1_HAVEGOLD = STARTGELD;
 			L2_HAVEGOLD = STARTGELD;
 		};
-		if(MAP == MACHTL_MAP)
+		if (MAP == MACHTL_MAP)
 		{
 			CreateInvItems(hero,ItRu_TeleportSeaport,1);
 			CreateInvItems(hero,ItRu_TeleportFarm,1);
 			CreateInvItems(hero,ItRu_TeleportPassNW,1);
 		}
-		else if(MAP == MAP01)
+		else if (MAP == MAP01)
 		{
 			CreateInvItems(hero,ItRu_TeleportSeaport,1);
 			CreateInvItems(hero,ItRu_TeleportFarm,1);
 			CreateInvItems(hero,ItRu_TeleportPassOW,1);
 		}
-		else if(MAP == VARUS_MAP)
+		else if (MAP == VARUS_MAP)
 		{
 			CreateInvItems(hero,ItRu_TeleportSeaport,1);
 			CreateInvItems(hero,ItRu_TeleportFarm,1);
@@ -67,9 +67,9 @@ func void B_PrintSchleife()
 
 
 	// SPRAWDZENIE CZY I CZYJ KRÓL JEST MARTWY (mo¿e da siê lepiej ale coœ mi nie dzia³a³o do sprawdzenia)
- 	if((BOTK_GEWONNEN == 0) && Npc_IsDead(djg_2000_king))
+ 	if ((BOTK_GEWONNEN == 0) && Npc_IsDead(djg_2000_king))
 	{
-		if(LAGER == 2)
+		if (LAGER == 2)
 		{
 			BOTK_GEWONNEN = 2;
 		}
@@ -78,9 +78,9 @@ func void B_PrintSchleife()
 			BOTK_GEWONNEN = 1;
 		};
 	};
-	if((BOTK_GEWONNEN == 0) && Npc_IsDead(pal_1000_king))
+	if ((BOTK_GEWONNEN == 0) && Npc_IsDead(pal_1000_king))
 	{
-		if(LAGER == 1)
+		if (LAGER == 1)
 		{
 			BOTK_GEWONNEN = 2;
 		}
@@ -91,9 +91,9 @@ func void B_PrintSchleife()
 	};
 
 	// KONIEC GIERECZKI
-	if(BOTK_GEWONNEN > 0 && !(Npc_IsInState(hero,ZS_Talk) && (hero.aivar[AIV_INVINCIBLE] == FALSE) && (ISTALKING == FALSE) && InfoManager_HasFinished()))
+	if (BOTK_GEWONNEN > 0 && !(Npc_IsInState(hero,ZS_Talk) && (hero.aivar[AIV_INVINCIBLE] == FALSE) && (ISTALKING == FALSE) && InfoManager_HasFinished()))
 	{
-		if(BOTK_GEWONNEN == 1)
+		if (BOTK_GEWONNEN == 1)
 		{
 			PlayVideo("PL_BotK_Wygrana.bik");
 		}
@@ -101,12 +101,13 @@ func void B_PrintSchleife()
 		{
 			PlayVideo("PL_BotK_Przegrana.bik");
 		};
+
 		PlayVideo("PL_BotK_Credits.bik");
 		ExitSession();
 	};
 	
 	// SETUP HP KRÓLÓW, PUNKTÓW HONORU I TESKSTÓW POZIOMÓW BOHATERA
-	if(LAGER == 1)
+	if (LAGER == 1)
 	{
 		punkte = IntToString(L1_EHRENPUNKTE);
 		hp_own = IntToString((pal_1000_king.attribute* 100) / pal_1000_king.attribute[ATR_HITPOINTS_MAX] );
@@ -117,7 +118,7 @@ func void B_PrintSchleife()
 		heldenruessi = ConcatStrings(heldenruessi,IntToString(L1_HELD_RUESTUNGLEVEL + 1));
 		heldenarmbrust = ConcatStrings(heldenarmbrust,IntToString(L1_HELD_ARMBRUSTLEVEL));
 	}
-	else if(LAGER == 2)
+	else if (LAGER == 2)
 	{
 		hp_own = IntToString((djg_2000_king.attribute * 100) / djg_2000_king.attribute[ATR_HITPOINTS_MAX]);
 		hp_other = IntToString((pal_1000_king.attribute * 100) / pal_1000_king.attribute[ATR_HITPOINTS_MAX]);
@@ -135,12 +136,9 @@ func void B_PrintSchleife()
 	concatText = ConcatStrings(ConcatStrings("Z³oto: ",""),gold);
 	AI_PrintScreen(concatText,prozentangaberechts,2,FONT_ScreenSmall,2);
 
-
-
 	// PUNKTY HONORU NA SCREEN
 	concatText = ConcatStrings(ConcatStrings("Punkty Honoru: ",""),punkte);
 	AI_PrintScreen(concatText,prozentangaberechts,4,FONT_ScreenSmall,2);
-
 
 	// HP KRÓLÓW W %  NA SCREEN
 	concatText = ConcatStrings(PRINT_STATUSOWNKING,hp_own);
@@ -152,11 +150,13 @@ func void B_PrintSchleife()
 
 	// SETUP LVL CAP
 	lvl = (noetigekills / TOTEGEGNERFUERSKILLLEVEL) + 1;
-	if(lvl >= 8) {
+	if (lvl >= 8)
+	{
 		lvl = 8;
 		heldennext = PRINT_MAXLVL;
 	}
-	else {
+	else
+	{
 		// LICZENIE % DO NEXT LVLA
 		prozent = noetigekills % TOTEGEGNERFUERSKILLLEVEL * 100;
 		prozent = prozent / TOTEGEGNERFUERSKILLLEVEL;
@@ -168,8 +168,6 @@ func void B_PrintSchleife()
 	// AKUTALNY LVL BOHATERA NA SCREEN
 	heldenstufe = ConcatStrings(heldenstufe, IntToString(lvl));
 
-
-
 	// STATYSTYKI BOHATERA £¥CZONE W JEDN¥ LINIÊ
 	heldenstufe = ConcatStrings(heldenstufe,PRINT_VON8);
 	heldenschwert = ConcatStrings(heldenschwert,PRINT_VON4);
@@ -177,7 +175,7 @@ func void B_PrintSchleife()
 	heldenarmbrust = ConcatStrings(heldenarmbrust,PRINT_VON4);
 
 	// SPRAWDZANIE CZY MAMY BOHATERA I WYŒWIETLANIE STATÓW
-	if(((LAGER == 1) && (L1_HELD_SPAWNED == TRUE)) || ((LAGER == 2) && (L2_HELD_SPAWNED == TRUE)))
+	if (((LAGER == 1) && (L1_HELD_SPAWNED == TRUE)) || ((LAGER == 2) && (L2_HELD_SPAWNED == TRUE)))
 	{
 		AI_PrintScreen(heldenstufe,5,12,FONT_ScreenSmall,5);
 		AI_PrintScreen(heldennext,5,14,FONT_ScreenSmall,5);
@@ -187,10 +185,12 @@ func void B_PrintSchleife()
 	};
 
 	// POZOSTA£OŒCI PO STARYM DEBUGOWANIU, MO¯NA KORZYSTAÆ 
-	if(LAGER == 2) {
+	if (LAGER == 2) 
+	{
 		b_lagereinski();
 	}
-	else {
+	else 
+	{
 		b_lagerzweiki();
 	};
 
