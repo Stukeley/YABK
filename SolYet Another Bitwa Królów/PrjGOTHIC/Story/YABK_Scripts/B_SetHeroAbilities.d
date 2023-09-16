@@ -46,6 +46,7 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 
 	Npc_SetTalentSkill(slf,NPC_TALENT_1H,0);
 	Npc_SetTalentSkill(slf,NPC_TALENT_2H,0);
+	Npc_SetTalentSkill(slf,NPC_TALENT_MAGE,6);
 
 	if (gil == GIL_DJG)
 	{
@@ -157,52 +158,25 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	};
 
 	// Ustawienie atrybutow i AI w zaleznosci od poziomu (za doswiadczenie).
-	// Zostawiam to w takiej formie, bo latwiej wtedy zmieniac poszczegolne wartosci dla kazdego poziomu.
 	// [BALANS]
 	var int ratio;
 	ratio = skilllevel / TOTEGEGNERFUERSKILLLEVEL;
 	
 	slf.aivar[96] = ratio;
 
-	if (ratio >= 7)
-	{
-		B_SetAttributesToChapter(slf, 12);
+	if (ratio >= 7)	{
+		B_SetAttributesToHero(slf, 7);
+	}
+	else {
+		B_SetAttributesToHero(slf, ratio);
+	};
+
+	if (ratio >= 3)	{
 		slf.fight_tactic = FAI_HUMAN_MASTER;
 	}
-	else if (ratio >= 6)
-	{
-		B_SetAttributesToChapter(slf, 11);
-		slf.fight_tactic = FAI_HUMAN_MASTER;
-	}
-	else if (ratio >= 5)
-	{
-		B_SetAttributesToChapter(slf, 10);
-		slf.fight_tactic = FAI_HUMAN_MASTER;
-	}
-	else if (ratio >= 4)
-	{
-		B_SetAttributesToChapter(slf, 9);
-		slf.fight_tactic = FAI_HUMAN_MASTER;
-	}
-	else if (ratio >= 3)
-	{
-		B_SetAttributesToChapter(slf, 6);
-		slf.fight_tactic = FAI_HUMAN_MASTER;
-	}
-	else if (ratio >= 2)
-	{
-		B_SetAttributesToChapter(slf, 5);
+	else {
 		slf.fight_tactic = FAI_HUMAN_STRONG;
-	}
-	else if (ratio >= 1)
-	{
-		B_SetAttributesToChapter(slf, 4);
-		slf.fight_tactic = FAI_HUMAN_STRONG;
-	}
-	else
-	{
-		B_SetAttributesToChapter(slf, 3);
-		slf.fight_tactic = FAI_HUMAN_STRONG;
+
 	};
 
 	// Ustawienie kuszy i jej umiejetnosci w zaleznosci od talentu.

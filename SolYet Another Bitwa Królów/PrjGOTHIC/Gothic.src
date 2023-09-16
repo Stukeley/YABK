@@ -370,6 +370,7 @@ Story\NPC_Scripts\B_GiveNpcTalents.d
 Story\NPC_Scripts\B_SetAttributesToChapter.d
 Story\NPC_Scripts\Npc_Default.d
 Story\YABK_Scripts\B_HealthPerk.d
+Story\YABK_Scripts\B_SetAttributesToHero.d
 Story\YABK_Scripts\B_SetSoldierAbilities.d
 Story\YABK_Scripts\B_SetMageAbilities.d
 Story\YABK_Scripts\B_SetHeroAbilities.d

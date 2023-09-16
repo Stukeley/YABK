@@ -24,6 +24,7 @@ func void B_PrintSchleife()
 	var string heldenarmbrust; // str Poziom kuszy:
 	var int noetigekills; // ILOŒÆ KILLI BOHATERA DO LICZENIA LVLA 
 	var int prozent; // Procent do next lvl bohatera
+	var int lvl; // LVL na screen
 
 	// PRZYPISANIE TESKTÓW DO ZIMENNYCH 
 	heldenstufe = PRINT_HELDENSTUFE; 
@@ -149,17 +150,28 @@ func void B_PrintSchleife()
 	concatText = ConcatStrings(concatText,"%");
 	AI_PrintScreen(concatText,prozentangaberechts,8,FONT_ScreenSmall,2);
 
-	// AKUTALNY LVL BOHATERA NA SCREEN
-	heldenstufe = ConcatStrings(heldenstufe, IntToString((noetigekills / TOTEGEGNERFUERSKILLLEVEL) + 1));
+	// SETUP LVL CAP
+	lvl = (noetigekills / TOTEGEGNERFUERSKILLLEVEL) + 1;
+	if(lvl >= 8) {
+		lvl = 8;
+		heldennext = PRINT_MAXLVL;
+	}
+	else {
+		// LICZENIE % DO NEXT LVLA
+		prozent = noetigekills % TOTEGEGNERFUERSKILLLEVEL * 100;
+		prozent = prozent / TOTEGEGNERFUERSKILLLEVEL;
+		// PROCENT LVL NA SCREEN
+		heldennext = ConcatStrings(heldennext,IntToString(prozent));
+		heldennext = ConcatStrings(heldennext,PRINT_PERCENT);
+	};
 
-	// LICZENIE % DO NEXT LVLA
-	prozent = noetigekills % TOTEGEGNERFUERSKILLLEVEL * 100;
-	prozent = prozent / TOTEGEGNERFUERSKILLLEVEL;
+	// AKUTALNY LVL BOHATERA NA SCREEN
+	heldenstufe = ConcatStrings(heldenstufe, IntToString(lvl));
+
+
 
 	// STATYSTYKI BOHATERA £¥CZONE W JEDN¥ LINIÊ
 	heldenstufe = ConcatStrings(heldenstufe,PRINT_VON8);
-	heldennext = ConcatStrings(heldennext,IntToString(prozent));
-	heldennext = ConcatStrings(heldennext,PRINT_PERCENT);
 	heldenschwert = ConcatStrings(heldenschwert,PRINT_VON4);
 	heldenruessi = ConcatStrings(heldenruessi,PRINT_VON3);
 	heldenarmbrust = ConcatStrings(heldenarmbrust,PRINT_VON4);

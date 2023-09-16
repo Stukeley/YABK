@@ -983,6 +983,7 @@ const string PRINT_STATUSOWNKING = "Punkty trafieñ twojego króla: ";
 const string PRINT_STATUSOTHERKING = "Punkty trafieñ króla przeciwnika: ";
 const string PRINT_HELDENSTUFE = "Poziom bohatera:          ";
 const string PRINT_HELDENNEXT = "     Nastêpny poziom:     ";
+const string PRINT_MAXLVL = "     Maksymalny poziom.     ";
 const string PRINT_HELDENSCHWERT = "     Poziom mieczy:    ";
 const string PRINT_HELDENRUESSI = "     Poziom zbroi:    ";
 const string PRINT_HELDENARMBRUST = "     Poziom kuszy: ";
