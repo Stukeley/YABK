@@ -9,7 +9,7 @@ func void B_SetAttributesToHero(var C_Npc slf,var int kap)
 	slf.attribute[ATR_MANA] = 1000;
 	// LVL
 	slf.level = 30 + 10 * kap;
-	if(kap > 3) {
+	if(kap >= 3) {
 		// SI£A
 		slf.attribute[ATR_STRENGTH] = 200 + kap * 40;
 		slf.aivar[REAL_STRENGTH] = 200 + kap * 40;
@@ -19,6 +19,8 @@ func void B_SetAttributesToHero(var C_Npc slf,var int kap)
 		// HP
 		slf.attribute[ATR_HITPOINTS_MAX] = 400 + kap * 150;
 		slf.attribute[ATR_HITPOINTS] = 400 + kap * 150;
+		// STYL WALKI
+		slf.fight_tactic = FAI_HUMAN_MASTER;
 	}
 	else {
 		// SI£A
@@ -30,6 +32,8 @@ func void B_SetAttributesToHero(var C_Npc slf,var int kap)
 		// HP
 		slf.attribute[ATR_HITPOINTS_MAX] = 400 + kap * 120;
 		slf.attribute[ATR_HITPOINTS] = 400 + kap * 120;
+		//STYL WALKI
+		slf.fight_tactic = FAI_HUMAN_STRONG;
 	};
 	slf.exp = 500 * ((slf.level + 1) / 2) * (slf.level + 1);
 	slf.exp_next = 500 * ((slf.level + 2) / 2) * (slf.level + 1);

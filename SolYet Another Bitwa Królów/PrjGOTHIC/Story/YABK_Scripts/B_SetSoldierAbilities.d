@@ -46,6 +46,7 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 
 	Npc_SetTalentSkill(self, NPC_TALENT_1H, 0);
 	Npc_SetTalentSkill(self, NPC_TALENT_2H, 0);
+	Npc_SetTalentSkill(slf,NPC_TALENT_MAGE,6);
 
 	// Ustawiamy m.in. niesmiertelnosc [perk za honor].
 	if (gil == GIL_PAL)
@@ -143,55 +144,8 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 	// Ustawienie statystyk w zaleznosci od wykupionego poziomu zolnierzy.
 	// Zostawiam to w takiej formie, bo latwiej wtedy zmieniac poszczegolne wartosci dla kazdego poziomu.
 	// [BALANS]
-	if (stufe == 1)
-	{
-		B_SetAttributesToChapter(slf, 0);
-		B_SetFightSkills(slf, 10);
-		Npc_SetTalentSkill(self, NPC_TALENT_1H, 0);
-		slf.fight_tactic = FAI_HUMAN_COWARD;
-	}
-	else if (stufe == 2)
-	{
-		B_SetAttributesToChapter(slf, 1);
-		B_SetFightSkills(slf, 30);
-		Npc_SetTalentSkill(self, NPC_TALENT_1H, 1);
-		slf.fight_tactic = FAI_HUMAN_COWARD;
-	}
-	else if (stufe == 3)
-	{
-		B_SetAttributesToChapter(slf, 2);
-		B_SetFightSkills(slf, 45);
-		Npc_SetTalentSkill(self, NPC_TALENT_1H, 1);
-		slf.fight_tactic = FAI_HUMAN_NORMAL;
-	}
-	else if (stufe == 4)
-	{
-		B_SetAttributesToChapter(slf, 3);
-		B_SetFightSkills(slf, 60);
-		Npc_SetTalentSkill(self, NPC_TALENT_1H, 2);
-		slf.fight_tactic = FAI_HUMAN_NORMAL;
-	}
-	else if (stufe == 5)
-	{
-		B_SetAttributesToChapter(slf, 4);
-		B_SetFightSkills(slf, 70);
-		Npc_SetTalentSkill(self, NPC_TALENT_1H, 2);
-		slf.fight_tactic = FAI_HUMAN_STRONG;
-	}
-	else if (stufe == 6)
-	{
-		B_SetAttributesToChapter(slf, 5);
-		B_SetFightSkills(slf, 80);
-		Npc_SetTalentSkill(self, NPC_TALENT_1H, 2);
-		slf.fight_tactic = FAI_HUMAN_STRONG;
-	}
-	else if (stufe == 7)
-	{
-		B_SetAttributesToChapter(slf, 6);
-		B_SetFightSkills(slf, 90);
-		Npc_SetTalentSkill(self, NPC_TALENT_1H, 2);
-		slf.fight_tactic = FAI_HUMAN_MASTER;
-	};
+	B_SetAttributesToSoldier(slf, stufe);
+	AI_PrintScreen(IntToString(stufe),1,12,FONT_ScreenSmall,9);
 
 	// Ustawienie broni w zaleznosci od posiadanego ulepszenia.
 	var int soldier_weapon;
