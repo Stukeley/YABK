@@ -1,12 +1,13 @@
 // Ustawianie statystyk dla bohatera
 // [Balans]
 
-func void B_SetAttributesToHero(var C_Npc slf,var int kap)
+func void B_SetAttributesToHero(var C_Npc slf, var int kap)
 {
 	// MANA
 	slf.attribute[ATR_MANA_MAX] = 1000;
 	slf.aivar[REAL_MANA_MAX] = 1000;
 	slf.attribute[ATR_MANA] = 1000;
+
 	// LVL
 	slf.level = 30 + 10 * kap;
 	if(kap >= 3) {
@@ -22,7 +23,8 @@ func void B_SetAttributesToHero(var C_Npc slf,var int kap)
 		// STYL WALKI
 		slf.fight_tactic = FAI_HUMAN_MASTER;
 	}
-	else {
+	else
+	{
 		// SI£A
 		slf.attribute[ATR_STRENGTH] = 150 + kap * 25;
 		slf.aivar[REAL_STRENGTH] = 150 + kap * 25;
@@ -35,6 +37,7 @@ func void B_SetAttributesToHero(var C_Npc slf,var int kap)
 		//STYL WALKI
 		slf.fight_tactic = FAI_HUMAN_STRONG;
 	};
+
 	slf.exp = 500 * ((slf.level + 1) / 2) * (slf.level + 1);
 	slf.exp_next = 500 * ((slf.level + 2) / 2) * (slf.level + 1);
 };

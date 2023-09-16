@@ -106,7 +106,7 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	slf.guild = gil;
 
 	// Ustawienie modelu postaci.
-	if(fraktion != SKE)
+	if (fraktion != SKE)
 	{
 		Mdl_SetVisual(slf,"humans.mds");
 	};
@@ -164,10 +164,12 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 	
 	slf.aivar[96] = ratio;
 
-	if (ratio >= 7)	{
+	if (ratio >= 7)
+	{
 		B_SetAttributesToHero(slf, 7);
 	}
-	else {
+	else 
+	{
 		B_SetAttributesToHero(slf, ratio);
 	};
 
