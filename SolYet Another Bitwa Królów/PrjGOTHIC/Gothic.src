@@ -370,11 +370,12 @@ Story\NPC_Scripts\B_GiveNpcTalents.d
 Story\NPC_Scripts\B_SetAttributesToChapter.d
 Story\NPC_Scripts\Npc_Default.d
 Story\YABK_Scripts\B_HealthPerk.d
-Story\YABK_Scripts\B_SetAttributesToHero.d
-Story\YABK_Scripts\B_SetAttributesToSoldier.d
-Story\YABK_Scripts\B_SetSoldierAbilities.d
-Story\YABK_Scripts\B_SetMageAbilities.d
-Story\YABK_Scripts\B_SetHeroAbilities.d
+Story\YABK_Scripts\Hero\B_SetAttributesToHero.d
+Story\YABK_Scripts\Mage\B_SetAttributesToMage.d
+Story\YABK_Scripts\Soldier\B_SetAttributesToSoldier.d
+Story\YABK_Scripts\Hero\B_SetHeroAbilities.d
+Story\YABK_Scripts\Mage\B_SetMageAbilities.d
+Story\YABK_Scripts\Soldier\B_SetSoldierAbilities.d
 Story\YABK_Scripts\B_SetMercAbilities.d
 Story\YABK_Scripts\B_SetWachenAbilities.d
 Story\B_Story\b_kopfreturn.d
@@ -544,7 +545,7 @@ Story\B_Story\B_Enter_AddonWorld.d
 Story\B_Story\B_Kapitelwechsel.d
 Story\YABK_Scripts\B_HasUpgradeItems.d
 Story\B_Story\b_otherteamfraktion.d
-Story\YABK_Scripts\B_ReviveHero.d
+Story\YABK_Scripts\Hero\B_ReviveHero.d
 Story\B_Content\C_Addon_Knows_Schnaps.d
 Story\B_Story\b_lagereinsnotsoeldner.d
 Story\B_Story\b_lagerzweinotsoeldner.d
