@@ -142,7 +142,6 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 	slf.senses_range = 2500;
 
 	// Ustawienie statystyk w zaleznosci od wykupionego poziomu zolnierzy.
-	// Zostawiam to w takiej formie, bo latwiej wtedy zmieniac poszczegolne wartosci dla kazdego poziomu.
 	// [BALANS]
 	B_SetAttributesToSoldier(slf, stufe);
 	AI_PrintScreen(IntToString(stufe),1,12,FONT_ScreenSmall,9);
