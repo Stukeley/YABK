@@ -144,7 +144,6 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 	// Ustawienie statystyk w zaleznosci od wykupionego poziomu zolnierzy.
 	// [BALANS]
 	B_SetAttributesToSoldier(slf, stufe);
-	AI_PrintScreen(IntToString(stufe),1,12,FONT_ScreenSmall,9);
 
 	// Ustawienie broni w zaleznosci od posiadanego ulepszenia.
 	var int soldier_weapon;
