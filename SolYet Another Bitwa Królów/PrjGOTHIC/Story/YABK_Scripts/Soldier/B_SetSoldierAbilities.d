@@ -127,7 +127,7 @@ func void B_SetSoldierAbilities(var C_Npc slf, var int gil)
 	slf.npcType = npctype_main;
 
 	// Ustawienie modelu postaci.
-	if(fraktion != SKE)
+	if (fraktion != SKE)
 	{
 		Mdl_SetVisual(slf, "humans.mds");
 	};

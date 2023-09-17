@@ -143,13 +143,13 @@ func void B_SetMageAbilities(var C_Npc slf, var int gil)
 	CreateInvItems(slf,ItRu_InstantFireball,1);
 
 	// Jezeli magowie maja ulepszenie "Bryla Lodu" to tworzymy rune.
-	if(eisblockerforscht == TRUE)
+	if (eisblockerforscht == TRUE)
 	{
 		CreateInvItems(slf, ItRu_IceCube, 1);
 	};
 
 	// Jezeli magowie maja ulepszenie "Uzdrowienie" to tworzymy rune.
-	if(wundenheilenerforscht == TRUE)
+	if (wundenheilenerforscht == TRUE)
 	{
 		CreateInvItems(slf, ItRu_FullHeal, 1);
 		slf.aivar[90] = TRUE;
@@ -160,19 +160,19 @@ func void B_SetMageAbilities(var C_Npc slf, var int gil)
 	};
 
 	// Jezeli magowie maja ulepszenie "Blyskawica" to tworzymy rune.
-	if(blitzschlagerforscht == TRUE)
+	if (blitzschlagerforscht == TRUE)
 	{
 		CreateInvItems(slf, ItRu_LightningFlash, 1);
 	};
 
 	// Jezeli magowie maja ulepszenie "Pelnia Zycia" to tworzymy rune.
-	if(heiltrankerforscht == TRUE)
+	if (heiltrankerforscht == TRUE)
 	{
 		CreateInvItems(slf, ItPo_Health_Addon_04, 1);
 	};
 
 	// Je¿eli magowie maja ulepszenie "Korzen" to tworzymy rune.
-	if(rankenerforscht == TRUE)
+	if (rankenerforscht == TRUE)
 	{
 		CreateInvItems(slf, ItRu_GreenTentacle, 1);
 	};

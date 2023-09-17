@@ -1,7 +1,7 @@
 // Ustawianie statystyk Zolnierzy.
 // [Balans]
 
-func void B_SetAttributesToSoldier(var C_Npc slf,var int kap)
+func void B_SetAttributesToSoldier(var C_Npc slf, var int kap)
 {
 	// LVL
 	slf.level = 10 * kap;
@@ -14,7 +14,7 @@ func void B_SetAttributesToSoldier(var C_Npc slf,var int kap)
 	// % UMIEJETNOSCI WALKI 
 	B_SetFightSkills(slf, 13 * kap);
 
-	if(kap == 1)
+	if (kap == 1)
 	{
 		// SILA
 		slf.attribute[ATR_STRENGTH] = 10;
@@ -28,7 +28,8 @@ func void B_SetAttributesToSoldier(var C_Npc slf,var int kap)
 		// 1H TALENT SET
 		Npc_SetTalentSkill(self, NPC_TALENT_1H, 0);
 	}
-	else {
+	else
+	{
 		// SILA
 		slf.attribute[ATR_STRENGTH] = 30 * kap;
 		slf.aivar[REAL_STRENGTH] = 30 * kap;
@@ -39,7 +40,7 @@ func void B_SetAttributesToSoldier(var C_Npc slf,var int kap)
 		slf.attribute[ATR_HITPOINTS_MAX] = 40 + 120 * kap;
 		slf.attribute[ATR_HITPOINTS] =  40 + 120 * kap;
 		// 1H TALENT SET
-		if(kap <= 3) {
+		if (kap <= 3) {
 			Npc_SetTalentSkill(self, NPC_TALENT_1H, 1);
 		}
 		else {
@@ -49,16 +50,20 @@ func void B_SetAttributesToSoldier(var C_Npc slf,var int kap)
 	};
 
 	// FIGHT TACTIC 
-	if(kap <= 2) {
+	if (kap <= 2)
+	{
 		slf.fight_tactic = FAI_HUMAN_COWARD;
 	}
-	else if (kap <= 4) {
+	else if (kap <= 4)
+	{
 		slf.fight_tactic = FAI_HUMAN_NORMAL;
 	}
-	else if (kap <=6) {
+	else if (kap <=6)
+	{
 		slf.fight_tactic = FAI_HUMAN_STRONG;
 	}
-	else {
+	else
+	{
 		slf.fight_tactic = FAI_HUMAN_MASTER;
 	};
 

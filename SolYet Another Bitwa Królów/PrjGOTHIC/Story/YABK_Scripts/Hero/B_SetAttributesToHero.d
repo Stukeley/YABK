@@ -10,7 +10,8 @@ func void B_SetAttributesToHero(var C_Npc slf, var int kap)
 
 	// LVL
 	slf.level = 30 + 10 * kap;
-	if(kap >= 3) {
+	if (kap >= 3)
+	{
 		// SI£A
 		slf.attribute[ATR_STRENGTH] = 200 + kap * 40;
 		slf.aivar[REAL_STRENGTH] = 200 + kap * 40;
