@@ -173,16 +173,6 @@ func void B_SetHeroAbilities(var C_Npc slf, var int gil)
 		B_SetAttributesToHero(slf, ratio);
 	};
 
-	if (ratio >= 3)	
-	{
-		slf.fight_tactic = FAI_HUMAN_MASTER;
-	}
-	else 
-	{
-		slf.fight_tactic = FAI_HUMAN_STRONG;
-
-	};
-
 	// Ustawienie kuszy i jej umiejetnosci w zaleznosci od talentu.
 	// Umiejetnosc kuszy bohatera zaczyna sie od 0.
 	var int hero_crossbow;

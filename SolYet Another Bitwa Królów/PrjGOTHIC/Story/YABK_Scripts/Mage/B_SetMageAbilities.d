@@ -124,16 +124,7 @@ func void B_SetMageAbilities(var C_Npc slf, var int gil)
 
 	// Ustawienie statystyk oraz stylu walki w zaleznosci czy magowie sa ulepszeni czy nie.
 	// [BALANS]
-	if (magierupdate == TRUE)
-	{
-		B_SetAttributesToChapter(slf, 5);
-		slf.fight_tactic = FAI_HUMAN_MASTER;
-	}
-	else
-	{
-		B_SetAttributesToChapter(slf, 2);
-		slf.fight_tactic = FAI_HUMAN_NORMAL;
-	};
+	B_SetAttributesToMage(slf, magierupdate);
 
 	slf.guild = gil;
 	slf.voice = 7;
