@@ -70,6 +70,7 @@ Przydatne zasoby:
 - mag czasami się nie pojawia od razu
 - teleporty bez animacji?
 - różne typy AI z różnym zachowaniem
+- jakiś tutorial / help w grze (może menu jak w NB)
 
 ## Changelog balansu
 - Usunięto perk za punkty honoru "Nieśmiertelność" i zamieniono go perkiem "Bonusowe HP" - jest to spowodowane faktem, że wcześniejsza wersja umiejętności była bardzo pobugowana i nie było możliwości sprawienia, by działała dokładnie tak, jak zamierzyli oryginalni twórcy
