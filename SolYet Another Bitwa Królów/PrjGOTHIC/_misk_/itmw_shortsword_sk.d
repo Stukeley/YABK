@@ -390,3 +390,313 @@ instance ITMW_HERO_1(C_Item)
 	count[5] = value;
 };
 
+
+
+instance ITMW_Inquisition_1(C_Item)
+{
+	name = name_itmw_hero_1;
+	mainflag = ITEM_KAT_NF;
+	flags = ITEM_2HD_SWD;
+	material = MAT_METAL;
+	value = 0;
+	damageTotal = BOTK_WEAPON_01;
+	damagetype = DAM_EDGE;
+	range = Range_Sld2hSchwert;
+	on_equip = Equip_Yabk_Anim_Test_33;
+	on_unequip = UnEquip_Yabk_Anim_Test_33;
+	cond_atr[2] = ATR_STRENGTH;
+	cond_value[2] = 1;
+	visual = "Innosholyenforcer.3DS";
+	description = name;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
+	count[3] = cond_value[2];
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+instance ITMW_Inquisition_2(C_Item)
+{
+	name = name_itmw_hero_1;
+	mainflag = ITEM_KAT_NF;
+	flags = ITEM_2HD_SWD;
+	material = MAT_METAL;
+	value = 0;
+	damageTotal = BOTK_WEAPON_02;
+	damagetype = DAM_EDGE;
+	range = Range_Sld2hSchwert;
+	on_equip = Equip_Yabk_Anim_Test_33;
+	on_unequip = UnEquip_Yabk_Anim_Test_33;
+	cond_atr[2] = ATR_STRENGTH;
+	cond_value[2] = 1;
+	visual = "Innosholyenforcer.3DS";
+	description = name;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
+	count[3] = cond_value[2];
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+instance ITMW_Inquisition_3(C_Item)
+{
+	name = name_itmw_hero_1;
+	mainflag = ITEM_KAT_NF;
+	flags = ITEM_2HD_SWD;
+	material = MAT_METAL;
+	value = 0;
+	damageTotal = BOTK_WEAPON_03;
+	damagetype = DAM_EDGE;
+	range = Range_Sld2hSchwert;
+	on_equip = Equip_Yabk_Anim_Test_33;
+	on_unequip = UnEquip_Yabk_Anim_Test_33;
+	cond_atr[2] = ATR_STRENGTH;
+	cond_value[2] = 1;
+	visual = "Innosholyenforcer.3DS";
+	description = name;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
+	count[3] = cond_value[2];
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+instance ITMW_Inquisition_4(C_Item)
+{
+	name = name_itmw_hero_1;
+	mainflag = ITEM_KAT_NF;
+	flags = ITEM_2HD_SWD;
+	material = MAT_METAL;
+	value = 0;
+	damageTotal = BOTK_WEAPON_04;
+	damagetype = DAM_EDGE;
+	range = Range_Sld2hSchwert;
+	on_equip = Equip_Yabk_Anim_Test_33;
+	on_unequip = UnEquip_Yabk_Anim_Test_33;
+	cond_atr[2] = ATR_STRENGTH;
+	cond_value[2] = 1;
+	visual = "Innosholyenforcer.3DS";
+	description = name;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
+	count[3] = cond_value[2];
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+
+
+
+
+instance ITMW_Zakon_1(C_Item)
+{
+	name = name_itmw_hero_1;
+	mainflag = ITEM_KAT_NF;
+	flags = ITEM_SWD;
+	material = MAT_METAL;
+	value = 0;
+	damageTotal = BOTK_WEAPON_01;
+	damagetype = DAM_EDGE;
+	range = Range_Sld2hSchwert;
+	on_equip = Equip_Yabk_Anim_Test_3;
+	on_unequip = UnEquip_Yabk_Anim_Test_3;
+	cond_atr[2] = ATR_STRENGTH;
+	cond_value[2] = 1;
+	visual = "Konzeptklingeonehanded.3DS";
+	description = name;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
+	count[3] = cond_value[2];
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+instance ITMW_Zakon_2(C_Item)
+{
+	name = name_itmw_hero_1;
+	mainflag = ITEM_KAT_NF;
+	flags = ITEM_SWD;
+	material = MAT_METAL;
+	value = 0;
+	damageTotal = BOTK_WEAPON_02;
+	damagetype = DAM_EDGE;
+	range = Range_Sld2hSchwert;
+	on_equip = Equip_Yabk_Anim_Test_3;
+	on_unequip = UnEquip_Yabk_Anim_Test_3;
+	cond_atr[2] = ATR_STRENGTH;
+	cond_value[2] = 1;
+	visual = "Konzeptklingeonehanded.3DS";
+	description = name;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
+	count[3] = cond_value[2];
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+instance ITMW_Zakon_3(C_Item)
+{
+	name = name_itmw_hero_1;
+	mainflag = ITEM_KAT_NF;
+	flags = ITEM_SWD;
+	material = MAT_METAL;
+	value = 0;
+	damageTotal = BOTK_WEAPON_03;
+	damagetype = DAM_EDGE;
+	range = Range_Sld2hSchwert;
+	on_equip = Equip_Yabk_Anim_Test_3;
+	on_unequip = UnEquip_Yabk_Anim_Test_3;
+	cond_atr[2] = ATR_STRENGTH;
+	cond_value[2] = 1;
+	visual = "Konzeptklingeonehanded.3DS";
+	description = name;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
+	count[3] = cond_value[2];
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+instance ITMW_Zakon_4(C_Item)
+{
+	name = name_itmw_hero_1;
+	mainflag = ITEM_KAT_NF;
+	flags = ITEM_SWD;
+	material = MAT_METAL;
+	value = 0;
+	damageTotal = BOTK_WEAPON_04;
+	damagetype = DAM_EDGE;
+	range = Range_Sld2hSchwert;
+	on_equip = Equip_Yabk_Anim_Test_3;
+	on_unequip = UnEquip_Yabk_Anim_Test_3;
+	cond_atr[2] = ATR_STRENGTH;
+	cond_value[2] = 1;
+	visual = "Konzeptklingeonehanded.3DS";
+	description = name;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
+	count[3] = cond_value[2];
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+
+func void Equip_Yabk_Anim_Test_3()
+{
+			Mdl_ApplyOverlayMds(self,"HUMANS_RAPIER_ST2.mds");
+};
+
+func void UnEquip_Yabk_Anim_Test_3()
+{
+	Npc_ChangeAttribute(self,ATR_STRENGTH,-0);
+	Npc_ChangeAttribute(self,ATR_DEXTERITY,-0);
+};
+func void Equip_Yabk_Anim_Test_33()
+{
+			Mdl_ApplyOverlayMds(self,"HUMANS_2HST3.mds");
+};
+
+func void UnEquip_Yabk_Anim_Test_33()
+{
+	Npc_ChangeAttribute(self,ATR_STRENGTH,-0);
+	Npc_ChangeAttribute(self,ATR_DEXTERITY,-0);
+};
+
+
+instance ITMW_OrcWeapon_LEVEL_1(C_Item)
+{
+	name = name_itmw_hero_1;
+	mainflag = ITEM_KAT_NF;
+	flags = ITEM_2HD_SWD;
+	material = MAT_METAL;
+	value = 0;
+	damageTotal = BOTK_WEAPON_02;
+	damagetype = DAM_EDGE;
+	range = Range_Sld2hSchwert;
+	cond_atr[2] = ATR_STRENGTH;
+	cond_value[2] = 1;
+	visual = "ItMw_2H_OrcAxe_01.3DS";
+	description = name;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
+	count[3] = cond_value[2];
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+instance ITMW_OrcWeapon_LEVEL_2(C_Item)
+{
+	name = name_itmw_hero_1;
+	mainflag = ITEM_KAT_NF;
+	flags = ITEM_2HD_SWD;
+	material = MAT_METAL;
+	value = 0;
+	damageTotal = BOTK_WEAPON_02;
+	damagetype = DAM_EDGE;
+	range = Range_Sld2hSchwert;
+	cond_atr[2] = ATR_STRENGTH;
+	cond_value[2] = 1;
+	visual = "ItMw_2H_OrcAxe_02.3DS";
+	description = name;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
+	count[3] = cond_value[2];
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+instance ITMW_OrcWeapon_LEVEL_3(C_Item)
+{
+	name = name_itmw_hero_1;
+	mainflag = ITEM_KAT_NF;
+	flags = ITEM_2HD_SWD;
+	material = MAT_METAL;
+	value = 0;
+	damageTotal = BOTK_WEAPON_03;
+	damagetype = DAM_EDGE;
+	range = Range_Sld2hSchwert;
+	cond_atr[2] = ATR_STRENGTH;
+	cond_value[2] = 1;
+	visual = "ItMw_2H_OrcAxe_03.3DS";
+	description = name;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
+	count[3] = cond_value[2];
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+instance ITMW_OrcWeapon_LEVEL_4(C_Item)
+{
+	name = name_itmw_hero_1;
+	mainflag = ITEM_KAT_NF;
+	flags = ITEM_2HD_SWD;
+	material = MAT_METAL;
+	value = 0;
+	damageTotal = BOTK_WEAPON_04;
+	damagetype = DAM_EDGE;
+	range = Range_Sld2hSchwert;
+	cond_atr[2] = ATR_STRENGTH;
+	cond_value[2] = 1;
+	visual = "ItMw_2H_OrcSword_02.3DS";
+	description = name;
+	text[2] = NAME_Damage;
+	count[2] = damageTotal;
+	text[3] = NAME_Str_needed;
+	count[3] = cond_value[2];
+	text[4] = NAME_TwoHanded;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+

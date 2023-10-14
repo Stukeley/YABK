@@ -54,6 +54,36 @@ func void B_UpdateGenericWachenAbilities(var C_Npc wachen, var int fraktion, var
 		B_SetFightSkills(wachen, 85);
 		Npc_SetTalentSkill(wachen, NPC_TALENT_CROSSBOW, 2);
 	};
+
+	if (fraktion == SKE){
+		wachen.protection[PROT_EDGE] = (175*wachen.protection[PROT_EDGE])/100;
+		wachen.protection[PROT_BLUNT] = (175*wachen.protection[PROT_BLUNT])/100;
+		wachen.protection[PROT_POINT] = (175*wachen.protection[PROT_POINT])/100;
+		wachen.protection[PROT_FIRE] = (25*wachen.protection[PROT_FIRE])/100;
+		wachen.protection[PROT_MAGIC] = (25*wachen.protection[PROT_FIRE])/100;
+	}
+	else if (fraktion == PAL)
+	{
+		wachen.attribute[ATR_DEXTERITY] = 2*wachen.attribute[ATR_DEXTERITY];
+		wachen.aivar[REAL_DEXTERITY] = 2*wachen.attribute[ATR_DEXTERITY];
+	}
+	else if (fraktion == DJG){
+		wachen.attribute[ATR_HITPOINTS_MAX] =(6*wachen.attribute[ATR_HITPOINTS_MAX])/5;
+		wachen.attribute[ATR_HITPOINTS] = (6*wachen.attribute[ATR_HITPOINTS])/5;
+	}
+	else if (fraktion == PCH){
+		wachen.protection[PROT_EDGE] = (14*wachen.protection[PROT_EDGE])/10;
+		wachen.protection[PROT_BLUNT] = (14*wachen.protection[PROT_BLUNT])/10;
+		wachen.protection[PROT_POINT] = (14*wachen.protection[PROT_POINT])/10;
+	}
+	else if (fraktion == TMP){
+		wachen.protection[PROT_FIRE] = (14*wachen.protection[PROT_FIRE])/10;
+		wachen.protection[PROT_MAGIC] = (14*wachen.protection[PROT_FIRE])/10;
+	}
+	else if (fraktion == ORC){
+		wachen.attribute[ATR_STRENGTH] = (13*wachen.attribute[ATR_STRENGTH])/10;
+		wachen.aivar[REAL_STRENGTH] = (13*wachen.aivar[REAL_STRENGTH])/10;
+	};
 };
 
 // Funkcja zmieniajaca parametry stworzonego straznika (slf) w zaleznosci od gildii (gil)

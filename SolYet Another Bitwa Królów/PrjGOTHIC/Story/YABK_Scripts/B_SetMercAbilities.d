@@ -8,7 +8,7 @@ func void B_SetMercAbilities(var C_Npc slf, var int gil, var int stufe)
 	// Twarz??
 	var int face;
 
-	// Frakcja najemnika - PAL (Paladyn), DJG (Lowca Smokow), TMP (Templariusz), SKE (Ozywieniec).
+	// Frakcja najemnika - PAL (Paladyn), DJG (Lowca Smokow), TMP (Templariusz), SKE (Ozywieniec), PCH(Stary Obóz).
 	var int fraktion;
 
 	// Domyslne atrybuty najemnika.

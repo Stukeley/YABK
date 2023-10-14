@@ -50,6 +50,7 @@ func void pal_1006_minebauer_erbauen_info()
 		Npc_RemoveInvItems(self,ItMi_Gold,Npc_HasItems(self,ItMi_Gold));
 		L1_MINE_ERBAUT = TRUE;
 		self.aivar[91] = FALSE;
+		Przychod += 24;
 		AI_StopProcessInfos(self);
 	}
 	else

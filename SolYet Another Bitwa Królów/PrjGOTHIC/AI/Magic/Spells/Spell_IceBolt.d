@@ -1,6 +1,6 @@
 
-const int SPL_COST_Icebolt = 10;
-const int SPL_DAMAGE_Icebolt = 50;
+const int SPL_COST_Icebolt = MageSpellCost_1;
+const int SPL_DAMAGE_Icebolt = MageDamageSpell_1;
 
 instance Spell_IceBolt(C_Spell_Proto)
 {

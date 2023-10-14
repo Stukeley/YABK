@@ -1,12 +1,11 @@
 
-const int SPL_Cost_DESTROYUNDEAD = 100;
-const int SPL_Damage_DESTROYUNDEAD = 1000;
+const int SPL_Cost_DESTROYUNDEAD = MageSpellCost_3;
+const int SPL_Damage_DESTROYUNDEAD = MageDamageSpell_3;
 
 instance Spell_DestroyUndead(C_Spell_Proto)
 {
 	time_per_mana = 0;
 	damage_per_level = SPL_Damage_DESTROYUNDEAD;
-	spellType = SPELL_NEUTRAL;
 };
 
 

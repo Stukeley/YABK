@@ -31,7 +31,7 @@ prototype Mst_Default_Gobbo_Black(C_Npc)
 
 func void B_SetVisuals_Gobbo_Black()
 {
-	Mdl_SetVisual(self,"Gobbo.mds");
+	Mdl_SetVisual(self,"Gobbo_Human.mds");
 	Mdl_SetVisualBody(self,"Gob_Body",1,DEFAULT,"",DEFAULT,DEFAULT,-1);
 };
 

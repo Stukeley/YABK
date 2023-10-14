@@ -28,6 +28,8 @@ func void ZS_MM_Rtn_Summoned()
 
 func int ZS_MM_Rtn_Summoned_Loop()
 {
+
+	
 	B_MM_WispDetect();
 	if(Npc_GetDistToNpc(self,hero) > 500)
 	{

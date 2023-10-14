@@ -35,6 +35,10 @@ func int Spell_ProcessMana(var int manaInvested)
 	{
 		return Spell_Logic_PalTeleportSecret(manaInvested);
 	};
+	if (activeSpell == SPL_ShrinkDmg			)	
+	{	
+		return	Spell_Logic_ShrinkDmg		(manaInvested);	
+	};
 	if(activeSpell == SPL_TeleportSeaport)
 	{
 		return Spell_Logic_TeleportSeaport(manaInvested);
@@ -311,9 +315,21 @@ func int Spell_ProcessMana(var int manaInvested)
 	{
 		return Spell_Logic_SummonZombie(manaInvested);
 	};
+	if (activeSpell == SPL_MineTeleport)	
+	{
+		return  Spell_Logic_TeleportMine		(manaInvested); 
+	};
+	if (activeSpell == SPL_MonasteryTeleport)	
+	{
+		return  Spell_Logic_TeleportMonaste		(manaInvested); 
+	};
 	if(activeSpell == SPL_SummonMud)
 	{
 		return Spell_Logic_SummonMud(manaInvested);
+	};
+	if (activeSpell == SPL_FireMeteor)	
+	{	
+		return	Spell_Logic_FireMeteor		(manaInvested);	
 	};
 	return TRUE;
 };

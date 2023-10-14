@@ -1,6 +1,6 @@
 
-const int SPL_COST_InstantFireball = 15;
-const int SPL_DAMAGE_InstantFireball = 140;
+const int SPL_COST_InstantFireball = MageSpellCost_2;
+const int SPL_DAMAGE_InstantFireball = MageDamageSpell_2;
 
 instance Spell_InstantFireball(C_Spell_Proto)
 {

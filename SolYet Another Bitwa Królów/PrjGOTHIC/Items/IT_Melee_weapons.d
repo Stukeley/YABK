@@ -837,10 +837,10 @@ instance ItMw_Kriegskeule(C_Item)
 	flags = ITEM_AXE;
 	material = MAT_WOOD;
 	value = Value_Kriegskeule;
-	damageTotal = Damage_Kriegskeule;
+	damageTotal = 0;
 	damagetype = DAM_BLUNT;
 	range = Range_Kriegskeule;
-	cond_atr[2] = ATR_STRENGTH;
+	cond_atr[2] = 1;
 	cond_value[2] = Condition_Kriegskeule;
 	visual = "ItMw_022_1h_mace_war_01.3DS";
 	description = name;

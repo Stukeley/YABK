@@ -49,6 +49,7 @@ func void djg_2007_minenaufseher_mehr_arbeiter_info()
 		B_GiveInvItems(other,self,ItMi_Gold,MINENARBEITERCOST);
 		Npc_RemoveInvItems(self,ItMi_Gold,Npc_HasItems(self,ItMi_Gold));
 		L2_MINE += 1;
+		Przychod +=24;
 		AI_StopProcessInfos(self);
 		if(L2_MINE == 2)
 		{

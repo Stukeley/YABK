@@ -20,6 +20,10 @@ instance DJG_2190_HOEHLENSOELDNER(Npc_Default)
 	{
 		B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_Normal02,BodyTex_P,itar_tmp_m);
 	}
+	else if(FRAKTION_L2 == PCH)
+	{
+		B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_Normal02,BodyTex_P,Itar_OldCamp_3);
+	}
 	else if(FRAKTION_L2 == SKE)
 	{
 		B_SetSkelettVisual(self,3);

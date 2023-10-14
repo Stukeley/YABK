@@ -1,8 +1,4 @@
-// Plik zawiera funkcje zwiazana z zadawaniem obrazen.
 
-// Funkcja zadajaca obrazenia.
-// self - NPC otrzymujacy obrazenia (bedacy atakowanym)
-// other - NPC atakujacy
 func void B_AssessDamage()
 {
 	var int random;

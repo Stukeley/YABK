@@ -1,6 +1,6 @@
 
-const int SPL_COST_Deathbolt = 25;
-const int SPL_DAMAGE_Deathbolt = 125;
+const int SPL_COST_Deathbolt = MageSpellCost_1;
+const int SPL_DAMAGE_Deathbolt = MageDamageSpell_1;
 
 instance Spell_Deathbolt(C_Spell_Proto)
 {

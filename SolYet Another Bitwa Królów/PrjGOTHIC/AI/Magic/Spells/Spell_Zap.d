@@ -1,6 +1,6 @@
 
-const int SPL_Cost_Zap = 15;
-const int SPL_Damage_Zap = 30;
+const int SPL_Cost_Zap = MageSpellCost_2;
+const int SPL_Damage_Zap = MageDamageSpell_2;
 
 instance Spell_Zap(C_Spell_Proto)
 {

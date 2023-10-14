@@ -2,7 +2,7 @@
 
 instance PAL_1001_SCHMIEDEBAUER(Npc_Default)
 {
-	name[0] = NPCNAME_SCHMIEDEBAUER;
+
 	guild = GIL_NONE;
 	id = 1001;
 	voice = 6;
@@ -20,19 +20,34 @@ instance PAL_1001_SCHMIEDEBAUER(Npc_Default)
 	Mdl_ApplyOverlayMds(self,"humans_relaxed.mds");
 	if(FRAKTION_L1 == DJG)
 	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_djg_m);
+		name[0] = "Bennet";
+		B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald", Face_N_CoolPock, BodyTex_N, ITAR_Smith);	
 	}
 	else if(FRAKTION_L1 == PAL)
 	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,ItAr_PAL_M);
+		name[0] = "Harad";
+		B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald", Face_N_NormalBart20, BodyTex_N, ITAR_Smith);	
 	}
 	else if(FRAKTION_L1 == TMP)
 	{
+		name[0] = "Kowal";
 		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_tmp_m);
 	}
 	else if(FRAKTION_L1 == SKE)
+	{	
+		name[0] = "Kowal";
+		B_SetNpcVisual(self,MALE,"Ske_Head",0,0,ITAR_SKEMIL_M);
+	}
+	else if (FRAKTION_L1 == PCH) 
 	{
-		B_SetSkelettVisual(self,3);
+		name[0] = "Huno";
+		B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_NormalBart_Huno, BodyTex_N, ITAR_SMITH);	
+	}
+	else if (FRAKTION_L1 == ORC)
+	{
+		name[0] = "Kowal";
+		Mdl_SetVisual(self,"Orc.mds");
+		Mdl_SetVisualBody(self,"Orc_BodyWarrior",DEFAULT,DEFAULT,"Orc_HeadWarrior",DEFAULT,DEFAULT,-1);
 	};
 	Mdl_SetModelFatness(self,1);
 	B_GiveNpcTalents(self);
@@ -46,8 +61,8 @@ instance PAL_1001_SCHMIEDEBAUER(Npc_Default)
 
 func void rtn_start_1001()
 {
-	TA_Stand_WP(8,0,23,0,"L1_SCHMIEDE_03");
-	TA_Stand_WP(23,0,8,0,"L1_SCHMIEDE_03");
+	TA_Stand_Guarding(8,0,23,0,"L1_SCHMIEDE_03");
+	TA_Stand_Guarding(23,0,8,0,"L1_SCHMIEDE_03");
 };
 
 func void rtn_tot_1001()

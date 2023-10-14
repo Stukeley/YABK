@@ -23,24 +23,33 @@ instance DJG_2004_MAGIER(Npc_Default)
 	Mdl_ApplyOverlayMds(self,"humans_mage.mds");
 	if(FRAKTION_L2 == DJG)
 	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,ITAR_KDW_L_Addon);
+	name[0] = "Saturas";
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_B_Saturas, BodyTex_B, ITAR_KDW_H);	
 	}
-	else if(FRAKTION_L2 == PAL)
+	else if(FRAKTION_L2 == PAL || FRAKTION_L2 == PCH)
 	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,ItAr_KDF_L);
+	name[0] = "Pyrokar";
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald",Face_N_ImportantOld , BodyTex_N, ITAR_Dummy_MAGE_3);	
 	}
 	else if(FRAKTION_L2 == TMP)
 	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_gur_l);
+		name[0] = "Y'Berion";
+		B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald",Face_N_YBerion, BodyTex_P,itar_gur_l);
+	}
+	else if (FRAKTION_L2 == ORC)
+	{
+		name[0] = "Urshak";
+		Mdl_SetVisual(self,"Orc.mds");
+		Mdl_SetVisualBody(self,"Orc_BodyShaman",DEFAULT,DEFAULT,"Orc_HeadShaman",DEFAULT,DEFAULT,-1);
 	}
 	else if(FRAKTION_L2 == SKE)
 	{
-		B_SetSkelettVisual(self,6);
+		name[0] = "Czarny Mag";
+		B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_MadPsi,BodyTex_N,ITAR_Xardas);
 	};
 	Mdl_SetModelFatness(self,1);
 	B_GiveNpcTalents(self);
 	B_SetFightSkills(self,30);
-	EquipItem(self,ItMw_Nagelknueppel);
 	B_CreateAmbientInv(self);
 	senses = SENSE_SEE | SENSE_SMELL;
 	senses_range = 20;

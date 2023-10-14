@@ -20,19 +20,23 @@ instance PAL_1005_MAGIEBAUER(Npc_Default)
 	Mdl_ApplyOverlayMds(self,"humans_relaxed.mds");
 	if(FRAKTION_L1 == DJG)
 	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_djg_m);
+	name[0] = "Saturas";
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_B_Saturas, BodyTex_B, ITAR_KDW_H);	
 	}
-	else if(FRAKTION_L1 == PAL)
+	else if(FRAKTION_L1 == PAL || FRAKTION_L1 == PCH)
 	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,ItAr_PAL_M);
+	name[0] = "Pyrokar";
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald",Face_N_ImportantOld , BodyTex_N, ITAR_Dummy_MAGE_3);	
 	}
 	else if(FRAKTION_L1 == TMP)
 	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_tmp_m);
+		name[0] = "Y'Berion";
+		B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald",Face_N_YBerion, BodyTex_P,itar_gur_l);
 	}
-	else if(FRAKTION_L1 == SKE)
+	else if(FRAKTION_L1 == SKE || FRAKTION_L1 == ORC)
 	{
-		B_SetSkelettVisual(self,3);
+		name[0] = "Czarny Mag";
+		B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_N_MadPsi,BodyTex_N,ITAR_Xardas);
 	};
 	Mdl_SetModelFatness(self,1);
 	B_GiveNpcTalents(self);

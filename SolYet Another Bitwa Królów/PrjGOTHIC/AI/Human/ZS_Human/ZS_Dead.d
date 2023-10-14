@@ -1,8 +1,4 @@
-// Plik zawiera funkcje zwiazana ze smiercia NPC.
 
-// Funkcja wywolywana po smierci NPC.
-// self - NPC zabity
-// other - NPC ktory zabil
 func void ZS_Dead()
 {
 	var int skilllevel;
@@ -349,13 +345,6 @@ func void ZS_Dead()
 			other.attribute[ATR_HITPOINTS] -= 50;
 		};
 	};
-
-	// Po zabiciu ulecz sie pelnia, jesli ja posiadasz.
-	if (Npc_HasItems(other, ItPo_Health_Addon_04) && other.attribute[ATR_HITPOINTS] < other.attribute[ATR_HITPOINTS_MAX])
-	{
-		B_UseItem(other, ItPo_Health_Addon_04);
-	};
-
 	B_GiveTradeInv(self);
 	B_GiveDeathInv(self);
 	B_ClearRuneInv(self);

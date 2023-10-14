@@ -80,3 +80,25 @@ func int Wld_GetTime_Intern()
 	return time;
 };
 
+
+
+var int minitime;
+var int StolenGold;
+var string InfoStolenGold;
+var string Amountgold;
+func void TICK_TOCK()
+{
+
+	
+};
+func void SKELETONTESTATTACK()
+{
+	if (LAGER == 1)
+	{
+		B_StartOtherRoutine (NONE_4001_Skeleton,"Start_Lager_2_Attack");
+	};
+	if (LAGER == 2)
+	{
+		B_StartOtherRoutine (NONE_4001_Skeleton,"Start_Lager_1_Attack");
+	};
+};

@@ -348,3 +348,30 @@ func void UseItPo_MegaDrink()
 	Snd_Play("DEM_Warn");
 };
 
+
+
+instance ItPo_Speed_YABK(C_Item)
+{
+	name = NAME_Trank;
+	mainflag = ITEM_KAT_POTIONS;
+	flags = ITEM_MULTI;
+	value = Value_Speed;
+	visual = "ItPo_Speed.3ds";
+	material = MAT_GLAS;
+	on_state[0] = UseItPo_Speed;
+	scemeName = "POTIONFAST";
+	wear = WEAR_EFFECT;
+	effect = "SPELLFX_ITEMGLIMMER";
+	description = "Mikstura szybkoœci";
+	text[1] = "Tymczasowo zwiêksza twoj¹ szybkoœæ.";
+	text[3] = NAME_Duration;
+	count[3] = Time_Speed / 60000;
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+
+
+func void UseItPo_Speed_YABK()
+{
+	Mdl_ApplyOverlayMdsTimed(self,"HUMANS_SPRINT.MDS",3000);
+};

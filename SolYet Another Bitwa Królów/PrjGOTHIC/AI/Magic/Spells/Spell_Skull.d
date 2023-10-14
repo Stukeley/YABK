@@ -1,13 +1,12 @@
 
-const int SPL_Cost_Skull = 250;
-const int SPL_Damage_Skull = 666;
+const int SPL_Cost_Skull = MageSpellCost_4;
+const int SPL_Damage_Skull = MageDamageSpell_4;
 
 instance Spell_Skull(C_Spell_Proto)
 {
 	time_per_mana = 0;
 	damage_per_level = SPL_Damage_Skull;
 	damagetype = DAM_MAGIC;
-	targetCollectAlgo = TARGET_COLLECT_FOCUS_FALLBACK_NONE;
 };
 
 

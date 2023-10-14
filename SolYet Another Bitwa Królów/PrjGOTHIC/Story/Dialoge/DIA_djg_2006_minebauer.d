@@ -51,6 +51,7 @@ func void djg_2006_minebauer_erbauen_info()
 		L2_MINE_ERBAUT = TRUE;
 		self.aivar[91] = FALSE;
 		AI_StopProcessInfos(self);
+		Przychod += 24;
 	}
 	else
 	{

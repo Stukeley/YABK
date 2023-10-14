@@ -572,6 +572,10 @@ func int ZS_RunToWP_Loop()
 		{
 			Npc_ExchangeRoutine(self,"HOEHLE");
 		};
+		if (self.aivar[97] == 5)
+		{
+			Npc_ExchangeRoutine(self,"lager2");	
+		};
 		self.aivar[94] += 1;
 		self.aivar[AIV_TAPOSITION] = NOTINPOS;
 	};

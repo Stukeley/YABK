@@ -18,3 +18,6 @@ const string TOPIC_WispDetector = "Das suchende Irrlicht";
 const string TOPIC_Language = "Die Sprache der Erbauer";
 const string Topic_Bonus = "Besonderes";
 const string Topic_Diebesgilde = "Diebesgilde";
+const string TOPIC_PASSIVE_INFO	= 	"Umiejêtnoœci Pasywne";
+const string TOPIC_EQ_INFO = "Statystyki przedmiotów";
+const string TOPIC_SMITH = "Kowal";

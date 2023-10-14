@@ -37,6 +37,7 @@ func void ZS_MM_Attack()
 
 func int ZS_MM_Attack_Loop()
 {
+	
 	if(Npc_IsPlayer(other))
 	{
 		return LOOP_END;

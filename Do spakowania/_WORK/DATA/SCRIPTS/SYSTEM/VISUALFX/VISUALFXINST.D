@@ -1348,9 +1348,6 @@ INSTANCE spellFX_Firebolt	(CFx_Base_Proto)
 
      	emActionCollStat_S		= "COLLIDE CREATE CREATEQUAD";
      	emActionCollDyn_S		= "COLLIDE CREATEONCE";
-     	emFXCollStat_S	   		= "spellFX_Firebolt_COLLIDEFX";
-     	emFXCollDyn_S	   		= "spellFX_Firebolt_COLLIDEDYNFX";
-     	emFXCollDynPerc_S	   	= "VOB_MAGICBURN";
 		emTrjTargetRange	 	= 20;
 		emTrjTargetElev 		= 0;
 		emTrjDynUpdateDelay		= 20000;
@@ -1372,27 +1369,22 @@ INSTANCE spellFX_Firebolt	(CFx_Base_Proto)
 
 		INSTANCE spellFX_Firebolt_KEY_INIT (C_ParticleFXEmitKey)
 		{
-				visname_S 			= "MFX_Firebolt_INIT";
+				visname_S				= "MFX_SLEEP_INIT";
 				lightrange 			= 0.001;
 		};
 
 		INSTANCE spellFX_Firebolt_KEY_CAST (C_ParticleFXEmitKey)
 		{
-				visname_S 				= "mfx_firebolt_cast";
-				emtrjmode_s 			= "TARGET";
-		     	emtrjeasevel 			= 1400.;
-	 			sfxid					= "Torch_Enlight";
-	 			lightrange 				= 100;
-	 			emCheckCollision 		= 1;
+				lightrange				= 100;
+				emtrjmode_s 		= "TARGET";
+				visname_S 			= "MFX_SHRINK_TARGET";
+		     	emSelfRotVel_S			= "100 100 100";
+				emtrjeasevel		= 1400;
+				LightRange			= 100;
+				sfxid				= "MFX_Sleep_Cast";
+				sfxisambient		= 1;
+				emCheckCollision 		= 1;
 		};
-
-		INSTANCE spellFX_Firebolt_KEY_COLLIDE (C_ParticleFXEmitKey)
-		{
-		     	visname_S 				= "";
-		     	pfx_flygravity_s		= "0 0.0002 0";
-		     	emtrjeasevel 			= 0.000001;
-	 			sfxid		  			= "TORCH_ENLIGHT";
-};
 
 instance spellFX_Firebolt_COLLIDEFX		(CFx_Base_Proto)
 {
@@ -4182,7 +4174,6 @@ INSTANCE spellFX_Shrink(CFx_Base_Proto)
 				LightRange			= 100;
 				sfxid				= "MFX_SHRINK_CAST";
 				sfxisambient		= 1;
-
 };
 
 INSTANCE spellFX_Shrink_Origin (CFx_Base_Proto)
@@ -4267,18 +4258,17 @@ instance spellFX_Concussionbolt_COLLIDEDYNFX		(CFx_Base_Proto)
 
 INSTANCE spellFX_Deathbolt(CFx_Base_Proto)
 {
-     	visname_S 				= "MFX_Fireball_INIT";
+     	visname_S 				= "MFX_SHRINK_INIT";
 
      	emtrjmode_s 			= "FIXED";
 		emTrjOriginNode 		= "ZS_RIGHTHAND";
-     	emtrjtargetnode 		= "BIP01 FIRE";
+     	emtrjtargetnode 		= "BIP01";
      	emtrjloopmode_s 		= "NONE";
      	emtrjeasefunc_s 		= "LINEAR";
      	emActionCollStat_S		= "COLLIDE CREATEONCE CREATEQUAD";
      	emActionCollDyn_S 		= "COLLIDE CREATEONCE";
 		emFXCollStat_S	   		= "spellFX_Deathbolt_COLLIDE";
-		emFXCollDyn_S     		= "spellFX_Deathbolt_COLLIDEDYNFX";
-		emFXCollDynPerc_S     	= "VOB_MAGICBURN";
+		emFXCollDyn_S     		= "spellFX_Deathbolt_COLLIDEFX";
 		emFXCollStatAlign_S		= "COLLISIONNORMAL";
 		emFXCreatedOwnTrj 		= 0;
 		emTrjTargetRange	 	= 20;
@@ -4300,21 +4290,25 @@ INSTANCE spellFX_Deathbolt(CFx_Base_Proto)
 
 		INSTANCE spellFX_Deathbolt_KEY_INIT (C_ParticleFXEmitKey)
 		{
-				visname_S 			= "MFX_Fireball_INIT";
+				visname_S 			= "MFX_SHRINK_INIT";
 				lightrange		= 0.01;
 		};
 
 		INSTANCE spellFX_Deathbolt_KEY_CAST (C_ParticleFXEmitKey)
 		{
 				lightrange				= 100;
-				visname_S 				= "MFX_IFB_PFXTRAIL";
+				visname_S 				= "MFX_DESTROYUNDEAD_CAST_SWAMP";
 				emtrjmode_s 			= "TARGET";
 		     	emSelfRotVel_S			= "100 100 100";
 		     	emtrjeasevel 			= 1400.;
-	 			sfxid					= "MFX_Fireball_Cast";
+	 			sfxid					= "MFX_SHRINK_INIT";
 	 			sfxisambient			= 1;
-	 			emCreateFXID			= "spellFX_InstantFireball_FIRECLOUD";
+	 			emCreateFXID			= "MFX_DESTROYUNDEAD_SOUL_CLOUD_SWAMP";
 	 			emCheckCollision 		= 1;
+				emCreateFXID 			= "MFX_Thunderstorm_Rain";
+
+
+				
 		};
 
 		INSTANCE spellFX_Deathbolt_KEY_COLLIDE (C_ParticleFXEmitKey)
@@ -4323,52 +4317,29 @@ INSTANCE spellFX_Deathbolt(CFx_Base_Proto)
 		     	emtrjeasevel 			= 0.000001;
 };
 
-instance spellFX_Deathbolt_FIRECLOUD		(CFx_Base_Proto)
-{
-		emtrjeasevel 	= 1400.;
-		visname_S 		= "MFX_IFB_CAST";
-		visAlpha		= 1;
-		emtrjmode_s 	= "TARGET";
-     	emtrjtargetnode 		= "BIP01 FIRE";
-     	emtrjloopmode_s 		= "NONE";
-     	emtrjeasefunc_s 		= "LINEAR";
-		emTrjDynUpdateDelay	= 20000;
-     	emCheckCollision 		= 2;					// [EDENFELD, neu] 2: Coll, aber keinen Schaden abziehen (nötig, da dieser FX nicht als Child eingefügt wurde, sondern komplett
-     													// unabhängig mit Coll in die Welt gesetzt wurde. Der Schaden wird aber schon von spellFX_InstantFireball berechnet.)
-		emActionCollDyn_S 		= "COLLIDE";
-		emActionCollStat_S 		= "COLLIDE";
-		};
-
-		INSTANCE spellFX_Deathbolt_FIRECLOUD_KEY_COLLIDE (C_ParticleFXEmitKey)
-		{
-		     	emtrjeasevel 			= 0.000001;
-};
 
 // KOLLISION MIT STATISCHER WELT:  KEINE PERCEPTION
 
-instance spellFX_Deathbolt_COLLIDE		(CFx_Base_Proto)
+INSTANCE spellFX_Deathbolt_COLLIDE		(CFx_Base_Proto)
 {
-		visname_S 			= "MFX_Fireball_Collide1";
+		visname_S 			= "MFX_Skull_Collide";
 		visAlpha			= 1;
 		emtrjmode_s 		= "FIXED";
-		emTrjOriginNode		= "BIP01";
-		lightPresetname   	= "FIRESMALL";
+		sfxid				= "MFX_Skull_Collide";
+		lightPresetname   	= "REDAMBIENCE";
 };
 
-INSTANCE spellFX_Deathbolt_COLLIDE_KEY_INVEST_1	(C_ParticleFXEmitKey)  {	visname_S 	= "MFX_Fireball_Collide1";		sfxid	= "MFX_Fireball_Collide1";		};
-
-// KOLLISION MIT DYNAMISCHER WELT:  WOHL PERCEPTION
-
-instance spellFX_Deathbolt_COLLIDEDYNFX	(CFx_Base_Proto)
+INSTANCE spellFX_Deathbolt_COLLIDEFX	(CFx_Base_Proto)
 {
-		visname_S 			= "MFX_Fireball_Collide1";
-		visAlpha			= 1;
-		emTrjOriginNode		= "BIP01";
-		emtrjmode_s 		= "FIXED";
-		lightPresetname   	= "FIRESMALL";
+	emTrjOriginNode 	= "BIP01";
+	visname_S 			= "MFX_DESTROYUNDEAD_COLLIDE_SWAMP";
+	emtrjmode_s 		= "FIXED";
+	emtrjdynupdatedelay = 0.;
+	lightpresetname		= "AURA";
+	sfxid				= "MFX_Sleep_Cast";
+	sfxisambient		= 1;
 };
 
-INSTANCE spellFX_Deathbolt_COLLIDEDYNFX_KEY_INVEST_1	(C_ParticleFXEmitKey)  {	visname_S 	= "MFX_Fireball_Collide1";		sfxid	= "MFX_Fireball_Collide1";		};
 
 
 //   													XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -4389,7 +4360,6 @@ INSTANCE spellFX_Deathball(CFx_Base_Proto)
      	emActionCollDyn_S 		= "COLLIDE CREATEONCE";
 		emFXCollStat_S	   		= "spellFX_Deathball_COLLIDE";
 		emFXCollDyn_S     		= "spellFX_Deathball_COLLIDEDYNFX";
-		emFXCollDynPerc_S     	= "VOB_MAGICBURN";
 		emFXCollStatAlign_S		= "COLLISIONNORMAL";
 		emFXCreatedOwnTrj 		= 0;
 		emTrjTargetRange	 	= 20;
@@ -4400,6 +4370,7 @@ INSTANCE spellFX_Deathball(CFx_Base_Proto)
 		userString[1]			= "100 100";
 		userString[2]			= "MUL";
 		lightPresetname   		= "FIRESMALL";
+		emFXInvestOrigin_S	= "spellFX_SHRINK";
 
 		};
 
@@ -4411,20 +4382,19 @@ INSTANCE spellFX_Deathball(CFx_Base_Proto)
 
 		INSTANCE spellFX_Deathball_KEY_INIT (C_ParticleFXEmitKey)
 		{
-				visname_S 			= "MFX_Fireball_INIT";
+				visname_S				= "MFX_SLEEP_INIT";
 				lightrange		= 0.01;
 		};
 
 		INSTANCE spellFX_Deathball_KEY_CAST (C_ParticleFXEmitKey)
 		{
 				lightrange				= 200;
-				visname_S 				= "MFX_IFB_PFXTRAIL";
+				visname_S 				= "MFX_SHRINK_CAST";
 				emtrjmode_s 			= "TARGET";
 		     	emSelfRotVel_S			= "100 100 100";
 		     	emtrjeasevel 			= 1400.;
-	 			sfxid					= "MFX_Fireball_Cast";
+	 			sfxid					= "MFX_DESTROYUNDEAD_CAST_SWAMP";
 	 			sfxisambient			= 1;
-	 			emCreateFXID			= "spellFX_InstantFireball_FIRECLOUD";
 	 			emCheckCollision 		= 1;
 		};
 
@@ -5690,4 +5660,80 @@ instance spellFX_InvisibleProjectile		(CFx_Base_Proto)
 	INSTANCE spellFX_InvisibleProjectile_KEY_COLLIDE (C_ParticleFXEmitKey)
 	{
 	     	emtrjeasevel 			= 0.000001;
+};
+  
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+///   													XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+///   													XXXXXXXXXXXXXX CZARY Z MODA YABK  XXXXXXXXXXXXXX
+///   													XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+INSTANCE spellFX_TestSpell	(CFx_Base_Proto)
+{
+
+     	visname_S 				= "MFX_Firebolt_INIT";
+
+     	emtrjmode_s 			= "FIXED";
+		emTrjOriginNode 		= "ZS_RIGHTHAND";
+     	emtrjloopmode_s 		= "NONE";
+     	emtrjeasefunc_s 		= "LINEAR";
+
+     	emActionCollStat_S		= "COLLIDE CREATE CREATEQUAD";
+     	emActionCollDyn_S		= "COLLIDE CREATEONCE";
+		emTrjTargetRange	 	= 20;
+		emTrjTargetElev 		= 0;
+		emTrjDynUpdateDelay		= 20000;
+
+		lightPresetname   		= "FIRESMALL";
+
+		// quadmark
+		userString[0]			= "fireballquadmark.tga";
+		userString[1]			= "40 40";
+		userString[2]			= "MUL";
+
+
+		};
+
+		INSTANCE spellFX_TestSpell_KEY_OPEN	(C_ParticleFXEmitKey)
+		{
+				lightrange = 0.001;
+		};
+
+		INSTANCE spellFX_TestSpell_KEY_INIT (C_ParticleFXEmitKey)
+		{
+				visname_S				= "MFX_SLEEP_INIT";
+				lightrange 			= 0.001;
+		};
+
+		INSTANCE spellFX_TestSpell_KEY_CAST (C_ParticleFXEmitKey)
+		{
+				lightrange				= 100;
+				emtrjmode_s 		= "TARGET";
+				visname_S 			= "MFX_SHRINK_TARGET";
+		     	emSelfRotVel_S			= "100 100 100";
+				emtrjeasevel		= 1400;
+				LightRange			= 100;
+				sfxid				= "MFX_Sleep_Cast";
+				sfxisambient		= 1;
+				emCheckCollision 		= 1;
+		};
+instance spellFX_TestSpell_COLLIDEFX		(CFx_Base_Proto)
+{
+		visname_S 			= "MFX_Firebolt_Collide";
+		visAlpha			= 1;
+		emtrjmode_s 		= "FIXED";
+		lightPresetname   	= "FIRESMALL";
+};
+
+instance spellFX_TestSpell_COLLIDEDYNFX  (CFx_Base_Proto)
+{
+		visname_S 			= "MFX_Firebolt_Collide";
+		visAlpha			= 1;
+		emtrjmode_s 		= "FIXED";
+		lightPresetname   	= "FIRESMALL";
 };

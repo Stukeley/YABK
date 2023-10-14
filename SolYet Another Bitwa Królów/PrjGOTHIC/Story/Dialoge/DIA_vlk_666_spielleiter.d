@@ -89,34 +89,172 @@ func void vlk_666_spielleiter_important_lager_1()
 {
 	Info_ClearChoices(vlk_666_spielleiter_important);
 	LAGER = 1;
+	Log_CreateTopic (TOPIC_PASSIVE_INFO, LOG_NOTE);
+	Log_CreateTopic (TOPIC_SMITH, LOG_NOTE);
+	Log_CreateTopic (TOPIC_EQ_INFO, LOG_NOTE);
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Ka¿da z frakcji posiada unikaln¹ umiejêtnoœæ pasywn¹. Obecne umiejêtnoœci s¹ nastêpuj¹ce:");
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Jednostki Starego Obozu maj¹ dodatkowe 40% ochrony przed obra¿eniami fizycznymi.");
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Paladyni posiadaj¹ 200% zrêcznoœci.");
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Stra¿nicy Œwi¹tynni maj¹ o 40% zwiêkszon¹ ochronê przed magi¹.");
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Najemnicy posiadaj¹ 20% wiêcej HP.");
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Szkielety maj¹ dodatkowe 75% ochrony od obra¿eñ fizycznym kosztem redukcji ochrony od magii o 75%.");
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Orkowie maj¹ 30% wiêcej si³y.");
+	B_LogEntry(TOPIC_SMITH, "Za 50 sztuk z³ota mo¿esz zatrudniæ kowala. Kowal mo¿e robiæ jedn¹ z trzech rzeczy:");
+	B_LogEntry(TOPIC_SMITH, "Kowal mo¿e wytwarzaæ dla Ciebie broñ dziêki której ulepszysz broñ swoich ¿o³nierzy. Co 45 sekund Kowal wyda jedn¹ sztukê. Do ulepszenia potrzeba trzech. Jeœli zmienisz zadanie Kowala w trakcie wykonywania broni to nie otrzymasz wiêcej broni jeœli nie zdecydujesz siê wróciæ do wytwarzania broni.");
+	B_LogEntry(TOPIC_SMITH, "Drug¹ opcj¹ jest wytwarzanie pancerza które dzia³a tak samo jak wytwarzanie broni");
+	B_LogEntry(TOPIC_SMITH, "Ostatni¹ mo¿liwoœci¹ jest wytarzanie z³ota. Co 45 sekund otrzymasz 10 sztuk z³ota. Po nakazaniu kowalowi wytwarzania z³ota, bêdzie on je produkowa³ a¿ nie zmienisz mu zadania.");
+	B_LogEntry(TOPIC_EQ_INFO, "Wraz z ulepszeniem broni lub pancerza zwiêksz¹ siê statystyki odpowiedniego przedmiotu. Dla kolejnych poziomów wartoœci s¹ nastêpuj¹ce:");
+	B_LogEntry(TOPIC_EQ_INFO,"Pancerz, poziom pierwszy: Ochrona fizyczna: 40 / Ochrona magiczna 40");
+	B_LogEntry(TOPIC_EQ_INFO,"Pancerz, poziom drugi: Ochrona fizyczna: 80 / Ochrona magiczna 80");
+	B_LogEntry(TOPIC_EQ_INFO,"Pancerz, poziom trzeci: Ochrona fizyczna: 115 / Ochrona magiczna 115");
+	B_LogEntry(TOPIC_EQ_INFO,"Pancerz, poziom czwarty: Ochrona fizyczna: 150 / Ochrona magiczna 150");
+	B_LogEntry(TOPIC_EQ_INFO,"Broñ, poziom pierwszy: Obra¿enia fizyczne: 45");
+	B_LogEntry(TOPIC_EQ_INFO,"Broñ, poziom drugi: Obra¿enia fizyczne: 80");
+	B_LogEntry(TOPIC_EQ_INFO,"Broñ, poziom trzeci: Obra¿enia fizyczne: 115");
+	B_LogEntry(TOPIC_EQ_INFO,"Broñ, poziom czwarty: Obra¿enia fizyczne: 150");
+	B_LogEntry(TOPIC_EQ_INFO,"Szata maga, poziom pierwszy: Ochrona fizyczna: 20 / Ochrona magiczna 20");
+	B_LogEntry(TOPIC_EQ_INFO,"Szata maga, poziom drugi: Ochrona fizyczna: 35 / Ochrona magiczna 35");
+	B_LogEntry(TOPIC_EQ_INFO,"Szata maga, poziom trzeci: Ochrona fizyczna: 70 / Ochrona magiczna 70");
+	B_LogEntry(TOPIC_EQ_INFO,"Szata maga, poziom czwarty: Ochrona fizyczna: 85 / Ochrona magiczna 85");
+	B_LogEntry(TOPIC_EQ_INFO,"Szata maga, poziom pi¹ty: Ochrona fizyczna: 100 / Ochrona magiczna 100");
+	B_LogEntry(TOPIC_EQ_INFO,"Magia, poziom pierwszy: Obra¿enia magiczne: 50");
+	B_LogEntry(TOPIC_EQ_INFO,"Magia, poziom drugi: Obra¿enia magiczne: 100");
+	B_LogEntry(TOPIC_EQ_INFO,"Magia, poziom trzeci: Obra¿enia magiczne: 150");
+	B_LogEntry(TOPIC_EQ_INFO,"Magia, poziom czwarty: Obra¿enia magiczne: 250");
+	B_LogEntry(TOPIC_EQ_INFO,"Magia, poziom pi¹ty: Obra¿enia magiczne: 400");
 	AI_Output(self,other,"VLK_666_Spielleiter_IMPORTANT_LAGER_1_07_01");	//Wybierz grupê, któr¹ chcesz graæ:
 	Info_AddChoice(vlk_666_spielleiter_important,PRINT_SKEDESCRIPTION,vlk_666_spielleiter_important_ske);
 	Info_AddChoice(vlk_666_spielleiter_important,PRINT_TMPDESCRIPTION,vlk_666_spielleiter_important_tmp);
 	Info_AddChoice(vlk_666_spielleiter_important,PRINT_DJGDESCRIPTION,vlk_666_spielleiter_important_djg);
 	Info_AddChoice(vlk_666_spielleiter_important,PRINT_PALDESCRIPTION,vlk_666_spielleiter_important_pal);
+	Info_AddChoice(vlk_666_spielleiter_important,PRINT_PCHDESCRIPTION, vlk_666_spielleiter_important_PCH);
+	Info_AddChoice(vlk_666_spielleiter_important,PRINT_ORCDESCRITPION, vlk_666_spielleiter_important_ORC);
 };
 
 func void vlk_666_spielleiter_important_lager_2()
 {
 	Info_ClearChoices(vlk_666_spielleiter_important);
 	LAGER = 2;
+	Log_CreateTopic (TOPIC_PASSIVE_INFO, LOG_NOTE);
+	Log_CreateTopic (TOPIC_SMITH, LOG_NOTE);
+	Log_CreateTopic (TOPIC_EQ_INFO, LOG_NOTE);
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Ka¿da z frakcji posiada unikaln¹ umiejêtnoœæ pasywn¹. Obecne umiejêtnoœci s¹ nastêpuj¹ce:");
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Jednostki Starego Obozu maj¹ dodatkowe 40% ochrony przed obra¿eniami fizycznymi.");
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Paladyni posiadaj¹ 200% zrêcznoœci.");
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Stra¿nicy Œwi¹tynni maj¹ o 40% zwiêkszon¹ ochronê przed magi¹.");
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Najemnicy posiadaj¹ 20% wiêcej HP.");
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Szkielety maj¹ dodatkowe 75% ochrony od obra¿eñ fizycznym kosztem redukcji ochrony od magii o 75%.");
+	B_LogEntry(TOPIC_PASSIVE_INFO,"Orkowie maj¹ 30% wiêcej si³y.");
+	B_LogEntry(TOPIC_SMITH, "Za 50 sztuk z³ota mo¿esz zatrudniæ kowala. Kowal mo¿e robiæ jedn¹ z trzech rzeczy:");
+	B_LogEntry(TOPIC_SMITH, "Kowal mo¿e wytwarzaæ dla Ciebie broñ dziêki której ulepszysz broñ swoich ¿o³nierzy. Co 45 sekund Kowal wyda jedn¹ sztukê. Do ulepszenia potrzeba trzech. Jeœli zmienisz zadanie Kowala w trakcie wykonywania broni to nie otrzymasz wiêcej broni jeœli nie zdecydujesz siê wróciæ do wytwarzania broni.");
+	B_LogEntry(TOPIC_SMITH, "Drug¹ opcj¹ jest wytwarzanie pancerza które dzia³a tak samo jak wytwarzanie broni");
+	B_LogEntry(TOPIC_SMITH, "Ostatni¹ mo¿liwoœci¹ jest wytarzanie z³ota. Co 45 sekund otrzymasz 10 sztuk z³ota. Po nakazaniu kowalowi wytwarzania z³ota, bêdzie on je produkowa³ a¿ nie zmienisz mu zadania.");
+	B_LogEntry(TOPIC_EQ_INFO, "Wraz z ulepszeniem broni lub pancerza zwiêksz¹ siê statystyki odpowiedniego przedmiotu. Dla kolejnych poziomów wartoœci s¹ nastêpuj¹ce:");
+	B_LogEntry(TOPIC_EQ_INFO,"Pancerz, poziom pierwszy: Ochrona fizyczna: 40 / Ochrona magiczna 40");
+	B_LogEntry(TOPIC_EQ_INFO,"Pancerz, poziom drugi: Ochrona fizyczna: 80 / Ochrona magiczna 80");
+	B_LogEntry(TOPIC_EQ_INFO,"Pancerz, poziom trzeci: Ochrona fizyczna: 115 / Ochrona magiczna 115");
+	B_LogEntry(TOPIC_EQ_INFO,"Pancerz, poziom czwarty: Ochrona fizyczna: 150 / Ochrona magiczna 150");
+	B_LogEntry(TOPIC_EQ_INFO,"Broñ, poziom pierwszy: Obra¿enia fizyczne: 45");
+	B_LogEntry(TOPIC_EQ_INFO,"Broñ, poziom drugi: Obra¿enia fizyczne: 80");
+	B_LogEntry(TOPIC_EQ_INFO,"Broñ, poziom trzeci: Obra¿enia fizyczne: 115");
+	B_LogEntry(TOPIC_EQ_INFO,"Broñ, poziom czwarty: Obra¿enia fizyczne: 150");
+	B_LogEntry(TOPIC_EQ_INFO,"Szata maga, poziom pierwszy: Ochrona fizyczna: 20 / Ochrona magiczna 20");
+	B_LogEntry(TOPIC_EQ_INFO,"Szata maga, poziom drugi: Ochrona fizyczna: 35 / Ochrona magiczna 35");
+	B_LogEntry(TOPIC_EQ_INFO,"Szata maga, poziom trzeci: Ochrona fizyczna: 70 / Ochrona magiczna 70");
+	B_LogEntry(TOPIC_EQ_INFO,"Szata maga, poziom czwarty: Ochrona fizyczna: 85 / Ochrona magiczna 85");
+	B_LogEntry(TOPIC_EQ_INFO,"Szata maga, poziom pi¹ty: Ochrona fizyczna: 100 / Ochrona magiczna 100");
+	B_LogEntry(TOPIC_EQ_INFO,"Magia, poziom pierwszy: Obra¿enia magiczne: 50");
+	B_LogEntry(TOPIC_EQ_INFO,"Magia, poziom drugi: Obra¿enia magiczne: 100");
+	B_LogEntry(TOPIC_EQ_INFO,"Magia, poziom trzeci: Obra¿enia magiczne: 150");
+	B_LogEntry(TOPIC_EQ_INFO,"Magia, poziom czwarty: Obra¿enia magiczne: 250");
+	B_LogEntry(TOPIC_EQ_INFO,"Magia, poziom pi¹ty: Obra¿enia magiczne: 400");
 	AI_Output(self,other,"VLK_666_Spielleiter_IMPORTANT_LAGER_1_07_01");	//Wybierz grupê, któr¹ chcesz graæ:
 	Info_AddChoice(vlk_666_spielleiter_important,PRINT_SKEDESCRIPTION,vlk_666_spielleiter_important_ske);
 	Info_AddChoice(vlk_666_spielleiter_important,PRINT_TMPDESCRIPTION,vlk_666_spielleiter_important_tmp);
 	Info_AddChoice(vlk_666_spielleiter_important,PRINT_DJGDESCRIPTION,vlk_666_spielleiter_important_djg);
 	Info_AddChoice(vlk_666_spielleiter_important,PRINT_PALDESCRIPTION,vlk_666_spielleiter_important_pal);
+	Info_AddChoice(vlk_666_spielleiter_important,PRINT_PCHDESCRIPTION, vlk_666_spielleiter_important_PCH);
+	Info_AddChoice(vlk_666_spielleiter_important,PRINT_ORCDESCRITPION, vlk_666_spielleiter_important_ORC);
 };
+
+func void vlk_666_spielleiter_important_ORC()
+{
+	Info_ClearChoices(vlk_666_spielleiter_important);
+	if(LAGER == 1)
+	{
+		FRAKTION_L1 = ORC;
+		MojaGildia = "Orkowie";
+	}
+	else if(LAGER == 2)
+	{
+		FRAKTION_L2 = ORC;
+		MojaGildia = "Orkowie";
+	};
+	AI_Output(self,other,"VLK_666_Spielleiter_IMPORTANT_PAL_07_01");	//Teraz pójdŸ do obrazu mapy, w której chcesz graæ.
+	b_otherteamfraktion();
+	AI_StopProcessInfos(self);
+};
+func void vlk_666_spielleiter_important_PCH()
+{
+	Info_ClearChoices(vlk_666_spielleiter_important);
+	if(LAGER == 1)
+	{
+		FRAKTION_L1 = PCH;
+		MojaGildia = "Stary Obóz";
+	}
+	else if(LAGER == 2)
+	{
+		FRAKTION_L2 = PCH;
+		MojaGildia = "Stary Obóz";
+	};
+	AI_Output(self,other,"VLK_666_Spielleiter_IMPORTANT_PAL_07_01");	//Teraz pójdŸ do obrazu mapy, w której chcesz graæ.
+	b_otherteamfraktion();
+	AI_StopProcessInfos(self);
+};
+func void vlk_666_spielleiter_important_MGB()
+{
+	Info_ClearChoices(vlk_666_spielleiter_important);
+	if(LAGER == 1)
+	{
+		FRAKTION_L1 = MGB;
+	}
+	else if(LAGER == 2)
+	{
+		FRAKTION_L2 = MGB;
+	};
+	AI_Output(self,other,"VLK_666_Spielleiter_IMPORTANT_PAL_07_01");	//Teraz pójdŸ do obrazu mapy, w której chcesz graæ.
+	b_otherteamfraktion();
+	AI_StopProcessInfos(self);
+};
+func void vlk_666_spielleiter_important_bst()
+{
+	Info_ClearChoices(vlk_666_spielleiter_important);
+	if(LAGER == 1)
+	{
+		FRAKTION_L1 = Bst;
+	}
+	else if(LAGER == 2)
+	{
+		FRAKTION_L2 = Bst;
+	};
+	AI_Output(self,other,"VLK_666_Spielleiter_IMPORTANT_PAL_07_01");	//Teraz pójdŸ do obrazu mapy, w której chcesz graæ.
+	b_otherteamfraktion();
+	AI_StopProcessInfos(self);
+};
+
 
 func void vlk_666_spielleiter_important_pal()
 {
 	Info_ClearChoices(vlk_666_spielleiter_important);
 	if(LAGER == 1)
 	{
-		FRAKTION_L1 = PAL;
+		FRAKTION_L1 = Pal;
+		MojaGildia = "Paladyni";
 	}
 	else if(LAGER == 2)
 	{
-		FRAKTION_L2 = PAL;
+		FRAKTION_L2 = Pal;
+		MojaGildia = "Paladyni";
 	};
 	AI_Output(self,other,"VLK_666_Spielleiter_IMPORTANT_PAL_07_01");	//Teraz pójdŸ do obrazu mapy, w której chcesz graæ.
 	b_otherteamfraktion();
@@ -129,10 +267,12 @@ func void vlk_666_spielleiter_important_djg()
 	if(LAGER == 1)
 	{
 		FRAKTION_L1 = DJG;
+		MojaGildia = "Najemnicy";
 	}
 	else if(LAGER == 2)
 	{
 		FRAKTION_L2 = DJG;
+		MojaGildia = "Najemnicy";
 	};
 	b_otherteamfraktion();
 	AI_Output(self,other,"VLK_666_Spielleiter_IMPORTANT_PAL_07_01");	//Teraz pójdŸ do obrazu mapy, w której chcesz graæ.
@@ -145,10 +285,12 @@ func void vlk_666_spielleiter_important_tmp()
 	if(LAGER == 1)
 	{
 		FRAKTION_L1 = TMP;
+		MojaGildia = "Sekta";
 	}
 	else if(LAGER == 2)
 	{
 		FRAKTION_L2 = TMP;
+		MojaGildia = "Sekta";
 	};
 	b_otherteamfraktion();
 	AI_Output(self,other,"VLK_666_Spielleiter_IMPORTANT_PAL_07_01");	//Teraz pójdŸ do obrazu mapy, w której chcesz graæ.
@@ -161,10 +303,12 @@ func void vlk_666_spielleiter_important_ske()
 	if(LAGER == 1)
 	{
 		FRAKTION_L1 = SKE;
+		MojaGildia = "Szkielety";
 	}
 	else if(LAGER == 2)
 	{
 		FRAKTION_L2 = SKE;
+		MojaGildia = "Szkielety";
 	};
 	b_otherteamfraktion();
 	AI_Output(self,other,"VLK_666_Spielleiter_IMPORTANT_PAL_07_01");	//Teraz pójdŸ do obrazu mapy, w której chcesz graæ.
@@ -253,11 +397,11 @@ func void vlk_666_spielleiter_fraktion_pal()
 {
 	if(LAGER == 1)
 	{
-		FRAKTION_L1 = PAL;
+		FRAKTION_L1 = Pal;
 	}
 	else if(LAGER == 2)
 	{
-		FRAKTION_L2 = PAL;
+		FRAKTION_L2 = Pal;
 	};
 	b_otherteamfraktion();
 	Info_ClearChoices(vlk_666_spielleiter_fraktion);
@@ -421,7 +565,30 @@ func void vlk_666_spielleiter_modifikatoren_info()
 	{
 		Info_AddChoice(vlk_666_spielleiter_modifikatoren,PRINT_INSTANTWEAPONSOFF,vlk_666_spielleiter_modifikatoren_instantweapons_off);
 	};
+	if (passive_perks == FALSE)
+	{
+		Info_AddChoice(vlk_666_spielleiter_modifikatoren,"W³¹cz umiejêtnoœci pasywne gildii",vlk_666_spielleiter_modifikatoren_passive_on);
+	}
+	else
+	{
+		Info_AddChoice(vlk_666_spielleiter_modifikatoren,"Wy³¹cz umiejêtnoœci pasywne gildii",vlk_666_spielleiter_modifikatoren_passive_off);
+	};
+	
 };
+
+func void vlk_666_spielleiter_modifikatoren_passive_on()
+{
+	passive_perks = TRUE;
+	Info_ClearChoices(vlk_666_spielleiter_modifikatoren);
+};
+
+func void vlk_666_spielleiter_modifikatoren_passive_off()
+{
+	passive_perks = FALSE;
+	Info_ClearChoices(vlk_666_spielleiter_modifikatoren);
+};
+
+
 
 func void vlk_666_spielleiter_modifikatoren_nonews_on()
 {

@@ -106,8 +106,8 @@ func void B_SetAttributesToChapter(var C_Npc slf,var int kap)
 		slf.attribute[ATR_MANA_MAX] = 1000;
 		slf.aivar[REAL_MANA_MAX] = 1000;
 		slf.attribute[ATR_MANA] = 1000;
-		slf.attribute[ATR_HITPOINTS_MAX] = 5000;
-		slf.attribute[ATR_HITPOINTS] = 5000;
+		slf.attribute[ATR_HITPOINTS_MAX] = 10000;
+		slf.attribute[ATR_HITPOINTS] = 10000;
 	};
 	if(kap == 8)
 	{

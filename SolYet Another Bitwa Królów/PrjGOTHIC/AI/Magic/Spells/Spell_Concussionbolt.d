@@ -1,6 +1,6 @@
 
-const int SPL_COST_Concussionbolt = 40;
-const int SPL_DAMAGE_Concussionbolt = 200;
+const int SPL_COST_Concussionbolt = MageSpellCost_1;
+const int SPL_DAMAGE_Concussionbolt = MageDamageSpell_1;
 
 instance Spell_Concussionbolt(C_Spell_Proto)
 {

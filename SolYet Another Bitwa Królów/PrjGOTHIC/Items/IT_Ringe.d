@@ -47,6 +47,10 @@ const int Ri_HpMana_Mana = 10;
 const int Value_Ri_DexStrg = 800;
 const int Ri_DexStrg_Dex = 4;
 const int Ri_DexStrg_Strg = 4;
+const int Ri_DexStrg_Dex_YABK = 0;
+const int Ri_DexStrg_Strg_YABK = 0;
+
+
 
 instance ItRi_Prot_Fire_01(C_Item)
 {
@@ -841,3 +845,39 @@ func void UnEquip_ItRi_Dex_Strg_01()
 	Npc_ChangeAttribute(self,ATR_DEXTERITY,-Ri_DexStrg_Dex);
 };
 
+
+
+instance ItRi_YABK_TEST_TIME(C_Item)
+{
+	name = NAME_Ring;
+	mainflag = ITEM_KAT_MAGIC;
+	flags = ITEM_RING;
+	value = Value_Ri_Strg;
+	visual = "ItRi_Str_01.3ds";
+	visual_skin = 0;
+	material = MAT_METAL;
+	on_equip = Equip_ItRi_Dex_Strg_YABK;
+	on_unequip = UnEquip_ItRi_Dex_Strg_YABK;
+	wear = WEAR_EFFECT;
+	effect = "SPELLFX_ITEMGLIMMER";
+	description = "Pierœcieñ mocy";
+	text[2] = NAME_Bonus_Str;
+	count[2] = Ri_Strg;
+	text[5] = NAME_Value;
+	count[5] = value;
+	inv_zbias = INVCAM_ENTF_RING_STANDARD;
+	inv_rotz = INVCAM_Z_RING_STANDARD;
+	inv_rotx = INVCAM_X_RING_STANDARD;
+};
+
+func void Equip_ItRi_Dex_Strg_YABK()
+{
+	Npc_ChangeAttribute(self,ATR_STRENGTH,Ri_DexStrg_Strg_YABK);
+	Npc_ChangeAttribute(self,ATR_DEXTERITY,Ri_DexStrg_Dex_YABK);
+};
+
+func void UnEquip_ItRi_Dex_Strg_YABK()
+{
+	Npc_ChangeAttribute(self,ATR_STRENGTH,-Ri_DexStrg_Strg_YABK);
+	Npc_ChangeAttribute(self,ATR_DEXTERITY,-Ri_DexStrg_Dex_YABK);
+};

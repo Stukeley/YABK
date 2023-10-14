@@ -1,6 +1,6 @@
 
-const int SPL_COST_Deathball = 35;
-const int SPL_DAMAGE_Deathball = 165;
+const int SPL_COST_Deathball = MageSpellCost_2;
+const int SPL_DAMAGE_Deathball = MageDamageSpell_2;
 
 instance Spell_Deathball(C_Spell_Proto)
 {

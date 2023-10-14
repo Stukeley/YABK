@@ -48,7 +48,10 @@ func void b_skript_schleife()
 		{
 			B_Message("NEWS_Gegner_SchmiedeFertig");
 		};
-		Wld_InsertNpc(pal_1002_schmied,SPAWNWAYPOINT);
+		if (LAGER == 2 )
+		{	
+		Wld_InsertNpc(djg_2002_schmied,SPAWNWAYPOINT);
+		};
 		L1_SCHMIEDE = ABLAUF;
 		L1_AKTUELLER_SCHMIEDE_ABLAUF = ABLAUF;
 	};
@@ -67,7 +70,10 @@ func void b_skript_schleife()
 		{
 			B_Message("NEWS_Gegner_SchmiedeFertig");
 		};
-		Wld_InsertNpc(djg_2002_schmied,SPAWNWAYPOINT);
+		if (LAGER == 1 )
+		{	
+		Wld_InsertNpc(pal_1002_schmied,SPAWNWAYPOINT);
+		};
 		L2_SCHMIEDE = ABLAUF;
 		L2_AKTUELLER_SCHMIEDE_ABLAUF = ABLAUF;
 	};
@@ -920,6 +926,21 @@ func void b_skript_schleife()
 				if(L2_TRANK_ERFORSCHEN == POTION_SMITHUPGRADE)
 				{
 					L2_SCHMIEDESTEP = 0;
+				};
+				if (L2_TRANK_ERFORSCHEN == POTION_FOURTHCIRCLE)
+				{
+					L2_MAGIERUPDATE = FALSE;
+					L2_FourthCircle = TRUE;
+				};
+				if (L2_TRANK_ERFORSCHEN == POTION_FIFTHCIRCLE)
+				{
+					L2_FourthCircle = FALSE;
+					L2_FifthCircle = TRUE;
+				};
+				if (L2_TRANK_ERFORSCHEN == POTION_SIXCIRCLE)
+				{
+					L2_FifthCircle = FALSE;
+					L2_SixthCircle = TRUE;
 				};
 				L2_TRANK_ERFORSCHEN = 0;
 				B_StartOtherRoutine(djg_2004_magier,"start");

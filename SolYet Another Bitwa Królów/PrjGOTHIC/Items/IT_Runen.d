@@ -222,7 +222,7 @@ instance ItRu_TeleportSeaport(C_Item)
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
 	value = Value_Ru_TeleportSeaport;
-	visual = "ItRu_TeleportSeaport.3ds";
+	visual = "ItRu_PalMediumHeal.3ds";
 	material = MAT_STONE;
 	spell = SPL_TeleportSeaport;
 	wear = WEAR_EFFECT;
@@ -254,11 +254,11 @@ instance ItRu_TeleportMonastery(C_Item)
 
 instance ItRu_TeleportFarm(C_Item)
 {
-	name = NAME_Rune;
+	name = "Do mojego Króla";
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
 	value = Value_Ru_TeleportFarm;
-	visual = "ItRu_TeleportFarm.3ds";
+	visual = "ItRu_PalMediumHeal.3ds";
 	material = MAT_STONE;
 	spell = SPL_TeleportFarm;
 	wear = WEAR_EFFECT;
@@ -312,7 +312,7 @@ instance ItRu_TeleportPassOW(C_Item)
 	mainflag = ITEM_KAT_RUNE;
 	flags = 0;
 	value = Value_Ru_TeleportPassOW;
-	visual = "ItRu_TeleportPassOW.3ds";
+	visual = "ItRu_PalFullHeal.3ds";
 	material = MAT_STONE;
 	spell = SPL_TeleportPassOW;
 	wear = WEAR_EFFECT;

@@ -133,7 +133,7 @@ INSTANCE SYS_Loading		(C_MUSICTHEME_DEF)
 // ####### ADT - AdanosTempel #####################################################################
 // ################################################################################################
 
-		INSTANCE ADT_Day_Std	(C_MUSICTHEME_STANDARD)		{	file			= "adt_day_std.sgt";		};
+		INSTANCE ADT_Day_Std	(C_MUSICTHEME_STANDARD)		{	file			= "ow_day_std.sgt";		};
 		
 
 
@@ -789,3 +789,9 @@ INSTANCE OGY_Day_Fgt	(C_MUSICTHEME_DEF)	{	file			= "ogy_day_fgt.sgt";					};
 INSTANCE OGY_Ngt_Std	(C_MUSICTHEME_DEF)	{	file			= "ogy_day_std.sgt";					};
 
 */
+
+
+instance DAYBARRIER_Day_STD(C_MUSICTHEME_DEF)
+{
+	file = "ow_day_std.sgt";
+};

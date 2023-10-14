@@ -36,7 +36,7 @@ instance DJG_2004_MAGIER_FAVORIT_SPELL(C_Info)
 
 func int djg_2004_magier_favorit_spell_condition()
 {
-	return TRUE;
+	return FALSE;
 };
 
 func void djg_2004_magier_favorit_spell_info()
@@ -103,7 +103,7 @@ func int djg_2004_magier_runen_erforschen_condition()
 {
 	if((L2_ZAUBER_ERFORSCHEN == 0) && (L2_TRANK_ERFORSCHEN == 0))
 	{
-		return TRUE;
+		return FALSE;
 	};
 };
 
@@ -226,7 +226,7 @@ func void djg_2004_magier_traenke_erforschen_info()
 {
 	Info_ClearChoices(djg_2004_magier_traenke_erforschen);
 	Info_AddChoice(djg_2004_magier_traenke_erforschen,Dialog_Back,djg_2004_magier_traenke_erforschen_back);
-	if(L2_SCHMIEDESTEP == SCHMIEDESTEP)
+	if(FALSE)
 	{
 		Info_AddChoice(djg_2004_magier_traenke_erforschen,B_GetCostString(PRINT_IMPROVESMITH,SMITHUPGRADE_COST),djg_2004_magier_traenke_erforschen_schmiede_step);
 	};
@@ -241,6 +241,18 @@ func void djg_2004_magier_traenke_erforschen_info()
 	if(L2_MAGIERUPDATE == FALSE)
 	{
 		Info_AddChoice(djg_2004_magier_traenke_erforschen,B_GetCostString(PRINT_VERBESSEREMAGIER,MAGIERUPDATE_COST),djg_2004_magier_traenke_erforschen_magier_update);
+	};
+	if(L2_MAGIERUPDATE == TRUE && L2_FourthCircle == FALSE)
+	{
+		Info_AddChoice(djg_2004_magier_traenke_erforschen,B_GetCostString(PRINT_VERBESSEREMAGIER,MAGIERUPDATE_COST_3),djg_2004_magier_traenke_erforschen_magier_update_3);
+	};
+	if(L2_FourthCircle == TRUE && L2_FifthCircle == FALSE)
+	{
+		Info_AddChoice(djg_2004_magier_traenke_erforschen,B_GetCostString(PRINT_VERBESSEREMAGIER,MAGIERUPDATE_COST_3),djg_2004_magier_traenke_erforschen_magier_update_4);
+	};
+	if(L2_FifthCircle == TRUE && L2_SixthCircle == FALSE)
+	{
+		Info_AddChoice(djg_2004_magier_traenke_erforschen,B_GetCostString(PRINT_VERBESSEREMAGIER,MAGIERUPDATE_COST_3),djg_2004_magier_traenke_erforschen_magier_update_5);
 	};
 	if((L2_WACHEN_LEVEL < 4) && ((MAP == MAP01) || (MAP == VARUS_MAP)))
 	{
@@ -276,6 +288,109 @@ func void djg_2004_magier_traenke_erforschen_schmiede_step()
 	Info_ClearChoices(djg_2004_magier_traenke_erforschen);
 };
 
+func void djg_2004_magier_traenke_erforschen_magier_update_3()
+{
+	if(Npc_HasItems(hero,ItMi_Gold) >= MAGIERUPDATE_COST_3)
+	{
+		AI_Output(self,other,"PAL_1004_Magier_RUNEN_ERFORSCHEN_HEILUNG_06_01");	//Zrozumiano.
+		L2_TRANK_ERFORSCHEN = POTION_FOURTHCIRCLE;
+		L2_FORSCHEN_STEP = ABLAUF;
+		L2_AKTUELLER_FORSCHEN_STEP = ABLAUF;
+		if(FRAKTION_L2 == DJG) {
+			L2_FAVORITSPELL = SPELLWATERCIRCLE4;
+		}
+		else if (FRAKTION_L2 == SKE)
+		{
+			L2_FAVORITSPELL = SPELLDARKCIRCLE4;
+		}
+		else if (FRAKTION_L2 == TMP)
+		{
+			L2_FAVORITSPELL = SPELLSWAMPCIRCLE4;
+		}
+		else 
+		{
+			L2_FAVORITSPELL = SPELLFIRECIRCLE4;
+		};
+		PoziomTwojegoMaga = "3/5";
+		Npc_ExchangeRoutine(self,"BUCH");
+		B_GiveInvItems(other,self,ItMi_Gold,MAGIERUPDATE_COST);
+		AI_StopProcessInfos(self);
+	}
+	else
+	{
+		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_LEVEL_1_Info_06_03");	//Nie masz wystarczaj¹co z³ota.
+	};
+	Info_ClearChoices(djg_2004_magier_traenke_erforschen);
+};
+func void djg_2004_magier_traenke_erforschen_magier_update_4()
+{
+	if(Npc_HasItems(hero,ItMi_Gold) >= MAGIERUPDATE_COST_3)
+	{
+		AI_Output(self,other,"PAL_1004_Magier_RUNEN_ERFORSCHEN_HEILUNG_06_01");	//Zrozumiano.
+		L2_TRANK_ERFORSCHEN = POTION_FIFTHCIRCLE;
+		L2_FORSCHEN_STEP = ABLAUF;
+		L2_AKTUELLER_FORSCHEN_STEP = ABLAUF;
+		if(FRAKTION_L2 == DJG) {
+			L2_FAVORITSPELL = SPELLWATERCIRCLE5;
+		}
+		else if (FRAKTION_L2 == SKE)
+		{
+			L2_FAVORITSPELL = SPELLDARKCIRCLE5;
+		}
+		else if (FRAKTION_L2 == TMP)
+		{
+			L2_FAVORITSPELL = SPELLSWAMPCIRCLE5;
+		}
+		else 
+		{
+			L2_FAVORITSPELL = SPELLFIRECIRCLE5;
+		};
+		PoziomTwojegoMaga = "4/5";
+		Npc_ExchangeRoutine(self,"BUCH");
+		B_GiveInvItems(other,self,ItMi_Gold,MAGIERUPDATE_COST);
+		AI_StopProcessInfos(self);
+	}
+	else
+	{
+		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_LEVEL_1_Info_06_03");	//Nie masz wystarczaj¹co z³ota.
+	};
+	Info_ClearChoices(djg_2004_magier_traenke_erforschen);
+};
+func void djg_2004_magier_traenke_erforschen_magier_update_5()
+{
+	if(Npc_HasItems(hero,ItMi_Gold) >= MAGIERUPDATE_COST_3)
+	{
+		AI_Output(self,other,"PAL_1004_Magier_RUNEN_ERFORSCHEN_HEILUNG_06_01");	//Zrozumiano.
+		L2_TRANK_ERFORSCHEN = POTION_SIXCIRCLE;
+		L2_FORSCHEN_STEP = ABLAUF;
+		L2_AKTUELLER_FORSCHEN_STEP = ABLAUF;
+		if(FRAKTION_L2 == DJG) {
+			L2_FAVORITSPELL = SPELLWATERCIRCLE6;
+		}
+		else if (FRAKTION_L2 == SKE)
+		{
+			L2_FAVORITSPELL = SPELLDARKCIRCLE6;
+		}
+		else if (FRAKTION_L2 == TMP)
+		{
+			L2_FAVORITSPELL = SPELLSWAMPCIRCLE6;
+		}
+		else 
+		{
+			L2_FAVORITSPELL = SPELLFIRECIRCLE6;
+		};
+		PoziomTwojegoMaga = "5/5";
+		Npc_ExchangeRoutine(self,"BUCH");
+		B_GiveInvItems(other,self,ItMi_Gold,MAGIERUPDATE_COST);
+		AI_StopProcessInfos(self);
+	}
+	else
+	{
+		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_LEVEL_1_Info_06_03");	//Nie masz wystarczaj¹co z³ota.
+	};
+	Info_ClearChoices(djg_2004_magier_traenke_erforschen);
+};
+
 func void djg_2004_magier_traenke_erforschen_magier_update()
 {
 	if(Npc_HasItems(hero,ItMi_Gold) >= MAGIERUPDATE_COST)
@@ -284,6 +399,22 @@ func void djg_2004_magier_traenke_erforschen_magier_update()
 		L2_TRANK_ERFORSCHEN = POTION_MAGIERUPDATE;
 		L2_FORSCHEN_STEP = ABLAUF;
 		L2_AKTUELLER_FORSCHEN_STEP = ABLAUF;
+		if(FRAKTION_L2 == DJG) {
+			L2_FAVORITSPELL = SPELLWATERCIRCLE3;
+		}
+		else if (FRAKTION_L2 == SKE)
+		{
+			L2_FAVORITSPELL = SPELLDARKCIRCLE3;
+		}
+		else if (FRAKTION_L2 == TMP)
+		{
+			L2_FAVORITSPELL = SPELLSWAMPCIRCLE3;
+		}
+		else 
+		{
+			L2_FAVORITSPELL = SPELLFIRECIRCLE3;
+		};
+		PoziomTwojegoMaga = "2/5";
 		Npc_ExchangeRoutine(self,"BUCH");
 		B_GiveInvItems(other,self,ItMi_Gold,MAGIERUPDATE_COST);
 		AI_StopProcessInfos(self);

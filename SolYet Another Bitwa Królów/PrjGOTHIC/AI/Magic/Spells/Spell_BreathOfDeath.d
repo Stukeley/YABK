@@ -1,6 +1,6 @@
 
-const int SPL_Cost_BreathOfDeath = 100;
-const int SPL_Damage_BreathOfDeath = 500;
+const int SPL_Cost_BreathOfDeath = MageSpellCost_3;
+const int SPL_Damage_BreathOfDeath = MageDamageSpell_3;
 
 instance Spell_BreathOfDeath(C_Spell_Proto)
 {

@@ -106,3 +106,47 @@ func int B_GetHeroWeapon(var int weapon_level)
 		return itmw_hero_4;
 	};
 };
+func int B_GetOrcWeaponSoldier(var int gil, var int weapon_level)
+{
+
+	if (gil == GIL_PAL)
+	{
+		if (weapon_level == 0)
+		{
+			return ITMW_OrcWeapon_LEVEL_1;
+		}
+		else if (weapon_level == 1)
+		{
+			return ITMW_OrcWeapon_LEVEL_2;
+		}
+		else if (weapon_level == 2)
+		{
+			return ITMW_OrcWeapon_LEVEL_3;
+		}
+		else
+		{
+			return ITMW_OrcWeapon_LEVEL_4;
+		};
+	}
+
+	else if (gil == GIL_DJG)
+	{
+		if (weapon_level == 0)
+		{
+			return ITMW_OrcWeapon_LEVEL_1;
+		}
+		else if (weapon_level == 1)
+		{
+			return ITMW_OrcWeapon_LEVEL_2;
+		}
+		else if (weapon_level == 2)
+		{
+			return ITMW_OrcWeapon_LEVEL_3;
+		}
+		else
+		{
+			return ITMW_OrcWeapon_LEVEL_4;
+		};
+	};
+
+};

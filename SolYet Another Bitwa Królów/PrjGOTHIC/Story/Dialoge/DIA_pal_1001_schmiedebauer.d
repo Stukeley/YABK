@@ -48,9 +48,12 @@ func void pal_1001_schmiedebauer_erbauen_info()
 	{
 		B_GiveInvItems(other,self,ItMi_Gold,SMITHCOST);
 		Npc_RemoveInvItems(self,ItMi_Gold,Npc_HasItems(self,ItMi_Gold));
+		AI_StopProcessInfos(self);
 		L1_SCHMIEDE_ERBAUT = TRUE;
 		self.aivar[91] = FALSE;
-		AI_StopProcessInfos(self);
+		FF_ApplyExtGT(SmithProcess1, 45000, -1);
+		Wld_InsertNPC(None_8001_Smith, SPAWNWAYPOINT);
+		FF_ApplyExtGT(SelfRemovalSchmiedL1,1000,1);
 	}
 	else
 	{
@@ -82,3 +85,7 @@ func void pal_1001_schmiedebauer_erbaut_info()
 	AI_StopProcessInfos(self);
 };
 
+func void SelfRemovalSchmiedL1()
+{
+	B_RemoveNpc(pal_1001_schmiedebauer);
+};

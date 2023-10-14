@@ -1,6 +1,6 @@
 
-const int SPL_Cost_Icelance = 20;
-const int SPL_DAMAGE_Icelance = 100;
+const int SPL_Cost_Icelance = MageSpellCost_3;
+const int SPL_DAMAGE_Icelance = MageDamageSpell_3;
 
 instance Spell_Icelance(C_Spell_Proto)
 {

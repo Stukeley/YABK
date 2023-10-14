@@ -62,7 +62,44 @@ func int B_GetUnitArmor(var int fraktion, var int level)
 		{
 			return itar_tmp_h;
 		};
+	}
+	else if (fraktion == SKE)
+	{
+		if (level == 1)
+		{
+			return ITAR_SKEMIL_L;
+		}
+		else if (level == 2)
+		{
+			return ITAR_SKEMIL_M;
+		}
+		else if (level == 3)
+		{
+			return ITAR_SKEPAL_M;
+		}
+		else
+		{
+			return ITAR_SKEPAL_H;
+		};
+	}
+	else if (fraktion == PCH)
+	{
+		if (level == 1)
+		{
+			return Itar_OldCamp_1;
+		}
+		else if (level == 2)
+		{
+			return Itar_OldCamp_2;
+		}
+		else if (level == 3)
+		{
+			return Itar_OldCamp_3;
+		}
+		else
+		{
+			return Itar_OldCamp_4;
+		};
 	};
-
 	return -1;
 };

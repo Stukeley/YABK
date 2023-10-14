@@ -168,7 +168,7 @@ instance ITAR_Vlk_L(C_Item)
 	value = VALUE_ITAR_Vlk_L;
 	wear = WEAR_TORSO;
 	visual = "ItAr_VLK_L.3DS";
-	visual_change = "Armor_Vlk_L.asc";
+	visual_change = "myth02.asc";
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;
@@ -1083,3 +1083,87 @@ func void UnEquip_ITAR_SLD_H()
 	};
 };
 
+instance ITAR_4_Mage_L(C_Item)
+{
+	name = "Szata Mrocznej Magii";
+	mainflag = ITEM_KAT_ARMOR;
+	flags = 0;
+	protection[PROT_EDGE] = 100;
+	protection[PROT_BLUNT] = 100;
+	protection[PROT_POINT] = 100;
+	protection[PROT_FIRE] = 50;
+	protection[PROT_MAGIC] = 50;
+	value = value_itar_xardas;
+	wear = WEAR_TORSO;
+	visual = "Nowicjusz_M_DARK.3ds";
+	visual_change = "Nowicjusz_M_DARK.asc";
+	visual_skin = 0;
+	material = MAT_LEATHER;
+	description = name;
+	text[1] = NAME_Prot_Edge;
+	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;
+	count[2] = protection[PROT_POINT];
+	text[3] = NAME_Prot_Fire;
+	count[3] = protection[PROT_FIRE];
+	text[4] = NAME_Prot_Magic;
+	count[4] = protection[PROT_MAGIC];
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+instance ITAR_1_MAGE_NOV_1(C_Item)
+{
+	name = "Szata Mrocznej Magii";
+	mainflag = ITEM_KAT_ARMOR;
+	flags = 0;
+	protection[PROT_EDGE] = 100;
+	protection[PROT_BLUNT] = 100;
+	protection[PROT_POINT] = 100;
+	protection[PROT_FIRE] = 50;
+	protection[PROT_MAGIC] = 50;
+	value = value_itar_xardas;
+	wear = WEAR_TORSO;
+	visual = "Nowicjusz_M_DARK.3ds";
+	visual_change = "Fanaticfinal.asc";
+	visual_skin = 0;
+	material = MAT_LEATHER;
+	description = name;
+	text[1] = NAME_Prot_Edge;
+	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;
+	count[2] = protection[PROT_POINT];
+	text[3] = NAME_Prot_Fire;
+	count[3] = protection[PROT_FIRE];
+	text[4] = NAME_Prot_Magic;
+	count[4] = protection[PROT_MAGIC];
+	text[5] = NAME_Value;
+	count[5] = value;
+};
+instance ITAR_1_MAGE_NOV_2(C_Item)
+{
+	name = "Szata Mrocznej Magii";
+	mainflag = ITEM_KAT_ARMOR;
+	flags = 0;
+	protection[PROT_EDGE] = 100;
+	protection[PROT_BLUNT] = 100;
+	protection[PROT_POINT] = 100;
+	protection[PROT_FIRE] = 50;
+	protection[PROT_MAGIC] = 50;
+	value = value_itar_xardas;
+	wear = WEAR_TORSO;
+	visual = "Nowicjusz_M_DARK.3ds";
+	visual_change = "Fanatykwip8.asc";
+	visual_skin = 0;
+	material = MAT_LEATHER;
+	description = name;
+	text[1] = NAME_Prot_Edge;
+	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;
+	count[2] = protection[PROT_POINT];
+	text[3] = NAME_Prot_Fire;
+	count[3] = protection[PROT_FIRE];
+	text[4] = NAME_Prot_Magic;
+	count[4] = protection[PROT_MAGIC];
+	text[5] = NAME_Value;
+	count[5] = value;
+};

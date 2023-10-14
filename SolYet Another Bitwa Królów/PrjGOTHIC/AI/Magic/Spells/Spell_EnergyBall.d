@@ -1,6 +1,6 @@
 
-const int SPL_Cost_Energyball = 100;
-const int SPL_DAMAGE_Energyball = 200;
+const int SPL_Cost_Energyball = MageSpellCost_5;
+const int SPL_DAMAGE_Energyball = MageDamageSpell_5;
 
 instance Spell_EnergyBall(C_Spell_Proto)
 {

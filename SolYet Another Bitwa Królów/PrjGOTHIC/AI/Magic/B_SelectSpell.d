@@ -26,7 +26,7 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		}
 		else if(slf.aivar[89] == SPELLFEUERBALL)
 		{
-			B_ReadySpell(slf,SPL_InstantFireball,SPL_COST_InstantFireball);
+			B_ReadySpell(slf,SPL_Concussionbolt,SPL_Cost_Concussionbolt);
 			return TRUE;
 		}
 		else if(slf.aivar[89] == SPELLEISBLOCK)
@@ -43,6 +43,92 @@ func int B_SelectSpell(var C_Npc slf,var C_Npc oth)
 		{
 			B_ReadySpell(slf,SPL_GreenTentacle,SPL_Cost_Greententacle);
 			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLFIRECIRCLE4)
+		{
+		B_ReadySpell(slf,SPL_Firestorm,SPL_Cost_Firestorm);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLFIRECIRCLE3)
+		{
+		B_ReadySpell(slf,SPL_InstantFireball,SPL_Cost_InstantFireball);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLFIRECIRCLE5)
+		{
+		B_ReadySpell(slf,SPL_ChargeFireball,SPL_Cost_ChargeFireball);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLFIRECIRCLE6)
+		{
+		B_ReadySpell(slf,SPL_FireMeteor,SPL_Cost_FireMeteor);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLWATERCIRCLE2)
+		{
+		B_ReadySpell(slf,SPL_IceBolt,SPL_Cost_IceBolt);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLWATERCIRCLE4)
+		{
+		B_ReadySpell(slf,SPL_Icelance,SPL_Cost_IceLance);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLWATERCIRCLE6)
+		{
+		B_ReadySpell(slf,SPL_Waterfist,SPL_Cost_Waterfist);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLWATERCIRCLE5)
+		{
+		B_ReadySpell(slf,SPL_LightningFlash,SPL_Cost_LightningFlash);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLWATERCIRCLE3)
+		{
+		B_ReadySpell(slf,SPL_Zap,SPL_Cost_Zap);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLDARKCIRCLE2)
+		{
+		B_ReadySpell(slf,SPL_Concussionbolt,SPL_Cost_Concussionbolt);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLDARKCIRCLE3)
+		{
+		B_ReadySpell(slf,SPL_FireMeteor,SPL_Cost_FireMeteor);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLDARKCIRCLE4)
+		{
+		B_ReadySpell(slf,SPL_BreathOfDeath,SPL_Cost_BreathOfDeath);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLDARKCIRCLE6)
+		{
+		B_ReadySpell(slf,SPL_EnergyBall,SPL_Cost_EnergyBall);
+			return TRUE;
+		}
+		else if(slf.aivar[89] == SPELLDARKCIRCLE5)
+		{
+		B_ReadySpell(slf,SPL_Skull,SPL_Cost_Skull);
+			return TRUE;
+		}
+		else if (slf.aivar[89] == SPELLSWAMPCIRCLE3)
+		{
+		B_ReadySpell(slf,SPL_Firebolt,SPL_Cost_Firebolt);		
+		}
+		else if (slf.aivar[89] == SPELLSWAMPCIRCLE4)
+		{
+		B_ReadySpell(slf,SPL_WindFist,SPL_Cost_WindFist);		
+		}
+		else if (slf.aivar[89] == SPELLSWAMPCIRCLE5)
+		{
+		B_ReadySpell(slf,SPL_Deathball,SPL_Cost_Deathball);		
+		}
+		else if (slf.aivar[89] == SPELLSWAMPCIRCLE6)
+		{
+		B_ReadySpell(slf,SPL_Deathbolt,SPL_Cost_Deathbolt);		
 		}
 		else
 		{

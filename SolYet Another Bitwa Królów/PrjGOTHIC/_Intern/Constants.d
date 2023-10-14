@@ -325,6 +325,8 @@ const int TARGET_TYPE_NPCS = 4;
 const int TARGET_TYPE_ORCS = 8;
 const int TARGET_TYPE_HUMANS = 16;
 const int TARGET_TYPE_UNDEAD = 32;
+const int TARGET_TYPE_L2 = 64;
+const int TARGET_TYPE_L1 = 128;
 const int SPL_PalLight = 0;
 const int SPL_PalLightHeal = 1;
 const int SPL_PalHolyBolt = 2;
@@ -389,8 +391,8 @@ const int SPL_MasterOfDisaster = 60;
 const int SPL_Deathbolt = 61;
 const int SPL_Deathball = 62;
 const int SPL_ConcussionBolt = 63;
-const int SPL_Reserved_64 = 64;
-const int SPL_Reserved_65 = 65;
+const int SPL_FireMeteor = 64; // Fire Meteor
+const int SPL_ShrinkDMG = 65; //ShrinkDmg
 const int SPL_Reserved_66 = 66;
 const int SPL_Reserved_67 = 67;
 const int SPL_Reserved_68 = 68;
@@ -415,8 +417,8 @@ const int SPL_SuckEnergy = 86;
 const int SPL_Skull = 87;
 const int SPL_SummonZombie = 88;
 const int SPL_SummonMud = 89;
-const int SPL_Reserved_90 = 90;
-const int SPL_Reserved_91 = 91;
+const int SPL_MineTeleport = 90;
+const int SPL_MonasteryTeleport = 91;
 const int SPL_Reserved_92 = 92;
 const int SPL_Reserved_93 = 93;
 const int SPL_Reserved_94 = 94;
@@ -494,8 +496,8 @@ const string spellFxInstanceNames[100] =
 	"Deathbolt",
 	"Deathball",
 	"Concussionbolt",
-	"Light",
-	"Light",
+	"DestroyUndead", // Spell dla mrocznych magow
+	"TestSpell", //Shrink z DMG
 	"Light",
 	"Light",
 	"Light",
@@ -520,8 +522,8 @@ const string spellFxInstanceNames[100] =
 	"Skull",
 	"SummonZombie",
 	"SummonMud",
-	"Light",
-	"Light",
+	"Teleport",
+	"Teleport",
 	"Light",
 	"Light",
 	"Light",
@@ -541,17 +543,17 @@ const string spellFxAniLetters[100] =
 	"FBT",
 	"HEA",
 	"FIB",
-	"HEA",
-	"HEA",
-	"HEA",
-	"HEA",
-	"HEA",
-	"HEA",
-	"HEA",
-	"HEA",
-	"HEA",
-	"HEA",
-	"HEA",
+	"FIB",
+	"FIB",
+	"FIB",
+	"FIB",
+	"FIB",
+	"FIB",
+	"FIB",
+	"FIB",
+	"FIB",
+	"FIB",
+	"FIB",
 	"SLE",
 	"FBT",
 	"FBT",
@@ -598,8 +600,8 @@ const string spellFxAniLetters[100] =
 	"FBT",
 	"FBT",
 	"FBT",
-	"XXX",
-	"XXX",
+	"FIB", // Spell drugi nieumarlych
+	"FIB", // Spell Shrink z DMG
 	"XXX",
 	"XXX",
 	"XXX",
@@ -624,8 +626,8 @@ const string spellFxAniLetters[100] =
 	"WND",
 	"SUM",
 	"SUM",
-	"XXX",
-	"XXX",
+	"FIB", //Teleport do kopalni
+	"FIB", //Teleport do domu magów
 	"XXX",
 	"XXX",
 	"XXX",

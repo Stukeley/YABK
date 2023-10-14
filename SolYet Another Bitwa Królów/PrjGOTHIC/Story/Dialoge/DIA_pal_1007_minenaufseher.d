@@ -49,6 +49,7 @@ func void pal_1007_minenaufseher_mehr_arbeiter_info()
 		B_GiveInvItems(other,self,ItMi_Gold,MINENARBEITERCOST);
 		Npc_RemoveInvItems(self,ItMi_Gold,Npc_HasItems(self,ItMi_Gold));
 		L1_MINE += 1;
+		Przychod +=24;
 		AI_StopProcessInfos(self);
 		if(L1_MINE == 2)
 		{

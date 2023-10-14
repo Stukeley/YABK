@@ -266,7 +266,7 @@ const string TXT_SPELLS[100] =
 	"TXT_SPL_DEATHBOLT",
 	"TXT_SPL_DEATHBALL",
 	"TXT_SPL_CONCUSSIONBOLT",
-	"TXT_SPL_RESERVED_64",
+	"Ognisty Meteor",
 	"TXT_SPL_RESERVED_65",
 	"TXT_SPL_RESERVED_66",
 	"TXT_SPL_RESERVED_67",
@@ -306,6 +306,7 @@ const string TXT_SPELLS[100] =
 const string NAME_SPL_PalLight = "Œwiêty p³omieñ";
 const string NAME_SPL_PalLightHeal = "Pomniejsze uleczenie";
 const string NAME_SPL_PalHolyBolt = "Œwiêta strza³a";
+const string NAME_SPL_FireMeteor				= "Ognisty Meteor";
 const string NAME_SPL_PalMediumHeal = "Œrednie uleczenie";
 const string NAME_SPL_PalRepelEvil = "Szkodzenie z³u";
 const string NAME_SPL_PalFullHeal = "Wiêksze uleczenie";
@@ -327,6 +328,7 @@ const string NAME_SPL_Icebolt = "Lodowa strza³a";
 const string NAME_SPL_LightHeal = "Leczenie lekkich ran";
 const string NAME_SPL_SummonGoblinSkeleton = "Tworzenie szkieletu-goblina";
 const string NAME_SPL_InstantFireball = "Kula ognia";
+const string NAME_SPL_ShrinkDmg			= "Shrink z DMG";
 const string NAME_SPL_Zap = "B³yskawica";
 const string NAME_SPL_SummonWolf = "Przyzwanie wilka";
 const string NAME_SPL_WINDFIST = "Piêœæ wichru";
@@ -404,56 +406,59 @@ const string NAME_SPL_Reserved_97 = "NAME_SPL_RESERVED_97";
 const string NAME_SPL_Reserved_98 = "NAME_SPL_RESERVED_98";
 const string NAME_SPL_Reserved_99 = "NAME_SPL_RESERVED_99";
 
-const string TXT_TALENTS[22] =
+CONST STRING TXT_TALENTS [23] =
 {
-	"",
-	"Br. jednorêczna",
-	"Br. dwurêczna",
-	"£uki",
-	"Kusze",
-	"W³amywanie siê",
-	"",
-	"Magia",
-	"Skradanie siê",
-	"",
-	"",
-	"Akrobatyka",
-	"Kradzie¿ kiesz.",
-	"Kowalstwo",
-	"Tworzenie run",
-	"Alchemia",
-	"Zbieranie trofeów",
-	"Czytanie w obcym jêzyku",
-	"Zdolnoœæ ognika",
-	"",
-	"",
-	""
+	"",							//NPC_TALENT_UNKNOWN			= 0;
+	"",			//NPC_TALENT_1H					= 1;
+	"",			//NPC_TALENT_2H					= 2;
+	"",						//NPC_TALENT_BOW				= 3;
+	"",					//NPC_TALENT_CROSSBOW			= 4;
+	"",			//NPC_TALENT_PICKLOCK			= 5;	//wird jetzt per DEX geregelt UND es gibt nur noch Level 0 und 1 (nicht	mehr 2)
+	"",							//altes	Pickpocket aus Gothic 1	- NICHT	benutzen! Bleibt als Relikt	im Code	= 6;
+	"",					//NPC_TALENT_MAGE				= 7;	// Magiekreis
+	"",			//NPC_TALENT_SNEAK				= 8;
+	"",							//raus //NPC_TALENT_REGENERATE	= 9;
+	"",							//raus //NPC_TALENT_FIREMASTER	= 10;
+	"",				//NPC_TALENT_ACROBAT			= 11;
+	"",			//NPC_TALENT_PICKPOCKET			= 12;	//NEUES	Pickpocket
+	"",				//NPC_TALENT_SMITH				= 13;
+	"",			//NPC_TALENT_RUNES				= 14;
+	"",					//NPC_TALENT_ALCHEMY			= 15;
+	"",		//NPC_TALENT_TAKEANIMALTROPHY	= 16;
+	"",	//NPC_TALENT_FOREIGNLANGUAGE	= 17;
+	"",			//NPC_TALENT_WISPDETECTOR		= 18;
+	"",							//NPC_TALENT_C					= 19;
+	"",							//NPC_TALENT_D					= 20;
+	"",						//NPC_TALENT_E					= 21;
+	""						//NPC_TALENT_F					= 22;
+
 };
 
-const string TXT_TALENTS_SKILLS[22] =
+CONST STRING TXT_TALENTS_SKILLS	[23] =
 {
-	"",
-	"Zielony|Wojownik|Mistrz",
-	"Zielony|Wojownik|Mistrz",
-	"Zielony|Wojownik|Mistrz",
-	"Zielony|Wojownik|Mistrz",
-	"-|Uczony|-",
-	"0|1|2",
-	"0|1|2|3|4|5|6",
-	"-|Uczony",
-	"-|-",
-	"-|-",
-	"-|Uczony",
-	"-|Uczony",
-	"-|Uczony",
-	"-|Uczony",
-	"-|Uczony",
-	"-|Uczony",
-	"-|Uczony",
-	"-|Uczony",
-	"-|Uczony",
-	"-|Uczony",
-	"-|Uczony"
+	"",															//NPC_TALENT_UNKNOWN			= 0;
+	"",									//NPC_TALENT_1H					= 1;
+	"",									//NPC_TALENT_2H					= 2;
+	"",									//NPC_TALENT_BOW				= 3;
+	"",									//NPC_TALENT_CROSSBOW			= 4;
+	"",												//NPC_TALENT_PICKLOCK			= 5;	//wird jetzt per DEX geregelt UND es gibt nur noch Level 0 und 1 (nicht	mehr 2)
+	"",													//altes	Pickpocket aus Gothic 1	- NICHT	benutzen! Bleibt als Relikt	im Code	= 6;
+	"",											//NPC_TALENT_MAGE				= 7;	// Magiekreis
+	"",													//NPC_TALENT_SNEAK				= 8;
+	"",														//raus //NPC_TALENT_REGENERATE	= 9;
+	"",														//raus //NPC_TALENT_FIREMASTER	= 10;
+	"",													//NPC_TALENT_ACROBAT			= 11;
+	"",													//NPC_TALENT_PICKPOCKET			= 12;	//NEUES	Pickpocket
+	"",													//NPC_TALENT_SMITH				= 13;
+	"",													//NPC_TALENT_RUNES				= 14;
+	"",													//NPC_TALENT_ALCHEMY			= 15;
+	"",													//NPC_TALENT_TAKEANIMALTROPHY	= 16;
+	"",													//NPC_TALENT_FOREIGNLANGUAGE	= 17;	//ADDON
+	"",													//NPC_TALENT_WISPDETECTOR		= 18;
+	"",													//NPC_TALENT_C					= 19;
+	"",													//NPC_TALENT_D					= 20;
+	"",												//NPC_TALENT_E					= 21;
+	""												//NPC_TALENT_F					= 22;
 };
 
 const string TXT_INV_CAT[9] =
@@ -952,10 +957,14 @@ const string PRINT_NORMAL = "(Normalny)";
 const string PRINT_HEAVY = "(Trudny)";
 const string PRINT_HORROR = "(Horror!)";
 const string PRINT_DECIDEFRAKTION = "Pozwól mi wybraæ grupê w której bêde graæ.";
-const string PRINT_PALDESCRIPTION = "(Paladyni, umiejêtnoœæ: wskrzeszenie)";
-const string PRINT_DJGDESCRIPTION = "(£owcy Smoków, umiejêtnoœæ: szybkie zabijanie)";
-const string PRINT_TMPDESCRIPTION = "(Templariusze, umiejêtnoœæ: uleczanie)";
-const string PRINT_SKEDESCRIPTION = "(O¿ywieñcy, umiejêtnoœæ: ¿o³nierze wracaj¹ do ¿ycia jako szkielety)";
+const string PRINT_PALDESCRIPTION = "Paladyni";
+const string PRINT_DJGDESCRIPTION = "Nowy Obóz";
+const string PRINT_TMPDESCRIPTION = "Obóz Bractwa";
+const string PRINT_SKEDESCRIPTION = "Istoty Beliara";
+const string PRINT_BSTDESCRIPTION = "Zwierzêta";
+const string PRINT_MGBDESCRIPTION = "Istoty Magiczne";
+const string PRINT_PCHDESCRIPTION = "Stary Obóz";
+const string PRINT_ORCDESCRITPION = "Orkowie";
 const string PRINT_DECIDECAMP = "Pozwól mi wybraæ obóz w którym bêde gra³.";
 const string PRINT_REDCAMP = "(Czerwony obóz)";
 const string PRINT_BLUECAMP = "(Niebieski obóz)";
@@ -983,7 +992,6 @@ const string PRINT_STATUSOWNKING = "Punkty trafieñ twojego króla: ";
 const string PRINT_STATUSOTHERKING = "Punkty trafieñ króla przeciwnika: ";
 const string PRINT_HELDENSTUFE = "Poziom bohatera:          ";
 const string PRINT_HELDENNEXT = "     Nastêpny poziom:     ";
-const string PRINT_MAXLVL = "     Maksymalny poziom.     ";
 const string PRINT_HELDENSCHWERT = "     Poziom mieczy:    ";
 const string PRINT_HELDENRUESSI = "     Poziom zbroi:    ";
 const string PRINT_HELDENARMBRUST = "     Poziom kuszy: ";
@@ -991,6 +999,8 @@ const string PRINT_VON8 = " z 8";
 const string PRINT_VON4 = " z 4";
 const string PRINT_VON3 = " z 3";
 const string PRINT_PERCENT = " procent";
+const string PRINT_THIEF_1 = "Otrzymano ";
+const string PRINT_THIEF_2 = " sztuk z³ota od gildii z³odziei";
 const string NAME_ITMW_SHORTSWORD_SK = "Krótki miecz";
 const string NAME_ITMW_SHORTSWORD_DJG = "Krótki miecz";
 const string NAME_ITMW_SHORTSWORD_PAL = "Krótki miecz";

@@ -1,7 +1,7 @@
 
 instance MENU_MAIN(C_MENU_DEF)
 {
-	backpic = MENU_BACK_PIC;
+	backpic = "NOWEMENUKURWA.tga";
 	musictheme = "SYS_Menu";
 	items[0] = "MENUITEM_MAIN_HEADLINE";
 	items[1] = "MENUITEM_MAIN_HEADLINE2";
@@ -15,6 +15,8 @@ instance MENU_MAIN(C_MENU_DEF)
 	defaultoutgame = 2;
 	defaultingame = 4;
 	flags = flags | MENU_SHOW_INFO;
+	dimx		=	3191;
+	dimy		= 	3191;
 };
 
 
@@ -24,8 +26,8 @@ const int MENU_MAIN_Y = 2500;
 instance MENUITEM_MAIN_NEWGAME(C_MENU_ITEM_DEF)
 {
 	backpic = MENU_ITEM_BACK_PIC;
-	text[0] = "Zacznij Bitwê Królów";
-	text[1] = "Zacznij bitwê.";
+	text[0] = "Rozpocznij bitwê";
+	text[1] = "Zacznij bitwê królów.";
 	posx = 0;
 	posy = MENU_MAIN_Y + (MENU_MAIN_DY * 0);
 	dimx = 8100;
@@ -38,7 +40,7 @@ instance MENUITEM_MAIN_NEWGAME(C_MENU_ITEM_DEF)
 instance MENUITEM_MAIN_SAVEGAME_LOAD(C_MENU_ITEM_DEF)
 {
 	backpic = MENU_ITEM_BACK_PIC;
-	text[0] = "Wczytaj grê";
+	text[0] = "Wczytaj";
 	text[1] = "Kontynuuj zapisan¹ grê.";
 	posx = 0;
 	posy = MENU_MAIN_Y + (MENU_MAIN_DY * 1);
@@ -52,7 +54,7 @@ instance MENUITEM_MAIN_SAVEGAME_LOAD(C_MENU_ITEM_DEF)
 instance MENUITEM_MAIN_SAVEGAME_SAVE(C_MENU_ITEM_DEF)
 {
 	backpic = MENU_ITEM_BACK_PIC;
-	text[0] = "Zapisz grê";
+	text[0] = "Zapisz";
 	text[1] = "Zapisz swoj¹ grê.";
 	posx = 0;
 	posy = MENU_MAIN_Y + (MENU_MAIN_DY * 2);
@@ -62,6 +64,21 @@ instance MENUITEM_MAIN_SAVEGAME_SAVE(C_MENU_ITEM_DEF)
 	onselaction[0] = SEL_ACTION_STARTMENU;
 	flags = flags | IT_TXT_CENTER | IT_ONLY_IN_GAME;
 };
+
+instance MENUITEM_MAIN_MOD_SETTINGS(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_ITEM_BACK_PIC;
+	text[0] = "Ustawienia Moda";
+	text[1] = "Dostosuj ustawienia modyfikacji";
+	posx = 0;
+	posy = MENU_MAIN_Y + (MENU_MAIN_DY * 5);
+	dimx = 8100;
+	dimy = 750;
+	onselaction_s[0] = "MENU_SAVEGAME_LOAD";
+	onselaction[0] = SEL_ACTION_STARTMENU;
+	flags = flags | IT_TXT_CENTER;
+};
+
 
 instance MENUITEM_MAIN_RESUME(C_MENU_ITEM_DEF)
 {

@@ -144,8 +144,8 @@ PROTOTYPE C_MENU_DEF(C_MENU)
 //	backWorld	=	"cutscenes\INTRO.zen";
 	posx		=	0;
 	posy		=	0;
-	dimx		=	8191;
-	dimy		= 	8191;	
+	dimx		=	-1;
+	dimy		= 	-1;	
 	alpha		=	254;			// NOTE: Must be under 255 to support chroma keying, chroma color is black
 	items[0]	=	"ITEM_BACK";
 	flags		=	MENU_EXCLUSIVE|MENU_DONTSCALE_DIM|MENU_ALIGN_CENTER;

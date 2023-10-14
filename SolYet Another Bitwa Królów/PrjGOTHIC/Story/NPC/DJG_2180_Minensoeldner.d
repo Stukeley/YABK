@@ -20,6 +20,10 @@ instance DJG_2180_MINENSOELDNER(Npc_Default)
 	{
 		B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_NormalBald,BodyTex_P,itar_tmp_l);
 	}
+	else if(FRAKTION_L2 == PCH)
+	{
+		B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_NormalBald,BodyTex_P,Itar_OldCamp_2);
+	}
 	else if(FRAKTION_L2 == SKE)
 	{
 		B_SetSkelettVisual(self,2);

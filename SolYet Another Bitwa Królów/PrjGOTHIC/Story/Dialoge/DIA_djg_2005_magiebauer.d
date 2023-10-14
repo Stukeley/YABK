@@ -48,6 +48,7 @@ func void djg_2005_magiebauer_erbauen_info()
 	{
 		B_GiveInvItems(other,self,ItMi_Gold,MAGECOST);
 		Npc_RemoveInvItems(self,ItMi_Gold,Npc_HasItems(self,ItMi_Gold));
+		PoziomTwojegoMaga = "1/5";
 		L2_MAGIE_ERBAUT = TRUE;
 		self.aivar[91] = FALSE;
 		AI_StopProcessInfos(self);

@@ -1,6 +1,6 @@
 
-const int SPL_Cost_PalHolyBolt = 10;
-const int SPL_Damage_PalHolyBolt = 100;
+const int SPL_Cost_PalHolyBolt = MageSpellCost_1;
+const int SPL_Damage_PalHolyBolt = MageDamageSpell_1;
 
 instance Spell_PalHolyBolt(C_Spell_Proto)
 {

@@ -189,6 +189,16 @@ func void TA_Stand_ArmsCrossed(var int start_h,var int start_m,var int stop_h,va
 	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Stand_ArmsCrossed,waypoint);
 };
 
+func void TA_Stand_Halberd		(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	
+{
+	TA_Min		(self,	start_h,start_m, stop_h, stop_m, ZS_Stand_Halberd,	        waypoint);
+};
+
+func void TA_Lean_Wall			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	
+{
+	TA_Min		(self,	start_h,start_m, stop_h, stop_m, ZS_Lean_Wall,				waypoint);
+};
+
 func void TA_Stand_Drinking(var int start_h,var int start_m,var int stop_h,var int stop_m,var string waypoint)
 {
 	TA_Min(self,start_h,start_m,stop_h,stop_m,ZS_Stand_Drinking,waypoint);
@@ -293,4 +303,3 @@ func void ta_muell(var int start_h,var int start_m,var int stop_h,var int stop_m
 {
 	TA_Min(self,start_h,start_m,stop_h,stop_m,zs_muell,waypoint);
 };
-

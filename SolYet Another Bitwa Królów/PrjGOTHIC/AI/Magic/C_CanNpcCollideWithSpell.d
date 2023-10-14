@@ -227,18 +227,7 @@ func int C_CanNpcCollideWithSpell(var int spellType)
 		};
 		return COLL_DONOTHING;
 	};
-	if(spellType == SPL_BreathOfDeath)
-	{
-		if((Npc_GetDistToNpc(other,self) < 1000) && !C_NpcIsUndead(self))
-		{
-			if((self.guild == GIL_DRAGON) || (Hlp_GetInstanceID(self) != Hlp_GetInstanceID(hero)))
-			{
-				return COLL_APPLYHALVEDAMAGE;
-			};
-			return COLL_DOEVERYTHING;
-		};
-		return COLL_DONOTHING;
-	};
+
 	if(spellType == SPL_MassDeath)
 	{
 		if(!C_NpcIsUndead(self))

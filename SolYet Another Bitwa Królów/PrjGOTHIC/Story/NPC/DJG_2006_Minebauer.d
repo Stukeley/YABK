@@ -2,7 +2,6 @@
 
 instance DJG_2006_MINEBAUER(Npc_Default)
 {
-	name[0] = NPCNAME_MINENBAUER;
 	guild = GIL_NONE;
 	id = 2006;
 	voice = 6;
@@ -20,18 +19,32 @@ instance DJG_2006_MINEBAUER(Npc_Default)
 	Mdl_ApplyOverlayMds(self,"humans_relaxed.mds");
 	if(FRAKTION_L2 == DJG)
 	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_djg_m);
+		name[0] = "Jarvis";
+		B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald", Face_N_Torlof, BodyTex_N, ITAR_SLD_M);	
 	}
 	else if(FRAKTION_L2 == PAL)
 	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,ItAr_PAL_M);
+		name[0] = "Girion";
+		B_SetNpcVisual 		(self, MALE, "Hum_Head_Pony", Face_N_Lefty, BodyTex_N, ITAR_PAL_M);	
 	}
 	else if(FRAKTION_L2 == TMP)
 	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_tmp_m);
+		name[0] = "Fortuno";
+		B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Fortuno, BodyTex_T, ITAR_LESTER);
+	}
+	else if (FRAKTION_L2 == PCH)
+	{
+		name = "Grimes";
+		B_SetNpcVisual 		(self, MALE, "Hum_Head_Thief", Face_N_ImportantGrey, BodyTex_N, ITAR_Prisoner);	
+	}
+	else if (FRAKTION_L2 == ORC)
+	{
+		name = "Ork zarz¹dca";
+		B_SetSkelettVisual(self, 13);
 	}
 	else if(FRAKTION_L2 == SKE)
 	{
+		name[0] = "ZarzÄ…dca Kopalni";
 		B_SetSkelettVisual(self,3);
 	};
 	Mdl_SetModelFatness(self,1);
@@ -46,8 +59,8 @@ instance DJG_2006_MINEBAUER(Npc_Default)
 
 func void Rtn_Start_2006()
 {
-	TA_Stand_WP(8,0,23,0,"L2_MINE_01");
-	TA_Stand_WP(23,0,8,0,"L2_MINE_01");
+	TA_Stand_Guarding(8,0,23,0,"L2_MINE_01");
+	TA_Stand_Guarding(23,0,8,0,"L2_MINE_01");
 };
 
 func void rtn_tot_2006()

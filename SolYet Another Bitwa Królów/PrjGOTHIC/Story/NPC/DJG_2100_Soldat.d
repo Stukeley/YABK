@@ -4,7 +4,9 @@ instance DJG_2100_SOLDAT(Npc_Default)
 {
 	B_SetSoldierAbilities(self,GIL_DJG);
 	id = 2100;
+	CreateInvItems (self,ITHE_Test,1);
 	daily_routine = rtn_lager2_2100;
+	
 };
 
 // Rutyny zalezne od mapy.

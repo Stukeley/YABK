@@ -17,21 +17,13 @@ instance DJG_2009_MINENARBEITER(Npc_Default)
 	B_SetAttributesToChapter(self,1);
 	Mdl_SetVisual(self,"humans.mds");
 	Mdl_ApplyOverlayMds(self,"humans_relaxed.mds");
-	if(FRAKTION_L2 == DJG)
-	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_djg_prisoner);
-	}
-	else if(FRAKTION_L2 == PAL)
-	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_pal_prisoner);
-	}
-	else if(FRAKTION_L2 == TMP)
-	{
-		B_SetNpcVisual(self,MALE,"Hum_Head_Fighter",Face_N_NormalBart08,BodyTex_N,itar_tmp_prisoner);
-	}
-	else if(FRAKTION_L2 == SKE)
+	if(FRAKTION_L2 == SKE)
 	{
 		B_SetSkelettVisual(self,1);
+	}
+	else 
+	{
+		B_SetNpcVisual 		(self, MALE, "Hum_Head_Pony", Face_B_Normal01, BodyTex_B,itar_pal_prisoner);	
 	};
 	Mdl_SetModelFatness(self,1);
 	B_GiveNpcTalents(self);

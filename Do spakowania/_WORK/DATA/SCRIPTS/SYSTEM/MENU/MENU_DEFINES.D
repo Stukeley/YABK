@@ -1,5 +1,5 @@
 
-const string MENU_BACK_PIC = "menu_ingame.tga";
+const string MENU_BACK_PIC = "NOWEMENUKURWA.tga";
 const string MENU_ITEM_BACK_PIC = "";
 const string MENU_CHOICE_BACK_PIC = "menu_choice_back.tga";
 const string MENU_SLIDER_BACK_PIC = "menu_slider_back.tga";
@@ -13,6 +13,7 @@ const string STAT_BACK_PIC = "status_back.tga";
 const string MENU_FONT_DEFAULT = "font_old_20_white.tga";
 const string MENU_FONT_SMALL = "font_old_10_white.tga";
 const string MENU_FONT_BRIGHT = "font_old_10_white_hi.tga";
+const string STAT_FONT_BRAK			= "100.tga";
 const string LOG_FONT_DEFAULT = "font_old_10_white.tga";
 const string LOG_FONT_VIEWER = "font_old_10_white.tga";
 const string LOG_FONT_DATETIME = "font_old_10_white_hi.tga";

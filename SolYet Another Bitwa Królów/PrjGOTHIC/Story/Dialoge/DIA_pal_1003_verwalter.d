@@ -110,7 +110,7 @@ func int pal_1003_verwalter_improve_weapons_condition()
 
 func void pal_1003_verwalter_improve_weapons_info()
 {
-	if((Npc_HasItems(hero,ItMi_Gold) >= 50) && B_HasUpgradeWeapons())
+	if((Npc_HasItems(hero,ItMi_Gold) >= 50) && b_hasupgradeweapons())
 	{
 		B_GiveInvItems(other,self,itmw_sword_pal,Npc_HasItems(hero,itmw_sword_pal));
 		B_GiveInvItems(other,self,itmw_langschwert_pal,Npc_HasItems(hero,itmw_langschwert_pal));
@@ -154,7 +154,7 @@ func int pal_1003_verwalter_improve_armor_condition()
 
 func void pal_1003_verwalter_improve_armor_info()
 {
-	if((Npc_HasItems(hero,ItMi_Gold) >= 50) && B_HasUpgradeArmors())
+	if((Npc_HasItems(hero,ItMi_Gold) >= 50) && b_hasupgradearmors())
 	{
 		B_GiveInvItems(other,self,ItAr_MIL_M,Npc_HasItems(hero,ItAr_MIL_M) - 1);
 		B_GiveInvItems(other,self,itar_skemil_m,Npc_HasItems(hero,itar_skemil_m));
@@ -168,8 +168,15 @@ func void pal_1003_verwalter_improve_armor_info()
 		B_GiveInvItems(other,self,itar_skepal_h,Npc_HasItems(hero,itar_skepal_h));
 		B_GiveInvItems(other,self,itar_djg_h,Npc_HasItems(hero,itar_djg_h) - 1);
 		B_GiveInvItems(other,self,itar_tmp_h,Npc_HasItems(hero,itar_tmp_h) - 1);
+		B_GiveInvItems(other,self,Itar_OldCamp_2,Npc_HasItems(hero,Itar_OldCamp_2));
+		B_GiveInvItems(other,self,Itar_OldCamp_3,Npc_HasItems(hero,Itar_OldCamp_3) - 1);
+		B_GiveInvItems(other,self,Itar_OldCamp_4,Npc_HasItems(hero,Itar_OldCamp_4) - 1);
+		B_GiveInvItems(other,self,ItMi_Packet_ORC_2,Npc_HasItems(hero,ItMi_Packet_ORC_2));
+		B_GiveInvItems(other,self,ItMi_Packet_ORC_3,Npc_HasItems(hero,ItMi_Packet_ORC_3) - 1);
+		B_GiveInvItems(other,self,ItMi_Packet_ORC_4,Npc_HasItems(hero,ItMi_Packet_ORC_4) - 1);
 		B_GiveInvItems(other,self,ItMi_Gold,50);
-
+		AI_EquipBestArmor(other);
+		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
 		if(LAGER == 1)
 		{
 			L1_USED_ARMOR += 1;
@@ -178,19 +185,6 @@ func void pal_1003_verwalter_improve_armor_info()
 		{
 			L2_USED_ARMOR += 2;
 		};
-
-		// Ubranie lepszego pancerza graczowi, lub zmiana visuala jesli jest szkieletem.
-		if (FRAKTION_L1 == SKE)
-		{
-			B_SetSkelettVisual(other, L1_USED_ARMOR);
-		}
-		else
-		{
-			AI_EquipBestArmor(other);
-		};
-
-		AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_WEAPONS_Info_06_02");	//Dobrze.
-		
 		if(L1_USED_ARMOR >= MAXARMORSTEP)
 		{
 			AI_Output(self,other,"PAL_1003_Verwalter_IMPROVE_ARMOR_Info_06_02");	//Twój kowal nie mo¿e stworzyæ lepszej zbroi. Musisz zacz¹æ produkcjê czegoœ innego.

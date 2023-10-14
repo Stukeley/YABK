@@ -13,13 +13,15 @@ instance PC_Hero(Npc_Default)
 	lp = 0;
 	attribute[ATR_STRENGTH] = 0;
 	attribute[ATR_DEXTERITY] = 0;
-	attribute[ATR_MANA_MAX] = 1;
-	attribute[ATR_MANA] = 1;
+	attribute[ATR_MANA_MAX] = 20;
+	attribute[ATR_MANA] = 20;
 	attribute[ATR_HITPOINTS_MAX] = 1;
 	attribute[ATR_HITPOINTS] = 1;
 	Mdl_SetVisual(self,"HUMANS.MDS");
 	Mdl_SetVisualBody(self,"hum_body_Naked0",9,0,"Hum_Head_Pony",Face_N_Player,0,NO_ARMOR);
 	B_SetFightSkills(self,0);
+	Mdl_ApplyOverlayMds(self,"HUMANS_FLEE.MDS");
+
 };
 
 instance PC_L10(Npc_Default)
